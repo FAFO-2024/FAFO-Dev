@@ -1,0 +1,3 @@
+Please follow the following instuctions closely in order to correctly setup the Sonoran Mobile Command Center
+
+See https://docs.sonoran.store/en/mcc/getting-started for the full instructions...

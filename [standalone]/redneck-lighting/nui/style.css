@@ -1,0 +1,8 @@
+body {
+	display: none;
+	position: absolute;
+	right: 25px;
+	bottom: 40px;
+	z-index: auto;
+	overflow: hidden;
+}
