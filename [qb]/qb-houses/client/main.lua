@@ -1022,7 +1022,7 @@ local function openOutfitMenu()
     local outfitLoc = vector3(outfitLocation.x, outfitLocation.y, outfitLocation.z)
     if CheckDistance(outfitLoc, 1.5) then
         TriggerServerEvent('InteractSound_SV:PlayOnSource', 'Clothes1', 0.4)
-        TriggerEvent('qb-clothing:client:openOutfitMenu')
+        TriggerEvent('illenium-appearance:client:openClothingShop')
     end
 end
 

@@ -36,6 +36,7 @@ Config.NormalShops = {
         {name = "lighter", price = 20},
         {name = "rolex", price = 900},
         {name = "laptop", price = 1500},
+        --{name = "kq_outfitbag", price = 1000},
 --[[         {name = "marlboro", price = 650},
         {name = "menthols", price = 1000},
         {name = "marblights", price = 600}, ]]

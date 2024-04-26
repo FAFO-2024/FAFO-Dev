@@ -2,7 +2,7 @@
 -- htttps://docs.londonstudios.net
 
 main = {
-	blipsEnabled = true, -- Only shows blips nearby on minimap
+	blipsEnabled = false, -- Only shows blips nearby on minimap
 	shortRangeBlips = true,
 	disablePublicDefibs = false,
 	maximumEMSToStopDefibUse = 1, -- When set to 0, players can always use defib, when set to 1, players can only use defib if there is less than 1 EMS online. Only available for frameworks.
