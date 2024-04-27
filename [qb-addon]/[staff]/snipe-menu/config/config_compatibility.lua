@@ -16,7 +16,7 @@ Config.Skin = "illenium-appearance" -- qb-clothing || fivem-appearance || esx_sk
 -- lb is for lb-phone
 -- gks is for gks-phone
 -- renewed is for renewed qb phone (only for jobs)
-Config.Phone = "gks" -- "none", "lb", "gks", "renewed"
+Config.Phone = "none" -- "none", "lb", "gks", "renewed"
 
 -- use none if you dont use any of the mentioned options
 -- wasabi is for wasabi-ambulance
@@ -44,7 +44,7 @@ Config.Fuel = "cdn" -- "ps" "ox" "other", "cdn", "legacy"
 -- cd is for cd_garage
 -- if you use any other paid garage system, the code is open in server/open/sv_vehicles.lua for you to edit queries.
 -- Make sure to try with none before making changes in the config or the sv_vehicles.lua file
-Config.Garage = "cd" -- cd , none
+Config.Garage = "none" -- cd , none
 
 Config.GarageTables = {
     ["QBCore"] = {
