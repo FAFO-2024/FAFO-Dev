@@ -8,6 +8,7 @@ Config.NormalShops = {
         {name = "water_bottle", price = 50},
         {name = "tosti", price = 75},
         {name = "lighter", price = 500},
+        {name = "harness", price = 1000},
         },
         locations = { -- locations for this particular shop
         -- coords = vector4

@@ -30,7 +30,7 @@ Config.Chat = "none" -- "none", "okok", "codem"
 -- use none if you dont use any of the mentioned options
 -- cd_easytime for cd_easytime (if you use esx, it will be cd_easytime  by default)
 -- you can add custom weather system in client/open/cl_weather.lua
-Config.WeatherScript = "cd_easytime" -- "none", "cd_easytime"
+Config.WeatherScript = "none" -- "none", "cd_easytime"
 
 -- legacy is for legacyfuel
 -- ps is for ps-fuel

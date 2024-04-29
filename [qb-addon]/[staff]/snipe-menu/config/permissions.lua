@@ -27,7 +27,7 @@ Config.GodRoles = {
 
 
 Config.Permissions = {
-    ["license:cb5765d5073314f0d95e9e69ab51cf5cc5e16d7d"] = "god",   --Sticky
+    ["license:0efb014351334e4c7bad1f7217a2a4c6c683b807"] = "god",   --Sticky
     ["license:66ad9907077ce29ebeb7234ef771915368ae5d6e"] = "god",   --K9
 
     ["fivem:1649224"] = "god", --Snipe
