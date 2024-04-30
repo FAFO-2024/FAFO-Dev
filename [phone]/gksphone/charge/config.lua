@@ -4,15 +4,15 @@ ChargeBlipOn = false  --- To see the blips of the charging stations
 PowerBankFillingTime = 10 -- seconds
 PowerBank = 1  -- Adjust this part how much you want to fill in how many seconds
 
-NormalChargingFillingTime = 5 -- seconds
+NormalChargingFillingTime = 60 -- seconds
 NormalCharging = 1  -- Adjust this part how much you want to fill in how many seconds
 NormalChargingPropName = "gks_charge_normal"
-NormalChargePay = 30  -- pay * percent
+NormalChargePay = 20  -- pay * percent
 
-FastChargingFillingTime = 5 -- seconds
+FastChargingFillingTime = 30 -- seconds
 FastCharging = 3  -- Adjust this part how much you want to fill in how many seconds
 FastChargingPropName = "gks_charge_fast"
-FastChargePay = 50  -- pay * percent
+FastChargePay = 60  -- pay * percent
 
 ChargeEyeTarget = false
 

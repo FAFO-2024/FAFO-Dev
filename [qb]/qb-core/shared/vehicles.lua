@@ -751,6 +751,7 @@ local Vehicles = {
     { model = '19tahoel2',     name = 'Tahoe',                         brand = 'Chevy',           price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
     { model = '19fpis',        name = 'Taurus',                        brand = 'Ford',            price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
     { model = '20fpiul2',      name = 'Explorer',                      brand = 'Ford',            price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
+    { model = 'stretcher',     name = 'stretcher',                     brand = 'Redneck',         price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
 }
 
 for i = 1, #Vehicles do

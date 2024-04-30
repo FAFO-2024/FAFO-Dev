@@ -1,7 +1,7 @@
 config = {}
 
 -- How much ofter the player position is updated ?
-config.RefreshTime = 100
+config.RefreshTime = 300
 
 -- default sound format for interact
 config.interact_sound_file = "ogg"
@@ -23,5 +23,5 @@ config.Messages = {
 -- Addon list
 -- True/False enabled/disabled
 config.AddonList = {
-    crewPhone = true,
+    crewPhone = false,
 }

@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dat151>
+ <Version value="7516460" />
+ <Items>
+  <Item type="Door" ntOffset="0">
+   <Name>hash_41CBC33B</Name>
+   <SoundSet>hash_686BC26D</SoundSet>
+   <Params>hash_0246D335</Params>
+   <Unk1 value="0.7" />
+  </Item>
+  <Item type="DoorModel" ntOffset="0">
+   <Name>hash_F309E12C</Name>
+   <Door>hash_41CBC33B</Door>
+  </Item>
+  <Item type="Door" ntOffset="0">
+   <Name>hash_F6C913B0</Name>
+   <SoundSet>hash_774B23FB</SoundSet>
+   <Params>hash_0246D335</Params>
+   <Unk1 value="0.7" />
+  </Item>
+  <Item type="DoorModel" ntOffset="0">
+   <Name>hash_CF43D51E</Name>
+   <Door>hash_F6C913B0</Door>
+  </Item>
+  <Item type="Door" ntOffset="0">
+   <Name>hash_E1ECEBDE</Name>
+   <SoundSet>hash_774B23FB</SoundSet>
+   <Params>hash_0246D335</Params>
+   <Unk1 value="0.7" />
+  </Item>
+  <Item type="DoorModel" ntOffset="0">
+   <Name>hash_8F5736CE</Name>
+   <Door>hash_E1ECEBDE</Door>
+  </Item>
+  <Item type="Door" ntOffset="0">
+   <Name>hash_66FB2E48</Name>
+   <SoundSet>hash_774B23FB</SoundSet>
+   <Params>hash_0246D335</Params>
+   <Unk1 value="0.7" />
+  </Item>
+  <Item type="DoorModel" ntOffset="0">
+   <Name>hash_3C908FB8</Name>
+   <Door>hash_66FB2E48</Door>
+  </Item>
+  <Item type="Interior" ntOffset="1500">
+   <Name>hash_D029DD21</Name>
+   <Unk0 value="0xAAAAA044" />
+   <Unk1 value="0xD4855127" />
+   <Unk2 value="0x00000000" />
+   <Rooms>
+    <Item>hash_DBB11B6B</Item>
+    <Item>hash_A2C39D3B</Item>
+    <Item>hash_B792C6D9</Item>
+    <Item>hash_FE40D434</Item>
+    <Item>hash_0D1371D9</Item>
+    <Item>hash_CCC97152</Item>
+    <Item>hash_63049DC6</Item>
+    <Item>hash_AA03ABC7</Item>
+    <Item>hash_BE58D471</Item>
+    <Item>hash_1B698E91</Item>
+    <Item>hash_DE7F7201</Item>
+    <Item>hash_CE44D18C</Item>
+   </Rooms>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="1600">
+   <Name>hash_DBB11B6B</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>limbo</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.5" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound />
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet />
+  </Item>
+  <Item type="InteriorRoom" ntOffset="1600">
+   <Name>hash_A2C39D3B</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>hash_F3181BAE</MloRoom>
+   <Zone>hash_EC31E1C8</Zone>
+   <Unk02 value="0" />
+   <Unk03 value="0.5" />
+   <Reverb value="0" />
+   <Echo value="0.4" />
+   <Sound />
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet />
+  </Item>
+  <Item type="InteriorRoom" ntOffset="1600">
+   <Name>hash_B792C6D9</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>hash_F7512420</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.5" />
+   <Reverb value="0" />
+   <Echo value="0.2" />
+   <Sound />
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet />
+  </Item>
+  <Item type="InteriorRoom" ntOffset="1600">
+   <Name>hash_FE40D434</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>hash_0EBBD2F5</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.5" />
+   <Reverb value="0" />
+   <Echo value="0.3" />
+   <Sound />
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet />
+  </Item>
+  <Item type="InteriorRoom" ntOffset="1600">
+   <Name>hash_0D1371D9</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>hash_24FDFF79</MloRoom>
+   <Zone>hash_8D076773</Zone>
+   <Unk02 value="0" />
+   <Unk03 value="0.5" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound />
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet />
+  </Item>
+  <Item type="InteriorRoom" ntOffset="1600">
+   <Name>hash_CCC97152</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>hash_BBE2AD44</MloRoom>
+   <Zone>hash_E626E8CA</Zone>
+   <Unk02 value="0" />
+   <Unk03 value="0.5" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound />
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet />
+  </Item>
+  <Item type="InteriorRoom" ntOffset="1600">
+   <Name>hash_63049DC6</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>hash_0957C821</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.5" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound />
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet />
+  </Item>
+  <Item type="InteriorRoom" ntOffset="1600">
+   <Name>hash_AA03ABC7</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>hash_D660623F</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.5" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound />
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet />
+  </Item>
+  <Item type="InteriorRoom" ntOffset="1600">
+   <Name>hash_BE58D471</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>hash_A62581CA</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.5" />
+   <Reverb value="0" />
+   <Echo value="0.3" />
+   <Sound />
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet />
+  </Item>
+  <Item type="InteriorRoom" ntOffset="1600">
+   <Name>hash_1B698E91</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>hash_84F93F72</MloRoom>
+   <Zone>hash_6B8C96D8</Zone>
+   <Unk02 value="0" />
+   <Unk03 value="0.5" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound />
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet />
+  </Item>
+  <Item type="InteriorRoom" ntOffset="1600">
+   <Name>hash_DE7F7201</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>hash_CC295102</MloRoom>
+   <Zone>hash_74FB3F57</Zone>
+   <Unk02 value="0" />
+   <Unk03 value="0.5" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound />
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet />
+  </Item>
+  <Item type="InteriorRoom" ntOffset="1600">
+   <Name>hash_CE44D18C</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>hash_C1F33C96</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.5" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound />
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet />
+  </Item>
+  <Item type="Interior" ntOffset="1500">
+   <Name>hash_9DCA9877</Name>
+   <Unk0 value="0xAAAAA044" />
+   <Unk1 value="0xD4855127" />
+   <Unk2 value="0x00000000" />
+   <Rooms>
+    <Item>hash_4F9DB304</Item>
+    <Item>hash_B700E034</Item>
+   </Rooms>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="1600">
+   <Name>hash_4F9DB304</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>limbo</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.5" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound />
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet />
+  </Item>
+  <Item type="InteriorRoom" ntOffset="1600">
+   <Name>hash_B700E034</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>hash_F3181BAE</MloRoom>
+   <Zone>hash_E1EC84AC</Zone>
+   <Unk02 value="0" />
+   <Unk03 value="0.5" />
+   <Reverb value="0" />
+   <Echo value="0.599999964" />
+   <Sound />
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet />
+  </Item>
+  <Item type="AmbientRule" ntOffset="52092">
+   <Name>hash_23DA071F</Name>
+   <Flags0 value="0xAA000500" />
+   <Flags1 value="0x00000000" />
+   <Flags2 value="0x00000000" />
+   <Position x="1860.16907" y="3165.77051" z="45.525074" />
+   <Flags3 value="0x00000000" />
+   <ChildSound>hash_3FB7A405</ChildSound>
+   <Category>base</Category>
+   <Flags4 value="0x00000000" />
+   <Flags5 value="0xFFFFFFFF" />
+   <Flags6 value="0x00000000" />
+   <Unk01 value="1" />
+   <InnerRad value="0" />
+   <OuterRad value="30" />
+   <StartTime value="0" />
+   <EndTime value="1440" />
+   <Unk06 value="30" />
+   <Unk07 value="5" />
+   <Unk08 value="0" />
+   <Unk09 value="1" />
+   <Unk10 value="1" />
+   <Unk11 value="1" />
+   <Unk12 value="100" />
+   <Unk13 value="3" />
+   <ExtParams />
+  </Item>
+  <Item type="AmbientRule" ntOffset="52092">
+   <Name>hash_E563D539</Name>
+   <Flags0 value="0xAA000500" />
+   <Flags1 value="0x00000000" />
+   <Flags2 value="0x00000000" />
+   <Position x="1869.49377" y="3160.00854" z="44.6589279" />
+   <Flags3 value="0x00000000" />
+   <ChildSound>hash_4D331468</ChildSound>
+   <Category>base</Category>
+   <Flags4 value="0x00000000" />
+   <Flags5 value="0xFFFFFFFF" />
+   <Flags6 value="0x00000000" />
+   <Unk01 value="1" />
+   <InnerRad value="0" />
+   <OuterRad value="30" />
+   <StartTime value="0" />
+   <EndTime value="1440" />
+   <Unk06 value="30" />
+   <Unk07 value="5" />
+   <Unk08 value="0" />
+   <Unk09 value="1" />
+   <Unk10 value="1" />
+   <Unk11 value="1" />
+   <Unk12 value="100" />
+   <Unk13 value="3" />
+   <ExtParams />
+  </Item>
+  <Item type="AmbientRule" ntOffset="52092">
+   <Name>hash_DE9319DD</Name>
+   <Flags0 value="0xAA000500" />
+   <Flags1 value="0x00000000" />
+   <Flags2 value="0x00000000" />
+   <Position x="1879.97363" y="3154.01074" z="44.9414024" />
+   <Flags3 value="0x00000000" />
+   <ChildSound>hash_5AFD87DA</ChildSound>
+   <Category>base</Category>
+   <Flags4 value="0x00000000" />
+   <Flags5 value="0xFFFFFFFF" />
+   <Flags6 value="0x00000000" />
+   <Unk01 value="1" />
+   <InnerRad value="0" />
+   <OuterRad value="30" />
+   <StartTime value="0" />
+   <EndTime value="1440" />
+   <Unk06 value="30" />
+   <Unk07 value="5" />
+   <Unk08 value="0" />
+   <Unk09 value="1" />
+   <Unk10 value="1" />
+   <Unk11 value="1" />
+   <Unk12 value="100" />
+   <Unk13 value="3" />
+   <ExtParams />
+  </Item>
+  <Item type="AmbientRule" ntOffset="52092">
+   <Name>hash_5CCCA305</Name>
+   <Flags0 value="0xAA000500" />
+   <Flags1 value="0x00000000" />
+   <Flags2 value="0x00000000" />
+   <Position x="1868.93335" y="3160.19" z="49.32667" />
+   <Flags3 value="0x00000000" />
+   <ChildSound>hash_3B8074A5</ChildSound>
+   <Category>base</Category>
+   <Flags4 value="0x00000000" />
+   <Flags5 value="0xFFFFFFFF" />
+   <Flags6 value="0x00000000" />
+   <Unk01 value="1" />
+   <InnerRad value="0" />
+   <OuterRad value="30" />
+   <StartTime value="0" />
+   <EndTime value="1440" />
+   <Unk06 value="30" />
+   <Unk07 value="5" />
+   <Unk08 value="0" />
+   <Unk09 value="1" />
+   <Unk10 value="1" />
+   <Unk11 value="1" />
+   <Unk12 value="100" />
+   <Unk13 value="3" />
+   <ExtParams />
+  </Item>
+  <Item type="AmbientRule" ntOffset="52092">
+   <Name>hash_9B676296</Name>
+   <Flags0 value="0xAA000500" />
+   <Flags1 value="0x00000000" />
+   <Flags2 value="0x00000000" />
+   <Position x="1857.51636" y="3149.00928" z="49.32992" />
+   <Flags3 value="0x00000000" />
+   <ChildSound>hash_A6DDC7A9</ChildSound>
+   <Category>base</Category>
+   <Flags4 value="0x00000000" />
+   <Flags5 value="0xFFFFFFFF" />
+   <Flags6 value="0x00000000" />
+   <Unk01 value="1" />
+   <InnerRad value="0" />
+   <OuterRad value="30" />
+   <StartTime value="0" />
+   <EndTime value="1440" />
+   <Unk06 value="35" />
+   <Unk07 value="5" />
+   <Unk08 value="0" />
+   <Unk09 value="1" />
+   <Unk10 value="1" />
+   <Unk11 value="1" />
+   <Unk12 value="100" />
+   <Unk13 value="3" />
+   <ExtParams />
+  </Item>
+  <Item type="StaticEmitter" ntOffset="15007">
+   <Name>hash_77EE601A</Name>
+   <Flags value="0xAA041001" />
+   <Unk01>null_sound</Unk01>
+   <RadioStation>radio_13_jazz</RadioStation>
+   <Position x="1868.57935" y="3163.67065" z="50.38793" />
+   <Unk06 value="0" />
+   <Unk07 value="150" />
+   <Unk08 value="500" />
+   <Unk09 value="2750" />
+   <Unk10 value="50" />
+   <Unk11 value="250" />
+   <Interior>hash_D029DD21</Interior>
+   <Room>hash_A2C39D3B</Room>
+   <Unk13 />
+   <Unk14 value="1" />
+   <Unk15 value="0" />
+   <Unk16 value="1" />
+   <Alarm />
+   <Unk18>null_sound</Unk18>
+   <Unk19 value="0x00000003" />
+   <Unk20 value="0x05A00000" />
+   <Unk21 value="0.94" />
+   <Unk22 value="0.99" />
+  </Item>
+  <Item type="StaticEmitter" ntOffset="15007">
+   <Name>hash_72D7C6A7</Name>
+   <Flags value="0xAA041501" />
+   <Unk01>null_sound</Unk01>
+   <RadioStation>hash_09E34587</RadioStation>
+   <Position x="1900.55469" y="3142.112" z="47.897213" />
+   <Unk06 value="0" />
+   <Unk07 value="150" />
+   <Unk08 value="500" />
+   <Unk09 value="2250" />
+   <Unk10 value="50" />
+   <Unk11 value="250" />
+   <Interior>hash_9DCA9877</Interior>
+   <Room>hash_B700E034</Room>
+   <Unk13 />
+   <Unk14 value="1" />
+   <Unk15 value="0" />
+   <Unk16 value="1" />
+   <Alarm />
+   <Unk18>null_sound</Unk18>
+   <Unk19 value="0x00000003" />
+   <Unk20 value="0x05A00000" />
+   <Unk21 value="0.94" />
+   <Unk22 value="0.99" />
+  </Item>
+  <Item type="StaticEmitterList" ntOffset="1297">
+   <Name>ambient_emitter_list_20</Name>
+   <Emitters>
+    <Item>hash_77EE601A</Item>
+    <Item>hash_72D7C6A7</Item>
+   </Emitters>
+  </Item>
+  <Item type="AmbientZone" ntOffset="500">
+   <Name>hash_EC31E1C8</Name>
+   <Flags0 value="0xAA800425" />
+   <Shape>Box</Shape>
+   <Flags1 value="0x00000000" />
+   <ActivationZonePosition x="1861.14771" y="3164.87524" z="47.76106" />
+   <ActivationZoneSize x="16.3281612" y="16.3281555" z="8.119522" />
+   <ActivationZoneVec1 x="0" y="0" z="0" w="0" />
+   <ActivationZoneVec2 x="1" y="1" z="1" w="0" />
+   <ActivationZoneAngle value="0" />
+   <ActivationZoneVec3 x="0" y="0" z="0" />
+   <PlaybackZonePosition x="1861.14771" y="3164.87524" z="47.76106" />
+   <PlaybackZoneSize x="14.368782" y="14.3687773" z="7.14517927" />
+   <PlaybackZoneVec1 x="0" y="0" z="0" w="0" />
+   <PlaybackZoneVec2 x="1" y="1" z="1" w="0" />
+   <PlaybackZoneAngle value="0" />
+   <PlaybackZoneVec3 x="0" y="0" z="0" />
+   <UnkVec1 x="0" y="0" z="1" w="0" />
+   <UnkVec2 x="1" y="-1" z="-1" w="0" />
+   <UnkHash0 />
+   <Scene />
+   <UnkVec3 x="-1" y="0" />
+   <Flags2 value="0x00000000" />
+   <Unk14 value="1" />
+   <Unk15 value="1" />
+   <Unk16 value="0" />
+   <Rules>
+    <Item>hash_23DA071F</Item>
+    <Item>hash_77EE601A</Item>
+   </Rules>
+   <ExtParams />
+  </Item>
+  <Item type="AmbientZone" ntOffset="500">
+   <Name>hash_8D076773</Name>
+   <Flags0 value="0xAA800425" />
+   <Shape>Box</Shape>
+   <Flags1 value="0x00000000" />
+   <ActivationZonePosition x="1870.9613" y="3158.8418" z="45.5513725" />
+   <ActivationZoneSize x="7.607106" y="7.607106" z="3.93357277" />
+   <ActivationZoneVec1 x="0" y="0" z="0" w="0" />
+   <ActivationZoneVec2 x="1" y="1" z="1" w="0" />
+   <ActivationZoneAngle value="0" />
+   <ActivationZoneVec3 x="0" y="0" z="0" />
+   <PlaybackZonePosition x="1870.9613" y="3158.8418" z="45.5513725" />
+   <PlaybackZoneSize x="6.69425344" y="6.69425344" z="3.461544" />
+   <PlaybackZoneVec1 x="0" y="0" z="0" w="0" />
+   <PlaybackZoneVec2 x="1" y="1" z="1" w="0" />
+   <PlaybackZoneAngle value="0" />
+   <PlaybackZoneVec3 x="0" y="0" z="0" />
+   <UnkVec1 x="0" y="0" z="1" w="0" />
+   <UnkVec2 x="1" y="-1" z="-1" w="0" />
+   <UnkHash0 />
+   <Scene />
+   <UnkVec3 x="-1" y="0" />
+   <Flags2 value="0x00000000" />
+   <Unk14 value="1" />
+   <Unk15 value="1" />
+   <Unk16 value="0" />
+   <Rules>
+    <Item>hash_E563D539</Item>
+   </Rules>
+   <ExtParams />
+  </Item>
+  <Item type="AmbientZone" ntOffset="500">
+   <Name>hash_E626E8CA</Name>
+   <Flags0 value="0xAA800425" />
+   <Shape>Box</Shape>
+   <Flags1 value="0x00000000" />
+   <ActivationZonePosition x="1877.05261" y="3153.69043" z="45.6134148" />
+   <ActivationZoneSize x="6.96478653" y="6.96478653" z="3.76383066" />
+   <ActivationZoneVec1 x="0" y="0" z="0" w="0" />
+   <ActivationZoneVec2 x="1" y="1" z="1" w="0" />
+   <ActivationZoneAngle value="0" />
+   <ActivationZoneVec3 x="0" y="0" z="0" />
+   <PlaybackZonePosition x="1877.05261" y="3153.69043" z="45.6134148" />
+   <PlaybackZoneSize x="6.129012" y="6.129012" z="3.312171" />
+   <PlaybackZoneVec1 x="0" y="0" z="0" w="0" />
+   <PlaybackZoneVec2 x="1" y="1" z="1" w="0" />
+   <PlaybackZoneAngle value="0" />
+   <PlaybackZoneVec3 x="0" y="0" z="0" />
+   <UnkVec1 x="0" y="0" z="1" w="0" />
+   <UnkVec2 x="1" y="-1" z="-1" w="0" />
+   <UnkHash0 />
+   <Scene />
+   <UnkVec3 x="-1" y="0" />
+   <Flags2 value="0x00000000" />
+   <Unk14 value="1" />
+   <Unk15 value="1" />
+   <Unk16 value="0" />
+   <Rules>
+    <Item>hash_DE9319DD</Item>
+   </Rules>
+   <ExtParams />
+  </Item>
+  <Item type="AmbientZone" ntOffset="500">
+   <Name>hash_6B8C96D8</Name>
+   <Flags0 value="0xAA800425" />
+   <Shape>Box</Shape>
+   <Flags1 value="0x00000000" />
+   <ActivationZonePosition x="1861.08923" y="3149.72729" z="49.9463425" />
+   <ActivationZoneSize x="14.2065144" y="14.2065144" z="3.70881081" />
+   <ActivationZoneVec1 x="0" y="0" z="0" w="0" />
+   <ActivationZoneVec2 x="1" y="1" z="1" w="0" />
+   <ActivationZoneAngle value="0" />
+   <ActivationZoneVec3 x="0" y="0" z="0" />
+   <PlaybackZonePosition x="1861.08923" y="3149.72729" z="49.9463425" />
+   <PlaybackZoneSize x="12.5017328" y="12.5017328" z="3.26375341" />
+   <PlaybackZoneVec1 x="0" y="0" z="0" w="0" />
+   <PlaybackZoneVec2 x="1" y="1" z="1" w="0" />
+   <PlaybackZoneAngle value="0" />
+   <PlaybackZoneVec3 x="0" y="0" z="0" />
+   <UnkVec1 x="0" y="0" z="1" w="0" />
+   <UnkVec2 x="1" y="-1" z="-1" w="0" />
+   <UnkHash0 />
+   <Scene />
+   <UnkVec3 x="-1" y="0" />
+   <Flags2 value="0x00000000" />
+   <Unk14 value="1" />
+   <Unk15 value="1" />
+   <Unk16 value="0" />
+   <Rules>
+    <Item>hash_9B676296</Item>
+    <Item>hash_2C1D0060</Item>
+    <Item>hash_9ACEDDC2</Item>
+   </Rules>
+   <ExtParams />
+  </Item>
+  <Item type="AmbientZone" ntOffset="500">
+   <Name>hash_74FB3F57</Name>
+   <Flags0 value="0xAA800425" />
+   <Shape>Box</Shape>
+   <Flags1 value="0x00000000" />
+   <ActivationZonePosition x="1870.76538" y="3158.62378" z="50.06203" />
+   <ActivationZoneSize x="7.956556" y="7.956556" z="3.59713459" />
+   <ActivationZoneVec1 x="0" y="0" z="0" w="0" />
+   <ActivationZoneVec2 x="1" y="1" z="1" w="0" />
+   <ActivationZoneAngle value="0" />
+   <ActivationZoneVec3 x="0" y="0" z="0" />
+   <PlaybackZonePosition x="1870.76538" y="3158.62378" z="50.06203" />
+   <PlaybackZoneSize x="7.001769" y="7.001769" z="3.16547847" />
+   <PlaybackZoneVec1 x="0" y="0" z="0" w="0" />
+   <PlaybackZoneVec2 x="1" y="1" z="1" w="0" />
+   <PlaybackZoneAngle value="0" />
+   <PlaybackZoneVec3 x="0" y="0" z="0" />
+   <UnkVec1 x="0" y="0" z="1" w="0" />
+   <UnkVec2 x="1" y="-1" z="-1" w="0" />
+   <UnkHash0 />
+   <Scene />
+   <UnkVec3 x="-1" y="0" />
+   <Flags2 value="0x00000000" />
+   <Unk14 value="1" />
+   <Unk15 value="1" />
+   <Unk16 value="0" />
+   <Rules>
+    <Item>hash_5CCCA305</Item>
+   </Rules>
+   <ExtParams />
+  </Item>
+  <Item type="AmbientZone" ntOffset="500">
+   <Name>hash_E1EC84AC</Name>
+   <Flags0 value="0xAA800425" />
+   <Shape>Box</Shape>
+   <Flags1 value="0x00000000" />
+   <ActivationZonePosition x="1894.45813" y="3136.02173" z="47.5845642" />
+   <ActivationZoneSize x="36.643" y="36.643" z="7.95873737" />
+   <ActivationZoneVec1 x="0" y="0" z="0" w="0" />
+   <ActivationZoneVec2 x="1" y="1" z="1" w="0" />
+   <ActivationZoneAngle value="0" />
+   <ActivationZoneVec3 x="0" y="0" z="0" />
+   <PlaybackZonePosition x="1894.45813" y="3136.02173" z="47.5845642" />
+   <PlaybackZoneSize x="32.245842" y="32.245842" z="7.003689" />
+   <PlaybackZoneVec1 x="0" y="0" z="0" w="0" />
+   <PlaybackZoneVec2 x="1" y="1" z="1" w="0" />
+   <PlaybackZoneAngle value="0" />
+   <PlaybackZoneVec3 x="0" y="0" z="0" />
+   <UnkVec1 x="0" y="0" z="1" w="0" />
+   <UnkVec2 x="1" y="-1" z="-1" w="0" />
+   <UnkHash0 />
+   <Scene />
+   <UnkVec3 x="-1" y="0" />
+   <Flags2 value="0x00000000" />
+   <Unk14 value="1" />
+   <Unk15 value="1" />
+   <Unk16 value="0" />
+   <Rules />
+   <ExtParams />
+  </Item>
+  <Item type="AmbientZoneList" ntOffset="2500">
+   <Name>ambient_zone_list</Name>
+   <Zones>
+    <Item>hash_EC31E1C8</Item>
+    <Item>hash_8D076773</Item>
+    <Item>hash_E626E8CA</Item>
+    <Item>hash_6B8C96D8</Item>
+    <Item>hash_74FB3F57</Item>
+    <Item>hash_E1EC84AC</Item>
+   </Zones>
+  </Item>
+ </Items>
+</Dat151>

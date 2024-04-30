@@ -1,5 +1,3 @@
-server_script "TXV8FJ7DO79PTL.lua"
-client_script "TXV8FJ7DO79PTL.lua"
 fx_version 'cerulean'
 games { 'gta5' }
 description 'GKSHOP - GKS GOTUR JOB'

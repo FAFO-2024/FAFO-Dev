@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dat151>
+ <Version value="35636732" />
+ <Items>
+  <Item type="Interior" ntOffset="0">
+   <Name>interiorname</Name>
+   <Unk0 value="0xAAAAA044" />
+   <Unk1 value="0xD4855127" />
+   <Unk2 value="0x00000000" />
+   <Rooms>
+    <Item>interiorname_limbo</Item>
+    <Item>interiorname_mloroomname</Item>
+   </Rooms>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>interiorname_limbo</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>limbo</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>interiorname_mloroomname</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>mloroomname</MloRoom>
+   <Zone>iz_mloroomname</Zone>
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="RadioTrack" ntOffset="0">
+   <Name>radiotrack_wavname</Name>
+   <Unk00 value="0xAAAAAAA0" />
+   <TrackType value="2" />
+   <Unk01 value="0" />
+   <Unk02 value="0" />
+   <Unk03 value="10" />
+   <Unk04 value="0" />
+   <Unk05 value="0" />
+   <Unk06 value="0" />
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0" />
+   <Unk11 value="0" />
+   <Unk12 value="0" />
+   <Unk13 value="0" />
+   <Unk14 value="0" />
+   <Unk15 value="0" />
+   <Unk16 value="0" />
+   <Tracks>
+    <Item>
+     <Hash0 />
+     <Hash1>streamingsound_wavname</Hash1>
+    </Item>
+   </Tracks>
+  </Item>
+  <Item type="RadioStation" ntOffset="0">
+   <Name>radiostation_dlcname</Name>
+   <Unk00 value="0xAA944100" />
+   <WheelPosition value="19150" />
+   <Unk02 value="0" />
+   <MusicGenre value="10" />
+   <RadioName>RADIOSTATION_DLCNAME</RadioName>
+   <Unk04 value="0" />
+   <MusicList>
+    <Item>radiotrack_wavname</Item>
+   </MusicList>
+  </Item>
+  <Item type="RadioStationList" ntOffset="0">
+   <Name>radio_stations_dlc</Name>
+   <Stations>
+    <Item>radiostation_dlcname</Item>
+   </Stations>
+  </Item>
+  <Item type="StaticEmitter" ntOffset="0">
+   <Name>se_wavname_01</Name>
+   <Flags value="0xAA045501" />
+   <Unk01>null_sound</Unk01>
+   <RadioStation>radiostation_dlcname</RadioStation>
+   <Position x="1294" y="1746" z="54" />
+   <Unk06 value="0" />
+   <Unk07 value="200" />
+   <Unk08 value="2000" />
+   <Unk09 value="23900" />
+   <Unk10 value="0" />
+   <Unk11 value="400" />
+   <Interior>interiorname</Interior>
+   <Room>interiorname_mloroomname</Room>
+   <Unk13 />
+   <Unk14 value="1" />
+   <Unk15 value="0" />
+   <Unk16 value="0" />
+   <Alarm />
+   <Unk18>null_sound</Unk18>
+   <Unk19 value="0x32320003" />
+   <Unk20 value="0x05A00000" />
+   <Unk21 value="0.94" />
+   <Unk22 value="0.99" />
+  </Item>
+  <Item type="Alarm" ntOffset="0">
+   <Name>alarm_name</Name>
+   <DistantAlarm>alarms_null_loop</DistantAlarm>
+   <Curve>hash_636B8F54</Curve>
+   <Unk03 value="500" />
+   <Interior>interiorname</Interior>
+   <Alarm>script/alarm_bell_03</Alarm>
+   <Unk04 />
+   <Unk05 />
+   <Position x="1298" y="-1745" z="57" />
+   <Unk06 />
+  </Item>
+  <Item type="StaticEmitter" ntOffset="0">
+   <Name>se_alarm_name_01</Name>
+   <Flags value="0xAA040001" />
+   <Unk01>hash_85FD5638</Unk01>
+   <RadioStation />
+   <Position x="1294" y="-1746" z="54" />
+   <Unk06 value="0" />
+   <Unk07 value="600" />
+   <Unk08 value="0" />
+   <Unk09 value="23900" />
+   <Unk10 value="0" />
+   <Unk11 value="100" />
+   <Interior>interiorname</Interior>
+   <Room>interiorname_mloroomname</Room>
+   <Unk13 />
+   <Unk14 value="1" />
+   <Unk15 value="0" />
+   <Unk16 value="0" />
+   <Alarm>alarm_name</Alarm>
+   <Unk18>hash_10C35B91</Unk18>
+   <Unk19 value="0x00000003" />
+   <Unk20 value="0x05A00000" />
+   <Unk21 value="0.94" />
+   <Unk22 value="0.99" />
+  </Item>
+  <Item type="StaticEmitter" ntOffset="0">
+   <Name>se_alarm_name_02</Name>
+   <Flags value="0xAA041401" />
+   <Unk01>hash_85FD5638</Unk01>
+   <RadioStation />
+   <Position x="1299" y="-1743" z="55" />
+   <Unk06 value="0" />
+   <Unk07 value="600" />
+   <Unk08 value="0" />
+   <Unk09 value="23900" />
+   <Unk10 value="0" />
+   <Unk11 value="100" />
+   <Interior>interiorname</Interior>
+   <Room>interiorname_mloroomname</Room>
+   <Unk13 />
+   <Unk14 value="1" />
+   <Unk15 value="0" />
+   <Unk16 value="0" />
+   <Alarm>alarm_name</Alarm>
+   <Unk18>null_sound</Unk18>
+   <Unk19 value="0x00000003" />
+   <Unk20 value="0x05A00000" />
+   <Unk21 value="0.94" />
+   <Unk22 value="0.99" />
+  </Item>
+  <Item type="AmbientRule" ntOffset="0">
+   <Name>ar_ambient_rule_name</Name>
+   <Flags0 value="0xAA0011A8" />
+   <Flags1 value="0x00000000" />
+   <Flags2 value="0x00000000" />
+   <Position x="0" y="0" z="0" />
+   <Flags3 value="0x00000000" />
+   <ChildSound>dlc_apt_yacht_bridge_computers_sonar</ChildSound>
+   <Category>base</Category>
+   <Flags4 value="0x00000000" />
+   <Flags5 value="0xFFFFFFFF" />
+   <Flags6 value="0x00000000" />
+   <Unk01 value="1" />
+   <InnerRad value="0" />
+   <OuterRad value="100" />
+   <StartTime value="0" />
+   <EndTime value="1440" />
+   <Unk06 value="60" />
+   <Unk07 value="3" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="255" />
+   <Unk11 value="1" />
+   <Unk12 value="100" />
+   <Unk13 value="3" />
+   <ExtParams />
+  </Item>
+  <Item type="AmbientZone" ntOffset="0">
+   <Name>iz_mloroomname</Name>
+   <Flags0 value="0xAA800425" />
+   <Shape>Box</Shape>
+   <Flags1 value="0x00000000" />
+   <ActivationZonePosition x="1297.853" y="-1745.366" z="54" />
+   <ActivationZoneSize x="12" y="22" z="12" />
+   <ActivationZoneVec1 x="0" y="0" z="0" w="0" />
+   <ActivationZoneVec2 x="1" y="1" z="1" w="0" />
+   <ActivationZoneAngle value="26" />
+   <ActivationZoneVec3 x="0" y="0" z="0" />
+   <PlaybackZonePosition x="1297.853" y="-1745.366" z="54" />
+   <PlaybackZoneSize x="10" y="20" z="10" />
+   <PlaybackZoneVec1 x="0" y="0" z="0" w="0" />
+   <PlaybackZoneVec2 x="1" y="1" z="1" w="0" />
+   <PlaybackZoneAngle value="26" />
+   <PlaybackZoneVec3 x="0" y="0" z="0" />
+   <UnkVec1 x="0" y="0" z="1" w="0" />
+   <UnkVec2 x="1" y="-1" z="-1" w="0" />
+   <UnkHash0 />
+   <Scene />
+   <UnkVec3 x="-1" y="0" />
+   <Flags2 value="0x00000000" />
+   <Unk14 value="4" />
+   <Unk15 value="1" />
+   <Unk16 value="0" />
+   <Rules>
+    <Item>ar_hairdryer</Item>
+    <Item>ar_vacuum</Item>
+    <Item>ar_alarm_clock</Item>
+    <Item>ar_phone</Item>
+    <Item>ar_ambient_rule_test</Item>
+   </Rules>
+   <ExtParams />
+  </Item>
+  <Item type="AmbientZone" ntOffset="0">
+   <Name>az_zonename_01</Name>
+   <Flags0 value="0xAA800424" />
+   <Shape>Box</Shape>
+   <Flags1 value="0x00000000" />
+   <ActivationZonePosition x="1297.853" y="-1745.366" z="54" />
+   <ActivationZoneSize x="32" y="52" z="22" />
+   <ActivationZoneVec1 x="0" y="0" z="0" w="0" />
+   <ActivationZoneVec2 x="1" y="1" z="1" w="0" />
+   <ActivationZoneAngle value="26" />
+   <ActivationZoneVec3 x="0" y="0" z="0" />
+   <PlaybackZonePosition x="1297.853" y="-1745.366" z="54" />
+   <PlaybackZoneSize x="30" y="50" z="20" />
+   <PlaybackZoneVec1 x="0" y="0" z="0" w="0" />
+   <PlaybackZoneVec2 x="1" y="1" z="1" w="0" />
+   <PlaybackZoneAngle value="26" />
+   <PlaybackZoneVec3 x="0" y="0" z="0" />
+   <UnkVec1 x="0" y="0" z="1" w="0" />
+   <UnkVec2 x="1" y="-1" z="-1" w="0" />
+   <UnkHash0 />
+   <Scene />
+   <UnkVec3 x="-1" y="0" />
+   <Flags2 value="0x00000000" />
+   <Unk14 value="4" />
+   <Unk15 value="1" />
+   <Unk16 value="0" />
+   <Rules />
+   <ExtParams />
+  </Item>
+  <Item type="AmbientZoneList" ntOffset="0">
+   <Name>name</Name>
+   <Zones>
+    <Item>az_zonename_01</Item>
+   </Zones>
+  </Item>
+  <Item type="AmbientZoneList" ntOffset="0">
+   <Name>ambient_zone_list</Name>
+   <Zones>
+    <Item>az_zonename_01</Item>
+   </Zones>
+  </Item>
+  <Item type="StaticEmitterList" ntOffset="0">
+   <Name>ambient_emitter_list_69</Name>
+   <Emitters>
+    <Item>se_wavname_01</Item>
+    <Item>se_alarm_name_01</Item>
+    <Item>se_alarm_name_02</Item>
+   </Emitters>
+  </Item>
+ </Items>
+</Dat151>

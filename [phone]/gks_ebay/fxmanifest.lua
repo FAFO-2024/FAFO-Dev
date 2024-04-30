@@ -1,5 +1,3 @@
-server_script "I4J2ZA12XPV9U3.lua"
-client_script "I4J2ZA12XPV9U3.lua"
 fx_version 'cerulean'
 games { 'gta5' }
 description 'GKSHOP - GKS EBAY'

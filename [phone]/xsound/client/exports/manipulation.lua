@@ -23,16 +23,6 @@ end
 
 exports('Position', Position)
 
-function SetLowpass(name_, state_)
-    SendNUIMessage({
-        status = "setLowpass",
-        name = name_,
-		state = state_
-    })
-end
-
-exports('SetLowpass', SetLowpass)
-
 function Destroy(name_)
     SendNUIMessage({
         status = "delete",

@@ -1,5 +1,3 @@
-server_script "T6KO1B9D.lua"
-client_script "T6KO1B9D.lua"
 fx_version 'adamant'
 
 game 'gta5'

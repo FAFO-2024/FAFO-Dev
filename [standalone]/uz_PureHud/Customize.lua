@@ -1,10 +1,10 @@
 Customize = {
     Framework = "QBCore", -- QBCore | ESX | NewESX | OldQBCore (Write the framework you used as in the example)    
     
-    SpeedometerTypeKMH = true, -- kmh | mph
-    AlwaysOnMinimap = false, -- Specifies whether the minimap should be visible outside the vehicle
+    SpeedometerTypeKMH = false, -- kmh | mph
+    AlwaysOnMinimap = true, -- Specifies whether the minimap should be visible outside the vehicle
     StreetDisplay = true,
-    ServerName = 'uz rp',
+    ServerName = 'fafo',
     MoneyType = '$',
     OnlinePlayersRefreshTime = 25000,
 

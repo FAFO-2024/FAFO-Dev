@@ -5,29 +5,29 @@
   "ImageSizeLimitMB": 10,
   "PictureType": "jpg",
   "NotifiKonumDebug" : false,
-  "Valebring": false,
+  "Valebring": true,
   "Facetime": true,
   "GroupCall": true,
   "MessageRecordMic": true,
   "BottomNotif" : true,
   "RealTime" : true,
   "AirDrop": true,
-  "RingtoneXsound": false,
+  "RingtoneXsound": true,
   "JobMessageAnonymous": true,
   "CurrencyComma" : true,
   "GamblingGame" : true,
-  "qbitPurchase": false,
-  "qbitSell": false,
-  "qbitTransfer": false,
-  "RaceNOSPhasing": false,
-  "Race30sPhasing": false,
-  "RaceFullPhasing": false,
+  "qbitPurchase": true,
+  "qbitSell": true,
+  "qbitTransfer": true,
+  "RaceNOSPhasing": true,
+  "Race30sPhasing": true,
+  "RaceFullPhasing": true,
   "HomePageSkip": false,
   "LiveAPPGIF": 5000,
   "NewBill": true,
   "NewsPerm" : {
-    "police" : false,
-    "newspaper" : false
+    "police" : true,
+    "newspaper" : true
   },
 
   "Squawk": {
@@ -43,59 +43,32 @@
   "YellowFilter": {
     "mechanic" : "Mechanic",
     "bartender" : "Bartender",
-    "legal" : "Legal",
-    "events" : "Events",
-    "foodservices" : "Food Services",
-    "recreation" : "Recreation",
-    "services" : "Services",
-    "dispensary" : "Dispensary"
-
+    "lawyer" : "Lawyer"
   },
 
   "JobApplication": {
+    "police": "Police",
+    "ambulance": "Ambulance"
   },
 
   "JobApplicationQuestions": {
+    "1": "Why are you applying for this job?",
+    "2": "Tell about yourself"
   },
 
   "JobCategory": {
-    "police" : "Law Enforment",
-    "ambulance" : "Medical",
-    "fire" : "Fire",
+    "police" : "Deparments",
+    "ambulance" : "Ambulance",
     "mechanic" : "Mechanic",
-    "legal" : "Legal",
-    "food" : "Food",
-    "dispensary" : "Dispensary",
-    "realestate" : "Real Estate",
-    "recreation" : "Recreation",
-    "events" : "Events",
-    "services" : "Services"
+    "lawyer" : "Lawyer"
   },
 
   "JobMessages": [
-    {"label" : "PD", "jobname" : ["police", "sheriff", "#####"], "logoname": "lspd", "category": "police"},
+    {"label" : "PD", "jobname" : ["police", "sheriff", "#####"], "logoname": "police", "category": "police"},
     {"label" : "EMS", "jobname" : ["ambulance"], "logoname": "ambulance", "category": "ambulance"},
-    {"label" : "Hayes Repairs", "jobname" : ["cosmetic"], "logoname": "cosmetic", "category": "mechanic"},
-    {"label" : "Elite Customs", "jobname" : ["jwc"], "logoname": "elitecustoms", "category": "mechanic"},
-    {"label" : "Walkers Auto Shop", "jobname" : ["was"], "logoname": "was", "category": "mechanic"},
-    {"label" : "Never Stranded Towing", "jobname" : ["towing"], "logoname": "towing", "category": "mechanic"},
-    {"label" : "Sanders Motorbikes", "jobname" : ["sanders"], "logoname": "sanders", "category": "mechanic"},
-    {"label" : "Department of Justice", "jobname" : ["doj"], "logoname": "doj", "category": "legal"},
-    {"label" : "Pearls Seafood", "jobname" : ["pearl"], "logoname": "pearls", "category": "food"},
-    {"label" : "Wing Break", "jobname" : ["wingbrake"], "logoname": "wingbreak", "category": "food"},
-    {"label" : "UwU", "jobname" : ["catcafe"], "logoname": "uwu", "category": "food"},
-    {"label" : "White Widow", "jobname" : ["whitewidow"], "logoname": "whitewidow", "category": "dispensary"},
-    {"label" : "Real Estate Agent", "jobname" : ["rea"], "logoname": "rea", "category": "realestate"},  
-    {"label" : "Hogs Pub n Gifts", "jobname" : ["upnatom"], "logoname": "upnatom", "category": "recreation"},
-    {"label" : "Ice Box", "jobname" : ["icebox"], "logoname": "icebox", "category": "recreation"},
-    {"label" : "Bahama Mama", "jobname" : ["bahama"], "logoname": "bahama", "category": "events"},
-    {"label" : "The Lux", "jobname" : ["vanilla"], "logoname": "lux", "category": "events"}, 
-    {"label" : "Hen House", "jobname" : ["henhouse"], "logoname": "henhouse", "category": "events"}, 
-    {"label" : "Davis Auto Sales", "jobname" : ["used"], "logoname": "used", "category": "services"},
-    {"label" : "Von Hotel", "jobname" : ["rea"], "logoname": "rea", "category": "realestate"},
-    {"label" : "North Star Pops Diner", "jobname" : ["popsdiner"], "logoname": "pops", "category": "food"},
-    {"label" : "Cluckin bell", "jobname" : ["cluckinbell"], "logoname": "cluckinbell", "category": "food"},
-    {"label" : "Emerald Bar", "jobname" : ["emeraldbar"], "logoname": "emerald", "category": "events"}
+    {"label" : "GKSHOP Mechanic", "jobname" : ["mechanic"], "logoname": "mechanic", "category": "mechanic"},
+    {"label" : "GKSHOP Mechanic2", "jobname" : ["mechanic2"], "logoname": "mechanic", "category": "mechanic"},
+    {"label" : "GKSHOP Lawyer", "jobname" : ["lawyer"], "logoname": "mechanic", "category": "lawyer"}
   ],
 
 
@@ -163,8 +136,7 @@
     {"name": "Jobs",      "categori": "jobs", "icons": "/html/static/img/icons/jobm.png", "routeName": "jobm", "puceRef": "nbJobMessRead", "signal": true, "show":true},
     {"name": "Mail",      "categori": "social", "icons": "/html/static/img/icons/mail.png", "routeName": "mail", "signal": true, "show":true},
     {"name": "Bank",     "categori": "finance", "icons": "/html/static/img/icons/wallet.png", "routeName": "bankb", "signal": true, "show":true},
-    {"name": "Billing",  "categori": "finance", "icons": "/html/static/img/icons/logo.png", "routeName": "faturapages", "signal": true, "show":true},
-    {"name": "Business",  "categori": "jobs", "icons": "/html/static/img/icons/business.png", "routeName": "bhome", "signal": true, "show":true}
+    {"name": "Billing",  "categori": "finance", "icons": "/html/static/img/icons/logo.png", "routeName": "faturapages", "signal": true, "show":true}
   ],
 
   "AppStore": [
@@ -245,7 +217,7 @@
       "routeName": "tetris",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": false,
+      "signal": true,
       "show": true
     },
     {
@@ -255,7 +227,7 @@
       "routeName": "gallery",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": false,
+      "signal": true,
       "show": true
     },
     {
@@ -275,8 +247,8 @@
       "routeName": "borsaa",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": false,
-      "show": false
+      "signal": true,
+      "show": true
     },
     {
       "name": "Race",
@@ -288,8 +260,8 @@
         "ambulance": "ambulance"
       }],
       "allowjob": [],
-      "signal": false,
-      "show": false
+      "signal": true,
+      "show": true
     },
     {
       "name": "Note",
@@ -318,8 +290,8 @@
       "routeName": "getir",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": false,
-      "show": false
+      "signal": true,
+      "show": true
     },
     {
       "name": "MarketPlace",
@@ -328,8 +300,8 @@
       "routeName": "ebay",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": false,
-      "show": false
+      "signal": true,
+      "show": true
     },
     {
       "name": "Rent A Car",
@@ -338,8 +310,8 @@
       "routeName": "rentcar",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": false,
-      "show": false
+      "signal": true,
+      "show": true
     },
     {
       "name": "Car Seller",
@@ -348,8 +320,8 @@
       "categori": "jobs",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": false,
-      "show": false
+      "signal": true,
+      "show": true
     },
     {
       "name": "Calculator",
@@ -368,8 +340,8 @@
       "routeName": "taxi",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": false,
-      "show": false
+      "signal": true,
+      "show": true
     },
     {
       "name": "Matchme",
@@ -420,8 +392,8 @@
       "allowjob": [{
         "police": "police"
       }],
-      "signal": false,
-      "show": false
+      "signal": true,
+      "show": true
     },
     {
       "name": "House",
@@ -430,8 +402,8 @@
       "routeName": "qbhouse",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": false,
-      "show": false
+      "signal": true,
+      "show": true
     },
     {
       "name": "Qbit",
@@ -440,8 +412,8 @@
       "routeName": "qbcrypto",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": false,
-      "show": false
+      "signal": true,
+      "show": true
     },
     {
       "name": "Business",

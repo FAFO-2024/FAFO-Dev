@@ -17,13 +17,6 @@ $(function(){
             case "position":
                 playerPos = [item.x,item.y,item.z];
                 break;
-			case "setLowpass":
-                var sound = soundList[item.name];
-                if(sound != null)
-                {
-                    sound.setLowpass(item.state);
-                }
-                break;
 
             case "volume":
                 var sound = soundList[item.name];

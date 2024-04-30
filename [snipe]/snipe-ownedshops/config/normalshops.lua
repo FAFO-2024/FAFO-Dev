@@ -9,6 +9,8 @@ Config.NormalShops = {
         {name = "tosti", price = 75},
         {name = "lighter", price = 500},
         {name = "harness", price = 1000},
+        {name = "phone", price = 500},
+        {name = "powerbank", price = 5000},
         },
         locations = { -- locations for this particular shop
         -- coords = vector4
@@ -37,6 +39,8 @@ Config.NormalShops = {
         {name = "lighter", price = 20},
         {name = "rolex", price = 900},
         {name = "laptop", price = 1500},
+        {name = "phone", price = 500},
+        {name = "powerbank", price = 5000},
         --{name = "kq_outfitbag", price = 1000},
 --[[         {name = "marlboro", price = 650},
         {name = "menthols", price = 1000},

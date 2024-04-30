@@ -1,454 +1,114 @@
-# ps-inventory
-Project-Sloth's FiveM Inventory System Redesigned to Look Like and Feel like NoPixel 4.0
+# PS-Inventory
 
-I removed the item images for my own sanity while uploading the changes. So please use your own item images
+lj-Inventory has been fully redesigned by [OK1ez](https://github.com/OK1ez), under the name ps-inventory.
 
-# Preview
-![image](https://github.com/i-kulgu/ps-inventory/assets/29943243/40320442-1df9-41e1-9a60-160f877492c0)
+Future updates will be coming and we will of course support all normal monitor sizes.
 
+# Previews
 
-# Credit where Credit is Due
+### Simple item guidelines (found in main directory ps-inventory)
 
-# Thanks to loljoshie for originally creating the lj-inventory we've all come to love.
-# Thanks to ok1ez and the project sloth dev team for continuing lj-inventory's existence with keeping it up to date and maintaining it as ps-inventory.
-# Thanks to root_ for making the items actually droppable with their respective props. 
-# Thanks to the Project Sloth Community. Without the support on the first version this release wouldn't be possible.
+![ps-inventory Guideline](https://user-images.githubusercontent.com/91661118/146315681-c67f542d-e2bc-43ca-9957-7f1971b84268.png)
 
-# Importing
-If you've downloaded the previous version, I've included descriptions / tags above all the UI Changes i've made so you can easily convert over but below will be certain snippets if you'd like to add things yourself without inspecting the code.
+### Full Inventory
 
-# Personal Information Snippet
+![image](https://github.com/Project-Sloth/ps-inventory/assets/82112471/fda2588d-e468-4fd5-8bf5-2f584f059609)
 
--- Client-Side LUA --
+### Options Menu
 
-QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(data)
-  inventory = data.inventory
-  other = data.other
-  SendNUIMessage({
-  action = "open",
-  inventory = inventory,
-  slots = Config.MaxInventorySlots,
-  other = other,
-  maxweight = Config.MaxInventoryWeight,
-  Ammo = PlayerAmmo,
-  maxammo = Config.MaximumAmmoValues,
-  Name = PlayerData.charinfo.firstname .." ".. PlayerData.charinfo.lastname .." - [".. GetPlayerServerId(PlayerId()) .."]", 
-  pName = PlayerData.charinfo.firstname .. PlayerData.charinfo.lastname, 
-  pNumber = PlayerData.charinfo.phone,
-  pCID = PlayerData.citizenid,
-  pID = GetPlayerServerId(PlayerId()),
-})
+![image](https://github.com/Project-Sloth/ps-inventory/assets/82112471/1782f97a-27e6-441b-90a1-ff150cd846e2)
 
-QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(data)
-  inventory = data.inventory
-  other = data.other
-  SendNUIMessage({
-  action = "open",
-  inventory = inventory,
-  slots = Config.MaxInventorySlots,
-  other = other,
-  maxweight = Config.MaxInventoryWeight,
-  Ammo = PlayerAmmo,
-  maxammo = Config.MaximumAmmoValues,
-  Name = PlayerData.charinfo.firstname .." ".. PlayerData.charinfo.lastname .." - [".. GetPlayerServerId(PlayerId()) .."]", 
-  pName = PlayerData.charinfo.firstname .. PlayerData.charinfo.lastname, 
-  pNumber = PlayerData.charinfo.phone,
-  pCID = PlayerData.citizenid,
-  pID = GetPlayerServerId(PlayerId()),
-})
+### Hotbar Slots
 
--- HTML --
+![image](https://github.com/Project-Sloth/ps-inventory/assets/82112471/c0a77f4a-f482-42f5-a5da-1f3571d14130)
 
-<div class="player-name-title"> <span class="name-info-title">Name : </span></div>
-<div class="player-name"> <span class="name-info">Player-Name</span></div>
-<div class="phone-number-title"> <span class="phone-number-info">Phone Number : </span></div>
-<div class="phone-number"> <span class="phone-number">Player-Phone-Number</span></div>
-<div class="player-id-title"> <span class="player-id-info">State ID : </span></div>
-<div class="player-id"> <span class="player-id">Player-State-ID</span></div>
-<div class="citizen-id-title"> <span class="citizen-id-info">Citizen ID : </span></div>
-<div class="citizen-id"> <span class="citizen-id">Player-Citizen-ID</span></div>
-<div class="ply-number-line"></div>
-<div class="phone-number-line"></div>
-<div class="player-id-line"></div>
-<div class="citizen-id-line"></div>
+### Inventory Glovebox
 
--- JS --
+![image](https://github.com/Project-Sloth/ps-inventory/assets/82112471/432f8c79-1a9f-44d1-8062-50b596194752)
 
-$(".player-name-title").html('Name');
-$(".player-name").html(data.pName);
-$(".phone-number-title").html('Phone Number');
-$(".phone-number").html(data.pNumber);
-$(".player-id-title").html('State ID');
-$(".player-id").html(data.pID);
-$(".citizen-id-title").html('Citizen ID');
-$(".citizen-id").html(data.pCID);
+### Inventory Trunk
 
--- CSS --
+![image](https://github.com/Project-Sloth/ps-inventory/assets/82112471/f9c78e49-ec51-4d55-9ac0-b7058951d31a)
 
-.ply-number-line {
-  overflow: hidden;
-  position: absolute;
-  font-family: 'Oswald', sans-serif;
-  background-color: rgb(137, 245, 169) !important;
-  border: 1px solid rgba(55, 55, 55, 1);
-  box-shadow: 0 0 1vh rgba(0, 0, 0, 0.3);
-  top: 75%;
-  margin-left: 6%;
-  height: 5.6vh;
-  width: 0.7vh;
-}
+# Key Features
 
-.player-name-title {
-  overflow: hidden;
-  position: absolute;
-    font-family: 'Oswald', sans-serif;
-  padding: 1%;
-  font-size: 1.6vh;
-  color: rgb(160, 160, 160);
-  top: 73.5%;
-  margin-left: 6%;
-  font-weight: 300;
-}
+* ALL IMAGES FOLLOW THE SAME DIMENSIONS
+* Easy Photoshop guideline template for creating custom images within ps-inventory
+* Custom brand logo above option buttons
+* Options menu
+* Help box 
+* Custom inventory images (more always being added in each new update)
+* Default weight icon easily changeable with Font Awesome icons
+* Hotkey numbers visible in inventory and hotbar slots
+* Weight progress bar
+* Tooltip has a determined height (so it won't ever go higher than visible or cut off)
+* Text overflow ellipsis used (so your product titles with never overlap the containers and instead do "...")
+* Blurred inventory background
+* Elements of NoPixel 3.5 design ideas interwoven
 
-.player-name {
-  overflow: hidden;
-  position: absolute;
-    font-family: 'Oswald', sans-serif;
-  padding: 1%;
-  font-size: 1.95vh;
-  color: white;
-  top: 75%;
-  margin-left: 6%;
-  font-weight: 300;
-}
+# How to install ps-inventory (Latest QBCore Update)
 
-.phone-number-line {
-  overflow: hidden;
-  position: absolute;
-  font-family: 'Oswald', sans-serif;
-  background-color: rgb(214, 137, 245) !important;
-  border: 1px solid rgba(55, 55, 55, 1);
-  box-shadow: 0 0 1vh rgba(0, 0, 0, 0.3);
-  top: 75%;
-  margin-left: 17.5%;
-  height: 5.6vh;
-  width: 0.7vh;
-}
+* Download `ps-inventory` from our GitHub
+* Make sure you have the latest update of [qb-core](https://github.com/qbcore-framework/qb-core)
+* Make sure you have the latest update of [qb-smallresources](https://github.com/qbcore-framework/qb-smallresources)
+* Make sure you have the latest update of [qb-weapons](https://github.com/qbcore-framework/qb-weapons)
+* Drag `ps-inventory` into your resources folder or any subfolder
+* Make sure that the folder is named `ps-inventory` and **not** `ps-inventory-main`
+* Replace all occurrences of `qb-inventory` with `ps-inventory`.<br>The example below uses Visual Studio Code to replace all instances.
 
-.phone-number-title {
-  overflow: hidden;
-  position: absolute;
-  font-family: 'Oswald', sans-serif;
-  padding: 1%;
-  font-size: 1.6vh;
-  color: rgb(160, 160, 160);
-  top: 73.5%;
-  margin-left: 17.5%;
-  font-weight: 300;
-}
+![image](https://github.com/Z3rio/ps-inventory/assets/54480523/00fa21a5-4be2-443f-aff2-4b3202b662dc)
 
-.phone-number {
-  overflow: hidden;
-  position: absolute;
-  font-family: 'Oswald', sans-serif;
-  padding: 1%;
-  font-size: 1.95vh;
-  color: white;
-  top: 75%;
-  margin-left: 17.5%;
-  font-weight: 300;
-}
+## Set up the decay system
 
-.player-id-line {
-  overflow: hidden;
-  position: absolute;
-  font-family: 'Oswald', sans-serif;
-  background-color: rgb(137, 232, 245) !important;
-  border: 1px solid rgba(55, 55, 55, 1);
-  box-shadow: 0 0 1vh rgba(0, 0, 0, 0.3);
-  top: 85%;
-  margin-left: 6%;
-  height: 5.6vh;
-  width: 0.7vh;
-}
+If you want the decay system to work, then please read the information below, otherwise it won't work.
 
-.player-id-title {
-  overflow: hidden;
-  position: absolute;
-  font-family: 'Oswald', sans-serif;
-  padding: 1%;
-  font-size: 1.6vh;
-  color: rgb(160, 160, 160);
-  top: 83.5%;
-  margin-left: 6%;
-  font-weight: 300;
-}
+You need to add a decay value for all items in your `qb-core/shared/items.lua` file, the variable stands for the number of days it takes to decay.
 
-.player-id {
-  overflow: hidden;
-  position: absolute;
-  font-family: 'Oswald', sans-serif;
-  padding: 1%;
-  font-size: 1.95vh;
-  color: white;
-  top: 85%;
-  margin-left: 6%;
-  font-weight: 300;
-}
+### Examples:
 
-.citizen-id-line {
-  overflow: hidden;
-  position: absolute;
-  font-family: 'Oswald', sans-serif;
-  background-color: rgb(245, 207, 137) !important;
-  border: 1px solid rgba(55, 55, 55, 1);
-  box-shadow: 0 0 1vh rgba(0, 0, 0, 0.3);
-  top: 85%;
-  margin-left: 17.5%;
-  height: 5.6vh;
-  width: 0.7vh;
-}
+#### Example of what you have to add
 
-.citizen-id-title {
-  overflow: hidden;
-  position: absolute;
-  font-family: 'Oswald', sans-serif;
-  padding: 1%;
-  font-size: 1.6vh;
-  color: rgb(160, 160, 160);
-  top: 83.5%;
-  margin-left: 17.5%;
-  font-weight: 300;
-}
+```lua
+-- decay = The number of days it takes for an item to decay
+-- delete = If set to true, the item will be removed once it decays
+["decay"] = 28.0, ["delete"] = true
+```
 
-.citizen-id {
-  overflow: hidden;
-  position: absolute;
-  font-family: 'Oswald', sans-serif;
-  padding: 1%;
-  font-size: 1.95vh;
-  color: white;
-  top: 85%;
-  margin-left: 17.5%;
-  font-weight: 300;
-}
+#### Example with the full item in QB-Core's shared file
 
-# Basic Damage / Health Snippet
+```lua
+['sandwich'] = {['name'] = 'sandwich', ['label'] = 'Sandwich', ['weight'] = 200, ['type'] = 'item', ['image'] = 'sandwich.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true,	['combinable'] = nil, ['description'] = 'Nice bread for your stomach', ["decay"] = 3.0, ["delete"] = true},
+```
 
--- Client-Side LUA --
+In this example, the sandwich item would take 3 days to decay and once it does, it would be removed.
 
-local stress = 0
+# Dependencies
 
-RegisterNetEvent('hud:client:UpdateStress', function(newStress) -- Add this event with adding stress elsewhere
-    stress = newStress
-end)
+* [qbcore framework](https://github.com/qbcore-framework)
+* [qb-target](https://github.com/BerkieBb/qb-target)
+* [qb-core](https://github.com/qbcore-framework/qb-core)
+* [qb-logs](https://github.com/qbcore-framework/qb-logs)
+* [qb-traphouse](https://github.com/qbcore-framework/qb-traphouse)
+* [qb-radio](https://github.com/qbcore-framework/qb-radio)
+* [qb-drugs](https://github.com/qbcore-framework/qb-drugs)
+* [qb-shops](https://github.com/qbcore-framework/qb-shops)
 
-QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(data)
-  inventory = data.inventory
-  other = data.other
-  SendNUIMessage({
-  action = "open",
-  inventory = inventory,
-  slots = Config.MaxInventorySlots,
-  other = other,
-  maxweight = Config.MaxInventoryWeight,
-  Ammo = PlayerAmmo,
-  maxammo = Config.MaximumAmmoValues,
-  Name = PlayerData.charinfo.firstname .." ".. PlayerData.charinfo.lastname .." - [".. GetPlayerServerId(PlayerId()) .."]", 
-  pName = PlayerData.charinfo.firstname .. PlayerData.charinfo.lastname, 
-  pNumber = PlayerData.charinfo.phone,
-  pCID = PlayerData.citizenid,
-  pID = GetPlayerServerId(PlayerId()),
-  pStress =  stress,
-  pHealth = 200 - GetEntityHealth(PlayerPedId()),
-})
+## Performance
 
-QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(data)
-  inventory = data.inventory
-  other = data.other
-  SendNUIMessage({
-  action = "open",
-  inventory = inventory,
-  slots = Config.MaxInventorySlots,
-  other = other,
-  maxweight = Config.MaxInventoryWeight,
-  Ammo = PlayerAmmo,
-  maxammo = Config.MaximumAmmoValues,
-  Name = PlayerData.charinfo.firstname .." ".. PlayerData.charinfo.lastname .." - [".. GetPlayerServerId(PlayerId()) .."]", 
-  pName = PlayerData.charinfo.firstname .. PlayerData.charinfo.lastname, 
-  pNumber = PlayerData.charinfo.phone,
-  pCID = PlayerData.citizenid,
-  pID = GetPlayerServerId(PlayerId()),
-  pStress =  stress,
-  pHealth = 200 - GetEntityHealth(PlayerPedId()),
-})
+Runs at ~ 0.00 to 0.01 ms if you have more optimization suggestions feel free to reach out
 
--- JS --
-$(".skull-damage").html('Stress : ');
-$(".skull-damage-title").html(data.pStress);
+# Credits
 
-$(".body-damage").html('Damage : ');
-$(".body-damage-title").html(data.pDamage + "%");
+* [OK1ez](https://github.com/OK1ez) for full redesign. 
+* ihyajb (Aj) for [original version](https://github.com/ihyajb/aj-inventory)
+* Jay for [decay](https://github.com/tnj-development/inventory)
+* i-kulgu for [updated decay](https://github.com/i-kulgu/qb-inventory-decay)
+* [OnlyCats](https://github.com/onlycats) who helped reorganize and also created some custom images.
 
--- HTML --
+# Issues and Suggestions
 
-<!-- Player Body Image -->
-<div class="player-body-container">
-<div class="player-body">
-<img src="./inventory_images/body.png" alt="player-body" style="width:198px;height:428px;">
-</div>
-</div>
+Please use the GitHub issues system to report issues or make suggestions, when making suggestions, please keep [Suggestion] in the title to make it clear that it is a suggestion.
 
-<!-- Player Damage-->
-<div class="skull-damage-container">
-<div class="skull-damage"></div>
-<div class="skull-damage-title"></div>
-<div class="skull-damage-line"></div>
-</div>
-                
-<div class="body-damage-container">
-<div class="body-damage"></div>
-<div class="body-damage-title"></div>
-<div class="body-damage-line"></div>
-</div>
+## Connect with us
 
--- CSS --
-
-/* Player Body */
-.player-body-container {
-	position: absolute;
-	bottom: 27.8%;
-	margin: 0 auto;
-	left: -65%;
-	right: 0;
-	text-align: center;
-	width: 15%;
-	height: 55%;
-	padding: 10%;
-}
-
-.player-body {
-	position: absolute;
-	bottom: 48%;
-	margin: 0 auto;
-	left: -23%;
-	right: 0;
-	text-align: center;
-	width: 15%;
-	height: 45%;
-}
-
- /* Player Body & Health */
-#player-damage-container {
-    position: absolute;
-    display: none;
-    user-select: none;
-    width: 100%;
-    height: 100%;
-}
-  
-  .skull-damage-title {
-    overflow: hidden;
-    position: absolute;
-	  font-family: 'Oswald', sans-serif;
-    padding: 1%;
-    font-size: 1.35vh;
-    color: white;
-    top: 20.5%;
-    margin-left: 22%;
-    font-weight: 300;
-    opacity: 0; 
-    transition: opacity 0.5s; 
-    z-index: 1; 
-}
-
-.skull-damage {
-    overflow: hidden;
-    position: absolute;
-	  font-family: 'Oswald', sans-serif;
-    padding: 1%;
-    font-size: 1.35vh;
-    color: white;
-    top: 20.5%;
-    margin-left: 20%;
-    font-weight: 300;
-    opacity: 0; 
-    transition: opacity 0.5s; 
-    z-index: 1; 
-}
-
-.skull-damage-line {
-    overflow: hidden;
-    position: absolute;
-	  font-family: 'Oswald', sans-serif;
-    background-color: rgb(255, 255, 255) !important;
-	  border: 1px solid rgba(55, 55, 55, 1);
-    box-shadow: 0 0 1vh rgba(0, 0, 0, 0.3);
-    top: 20.5%;
-    margin-left: 23%;
-    height: 7.6vh;
-    width: 0.2vh;
-    rotate: 90deg;
-    opacity: 0; 
-    transition: opacity 0.5s; 
-    z-index: 1; 
-}
-
-.skull-damage-container:hover .skull-damage,
-.skull-damage-container:hover .skull-damage-title,
-.skull-damage-container:hover .skull-damage-line {
-    opacity: 1;
-}
-
-.body-damage-title {
-    overflow: hidden;
-    position: absolute;
-	  font-family: 'Oswald', sans-serif;
-    padding: 1%;
-    font-size: 1.35vh;
-    color: white;
-    top: 28%;
-    margin-left: 13%;
-    font-weight: 300;
-    opacity: 0; 
-    transition: opacity 0.5s; 
-    z-index: 1; 
-}
-
-.body-damage {
-    overflow: hidden;
-    position: absolute;
-	  font-family: 'Oswald', sans-serif;
-    padding: 1%;
-    font-size: 1.35vh;
-    color: white;
-    top: 28%;
-    margin-left: 10.5%;
-    font-weight: 300;
-    opacity: 0; 
-    transition: opacity 0.5s; 
-    z-index: 1; 
-}
-
-.body-damage-line {
-    overflow: hidden;
-    position: absolute;
-	  font-family: 'Oswald', sans-serif;
-    background-color: rgb(255, 255, 255) !important;
-	  border: 1px solid rgba(55, 55, 55, 1);
-    box-shadow: 0 0 1vh rgba(0, 0, 0, 0.3);
-    top: 28%;
-    margin-left: 13.5%;
-    height: 7.6vh;
-    width: 0.2vh;
-    rotate: 90deg;
-    opacity: 0; 
-    transition: opacity 0.5s; 
-    z-index: 1; 
-}
-
-.body-damage-container:hover .body-damage,
-.body-damage-container:hover .body-damage-title,
-.body-damage-container:hover .body-damage-line {
-    opacity: 1;
-}
+Join our [**Discord**](https://discord.gg/projectsloth) for updates, support, and special early testing!

@@ -30,14 +30,13 @@ AddEventHandler("gksphone:faturapayBill", function(id)
                     if Config.BillingCommissions[data[1].society] then
                         local commission = Round(data[1].amount * Config.BillingCommissions[data[1].society])
                         SenderPly.Functions.AddMoney('bank', commission)
-                        -- if GetResourceState("qb-management") == "started" then
+                        if GetResourceState("qb-management") == "started" then
                             exports['qb-management']:RemoveMoney(data[1].society, commission)
-                           
                             Wait(500)
-                        -- elseif GetResourceState("qb-bossmenu") == "started" then
-                        --     TriggerEvent("qb-bossmenu:server:removeAccountMoney", data[1].society, commission)
-                        --     Wait(500)
-                        -- end
+                        elseif GetResourceState("qb-bossmenu") == "started" then
+                            TriggerEvent("qb-bossmenu:server:removeAccountMoney", data[1].society, commission)
+                            Wait(500)
+                        end
                         TriggerClientEvent('gksphone:notifi', SenderPly.PlayerData.source,
                             {title = _U('billing_title'),
                                 message = string.format('You received a commission check of $%s when %s %s paid a bill of $%s.'
@@ -48,14 +47,13 @@ AddEventHandler("gksphone:faturapayBill", function(id)
             end
 
             Ply.Functions.RemoveMoney('bank', data[1].amount, "paid-invoice")
-            -- if GetResourceState("qb-management") == "started" then
+            if GetResourceState("qb-management") == "started" then
                 Wait(500)
                 exports['qb-management']:AddMoney(data[1].society, data[1].amount)
-                --exports["snipe-banking"]:CreateJobTransactions(data[1].society, data[i].amount, "Invoice Paid", "transfer", Ply.PlayerData.citizenid, Ply.PlayerData.citizenid, true)
-            -- elseif GetResourceState("qb-bossmenu") == "started" then
-            --     Wait(500)
-            --     TriggerEvent("qb-bossmenu:server:addAccountMoney", data[1].society, data[1].amount)
-            -- end
+            elseif GetResourceState("qb-bossmenu") == "started" then
+                Wait(500)
+                TriggerEvent("qb-bossmenu:server:addAccountMoney", data[1].society, data[1].amount)
+            end
             TriggerEvent('gksphone:server:bank_gettransferinfo', src)
             MySQL.Async.execute('DELETE FROM gksphone_invoices WHERE id=@id', {['@id'] = id.id})
             TriggerClientEvent('updatebilling', src)
@@ -94,13 +92,13 @@ AddEventHandler("gksphone:server:faturapayBill", function()
                         if Config.BillingCommissions[data[i].society] then
                             local commission = Round(data[i].amount * Config.BillingCommissions[data[i].society])
                             SenderPly.Functions.AddMoney('bank', commission)
-                            -- if GetResourceState("qb-management") == "started" then
+                            if GetResourceState("qb-management") == "started" then
                                 exports['qb-management']:RemoveMoney(data[i].society, commission)
                                 Wait(500)
-                            -- elseif GetResourceState("qb-bossmenu") == "started" then
-                            --     TriggerEvent("qb-bossmenu:server:removeAccountMoney", data[i].society, commission)
-                            --     Wait(500)
-                            -- end
+                            elseif GetResourceState("qb-bossmenu") == "started" then
+                                TriggerEvent("qb-bossmenu:server:removeAccountMoney", data[i].society, commission)
+                                Wait(500)
+                            end
                             TriggerClientEvent('gksphone:notifi', tonumber(SenderPly.PlayerData.source),
                                 {title = _U('billing_title'),
                                     message = string.format('You received a commission check of $%s when %s %s paid a bill of $%s.'
@@ -113,14 +111,13 @@ AddEventHandler("gksphone:server:faturapayBill", function()
 
                 money = money - data[i].amount
                 Ply.Functions.RemoveMoney('bank', data[i].amount, "paid-invoice")
-                -- if GetResourceState("qb-management") == "started" then
+                if GetResourceState("qb-management") == "started" then
                     Wait(500)
                     exports['qb-management']:AddMoney(data[i].society, data[i].amount)
-                --    exports["snipe-banking"]:CreateJobTransactions(data[1].society, data[i].amount, "Invoice Paid", "transfer", Ply.PlayerData.citizenid, Ply.PlayerData.citizenid, true)
-                -- elseif GetResourceState("qb-bossmenu") == "started" then
-                --     Wait(500)
-                --     TriggerEvent("qb-bossmenu:server:addAccountMoney", data[i].society, data[i].amount)
-                -- end
+                elseif GetResourceState("qb-bossmenu") == "started" then
+                    Wait(500)
+                    TriggerEvent("qb-bossmenu:server:addAccountMoney", data[i].society, data[i].amount)
+                end
                 MySQL.Async.execute('DELETE FROM gksphone_invoices WHERE id=@id', {['@id'] = data[i].id})
 
                 MySQL.Async.execute("INSERT INTO gksphone_bank_transfer (type, identifier, price, name) VALUES (@type, @identifier, @price, @name)"

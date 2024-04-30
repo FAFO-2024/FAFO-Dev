@@ -8,9 +8,6 @@ local Stashes = {}
 local ShopItems = {}
 
 -- Functions
-function GetDrops()
-    return Drops
-end
 
 ---Loads the inventory for the player with the citizenid that is provided
 
@@ -907,10 +904,7 @@ local function AddToDrop(dropId, slot, itemName, amount, info, created)
 			id = dropId,
 		}
 	end
-
-	OnDropUpdate(dropId, Drops[dropId])
 end
-
 
 local function RemoveFromDrop(dropId, slot, itemName, amount)
 	amount = tonumber(amount) or 1
@@ -927,8 +921,6 @@ local function RemoveFromDrop(dropId, slot, itemName, amount)
 			Drops[dropId].items[slot] = nil
 		end
 	end
-	
-	OnDropUpdate(dropId, Drops[dropId])
 end
 
 local function CreateDropId()
@@ -986,9 +978,6 @@ local function CreateNewDrop(source, fromSlot, toSlot, itemAmount, created)
 		if itemData.name:lower() == "radio" then
 			TriggerClientEvent('Radio.Set', source, false)
 		end
-
-		
-		OnDropUpdate(dropId, Drops[dropId])
 	else
 		TriggerClientEvent("QBCore:Notify", source, "You don't have this item!", "error")
 		return
@@ -1165,9 +1154,9 @@ local function OpenInventory(name, id, other, origin)
 				secondInv.maxweight = Config.MaxInventoryWeight
 				secondInv.inventory = OtherPlayer.PlayerData.items
 				if (Player.PlayerData.job.name == "police" or Player.PlayerData.job.type == "leo") and Player.PlayerData.job.onduty then
-					secondInv.slots = Config.MaxInventorySlots + 150
+					secondInv.slots = Config.MaxInventorySlots
 				else
-					secondInv.slots = Config.MaxInventorySlots + 150
+					secondInv.slots = Config.MaxInventorySlots - 1
 				end
 				Wait(250)
 			end
@@ -1200,7 +1189,7 @@ local function OpenInventory(name, id, other, origin)
 				secondInv.slots = 0
 			end
 		end
-		TriggerClientEvent("lj-inventory:client:closeinv", id)
+		TriggerClientEvent("ps-inventory:client:closeinv", id)
 		TriggerClientEvent("inventory:client:OpenInventory", src, {}, Player.PlayerData.items, secondInv)
 	else
 		TriggerClientEvent("inventory:client:OpenInventory", src, {}, Player.PlayerData.items)
@@ -1529,19 +1518,19 @@ RegisterNetEvent('inventory:server:OpenInventory', function(name, id, other)
 				secondInv.inventory = other.items
 				secondInv.slots = #other.items
 			elseif name == "otherplayer" then
-                local OtherPlayer = QBCore.Functions.GetPlayer(tonumber(id))
-                if OtherPlayer then
-                    secondInv.name = "otherplayer-"..id
-                    secondInv.label = "Player-"..id
-                    secondInv.maxweight = Config.MaxInventoryWeight
-                    secondInv.inventory = OtherPlayer.PlayerData.items
-                    if (Player.PlayerData.job.name == "police" or Player.PlayerData.job.type == "leo") and Player.PlayerData.job.onduty then
-                        secondInv.slots = Config.MaxInventorySlots + 150
-                    else
-                        secondInv.slots = Config.MaxInventorySlots + 150
-                    end
-                    Wait(250)
-                end
+				local OtherPlayer = QBCore.Functions.GetPlayer(tonumber(id))
+				if OtherPlayer then
+					secondInv.name = "otherplayer-"..id
+					secondInv.label = "Player-"..id
+					secondInv.maxweight = Config.MaxInventoryWeight
+					secondInv.inventory = OtherPlayer.PlayerData.items
+					if (Player.PlayerData.job.name == "police" or Player.PlayerData.job.type == "leo") and Player.PlayerData.job.onduty then
+						secondInv.slots = Config.MaxInventorySlots
+					else
+						secondInv.slots = Config.MaxInventorySlots - 1
+					end
+					Wait(250)
+				end
 			else
 				if Drops[id] then
 					if Drops[id].isOpen then
@@ -1571,7 +1560,7 @@ RegisterNetEvent('inventory:server:OpenInventory', function(name, id, other)
 					secondInv.slots = 0
 				end
 			end
-			TriggerClientEvent("lj-inventory:client:closeinv", id)
+			TriggerClientEvent("ps-inventory:client:closeinv", id)
 			TriggerClientEvent("inventory:client:OpenInventory", src, {}, Player.PlayerData.items, secondInv)
 		else
 			TriggerClientEvent("inventory:client:OpenInventory", src, {}, Player.PlayerData.items)
@@ -2283,10 +2272,10 @@ RegisterServerEvent("inventory:server:GiveItem", function(target, name, amount, 
 		end
 		if RemoveItem(src, item.name, amount, item.slot) then
 			if AddItem(target, item.name, amount, false, item.info, item.created) then
-				TriggerClientEvent('inventory:client:ItemBox',target, QBCore.Shared.Items[item.name], "add", amount)
+				TriggerClientEvent('inventory:client:ItemBox',target, QBCore.Shared.Items[item.name], "add")
 				QBCore.Functions.Notify(target, "You Received "..amount..' '..item.label.." From "..Player.PlayerData.charinfo.firstname.." "..Player.PlayerData.charinfo.lastname)
 				TriggerClientEvent("inventory:client:UpdatePlayerInventory", target, true)
-				TriggerClientEvent('inventory:client:ItemBox',src, QBCore.Shared.Items[item.name], "remove", amount)
+				TriggerClientEvent('inventory:client:ItemBox',src, QBCore.Shared.Items[item.name], "remove")
 				QBCore.Functions.Notify(src, "You gave " .. OtherPlayer.PlayerData.charinfo.firstname.." "..OtherPlayer.PlayerData.charinfo.lastname.. " " .. amount .. " " .. item.label .."!")
 				TriggerClientEvent("inventory:client:UpdatePlayerInventory", src, true)
 				TriggerClientEvent('ps-inventory:client:giveAnim', src)
@@ -2417,10 +2406,6 @@ QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help="
 					info.quality = 100
 				elseif itemData["name"] == "harness" then
 					info.uses = 20
-				elseif itemData["name"] == "syphoningkit" then
-					info.gasamount = 0
-				elseif itemData["name"] == "jerrycan" then
-					info.gasamount = 0
 				elseif itemData["name"] == "markedbills" then
 					info.worth = math.random(5000, 10000)
 				elseif itemData["name"] == "labkey" then

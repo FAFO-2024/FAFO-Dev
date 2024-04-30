@@ -2,12 +2,6 @@ globalOptionsCache = {}
 isPlayerCloseToMusic = false
 disableMusic = false
 
-RegisterCommand('xsounddump', function(source, args)
-    for k,v in pairs(soundInfo) do
-        print(k, json.encode(v))
-    end
-end)
-
 function getDefaultInfo()
     return {
         volume = 1.0,

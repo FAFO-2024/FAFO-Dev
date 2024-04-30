@@ -18,12 +18,6 @@ class SoundPlayer
 		this.load = false;
 		this.isMuted_ = false;
 		this.audioPlayer = null;
-		this.context = null;
-		this.media = null;
-		this.element = null;
-		this.lowpass = null;
-		this.gainNode = null;
-		this.audioConnected = false;
 
 		//this.textToSpeech = false;
         //this.speechSynthMessage = new SpeechSynthesisUtterance();
@@ -132,53 +126,6 @@ class SoundPlayer
 			}
 		}
 	}
-	
-	setLowpass(state)
-	{
-		if (this.youtubeIsReady) {
-			if (!this.audioConnected) {
-				this.context = new AudioContext();
-				this.element = this.yPlayer.getIframe().contentDocument.getElementsByTagName('video')[0];
-				
-				this.media = this.context.createMediaElementSource(this.element);
-				
-				if (this.media) {
-					var splitter = this.context.createChannelSplitter(2);
-					var merger = this.context.createChannelMerger(2);
-					
-					this.gainNode = this.context.createGain();
-					this.gainNode.gain.value = 1.0;
-					
-					this.lowpass = this.context.createBiquadFilter();
-					this.lowpass.type = 'lowpass';
-					this.lowpass.frequency.value = 24000;
-					this.lowpass.gain.value = -1;
-					
-					this.media.connect(splitter);
-					splitter.connect(merger, 0, 0);
-					splitter.connect(merger, 1, 0);
-					splitter.connect(merger, 0, 1);
-					splitter.connect(merger, 1, 1);
-					merger.connect(this.gainNode);
-					this.gainNode.connect(this.lowpass);
-					this.lowpass.connect(this.context.destination);
-					
-					this.audioConnected = true;
-				}
-			}
-			
-			if (this.audioConnected) {
-				if (state) {
-					this.gainNode.gain.value = 0.2;
-					this.lowpass.frequency.value = 2000;
-				}
-				else {
-					this.gainNode.gain.value = 1.0;
-					this.lowpass.frequency.value = 24000;
-				}
-			}
-		}
-	}
   
 	create()
 	{
@@ -253,12 +200,6 @@ class SoundPlayer
                 this.yPlayer.destroy();
                 this.youtubeIsReady = false;
                 this.yPlayer = null;
-				this.context = null;
-				this.media = null;
-				this.element = null;
-				this.lowpass = null;
-				this.gainNode = null;
-				this.audioConnected = false;
             }
         }
     }

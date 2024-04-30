@@ -409,15 +409,20 @@ AddEventHandler("gksphone:server:BusSendTip", function(phoneNumber, amaount)
     local AuthCheck = false
     if xPlayer and zPlayer then
         local jobs = xPlayer.PlayerData.job.name
-        local gradejob = xPlayer.PlayerData.job.grade.level
-        if gradecheck then
-            for k, value in pairs(Config.JobGrade) do
-                if jobs == k and gradejob >= value then
-                    AuthCheck = true
-                    break
-                end
+        local gradejob = 0
+        if type(xPlayer.PlayerData.job.grade) == "number" then
+            gradejob = xPlayer.PlayerData.job.grade
+        else
+            gradejob = xPlayer.PlayerData.job.grade.level
+        end
+
+        for k, value in pairs(Config.JobGrade) do
+            if jobs == k and gradejob >= value then
+                AuthCheck = true
+                break
             end
         end
+
         if not AuthCheck then TriggerEvent("gksphone:exploitwebhook", source, "Bussines Send TIP", "Unauthorized Use of Send TIP") return end
         if GetResourceState("qb-management") == "started" then
             if exports['qb-management']:RemoveMoney(jobs, tip) then

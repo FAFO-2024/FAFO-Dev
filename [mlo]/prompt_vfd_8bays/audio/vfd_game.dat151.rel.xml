@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dat151>
+ <Version value="35636732" />
+ <Items>
+  <Item type="Door" ntOffset="0">
+   <Name>d_prompt_hub_red_door</Name>
+   <SoundSet>hash_774B23FB</SoundSet>
+   <Params>hash_0246D335</Params>
+   <Unk1 value="0.7" />
+  </Item>
+  <Item type="DoorModel" ntOffset="0">
+   <Name>dasl_88777EAB</Name>
+   <Door>d_prompt_hub_red_door</Door>
+  </Item>
+  <Item type="Interior" ntOffset="0">
+   <Name>prompt_vfd_col</Name>
+   <Unk0 value="0xAAAAA044" />
+   <Unk1 value="0xD4855127" />
+   <Unk2 value="0x00000000" />
+   <Rooms>
+    <Item>prompt_vfd_col_limbo</Item>
+    <Item>prompt_vfd_col_entrance</Item>
+    <Item>prompt_vfd_col_hall</Item>
+    <Item>prompt_vfd_col_gym</Item>
+    <Item>prompt_vfd_col_classroom</Item>
+    <Item>prompt_vfd_col_hub</Item>
+    <Item>prompt_vfd_col_office1</Item>
+    <Item>prompt_vfd_col_office2</Item>
+    <Item>prompt_vfd_col_office3</Item>
+    <Item>prompt_vfd_col_office4</Item>
+    <Item>prompt_vfd_col_office5</Item>
+    <Item>prompt_vfd_col_garage_part_2</Item>
+    <Item>prompt_vfd_col_office5</Item>
+    <Item>prompt_vfd_col_office6</Item>
+    <Item>prompt_vfd_col_office7</Item>
+    <Item>prompt_vfd_col_practise_room_med</Item>
+    <Item>prompt_vfd_col_office_med</Item>
+    <Item>prompt_vfd_col_briefing</Item>
+    <Item>prompt_vfd_col_hallway_long</Item>
+    <Item>prompt_vfd_col_lockers</Item>
+    <Item>prompt_vfd_col_kitchen</Item>
+    <Item>prompt_vfd_col_garage</Item>
+    <Item>prompt_vfd_col_lounge</Item>
+    <Item>prompt_vfd_col_upstairs_hallway</Item>
+    <Item>prompt_vfd_col_dispatch</Item>
+    <Item>prompt_vfd_col_dormitory_corridor</Item>
+    <Item>prompt_vfd_col_singleroom_1</Item>
+    <Item>prompt_vfd_col_singleroom_2</Item>
+    <Item>prompt_vfd_col_singleroom_3</Item>
+    <Item>prompt_vfd_col_singleroom_4</Item>
+    <Item>prompt_vfd_col_singleroom_5</Item>
+    <Item>prompt_vfd_col_singleroom_6</Item>
+   </Rooms>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_limbo</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>limbo</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_entrance</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>entrance</MloRoom>
+   <Zone>iz_entrance</Zone>
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_hall</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>hall</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_gym</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>gym</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_classroom</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>classroom</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_hub</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>hub</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_office1</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>office1</MloRoom>
+   <Zone>iz_office1</Zone>
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>dlc_vinewood_apartment_roomtone</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_office2</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>office2</MloRoom>
+   <Zone>iz_office2</Zone>
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>dlc_vinewood_apartment_roomtone</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_office3</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>office3</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>dlc_vinewood_apartment_roomtone</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_office4</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>office4</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>dlc_vinewood_apartment_roomtone</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_office5</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>office5</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>dlc_vinewood_apartment_roomtone</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_garage_part_2</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>garage_part_2</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0.5" />
+   <Sound>dlc_vinewood_garage</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_office5</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>office5</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>dlc_vinewood_apartment_roomtone</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_office6</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>office6</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>dlc_vinewood_apartment_roomtone</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_office7</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>office7</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>dlc_vinewood_apartment_roomtone</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_practise_room_med</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>practise_room_med</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>dlc_vinewood_apartment_roomtone</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_office_med</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>office_med</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>dlc_vinewood_apartment_roomtone</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_briefing</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>briefing</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_hallway_long</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>hallway_long</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_lockers</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>lockers</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_kitchen</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>kitchen</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_garage</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>garage</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0.5" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_lounge</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>lounge</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_upstairs_hallway</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>upstairs_hallway</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_dispatch</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>dispatch</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_dormitory_corridor</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>dormitory_corridor</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_singleroom_1</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>singleroom_1</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_singleroom_2</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>singleroom_2</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_singleroom_3</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>singleroom_3</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_singleroom_4</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>singleroom_4</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_singleroom_5</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>singleroom_5</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="InteriorRoom" ntOffset="0">
+   <Name>prompt_vfd_col_singleroom_6</Name>
+   <Flags0 value="0xAAAAAAAA" />
+   <MloRoom>singleroom_6</MloRoom>
+   <Zone />
+   <Unk02 value="0" />
+   <Unk03 value="0.35" />
+   <Reverb value="0" />
+   <Echo value="0" />
+   <Sound>null_sound</Sound>
+   <Unk07 value="0" />
+   <Unk08 value="0" />
+   <Unk09 value="0" />
+   <Unk10 value="0.7" />
+   <Unk11 value="0" />
+   <Unk12 value="50" />
+   <Unk13 />
+   <SoundSet>hash_D4855127</SoundSet>
+  </Item>
+  <Item type="AmbientRule" ntOffset="13653">
+   <Name>ar_prompt_stolen_rule_01</Name>
+   <Flags0 value="0xAA0011A8" />
+   <Flags1 value="0x00000000" />
+   <Flags2 value="0x00000000" />
+   <Position x="-1039.50061" y="-1373.14172" z="47.2015572" />
+   <Flags3 value="0x00000000" />
+   <ChildSound>hash_A6DDC7A9</ChildSound>
+   <Category>base</Category>
+   <Flags4 value="0x00000000" />
+   <Flags5 value="0xFFFFFFFF" />
+   <Flags6 value="0x00000000" />
+   <Unk01 value="1" />
+   <InnerRad value="0" />
+   <OuterRad value="30" />
+   <StartTime value="0" />
+   <EndTime value="1440" />
+   <Unk06 value="35" />
+   <Unk07 value="3" />
+   <Unk08 value="0" />
+   <Unk09 value="1" />
+   <Unk10 value="1" />
+   <Unk11 value="1" />
+   <Unk12 value="100" />
+   <Unk13 value="3" />
+   <ExtParams />
+  </Item>
+  <Item type="AmbientRule" ntOffset="52092">
+   <Name>ar_prompt_stolen_rule_02</Name>
+   <Flags0 value="0xAA000500" />
+   <Flags1 value="0x00000000" />
+   <Flags2 value="0x00000000" />
+   <Position x="-1054.02441" y="-1396.67175" z="47.2538376" />
+   <Flags3 value="0x00000000" />
+   <ChildSound>hash_5AFD87DA</ChildSound>
+   <Category>base</Category>
+   <Flags4 value="0x00000000" />
+   <Flags5 value="0xFFFFFFFF" />
+   <Flags6 value="0x00000000" />
+   <Unk01 value="1" />
+   <InnerRad value="0" />
+   <OuterRad value="30" />
+   <StartTime value="0" />
+   <EndTime value="1440" />
+   <Unk06 value="20" />
+   <Unk07 value="5" />
+   <Unk08 value="0" />
+   <Unk09 value="1" />
+   <Unk10 value="1" />
+   <Unk11 value="1" />
+   <Unk12 value="100" />
+   <Unk13 value="3" />
+   <ExtParams />
+  </Item>
+  <Item type="StaticEmitter" ntOffset="0">
+   <Name>se_promptaudioemitter_01</Name>
+   <Flags value="0xAA045501" />
+   <Unk01>null_sound</Unk01>
+   <RadioStation>radio_14_dance_02</RadioStation>
+   <Position x="-1039.50061" y="-1373.14172" z="47.2015572" />
+   <Unk06 value="0" />
+   <Unk07 value="200" />
+   <Unk08 value="2000" />
+   <Unk09 value="23900" />
+   <Unk10 value="0" />
+   <Unk11 value="400" />
+   <Interior>prompt_vfd_col</Interior>
+   <Room>prompt_vfd_col_entrance</Room>
+   <Unk13 />
+   <Unk14 value="1" />
+   <Unk15 value="0" />
+   <Unk16 value="0" />
+   <Alarm />
+   <Unk18>null_sound</Unk18>
+   <Unk19 value="0x32320003" />
+   <Unk20 value="0x05A00000" />
+   <Unk21 value="0.94" />
+   <Unk22 value="0.99" />
+  </Item>
+  <Item type="AmbientZone" ntOffset="0">
+   <Name>iz_entrance</Name>
+   <Flags0 value="0xAA800425" />
+   <Shape>Box</Shape>
+   <Flags1 value="0x00000000" />
+   <ActivationZonePosition x="-1039.50061" y="-1373.14172" z="47.2015572" />
+   <ActivationZoneSize x="12" y="22" z="12" />
+   <ActivationZoneVec1 x="0" y="0" z="0" w="0" />
+   <ActivationZoneVec2 x="1" y="1" z="1" w="0" />
+   <ActivationZoneAngle value="26" />
+   <ActivationZoneVec3 x="0" y="0" z="0" />
+   <PlaybackZonePosition x="-1039.50061" y="-1373.14172" z="47.2015572" />
+   <PlaybackZoneSize x="10" y="20" z="10" />
+   <PlaybackZoneVec1 x="0" y="0" z="0" w="0" />
+   <PlaybackZoneVec2 x="1" y="1" z="1" w="0" />
+   <PlaybackZoneAngle value="26" />
+   <PlaybackZoneVec3 x="0" y="0" z="0" />
+   <UnkVec1 x="0" y="0" z="1" w="0" />
+   <UnkVec2 x="1" y="-1" z="-1" w="0" />
+   <UnkHash0 />
+   <Scene />
+   <UnkVec3 x="-1" y="0" />
+   <Flags2 value="0x00000000" />
+   <Unk14 value="4" />
+   <Unk15 value="1" />
+   <Unk16 value="0" />
+   <Rules>
+    <Item>ar_phone</Item>
+    <Item>ar_prompt_stolen_rule_01</Item>
+   </Rules>
+   <ExtParams />
+  </Item>
+  <Item type="AmbientZone" ntOffset="0">
+   <Name>iz_office1</Name>
+   <Flags0 value="0xAA800425" />
+   <Shape>Box</Shape>
+   <Flags1 value="0x00000000" />
+   <ActivationZonePosition x="-1053.94824" y="-1395.7605" z="47.43372" />
+   <ActivationZoneSize x="10" y="13" z="5" />
+   <ActivationZoneVec1 x="0" y="0" z="0" w="0" />
+   <ActivationZoneVec2 x="1" y="1" z="1" w="0" />
+   <ActivationZoneAngle value="75" />
+   <ActivationZoneVec3 x="0" y="0" z="0" />
+   <PlaybackZonePosition x="-1053.94824" y="-1395.7605" z="47.43372" />
+   <PlaybackZoneSize x="7" y="7" z="5" />
+   <PlaybackZoneVec1 x="0" y="0" z="0" w="0" />
+   <PlaybackZoneVec2 x="1" y="1" z="1" w="0" />
+   <PlaybackZoneAngle value="75" />
+   <PlaybackZoneVec3 x="0" y="0" z="0" />
+   <UnkVec1 x="0" y="0" z="1" w="0" />
+   <UnkVec2 x="1" y="-1" z="-1" w="0" />
+   <UnkHash0 />
+   <Scene />
+   <UnkVec3 x="-1" y="0" />
+   <Flags2 value="0x00000000" />
+   <Unk14 value="4" />
+   <Unk15 value="1" />
+   <Unk16 value="0" />
+   <Rules>
+    <Item>ar_prompt_stolen_rule_02</Item>
+   </Rules>
+   <ExtParams />
+  </Item>
+  <Item type="AmbientZone" ntOffset="0">
+   <Name>iz_office2</Name>
+   <Flags0 value="0xAA800425" />
+   <Shape>Box</Shape>
+   <Flags1 value="0x00000000" />
+   <ActivationZonePosition x="-1055.043" y="-1402.068" z="47.43122" />
+   <ActivationZoneSize x="10" y="13" z="5" />
+   <ActivationZoneVec1 x="0" y="0" z="0" w="0" />
+   <ActivationZoneVec2 x="1" y="1" z="1" w="0" />
+   <ActivationZoneAngle value="75" />
+   <ActivationZoneVec3 x="0" y="0" z="0" />
+   <PlaybackZonePosition x="-1055.043" y="-1402.068" z="47.43122" />
+   <PlaybackZoneSize x="7" y="7" z="5" />
+   <PlaybackZoneVec1 x="0" y="0" z="0" w="0" />
+   <PlaybackZoneVec2 x="1" y="1" z="1" w="0" />
+   <PlaybackZoneAngle value="75" />
+   <PlaybackZoneVec3 x="0" y="0" z="0" />
+   <UnkVec1 x="0" y="0" z="1" w="0" />
+   <UnkVec2 x="1" y="-1" z="-1" w="0" />
+   <UnkHash0 />
+   <Scene />
+   <UnkVec3 x="-1" y="0" />
+   <Flags2 value="0x00000000" />
+   <Unk14 value="4" />
+   <Unk15 value="1" />
+   <Unk16 value="0" />
+   <Rules>
+    <Item>ar_phone</Item>
+   </Rules>
+   <ExtParams />
+  </Item>
+  <Item type="AmbientZone" ntOffset="0">
+   <Name>az_promptzone_01</Name>
+   <Flags0 value="0xAA800424" />
+   <Shape>Box</Shape>
+   <Flags1 value="0x00000000" />
+   <ActivationZonePosition x="-1039.50061" y="-1373.14172" z="47.2015572" />
+   <ActivationZoneSize x="13" y="13" z="9" />
+   <ActivationZoneVec1 x="0" y="0" z="0" w="0" />
+   <ActivationZoneVec2 x="1" y="1" z="1" w="0" />
+   <ActivationZoneAngle value="75" />
+   <ActivationZoneVec3 x="0" y="0" z="0" />
+   <PlaybackZonePosition x="-1039.50061" y="-1373.14172" z="47.2015572" />
+   <PlaybackZoneSize x="7" y="7" z="9" />
+   <PlaybackZoneVec1 x="0" y="0" z="0" w="0" />
+   <PlaybackZoneVec2 x="1" y="1" z="1" w="0" />
+   <PlaybackZoneAngle value="75" />
+   <PlaybackZoneVec3 x="0" y="0" z="0" />
+   <UnkVec1 x="0" y="0" z="1" w="0" />
+   <UnkVec2 x="1" y="-1" z="-1" w="0" />
+   <UnkHash0 />
+   <Scene />
+   <UnkVec3 x="-1" y="0" />
+   <Flags2 value="0x00000000" />
+   <Unk14 value="4" />
+   <Unk15 value="1" />
+   <Unk16 value="0" />
+   <Rules />
+   <ExtParams />
+  </Item>
+  <Item type="AmbientZoneList" ntOffset="0">
+   <Name>promptzonelist</Name>
+   <Zones>
+    <Item>az_promptzone_01</Item>
+   </Zones>
+  </Item>
+  <Item type="AmbientZoneList" ntOffset="0">
+   <Name>ambient_zone_list</Name>
+   <Zones>
+    <Item>az_promptzone_01</Item>
+   </Zones>
+  </Item>
+  <Item type="StaticEmitterList" ntOffset="0">
+   <Name>ambient_emitter_list_69</Name>
+   <Emitters>
+    <Item>se_promptaudioemitter_01</Item>
+   </Emitters>
+  </Item>
+ </Items>
+</Dat151>

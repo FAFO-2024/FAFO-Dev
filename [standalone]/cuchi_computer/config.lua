@@ -21,11 +21,11 @@ Config.DataHeists = {
     Areas = {
         --[coords as vector3] = areaRadius in meters
         -- fleeca
-        [vector3(149.9, -1040.46, 29.37)] = 14,
-        [vector3(314.23, -278.83, 54.17)] = 14,
-        [vector3(-350.8, -49.57, 49.04)] = 14,
-        [vector3(-1213.0, -330.39, 37.79)] = 14,
-        [vector3(246.64, 223.2, 106.29)] = 14,
+        [vector3(149.91, -1037.52, 29.37)] = 5,
+        [vector3(309.22, -275.77, 54.16)] = 5,
+        [vector3(-356.01, -46.7, 49.03)] = 5,
+        [vector3(-1218.44, -332.2, 37.78)] = 5,
+        [vector3(239.89, 218.95, 106.29)] = 5,
 
         -- arcadius tower (area in parking)
         [vector3(-160.274, -606.16, 32.424)] = 50
@@ -132,7 +132,7 @@ else
         joaat("sf_prop_sf_monitor_stu_01a")
     }
     Config.TargetSystem = false -- if true then you must have ox_target or qb-target, if false prop interactions will be based on a zone check
-    Config.TargetType = "ox" -- "ox"/"qb" for ox_target or qb-target
+    Config.TargetType = "qb" -- "ox"/"qb" for ox_target or qb-target
 
     Config.UsablePositions = { -- positions where players can open a computer free to use
         vector3(1275.5, -1710.7, 54.8),
