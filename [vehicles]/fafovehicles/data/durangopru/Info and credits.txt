@@ -1,0 +1,57 @@
+Headlights not working? Charge the lightSettings ID
+
+
+Modkits not working? Grab the modkit ID [39269_13FPIUPuck_modkit] and change the numbers like so [179134_13FPIUPuck_modkit] then put the numbers in the id value and change the carvariations to! 
+
+
+
+
+
+
+Original 2018 Dodge Durango SRT from FM7, revamped, remodeled, and turned into a 2014-2020 Durango by GeorgieMoon.
+Purchased by [Puck909]
+Chungah lots of chungah
+console ​Modeled by Brendo Endo#3282 https://discord.gg/brendos-productions-972698339441254480
+​Shifter and plastic textures by Georgimoon
+Radio/cluster display textures by Cartres
+Remodeled Steel Wheel, remodeled rear spoiler, edited
+interior details, hubcap LODs, and various vertex painting
+by Cartres
+Adjusted Body Vertex Normals, exterior emissive edits by
+Cartres
+Various diffuse, normal, and spec map changes and
+improvements by Cartres
+Interior emissives/dials, configurations and installation set
+up by Cartres
+Alpha Testing by Cartres
+Handling line by Dewey
+Beta Testing by Dewey, Matthew Peralta, Dan with the
+Van!, and CEO
+Chungah
+Terry Sloman
+Cj24
+Whelen Cencom Controllers 1.0
+Panasonic Toughbook CF-30
+CEO
+Ion’s
+Sniper67
+Sniper67 Setina 2020 FPIU Rambar Pack V.2
+Horseman
+HORSEMANS RANDOM BOX OF PARTS
+Converted From Sketch Up
+Backboards 1 & 2
+Q siren
+Stokes Basket
+Whelen SA34B
+Converted From Turbo Squid
+Can of chips
+crowbar
+fire axe
+glove box
+hot dog
+Road cone
+Scratch Modeled by Horseman
+Toughpad
+IC-EMS board
+IC-FD board
+MVI sticker 1 & 
