@@ -14,6 +14,12 @@ local isCrafting = false
 local isHotbar = false
 local WeaponAttachments = {}
 local showBlur = true
+local stress = 0
+
+-- Imported from qb-hud
+RegisterNetEvent('hud:client:UpdateStress', function(newStress) -- Add this event with adding stress elsewhere
+    stress = newStress
+end)
 
 local function HasItem(items, amount)
     local isTable = type(items) == 'table'
@@ -437,19 +443,29 @@ RegisterNetEvent('inventory:client:OpenInventory', function(PlayerAmmo, inventor
                 if other then
                     currentOtherInventory = other.name
                 end
-            QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(data)
-                inventory = data.inventory
-                other = data.other
-                SendNUIMessage({
-                    action = "open",
-                    inventory = inventory,
-                    slots = Config.MaxInventorySlots,
-                    other = other,
-                    maxweight = Config.MaxInventoryWeight,
-                    Ammo = PlayerAmmo,
-                    maxammo = Config.MaximumAmmoValues,
-                    Name = PlayerData.charinfo.firstname .." ".. PlayerData.charinfo.lastname .." - [".. GetPlayerServerId(PlayerId()) .."]", 
-                })
+                QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(data)
+                    inventory = data.inventory
+                    other = data.other
+                    SendNUIMessage({
+                        action = "open",
+                        inventory = inventory,
+                        slots = Config.MaxInventorySlots,
+                        other = other,
+                        maxweight = Config.MaxInventoryWeight,
+                        Ammo = PlayerAmmo,
+                        maxammo = Config.MaximumAmmoValues,
+                        Name = PlayerData.charinfo.firstname .." ".. PlayerData.charinfo.lastname .." - [".. GetPlayerServerId(PlayerId()) .."]", 
+    
+                        pName = PlayerData.charinfo.firstname .. PlayerData.charinfo.lastname, 
+                        pNumber = PlayerData.charinfo.phone,
+                        pCID = PlayerData.citizenid,
+                        pID = GetPlayerServerId(PlayerId()),
+    
+                        pStress = stress,
+                        pDamage = 200 - GetEntityHealth(PlayerPedId()),
+    
+    
+                    })
                 inInventory = true
                 end, inventory, other)
 
@@ -464,19 +480,28 @@ RegisterNetEvent('inventory:client:OpenInventory', function(PlayerAmmo, inventor
             if other then
                 currentOtherInventory = other.name
             end
-        QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(data)
-            inventory = data.inventory
-            other = data.other
-            SendNUIMessage({
-                action = "open",
-                inventory = inventory,
-                slots = Config.MaxInventorySlots,
-                other = other,
-                maxweight = Config.MaxInventoryWeight,
-                Ammo = PlayerAmmo,
-                maxammo = Config.MaximumAmmoValues,
-                Name = PlayerData.charinfo.firstname .." ".. PlayerData.charinfo.lastname .." - [".. GetPlayerServerId(PlayerId()) .."]", 
-            })
+            QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(data)
+                inventory = data.inventory
+                other = data.other
+                SendNUIMessage({
+                    action = "open",
+                    inventory = inventory,
+                    slots = Config.MaxInventorySlots,
+                    other = other,
+                    maxweight = Config.MaxInventoryWeight,
+                    Ammo = PlayerAmmo,
+                    maxammo = Config.MaximumAmmoValues,
+                    Name = PlayerData.charinfo.firstname .." ".. PlayerData.charinfo.lastname .." - [".. GetPlayerServerId(PlayerId()) .."]", 
+    
+                    pName = PlayerData.charinfo.firstname .. PlayerData.charinfo.lastname, 
+                    pNumber = PlayerData.charinfo.phone,
+                    pCID = PlayerData.citizenid,
+                    pID = GetPlayerServerId(PlayerId()),
+    
+                    pStress =  stress,
+                    pDamage = 200 - GetEntityHealth(PlayerPedId()),
+    
+                })
             inInventory = true
             end,inventory,other)
         end
@@ -740,22 +765,58 @@ RegisterCommand('inventory', function()
             end
 
             if CurrentVehicle then -- Trunk
-                local vehicleModel = string.lower(GetDisplayNameFromVehicleModel(GetEntityModel(curVeh)))
                 local vehicleClass = GetVehicleClass(curVeh)
                 local maxweight
                 local slots
-
-                if Config.VehicleInventories.vehicles[vehicleModel] then
-                    maxweight = Config.VehicleInventories.vehicles[vehicleModel].maxWeight
-                    slots = Config.VehicleInventories.vehicles[vehicleModel].slots
-                elseif Config.VehicleInventories.classes[vehicleClass] then
-                    maxweight = Config.VehicleInventories.classes[vehicleClass].maxWeight
-                    slots = Config.VehicleInventories.classes[vehicleClass].slots
+                if vehicleClass == 0 then
+                    maxweight = 38000
+                    slots = 30
+                elseif vehicleClass == 1 then
+                    maxweight = 50000
+                    slots = 40
+                elseif vehicleClass == 2 then
+                    maxweight = 75000
+                    slots = 50
+                elseif vehicleClass == 3 then
+                    maxweight = 42000
+                    slots = 35
+                elseif vehicleClass == 4 then
+                    maxweight = 38000
+                    slots = 30
+                elseif vehicleClass == 5 then
+                    maxweight = 30000
+                    slots = 25
+                elseif vehicleClass == 6 then
+                    maxweight = 30000
+                    slots = 25
+                elseif vehicleClass == 7 then
+                    maxweight = 30000
+                    slots = 25
+                elseif vehicleClass == 8 then
+                    maxweight = 15000
+                    slots = 15
+                elseif vehicleClass == 9 then
+                    maxweight = 60000
+                    slots = 35
+                elseif vehicleClass == 12 then
+                    maxweight = 120000
+                    slots = 35
+                elseif vehicleClass == 13 then
+                    maxweight = 0
+                    slots = 0
+                elseif vehicleClass == 14 then
+                    maxweight = 120000
+                    slots = 50
+                elseif vehicleClass == 15 then
+                    maxweight = 120000
+                    slots = 50
+                elseif vehicleClass == 16 then
+                    maxweight = 120000
+                    slots = 50
                 else
-                    maxweight = Config.VehicleInventories.default.maxWeight
-                    slots = Config.VehicleInventories.default.slots
+                    maxweight = 60000
+                    slots = 35
                 end
-
                 local other = {
                     maxweight = maxweight,
                     slots = slots,
@@ -950,7 +1011,7 @@ RegisterNUICallback("GiveItem", function(data, cb)
         if data.inventory == 'player' then
             local playerId = GetPlayerServerId(player)
             SetCurrentPedWeapon(PlayerPedId(),'WEAPON_UNARMED',true)
-            TriggerServerEvent("inventory:server:GiveItem", playerId, data.item.name, data.amount, data.item.slot)
+            TriggerServerEvent("inventory:server:GiveItem", playerId, data.item.name, tonumber(data.itemamt), data.item.slot)
         else
             QBCore.Functions.Notify("You do not own this item!", "error")
         end
@@ -962,7 +1023,6 @@ end)
 
 
 -- Threads
-
 CreateThread(function()
     while true do
         local sleep = 100
@@ -979,7 +1039,7 @@ CreateThread(function()
                         end
                     else
                         sleep = 0
-                        DrawMarker(20, v.coords.x, v.coords.y, v.coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.15, 120, 10, 20, 155, false, false, false, 1, false, false, false)
+                        -- DrawMarker(20, v.coords.x, v.coords.y, v.coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.15, 120, 10, 20, 155, false, false, false, 1, false, false, false)
                     end
 
 					local coords = (v.object ~= nil and GetEntityCoords(v.object)) or vector3(v.coords.x, v.coords.y, v.coords.z)
