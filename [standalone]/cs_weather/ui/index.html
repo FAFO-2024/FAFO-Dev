@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+     <div class="wrapper">
+        <div class="left-side-panel">
+            <div class="left-box-1">
+                <div class="city-location-heading">Los Santos</div>
+                <div class="city-date-heading">Friday, May 19, 2024</div>
+                <div class="city-weather-box-cont">
+                    <div class="city-weather-box-icon-cont">
+                        <img src="image/lightsnow.svg" class="city-weather-box-icon">
+                    </div>
+                    <div class="city-weather-box-text-cont">
+                        <div class="city-weather-box-text">Light Snow</div>
+                    </div>
+                </div>
+            </div>
+            <div class="left-box-2">
+                <div class="time-control-heading">
+                    <div>Time Control</div>
+                </div>
+                <div class="time-control-box-1">
+                    <div>00:00</div>
+                </div>
+                <div class="time-control-box-4">
+                    <div class="time-control-time-box">
+                        <div class="time-control-hour-cont">
+                            <input type="text" placeholder="Hour" class="time-hour-input">
+                            <input type="text" placeholder="Minute" class="time-minute-input">
+                        </div>
+                        <div class="time-control-set-btn-cont">
+                            <div class="time-control-set-btn">Set Time</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="time-control-box-3">
+                    <div class="time-menu-options" id="setMorning">
+                        <div class="time-menu-logo-cont">
+                            <img src="image/noon.svg" class="time-menu-logo">
+                        </div>
+                        <div class="time-menu-text">Morning</div>
+                    </div>
+                    <div class="time-menu-options" id="setNight">
+                        <div class="time-menu-logo-cont">
+                            <img src="image/night.svg" class="time-menu-logo">
+                        </div>
+                        <div class="time-menu-text">Night</div>
+                    </div>
+                </div>
+                <div class="time-control-box-2">
+                    <div class="time-quick-control-box">
+                        <div class="time-checkbox-box">
+                            <label class="checkBox">
+                                <input type="checkbox" id="ch6" />
+                                <div class="transition"></div>
+                            </label>
+                        </div>
+                        <div class="time-quick-title">Freeze Time</div>
+                    </div>
+                    <div class="time-quick-control-box">
+                        <div class="time-checkbox-box">
+                            <label class="checkBox">
+                                <input type="checkbox" id="ch7" />
+                                <div class="transition"></div>
+                            </label>
+                        </div>
+                        <div class="time-quick-title">Instant Time Change</div>
+                    </div>
+                    <div class="time-quick-control-box">
+                        <div class="time-checkbox-box">
+                            <label class="checkBox">
+                                <input type="checkbox" id="ch8" />
+                                <div class="transition"></div>
+                            </label>
+                        </div>
+                        <div class="time-quick-title">Real Time Sync</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-side-panel">
+            <div class="right-box-1">
+                <div class="weather-control-box-2">
+                    <div class="weather-panel-exit-container">
+                        <i class="fa-regular fa-circle-xmark weather-panel-exit-btn"></i>
+                    </div>
+                    <div class="weather-quick-control-container">
+                        <div class="weather-quick-control-box">
+                            <div class="weather-checkbox-box">
+                                <label class="checkBox">
+                                    <input type="checkbox" id="ch1" />
+                                    <div class="transition"></div>
+                                </label>
+                            </div>
+                            <div class="weather-quick-title">Freeze Weather</div>
+                        </div>
+                        <div class="weather-quick-control-box">
+                            <div class="weather-checkbox-box">
+                                <label class="checkBox">
+                                    <input type="checkbox" id="ch2" />
+                                    <div class="transition"></div>
+                                </label>
+                            </div>
+                            <div class="weather-quick-title">Instant Weather Change</div>
+                        </div>
+                        <div class="weather-quick-control-box">
+                            <div class="weather-checkbox-box">
+                                <label class="checkBox">
+                                    <input type="checkbox" id="ch3" />
+                                    <div class="transition"></div>
+                                </label>
+                            </div>
+                            <div class="weather-quick-title">Enable Blackout</div>
+                        </div>
+                        <div class="weather-quick-control-box">
+                            <div class="weather-checkbox-box">
+                                <label class="checkBox">
+                                    <input type="checkbox" id="ch4" />
+                                    <div class="transition"></div>
+                                </label>
+                            </div>
+                            <div class="weather-quick-title">Blackout Affects Vehicles</div>
+                        </div>
+                        <div class="weather-quick-control-box">
+                            <div class="weather-checkbox-box">
+                                <label class="checkBox">
+                                    <input type="checkbox" id="ch5" />
+                                    <div class="transition"></div>
+                                </label>
+                            </div>
+                            <div class="weather-quick-title">Force Ground Snow</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-box-2">
+                <div class="weather-forecast-heading">
+                    <div>Weather Forecast</div>
+                    <div class="add-weather-btn">ADD<i class="fa-solid fa-square-plus" style="margin-left: 1vh;"></i></div>
+                </div>
+                <div class="no-data-middle-cont">No Upcoming Weather Forecast</div>
+                <div class="current-weather-container">
+                    <div class="current-weather-header">
+                        <div class="current-weather-box-7">Sequence</div>
+                        <div class="current-weather-box-1">Current Weather</div>
+                        <div class="current-weather-box-2">Time Duration</div>
+                        <div class="current-weather-box-3">Actions</div>
+                    </div>
+                    <div class="current-weather-box">
+                        <div class="current-weather-box-7 sequence-number-box">0</div>
+                        <div class="current-weather-box-4">
+                            <img src="image/clear.svg" class="current-weather-icon">
+                            <div>N/A</div>
+                        </div>
+                        <div class="current-weather-box-5">0c</div>
+                        <div class="current-weather-box-3">
+                            <div class="current-weather-skip-btn"><i class="fa-solid fa-forward"></i></div>
+                            <div class="current-weather-edit-btn"><i class="fa-solid fa-pen"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="upcoming-weather-container" id="drop-items">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="weather-pop-up-menu">
+            <div class="weather-pop-up-title">Add Weather Forecast</div>
+            <div class="choose-weather-box">
+                <label for="weather">Choose Weather</label>
+                <select name="weather" id="weather" form="weather" class="weather-dropdown"></select>
+            </div>
+            <div class="choose-weather-time-box">
+                <label for="weather">Choose Time</label>
+                <input type="text" class="choose-weather-time-input" placeholder="Time In Minutes" required>
+            </div>
+            <div class="choose-weather-btns-box">
+                <div class="choose-weather-add-btn">Add</div>
+                <div class="choose-weather-close-btn">Close</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
