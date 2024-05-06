@@ -743,18 +743,18 @@ local Vehicles = {
     { model = 'formula2',      name = 'R88',                           brand = 'Ocelot',          price = 100000,  category = 'openwheel',      type = 'automobile', shop = 'none' },
     { model = 'formula',       name = 'PR4',                           brand = 'Progen',          price = 100000,  category = 'openwheel',      type = 'automobile', shop = 'none' },
     --- Addon (23)
-    { model = 'sonomcc',       name = 'MCC',                           brand = 'Freightliner',    price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
-    { model = 'f550ambows',    name = 'Ambulance',                     brand = 'Ford',            price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
-    { model = 'f250pov',       name = 'FireChief',                     brand = 'Ford',            price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
-    { model = 'f150pov',       name = 'MedicalChief',                  brand = 'Ford',            price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
+    { model = 'sonomcc',       name = 'Mobile Command',                brand = 'Freightliner',    price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
     { model = '18chargerl2',   name = 'Charger',                       brand = 'Dodge',           price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
-    { model = '19tahoel2',     name = 'Tahoe',                         brand = 'Chevy',           price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
     { model = '18fpisl2',      name = 'Taurus',                        brand = 'Ford',            price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
+    { model = '19tahoel2',     name = 'Tahoe',                         brand = 'Chevy',           price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
     { model = '20fpiul2',      name = 'Explorer',                      brand = 'Ford',            price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
-    { model = 'stretcher',     name = 'stretcher',                     brand = 'Redneck',         price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
     { model = 'quantum',       name = 'Engine',                        brand = 'Pierce',          price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
     { model = 'fdsilverado',   name = 'FireChief',                     brand = 'Chevy',           price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
     { model = 'durangopru',    name = 'MedicalChief',                  brand = 'Dodge',           price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
+    { model = 'f550ambows',    name = 'Ambulance',                     brand = 'Ford',            price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
+    { model = 'stretcher',     name = 'stretcher',                     brand = 'Redneck',         price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
+    { model = 'f250pov',       name = 'FireChief',                     brand = 'Ford',            price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
+    { model = 'f150pov',       name = 'MedicalChief',                  brand = 'Ford',            price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
 }
 
 for i = 1, #Vehicles do

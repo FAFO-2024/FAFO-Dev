@@ -13,7 +13,7 @@ Config.UsedInventory = '' -- qs or ox or nothing(default)
 
 Config.webHook = ''
 Config.webHookName = 'OSP Development - Ambulance' -- Name of the WebHook bot
-Config.webHookLogo = '' -- Logo of the WebHook bot
+Config.webHookLogo = 'https://cdn.discordapp.com/attachments/1102704629025886360/1227748671211180062/image.png?ex=6629890d&is=6617140d&hm=60043a8694fb72acc6cd4b1a7f21194d6dfc5df1ce2c79b34545ab358a3bf8c6&' -- Logo of the WebHook bot
 
 Config.UseTarget = true -- Set to false if you don't want to use targetting at all and instead use drawtext
 Config.UseOxTarget = false -- Set to false if you don't want to use ox_target
@@ -24,7 +24,7 @@ Config.Dispatch = 'default' -- Usable dispatch inputs: 'default', 'ps', 'other'
 
 Config.OpenKey = 'o' -- The default key to open the damage menu
 Config.SkellyKey = 'k' -- The default key to open the skelly overview
-Config.LockMedicalMenu = true -- Set to true if you want to lock the medical menu to only be opened by EMS
+Config.LockMedicalMenu = false -- Set to true if you want to lock the medical menu to only be opened by EMS
 
 Config.ServerDelay = 100 -- How many ms the server is behind by. Recommended to keep above 100ms. Should say in your server console by how far behind your server is.
 Config.Debug = false -- Enable or disable debug mode to investigate issues with the script
@@ -33,7 +33,7 @@ Config.CustomDeathScreen = false -- Enable of disable a customised death timer s
 
 Config.AmbulanceJobs = {
     'ambulance',
-    'firefighter',
+    'ambulance2',
 }
 
 Config.InteractionDict = 'anim@heists@narcotics@funding@gang_idle'
@@ -46,7 +46,7 @@ Config.AIHealTimer = 10 -- How long it will take to be healed after checking in,
 Config.WipeInventoryOnRespawn = false -- Enable or disable removing all the players items when they respawn at the hospital
 Config.Helicopter = "polmav" -- Helicopter model that players with the ambulance job can use
 Config.BillCost = 500 -- Price that players are charged for using the hospital check-in system
-Config.LastStandTime = 120 -- How long before the player is percived as medically dead (in seconds)
+Config.LastStandTime = 240 -- How long before the player is percived as medically dead (in seconds)
 Config.RespawnTime = 120 -- How long before the player can respawn (in seconds)
 Config.PropDespawnTimer = 360*1000 -- How long before the ecg prop despawns after being placed in ms
 Config.SavePlayerDataTimer = 30*1000 -- How often the player data should be saved in ms (the lower the more accurate the data is saved but the more performance impact) (The data is sent to the server so that the player data is saved when the player quits)
@@ -178,7 +178,6 @@ Config.Ambulances = {
 Config.AuthorizedVehicles = { -- Vehicles players can use based on their ambulance job grade level
 	-- Grade 0
 	[0] = {
-		["f550ambows"] = "Ambulance",
 	},
 	-- Grade 1
 	[1] = {
@@ -195,12 +194,13 @@ Config.AuthorizedVehicles = { -- Vehicles players can use based on their ambulan
 	-- Grade 4
 	[4] = {
 		["f550ambows"] = "Ambulance",
+        ["durangopru"] = "Chief's Durango",
 	}
 }
 
 Config.VehicleExtras = { -- Enable/disable the vehicle extras when spawning them with the job vehicle spawner
     ["f550ambows"] = { -- Model name
-        ["1"] = false, -- on/off
+        ["1"] = true, -- on/off
         ["2"] = true,
         ["3"] = true,
         ["4"] = true,
@@ -212,6 +212,21 @@ Config.VehicleExtras = { -- Enable/disable the vehicle extras when spawning them
         ["10"] = true,
         ["11"] = true,
         ["12"] = true,
+    },
+    ["durangopru"] = {
+        ["1"] = true,
+        ["2"] = false,
+        ["3"] = false,
+        ["4"] = true,
+        ["5"] = true,
+        ["6"] = false,
+        ["7"] = false,
+        ["8"] = false,
+        ["9"] = false,
+        ["10"] = true,
+        ["11"] = false,
+        ["12"] = false,
+        ["13"] = false,
     }
 }
 
@@ -248,12 +263,6 @@ Config.ItemShop = { -- The stock resets every script restart but is synced to al
         price = 1,
         type = "item",
     },
-    --[[ {
-        label = 'Fire Extinguisher',
-        name = "weapon_fireextinguisher",
-        price = 100,
-        type = "item",
-    }, ]]
     {
         label = 'Pager',
         name = "pager",
@@ -388,14 +397,14 @@ Config.ItemShop = { -- The stock resets every script restart but is synced to al
     },
 }
 
-Config.UseGarageSystem = true
+Config.UseGarageSystem = true 
 
 Config.Locations = {
     ["checking"] = {
 	    vector3(310.26, -582.47, 43.27),
     },
     ["duty"] = {
-        vector3(-1031.56, -1418.61, 4.97),
+        vector3(-1031.41, -1418.68, 4.97),
     },
     ["vehicle"] = {
         vector4(-1028.7, -1359.85, 4.48, 74.63),    --bay 5
@@ -406,29 +415,28 @@ Config.Locations = {
         vector4(-1039.93, -1440.39, 9.89, 344.91),  --right helipad
     },
     ["shop"] = {
-        vector3(-1041.19, -1421.54, 4.97),
+        vector3(-1041.12, -1421.56, 4.97),
     },
-    --[[ ["roof"] = {
+    ["roof"] = {
         vector4(338.5, -583.85, 74.16, 245.5),
     },
     ["main"] = {
         vector3(332.3166, -595.6741, 43.2841),
-    }, ]]
+    },
     ["stash"] = {
-        vector3(-1034.72, -1424.97, 4.97),
+        vector3(-1035.23, -1424.9, 4.97),
     },
     ["beds"] = {
         {coords = vector4(327.64, -583.56, 44.12, 150.34), taken = false, model = 1631638868},
         {coords = vector4(330.66, -584.93, 44.12, 158.84), taken = false, model = 1631638868},
         {coords = vector4(328.53, -588.74, 44.12, 336.67), taken = false, model = 2117668672},
-        {coords = vector4(328.44, -588.78, 44.12, 330.68), taken = false, model = 2117668672},
+        --{coords = vector4(328.44, -588.78, 44.12, 330.68), taken = false, model = 2117668672},
         {coords = vector4(325.57, -587.85, 44.12, 334.64), taken = false, model = 2117668672},
         {coords = vector4(322.59, -586.9,  44.12, 337.67), taken = false, model = -1091386327},
         {coords = vector4(319.84, -585.64, 44.12, 336.48), taken = false, model = -1091386327},
         {coords = vector4(316.89, -584.65, 44.12, 337.46), taken = false, model = -1091386327},
 	    {coords = vector4(318.46, -580.52, 44.12, 154.74), taken = false, model = 2117668672},
         {coords = vector4(321.22, -581.56, 44.12, 164.45), taken = false, model = 2117668672},
-        --{coords = vector4(-255.98, 6315.67, 32.34, 313.91), taken = false, model = 2117668672},
     },
     ["jailbeds"] = {
         {coords = vector4(1761.96, 2597.74, 45.66, 270.14), taken = false, model = 2117668672},
@@ -462,10 +470,10 @@ Config.ScreenProp = 'xm_prop_x17_tv_ceiling_01' -- The prop used for the screen
 Config.IncomingRenderDistance = 70 -- The rendering distance of an incoming screen, recommended to keep above 30 to avoid sync issues.
 
 Config.IncomingScreenPos = { -- The position of the incoming screen
-    vector4(328.2508, -576.4911, 46.0, 34.4687),
-    vector4(300.8384, -582.8441, 46.0, 32.9394)
+    vector4(332.6308, -581.5911, 46.0, 251.2287),
+    vector4(300.8384, -582.8441, 46.0, 91.7694)
 }
-Config.IncomingScreenSoundPos = vector3(327.6124, -592.8828, 43.2841)
+Config.IncomingScreenSoundPos = vector3(306.2124, -584.6828, 43.2741)
 Config.IncomingScreenSoundRange = 50
 
 -- STATIONARY ECG CONFIGURATION (ICU SCREENS)
@@ -473,51 +481,51 @@ Config.StationaryECGProp = 'v_med_cor_ceilingmonitor' -- The prop used for the s
 
 Config.StationaryECG = { -- IF YOU WANT MORE THAN 6 ECGS YOU NEED TO CREATE MORE GFX FILES.
     {
-        coords = vector4(318.7118, -579.8219, 45.8, 344.3082),
-        bedcoords = vector3(319.2666, -581.1186, 44.2040),
+        coords = vector4(327.9489, -582.8219, 45.8, 344.3082),
+        bedcoords = vector3(327.64, -583.56, 44.12),
         name = 'ICU 1'
     },
     {
-        coords = vector4(323.7489, -581.5202, 45.8, 337.8694),
-        bedcoords = vector3(324.2232, -583.0401, 44.2040),
+        coords = vector4(330.9489, -583.8219, 45.8, 344.3082),
+        bedcoords = vector3(330.66, -584.93, 44.12),
         name = 'ICU 2'
     },
     {
-        coords = vector4(321.3699, -587.7664, 45.8, 163.4208),
-        bedcoords = vector3(322.6256, -586.7698, 44.2130),
+        coords = vector4(328.0185, -589.3665, 45.8, 162.2001),
+        bedcoords = vector3(328.53, -588.74, 44.12),
         name = 'ICU 3'
     },
     {
-        coords = vector4(316.4125, -586.0515, 45.8, 163.2631),
-        bedcoords = vector3(317.5998, -585.4157, 44.2040),
+        coords = vector4(325.2185, -588.3665, 45.8, 162.2001),
+        bedcoords = vector3(325.57, -587.85, 44.12),
         name = 'ICU 4'
     },
     {
-        coords = vector4(313.1407, -584.6058, 45.8, 162.2001),
-        bedcoords = vector3(314.5409, -583.9615, 44.2040),
+        coords = vector4(322.3185, -587.3665, 45.8, 162.2001),
+        bedcoords = vector3(322.59, -586.9,  44.12),
         name = 'ICU 5'
     },
     {
-        coords = vector4(309.6808, -583.5556, 45.8, 162.3711),
-        bedcoords = vector3(311.2327, -582.8145, 44.2040),
+        coords = vector4(319.4185, -586.3665, 45.8, 162.2001),
+        bedcoords = vector3(319.84, -585.64, 44.12),
         name = 'ICU 6'
     },
     -- Some people have experienced issues with having a lot of loaded gfx files.
-    -- {
-    --     coords = vector4(308.3385, -582.8965, 45.8, 159.9160),
-    --     bedcoords = vector3(307.7694, -581.3610, 44.2049),
-    --     name = 'ICU 7'
-    -- },
-    -- {
-    --     coords = vector4(310.4750, -576.9198, 45.8, 340.2058),
-    --     bedcoords = vector3(309.2775, -577.7110, 44.2044),
-    --     name = 'ICU 8'
-    -- },
-    -- {
-    --     coords = vector4(315.0273, -578.4716, 45.8, 342.0016),
-    --     bedcoords = vector3(313.8342, -579.3513, 44.2040),
-    --     name = 'ICU 9'
-    -- },
+    {
+        coords = vector4(316.6185, -585.3665, 45.8, 162.2001),
+        bedcoords = vector3(316.89, -584.65, 44.12),
+        name = 'ICU 7'
+    },
+    {
+        coords = vector4(318.8489, -579.8219, 45.8, 344.3082),
+        bedcoords = vector3(318.46, -580.52, 44.12),
+        name = 'ICU 8'
+    },
+    {
+        coords = vector4(321.7489, -580.8219, 45.8, 344.3082),
+        bedcoords = vector3(321.22, -581.56, 44.12),
+        name = 'ICU 9'
+    },
 }
 
 

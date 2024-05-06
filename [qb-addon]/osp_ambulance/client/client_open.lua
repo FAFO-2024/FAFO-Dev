@@ -55,7 +55,7 @@ if Config.Framework == 'qb' then
     end
 
     function FullFuel(veh)
-        exports['LegacyFuel']:SetFuel(veh, 100.0)
+        exports['cdn-fuel']:SetFuel(veh, 100.0)
     end
 
     function IfInJail()
