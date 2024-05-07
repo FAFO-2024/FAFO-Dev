@@ -53,10 +53,10 @@ Config.Locations = {
 
 Config.ArmoryWhitelist = {}
 
-Config.PoliceHelicopter = "POLMAV"
+Config.PoliceHelicopter = "swathel"
 
 Config.SecurityCameras = {
-    hideradar = false,
+    hideradar = true,
     cameras = {
         [1] = {label = "Pacific Bank CAM#1", coords = vector3(257.45, 210.07, 109.08), r = {x = -25.0, y = 0.0, z = 28.05}, canRotate = false, isOnline = true},
         [2] = {label = "Pacific Bank CAM#2", coords = vector3(232.86, 221.46, 107.83), r = {x = -25.0, y = 0.0, z = -140.91}, canRotate = false, isOnline = true},
@@ -98,10 +98,6 @@ Config.SecurityCameras = {
 Config.AuthorizedVehicles = {
 	-- Grade 0
 	[0] = {
-		["18chargerl2"] = "Charger",
-		["18fpisl2"] = "Taurus",
-		["19tahoel2"] = "Tahoe",
-		["20fpiul2"] = "Explorer",
 	},
 	-- Grade 1
 	[1] = {
@@ -109,6 +105,8 @@ Config.AuthorizedVehicles = {
 		["18fpisl2"] = "Taurus",
 		["19tahoel2"] = "Tahoe",
 		["20fpiul2"] = "Explorer",
+        ["f250l2nc"] = "F250",
+        ["bmwbike"] = "Motorcycle",
 
 	},
 	-- Grade 2
@@ -117,6 +115,8 @@ Config.AuthorizedVehicles = {
 		["18fpisl2"] = "Taurus",
 		["19tahoel2"] = "Tahoe",
 		["20fpiul2"] = "Explorer",
+        ["f250l2nc"] = "F250",
+        ["bmwbike"] = "Motorcycle",
 	},
 	-- Grade 3
 	[3] = {
@@ -124,6 +124,8 @@ Config.AuthorizedVehicles = {
 		["18fpisl2"] = "Taurus",
 		["19tahoel2"] = "Tahoe",
 		["20fpiul2"] = "Explorer",
+        ["f250l2nc"] = "F250",
+        ["bmwbike"] = "Motorcycle",
 	},
 	-- Grade 4
 	[4] = {
@@ -131,6 +133,8 @@ Config.AuthorizedVehicles = {
 		["18fpisl2"] = "Taurus",
 		["19tahoel2"] = "Tahoe",
 		["20fpiul2"] = "Explorer",
+        ["f250l2nc"] = "F250",
+        ["bmwbike"] = "Motorcycle",
 	}
 }
 
@@ -338,30 +342,21 @@ Config.Items = {
             authorizedJobGrades = {1, 2, 3, 4}
         },
         [15] = {
-            name = "armor",
+            name = "radio",
             price = 0,
-            amount = 50,
+            amount = 10,
             info = {},
             type = "item",
             slot = 15,
             authorizedJobGrades = {0, 1, 2, 3, 4}
         },
         [16] = {
-            name = "radio",
-            price = 0,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 16,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
-        },
-        [17] = {
             name = "heavyarmor",
             price = 0,
             amount = 50,
             info = {},
             type = "item",
-            slot = 17,
+            slot = 16,
             authorizedJobGrades = {0, 1, 2, 3, 4}
         }
     }
@@ -439,5 +434,41 @@ Config.VehicleSettings = {
             ["13"] = true,
         },
 		["livery"] = 2,
+    },
+    ["f250l2nc"] = {
+        ["extras"] = {
+            ["1"] = true,
+            ["2"] = true,
+            ["3"] = true,
+            ["4"] = true,
+            ["5"] = true,
+            ["6"] = true,
+            ["7"] = true,
+            ["8"] = true,
+            ["9"] = true,
+            ["10"] = true,
+            ["11"] = true,
+            ["12"] = true,
+            ["13"] = true,
+        },
+		["livery"] = 1,
+    },
+    ["bmwbike"] = {
+        ["extras"] = {
+            ["1"] = true,
+            ["2"] = true,
+            ["3"] = true,
+            ["4"] = true,
+            ["5"] = true,
+            ["6"] = true,
+            ["7"] = true,
+            ["8"] = true,
+            ["9"] = true,
+            ["10"] = true,
+            ["11"] = true,
+            ["12"] = true,
+            ["13"] = true,
+        },
+		["livery"] = 1,
     }
 }

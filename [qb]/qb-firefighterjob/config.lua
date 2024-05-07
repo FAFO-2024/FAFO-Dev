@@ -40,19 +40,23 @@ Config.AuthorizedVehicles = {
 	},
 	-- Grade 1
 	[1] = {
-		["firetruk"] = "Fire Truck",
+		["quantum"] = "Quantum",
+        ["arrowb"] = "Arrow",
 	},
 	-- Grade 2
 	[2] = {
-		["firetruk"] = "Fire Truck",
+		["quantum"] = "Quantum",
+        ["arrowb"] = "Arrow",
 	},
 	-- Grade 3
 	[3] = {
-		["firetruk"] = "Fire Truck",
+		["quantum"] = "Quantum",
+        ["arrowb"] = "Arrow",
 	},
 	-- Grade 4
 	[4] = {
-		["firetruk"] = "Fire Truck",
+		["quantum"] = "Quantum",
+        ["arrowb"] = "Arrow",
         ["fdsilverado"] = "Chief's Truck",
 	},
 }
