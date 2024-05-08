@@ -1,0 +1,59 @@
+<div>
+  <div class="flex items-center justify-center gap-x-12 mt-20 w-full">
+    <div class="completed-jobs">
+      <p class="status-text">{{playerData.completedJobs}}</p>
+      <div class="status-bottom">
+        <p class="status-header">{{language.completed_jobs}}</p>
+        <p class="status-desc">
+         {{language.total_missions_completed}}
+        </p>
+      </div>
+    </div>
+    <div class="total-earnings">
+      <p class="status-text">${{playerData.totalEarnings}}</p>
+      <div class="status-bottom">
+        <p class="status-header">{{language.total_earnings}}</p>
+        <p class="status-desc">
+          {{language.total_earnings_desc}}
+          
+        </p>
+      </div>
+    </div>
+    <div class="current-level">
+      <p class="status-text">{{playerData.level}}</p>
+      <div class="status-bottom">
+        <p class="status-header">{{language.current_level}}</p>
+        <p class="status-desc">
+          Your current level is {{playerData.level}} with. For next level you need {{xp[playerData.level] - playerData.xp}} EXP.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="w-full flex items-center mt-10 gap-x-3">
+    <inlinesvg src="./assets/images/latest-works-icon.svg"></inlinesvg>
+    <p class="latest-works-header">{{language.latest_works}}</p>
+    <div class="latest-work-line"></div>
+  </div>
+  <div class="latest-works noscrollbar">
+    <div class="latest-work" v-for="i in getHistory">
+      <div class="flex items-center gap-x-3">
+        <div class="latest-work-company">NTS</div>
+        <div class="latest-work-company-label">{{i?.label}}</div>
+      </div>
+      <div class="flex items-center gap-x-6">
+        <div class="flex items-center gap-x-3">
+          <inlinesvg src="./assets/images/supply-icon.svg"></inlinesvg>
+          <p class="latest-work-status-text">{{i.supply}}</p>
+        </div>
+        <div class="flex items-center gap-x-3">
+          <inlinesvg src="./assets/images/profit-icon.svg"></inlinesvg>
+          <p class="latest-work-status-text">${{i.earn}} {{language.earned}}</p>
+        </div>
+        <div class="flex items-center gap-x-3">
+          <inlinesvg src="./assets/images/date-icon.svg"></inlinesvg>
+          <p class="latest-work-status-text">{{secondsToDate(i.date)}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,9 @@
-botToken = 'MTIzNzgxNDQ0ODEzMTkzNjM0OQ.Ga35Zq.OAY8nZWCnMVYverj_EnBuK0HYDspohM_S-JCtI'
-
+botToken = "MTIzNzgxNDQ0ODEzMTkzNjM0OQ.Ga35Zq.OAY8nZWCnMVYverj_EnBuK0HYDspohM_S-JCtI"
 
 
 
 Citizen.CreateThread(function()
-    local resource_name = 'mbossmenu'
+    local resource_name = 'codem_underground'
     local current_version = GetResourceMetadata(GetCurrentResourceName(), 'version', 0)
     PerformHttpRequest('https://raw.githubusercontent.com/Aiakos232/versionchecker/main/version.json',
         function(error, result, headers)

@@ -342,15 +342,15 @@ function RemoveSocietyMoney(job, givenAmount)
         if job then
             if Config.newManagementSystem then
                 local accountName = job
-                local account_money = exports["snipe-banking"]:GetAccount(accountName)
+                local account_money = exports["qb-banking"]:GetAccount(accountName)
                 if account_money.account_balance >= givenAmount then
                     if givenAmount < 0 then
                         print('ERROR SOCIETY MONEY IS NOT ENOUGH')
                         return false
                     else
-                        exports["snipe-banking"]:RemoveMoney(job, givenAmount)
+                        exports["qb-banking"]:RemoveMoney(job, givenAmount)
                         Wait(150)
-                        local newAccountMoney = exports["snipe-banking"]:GetAccount(job)
+                        local newAccountMoney = exports["qb-banking"]:GetAccount(job)
                         return newAccountMoney
                     end
                     return false
@@ -461,12 +461,12 @@ function GetSocietyMoney(job)
         if job then
             local accountName = job
             if Config.newManagementSystem then
-                local account_money = exports["snipe-banking"]:getAccount(accountName)
+                local account_money = exports["qb-banking"]:GetAccount(accountName)
                 if account_money and account_money.account_balance then
                     return  account_money.account_balance
                 else
                     if Config.CreateJobAccount then
-                        exports["snipe-banking"]:CreateJobAccount(accountName, 0)
+                        exports["qb-banking"]:CreateJobAccount(accountName, 0)
                         return  0
                     end
                 end
@@ -508,13 +508,13 @@ function AddSocietyMoney(job, givenAmount)
         if job then
             local accountName = job
             if Config.newManagementSystem then
-                local account_money = exports["snipe-banking"]:GetAccount(accountName)
+                local account_money = exports["qb-banking"]:GetAccount(accountName)
                 if account_money.account_balance then
                     if givenAmount < 0 then
                         print('ERROR SOCIETY MONEY IS NOT ENOUGH')
                         return false
                     else
-                        exports["snipe-banking"]:AddMoney(job, givenAmount)
+                        exports["qb-banking"]:AddMoney(job, givenAmount)
                     end
                 end
             else

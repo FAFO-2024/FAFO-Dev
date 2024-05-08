@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./vue/vue.global.js"></script>
+    <script src="./vue/vuex.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="phone" v-if="showPhone">
+        <div class="phone-wrapper"></div>
+      </div>
+      <div class="notifications">
+        <div class="notification" v-for="notification in notifications">
+          <img src="./assets/images/notification-icon.png">
+          <p class="ml-2">{{notification}}</p>
+          <img class="notification-icon" src="./assets/images/notification-icon-2.png">
+
+        </div>
+      </div>
+      <div class="trailer" v-if="jobInfo.started">
+        <img class="trailer-img" v-if="!jobInfo.attachedTrailer" src="./assets/images/no-trailer.png">
+        <template v-else>
+          <img class="trailer-img" v-if="jobInfo.bodyHealth > 50" src="./assets/images/trailer-full.png">
+          <img class="trailer-img" v-else-if="jobInfo.bodyHealth <= 50 && jobInfo.bodyHealth > 20" src="./assets/images/trailer-half.png">
+          <img class="trailer-img" v-else-if="jobInfo.bodyHealth <= 20" src="./assets/images/trailer-low.png">
+        </template>
+        <div>
+            <p class="trailer-route-header">{{jobInfo.routeHeader}}</p>
+            <p class="stage-header">{{language.transportation_stage}}</p>
+            <div class="flex items-center gap-x-3">
+              <div class="flex flex-col gap-y-2">
+                <p class="trailer-status">{{language.trailer_quality}}</p>
+                <p class="trailer-status">{{jobInfo?.bodyHealth?.toFixed(0)}}%</p>
+              </div>
+              <div class="flex flex-col gap-y-2">
+                  <p class="trailer-status">{{language.truck_fuel}}</p>
+                  <p class="trailer-status">{{jobInfo?.fuel?.toFixed(0)}}%</p>
+              </div>
+            </div>
+            <div class="flex items-center mt-3 gap-x-2">
+              <div class="flex items-center gap-x-1">
+                <div class="key-button">H</div>
+                <p class="key-button-desc">{{language.detach_trailer}}</p>
+              </div>
+              <div class="flex items-center gap-x-1">
+                <div class="key-button">G</div>
+                <p class="key-button-desc">{{language.mark_location}}</p>
+              </div>
+
+            </div>
+        </div>
+      </div>
+      <div class="truck-container" v-show="isOpen">
+        <img src="./assets/images/left-logo.png" class="left-logo">
+        <div class="truck-wrapper">
+          <div class="truck-header">
+            <div
+              :class="{active : activePage == 'main'}"
+              class="truck-header-btn"
+              @click="setActivePage('main')"
+            >
+              {{language.nts_main}}
+            </div>
+
+            <div
+              :class="{active : activePage == 'companies'}"
+              class="truck-header-btn"
+              @click="setActivePage('companies')"
+            >
+              {{language.companies}}
+            </div>
+
+            <div
+              :class="{active : activePage == 'leaderboard'}"
+              class="truck-header-btn"
+              @click="setActivePage('leaderboard')"
+            >
+              
+              {{language.leaderboard}}
+
+            </div>
+            <div
+              :class="{active : activePage == 'profile'}"
+              class="truck-header-btn"
+              @click="setActivePage('profile')"
+            >
+              
+              {{language.profile}}
+
+            </div>
+            <div class="truck-header-pp-container">
+              <div class="truck-header-name-container">
+                <p class="truck-header-name">{{playerData.name}}</p>
+                <p class="truck-header-level">
+                  Lv.{{playerData.level}}
+                  <inlinesvg src="./assets/images/level-icon.svg"></inlinesvg>
+                </p>
+              </div>
+              <div class="truck-header-pp">
+                <img :src="playerData.avatar" />
+              </div>
+            </div>
+          </div>
+          <ntsmain v-if="activePage == 'main'"></ntsmain>
+          <companies v-if="activePage == 'companies'"></companies>
+          <profile v-if="activePage == 'profile'"></profile>
+          <leaderboard v-if="activePage == 'leaderboard'"></leaderboard>
+        </div>
+      </div>
+    </div>
+    <audio id="trevor" src="./assets/trevor-phonecall.mp3" preload></audio>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js" type="text/javascript"></script>
+  <script type="module" src="./index.js"></script>
+  <script src="./utils/postNui.js"></script>
+</html>

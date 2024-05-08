@@ -1,0 +1,130 @@
+<div>
+  <div class="swiper relative">
+    <div v-show="!showRoutes" class="swiper-arrow">
+      <inlinesvg src="./assets/images/arrow.svg"></inlinesvg>
+    </div>
+    <div class="selected-mission-container" v-if="showRoutes">
+      <div class="flex items-center justify-between">
+        <p class="select-route-text">{{language.select_route}}</p>
+        <p class="route-header">{{selectedMission.header}}</p>
+        <img :src="'./assets/images/logo_'+(selectedMission.companyIndex+1)+'.png'" />
+        <img src="./assets/images/down-arrow.png" @click="showRoutes=false" class="down-arrow">
+      </div>
+      <div class="flex items-center justify-center gap-x-7 mt-12">
+        <div :class="{grayFilter:selectedRoute?.label != route?.label}" class="route" @click="selectRoute(route, selectedMission.companyIndex)" v-for="route in selectedMission.routes"
+          :style="getSmallBG(selectedMission.small_image)">
+         
+          <div v-if="route.reqPoint" class="absolute left-3 top-3 flex items-center gap-x-2">
+              <img src="./assets/images/trust-point-needed.png">
+              <p class="trust-point-needed">{{route.reqPoint}} Trust Point Needed</p>
+          </div>
+          <div class="route-desc">
+            <p class="route-label">{{route?.label}}</p>
+            <p class="route-payment mt-2" v-if="route.extraPayment"><span>+{{route.extraPayment}}</span> Extra Payment</p>
+            <p class="route-payment mt-2" v-else>No Extra Payment</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-wrapper">
+      <div  class="swiper-slide" :style="getBG(mission?.image)" v-for="mission in getMissions">
+        <!-- <img :src="'./assets/images/logo_'+(mission.companyIndex+1)+'.png'" class="company-logo"> -->
+        <h1 class="mission-header">{{mission.header}}</h1>
+        <img src="./assets/images/locked.png" v-if="!playerData.unlockedMissions?.[mission.id.toString()]" class="locked-icon">
+
+        <div class="mission-requirement" v-for="requirement in mission.requirementsLabel">
+          <inlinesvg :src="'./assets/images/'+requirement.icon"></inlinesvg>
+          <p class="mission-requirement-label">{{requirement?.label}}</p>
+        </div>
+        <div @click="selectedMission=mission;showRoutes=true" class="select-mission-btn">{{language.select_mission}}</div>
+      </div>
+    </div>
+    <div class="swiper-pagination" v-show="!showRoutes"></div>
+  </div>
+  <div class="main-bottom">
+    <div class="dailymissions">
+      <div class="dailymissions-header">
+        <div class="dailymissions-header-left">
+          <inlinesvg src="./assets/images/dailymissions-icon.svg"></inlinesvg>
+          <p>{{language.daily_missions}}</p>
+        </div>
+        <p class="daily-mission-remain-hours">{{getDailyMissionRemainHours}}{{language.hour}}</p>
+      </div>
+      <div class="dailymissions-list noscrollbar">
+        <div class="dailymission" v-for="dailymission in playerData.dailymissions?.data">
+          <div class="dailymission-header">
+            <h1>{{dailymission.header}}</h1>
+            <p>{{dailymission.xp}}XP</p>
+          </div>
+          <p class="dailymission-mission-label">
+            {{dailymission?.label}}
+          </p>
+          <p class="dailymission-status-text">{{dailymission.process >= dailymission.max ? language.completed : language.not_completed}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="selecttruck">
+      <p class="selecttruck-header">{{language.select_truck}}</p>
+      <div class="selecttruck-arrows">
+        <inlinesvg style="position: relative; z-index: 3;" @click="selectPrevTruck" src="./assets/images/left-arrow.svg"></inlinesvg>
+        <p class="selectruck-label">{{trucks?.[selectedTruckIndex]?.label}}</p>
+        <inlinesvg style="position: relative; z-index: 3;" @click="selectNextTruck" src="./assets/images/right-arrow.svg"></inlinesvg>
+      </div>
+      <img src="./assets/images/truck-overlay.png" class="truck-overlay" v-if="playerData?.level < trucks?.[selectedTruckIndex]?.level">
+      <img src="./assets/images/locked.png" class="truck-locked" v-if="playerData?.level < trucks?.[selectedTruckIndex]?.level">
+      <p class="truck-desc" v-if="trucks?.[selectedTruckIndex]?.desc">{{trucks[selectedTruckIndex]?.desc}}</p>
+      <img :src="'./assets/images/'+trucks?.[selectedTruckIndex]?.image" class="truck-img" />
+      <div @click="selectedTruck=trucks?.[selectedTruckIndex]" :class="{lockedbtn: playerData?.level < trucks?.[selectedTruckIndex]?.level}" class="select-truck-btn">{{playerData?.level >= trucks?.[selectedTruckIndex]?.level ? selectedTruck.name == trucks?.[selectedTruckIndex]?.name ? 'Selected Truck' : 'Select Truck' : 'Lv.'+trucks?.[selectedTruckIndex]?.level+' Required'}} </div>
+    </div>
+    <div class="startjob-container">
+      <div class="steps-container">
+        <div class="steps-header">
+          <inlinesvg src="./assets/images/truck-icon.svg"></inlinesvg>
+          <p>{{language.get_ready}}</p>
+        </div>
+        <div class="flex mt-8 items-center gap-x-3">
+          <inlinesvg v-if="!selectedTruck" src="./assets/images/circle.svg"></inlinesvg>
+          <inlinesvg v-if="selectedTruck" src="./assets/images/circle-filled.svg"></inlinesvg>
+          <p class="step-label">{{language.select_your_truck}}</p>
+        </div>
+        <inlinesvg v-if="!selectedTruck" class="relative left-[.65rem] top-3" src="./assets/images/small-circle.svg">
+        </inlinesvg>
+        <inlinesvg v-if="!selectedTruck" class="relative left-[.65rem] top-4" src="./assets/images/small-circle.svg">
+        </inlinesvg>
+        <inlinesvg v-if="!selectedTruck" class="relative left-[.65rem] top-5" src="./assets/images/small-circle.svg">
+        </inlinesvg>
+        <inlinesvg v-if="selectedTruck" class="relative left-[.65rem] top-3" src="./assets/images/small-circle-filled.svg">
+        </inlinesvg>
+        <inlinesvg v-if="selectedTruck" class="relative left-[.65rem] top-4" src="./assets/images/small-circle-filled.svg">
+        </inlinesvg>
+        <inlinesvg v-if="selectedTruck" class="relative left-[.65rem] top-5" src="./assets/images/small-circle-filled.svg">
+        </inlinesvg>
+
+        <div class="flex mt-8 items-center gap-x-3">
+          <inlinesvg v-if="!selectedRoute" src="./assets/images/circle.svg"></inlinesvg>
+          <inlinesvg v-if="selectedRoute" src="./assets/images/circle-filled.svg"></inlinesvg>
+          <p class="step-label">{{language.select_mission_and_route}}</p>
+        </div>
+        <inlinesvg v-if="!selectedRoute" class="relative left-[.65rem] top-3" src="./assets/images/small-circle.svg">
+        </inlinesvg>
+        <inlinesvg v-if="!selectedRoute" class="relative left-[.65rem] top-4" src="./assets/images/small-circle.svg">
+        </inlinesvg>
+        <inlinesvg v-if="!selectedRoute" class="relative left-[.65rem] top-5" src="./assets/images/small-circle.svg">
+        </inlinesvg>
+        <inlinesvg v-if="selectedRoute" class="relative left-[.65rem] top-3" src="./assets/images/small-circle-filled.svg">
+        </inlinesvg>
+        <inlinesvg v-if="selectedRoute" class="relative left-[.65rem] top-4" src="./assets/images/small-circle-filled.svg">
+        </inlinesvg>
+        <inlinesvg v-if="selectedRoute" class="relative left-[.65rem] top-5" src="./assets/images/small-circle-filled.svg">
+        </inlinesvg>
+        <div class="flex mt-8 items-center gap-x-3">
+          <inlinesvg src="./assets/images/circle.svg"></inlinesvg>
+          <p class="step-label">{{language.start_the_job}}</p>
+        </div>
+      </div>
+      <div @click="startJob" class="startjob-btn" v-if="!jobInfo.started">{{language.start_job}}</div>
+      <div @click="stopJob" class="stopjob-btn" v-if="jobInfo.started">{{language.stop_job}}</div>
+    </div>
+  </div>
+</div>

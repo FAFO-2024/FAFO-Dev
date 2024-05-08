@@ -1,0 +1,41 @@
+<div>
+  <div class="companies">
+    <div
+      @click="selectedCompany=index"
+      v-for="(company, index) in companies"
+      class="company"
+      :class="{active:selectedCompany==index}"
+    >
+      <img :src="company.logo" />
+    </div>
+  </div>
+  <div class="flex items-center gap-x-3 my-5">
+    <p class="company-label">{{companies[selectedCompany]?.label}}</p>
+    <div class="company-line"></div>
+    <div class="flex items-center gap-x-2">
+      <p class="company-label">{{playerData.points[selectedCompany.toString()]}} {{language.trust_point}}</p>
+      <inlinesvg src="./assets/images/trust-point-icon.svg"></inlinesvg>
+    </div>
+  </div>
+  <div class="companies-list noscrollbar">
+    <div
+    class="company-item"
+    :style="getBG(mission.image)"
+    v-for="mission in getSelectedMissions"
+    :class="{grayscale: !playerData.unlockedMissions?.[mission.id.toString()] }"
+    >
+      <img src="./assets/images/locked.png" v-if="!playerData.unlockedMissions?.[mission.id.toString()]" class="locked-icon">
+      <p class="lv-required-text" v-if="!playerData.unlockedMissions[mission.id.toString()] && mission.reqLevel">Lv.{{mission.reqLevel}} Required</p>
+      <h1 class="mission-header">{{mission.header}}</h1>
+      <div
+        class="mission-requirement"
+        v-for="requirement in mission.requirementsLabel"
+      >
+        <inlinesvg :src="'./assets/images/'+requirement.icon"></inlinesvg>
+        <p class="mission-requirement-label"  v-if="requirement.icon == 'trust-icon.svg' && !playerData.unlockedMissions[mission.id.toString()]">{{mission.reqPoint}} Trust Point Needed!</p>
+        <p class="mission-requirement-label"  v-else>{{requirement?.label}}</p>
+      </div>
+      <div class="unlock-btn locked" @click="UnlockMission(mission)"> {{playerData.unlockedMissions[mission.id.toString()] ? language.unlocked : language.locked}}</div>
+    </div>
+  </div>
+</div>
