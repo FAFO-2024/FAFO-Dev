@@ -106,7 +106,6 @@ Config.AuthorizedVehicles = {
 		["19tahoel2"] = "Tahoe",
 		["20fpiul2"] = "Explorer",
         ["f250l2nc"] = "F250",
-        ["bmwbike"] = "Motorcycle",
 
 	},
 	-- Grade 2
@@ -116,7 +115,6 @@ Config.AuthorizedVehicles = {
 		["19tahoel2"] = "Tahoe",
 		["20fpiul2"] = "Explorer",
         ["f250l2nc"] = "F250",
-        ["bmwbike"] = "Motorcycle",
 	},
 	-- Grade 3
 	[3] = {
@@ -125,7 +123,6 @@ Config.AuthorizedVehicles = {
 		["19tahoel2"] = "Tahoe",
 		["20fpiul2"] = "Explorer",
         ["f250l2nc"] = "F250",
-        ["bmwbike"] = "Motorcycle",
 	},
 	-- Grade 4
 	[4] = {
@@ -134,7 +131,6 @@ Config.AuthorizedVehicles = {
 		["19tahoel2"] = "Tahoe",
 		["20fpiul2"] = "Explorer",
         ["f250l2nc"] = "F250",
-        ["bmwbike"] = "Motorcycle",
 	}
 }
 
@@ -436,24 +432,6 @@ Config.VehicleSettings = {
 		["livery"] = 2,
     },
     ["f250l2nc"] = {
-        ["extras"] = {
-            ["1"] = true,
-            ["2"] = true,
-            ["3"] = true,
-            ["4"] = true,
-            ["5"] = true,
-            ["6"] = true,
-            ["7"] = true,
-            ["8"] = true,
-            ["9"] = true,
-            ["10"] = true,
-            ["11"] = true,
-            ["12"] = true,
-            ["13"] = true,
-        },
-		["livery"] = 1,
-    },
-    ["bmwbike"] = {
         ["extras"] = {
             ["1"] = true,
             ["2"] = true,

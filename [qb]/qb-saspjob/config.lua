@@ -451,7 +451,7 @@ Config.VehicleSettings = {
             ["12"] = true,
             ["13"] = true,
         },
-		["livery"] = 1,
+		["livery"] = 2,
     },
     ["bmwbike"] = {
         ["extras"] = {
