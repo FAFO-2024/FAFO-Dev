@@ -449,7 +449,7 @@ function GetSocietyMoney(job)
     if Config.Framework == "esx" or Config.Framework == "oldesx" then
         if job then
             local accountName = 'society_' .. job
-            local societyAccountMoney = ExecuteSql("SELECT * FROM `addon_account_data` WHERE `account_name` = '" ..
+            local societyAccountMoney = ExecuteSql("SELECT * FROM addon_account_data WHERE account_name = '" ..
                 accountName .. "'")
             if next(societyAccountMoney) then
                 return societyAccountMoney[1].money
@@ -460,24 +460,11 @@ function GetSocietyMoney(job)
     elseif Config.Framework == 'qb' or Config.Framework == 'oldqb' then
         if job then
             local accountName = job
-            if Config.newManagementSystem then
-                local account_money = exports["qb-banking"]:GetAccount(accountName)
-                if account_money and account_money.account_balance then
-                    return  account_money.account_balance
-                else
-                    if Config.CreateJobAccount then
-                        exports["qb-banking"]:CreateJobAccount(accountName, 0)
-                        return  0
-                    end
-                end
+            local account_money = exports["qb-banking"]:GetAccountBalance(accountName)
+            if account_money then
+                return account_money
             else
-                local societyAccountMoney = ExecuteSql("SELECT * FROM `management_funds` WHERE `job_name` = '" ..
-                accountName .. "'")
-                if next(societyAccountMoney) then
-                    return societyAccountMoney[1].amount
-                else
-                    return false
-                end
+                return 0
             end
         end
     end
@@ -487,7 +474,7 @@ function AddSocietyMoney(job, givenAmount)
     if Config.Framework == "esx" or Config.Framework == "oldesx" then
         if job then
             local accountName = 'society_' .. job
-            local societyAccountMoney = ExecuteSql("SELECT * FROM `addon_account_data` WHERE `account_name` = '" ..
+            local societyAccountMoney = ExecuteSql("SELECT * FROM addon_account_data WHERE account_name = '" ..
                 accountName .. "'")
             if societyAccountMoney and societyAccountMoney[1] then
                 local currentAmount = societyAccountMoney[1].money
@@ -496,7 +483,7 @@ function AddSocietyMoney(job, givenAmount)
                     print('ERROR SOCIETY MONEY IS NOT ENOUGH')
                     return false
                 else
-                    ExecuteSql("UPDATE `addon_account_data` SET `money` = ? WHERE `account_name` = ?",
+                    ExecuteSql("UPDATE addon_account_data SET money = ? WHERE account_name = ?",
                         { newAmount, accountName })
                     return newAmount
                 end
@@ -509,7 +496,7 @@ function AddSocietyMoney(job, givenAmount)
             local accountName = job
             if Config.newManagementSystem then
                 local account_money = exports["qb-banking"]:GetAccount(accountName)
-                if account_money.account_balance then
+                if account_money then
                     if givenAmount < 0 then
                         print('ERROR SOCIETY MONEY IS NOT ENOUGH')
                         return false
@@ -518,7 +505,7 @@ function AddSocietyMoney(job, givenAmount)
                     end
                 end
             else
-                local societyAccountMoney = ExecuteSql("SELECT * FROM `management_funds` WHERE `job_name` = '" ..
+                local societyAccountMoney = ExecuteSql("SELECT * FROM management_funds WHERE job_name = '" ..
                 accountName .. "'")
                 if societyAccountMoney and societyAccountMoney[1] then
                     local currentAmount = societyAccountMoney[1].amount
@@ -527,7 +514,7 @@ function AddSocietyMoney(job, givenAmount)
                         print('ERROR SOCIETY MONEY IS NOT ENOUGH')
                         return false
                     else
-                        ExecuteSql("UPDATE `management_funds` SET `amount` = ? WHERE `job_name` = ?",
+                        ExecuteSql("UPDATE management_funds SET amount = ? WHERE job_name = ?",
                             { newAmount, accountName })
                         return newAmount
                     end

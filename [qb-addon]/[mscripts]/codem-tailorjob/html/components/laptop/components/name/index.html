@@ -1,0 +1,22 @@
+<div>
+  <div class="mt-12 flex flex-col gap-y-3 mx-auto">
+    <img
+      class="w-[1.80525rem] h-[2.407rem] mx-auto"
+      src="./assets/images/laptop/tailor-logo-med.png"
+    />
+    <p class="tailor-job-text-med text-center">{{locales.tailor_job}}</p>
+  </div>
+  <p class="text-center welcome-text">
+    {{locales.welcome_to}}
+    <span>{{jobData.playerName}}</span>
+  </p>
+  <img class="mx-auto mt-5" src="./assets/images/laptop/line-big.png" />
+  <div class="name-input-container">
+    <h1>{{locales.tailorshop_name}}</h1>
+    <input v-model="jobName" type="text" :placeholder="locales.type_name" />
+  </div>
+  <div class="continue-button" @click="createTailorData">
+    {{locales.continue}}
+  </div>
+  <p class="tailorshop-name">{{locales.give_name}}</p>
+</div>

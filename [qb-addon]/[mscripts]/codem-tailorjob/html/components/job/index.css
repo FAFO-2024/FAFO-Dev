@@ -1,0 +1,454 @@
+.job {
+  width: 27rem;
+  height: 100%;
+  background-image: url(../../assets/images/job/job_panel.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-top: 5.5rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  position: relative;
+}
+
+.job .upgrade-machine-modal .upgrade-price {
+  color: rgba(0, 0, 0, 0.55);
+  color: color(display-p3 0 0 0 / 0.55);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.job .upgrade-machine-modal .upgrade-button {
+  width: 13.25rem;
+  height: 5rem;
+  background-image: url(../../assets/images/job/upgrade-button.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  transition: all 0.2s ease;
+}
+
+.job .upgrade-machine-modal .upgrade-button:hover {
+  background-image: url(../../assets/images/job/upgrade-button-active.png);
+}
+
+.job .upgrade-machine-modal .new-features-list {
+  width: 16.5rem;
+  min-height: 6.25rem;
+  padding: 0.75rem;
+  background-image: url(../../assets/images/job/new_features_list.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.3rem;
+}
+
+.job .cancel-text {
+  color: #000;
+  color: color(display-p3 0 0 0);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.job .upgrade-machine-modal .new-features-list p {
+  color: rgba(0, 0, 0, 0.55);
+  color: color(display-p3 0 0 0 / 0.55);
+  leading-trim: both;
+  text-edge: cap;
+  display: flex;
+  align-items: center;
+  column-gap: 0.3rem;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.lock {
+  width: 5rem;
+  height: 5rem;
+
+  object-fit: contain;
+}
+
+.job .modal-overflow {
+  height: 90%;
+  overflow: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.75rem;
+  align-content: flex-start;
+}
+.job .modal-overflow h1 {
+  color: rgba(0, 0, 0, 0.55);
+  color: color(display-p3 0 0 0 / 0.55);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.job .modal-overflow p {
+  color: rgba(0, 0, 0, 0.55);
+  color: color(display-p3 0 0 0 / 0.55);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.job .hidden-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+.job .upgrade-machine-modal .modal-header {
+  color: rgba(0, 0, 0, 0.55);
+  color: color(display-p3 0 0 0 / 0.55);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.job .upgrade-machine-modal {
+  width: 26.73213rem;
+  height: 28.92244rem;
+  background-image: url(../../assets/images/job/upgrade_machine_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  right: -27.7rem;
+  z-index: 2;
+  top: 15rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.35rem;
+  align-items: center;
+}
+
+.job .machine-name {
+  color: rgba(0, 0, 0, 0.55);
+  color: color(display-p3 0 0 0 / 0.55);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi-Black;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+.job .select-product {
+  color: rgba(0, 0, 0, 0.55);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi-Black;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.swiper {
+  width: 100%;
+}
+.job .start-job-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.job .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  height: 20rem;
+}
+
+.job .clothing-img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+}
+
+.job .amount-box {
+  background-image: url(../../assets/images/job/amount-box.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 19.56088rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.job .start-btn {
+  background-image: url(../../assets/images/job/BTN.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 22.03469rem;
+  height: 2.96613rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: rgba(0, 0, 0, 0.55);
+  color: color(display-p3 0 0 0 / 0.55);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.job .start-btn-2{
+  background-image: url(../../assets/images/job/BTN_2.png);
+
+}
+
+.job .amount-box input {
+  color: rgba(0, 0, 0, 0.32);
+  color: color(display-p3 0 0 0 / 0.32);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  appearance: none;
+  border: none;
+  outline: none;
+  height: 100%;
+  background-color: transparent;
+  text-align: center;
+}
+
+.job .time-box {
+  background-image: url(../../assets/images/job/time-box.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 17.125rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0 auto;
+  color: color(display-p3 0 0 0 / 0.55);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.job .material-box .item-amount2 {
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(0, 0, 0, 0.55);
+  color: color(display-p3 0 0 0 / 0.55);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.job .material-box .item-label2 {
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  width: 6rem;
+  text-align: center;
+  transform: translateX(-50%);
+  color: rgba(0, 0, 0, 0.55);
+  color: color(display-p3 0 0 0 / 0.55);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.job .material-box .item-img {
+  object-fit: contain;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.job .material-box {
+  background-image: url(../../assets/images/job/material-box.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 3.125rem;
+  height: 3.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.job .material-box.active {
+  background-image: url(../../assets/images/job/material-box-active.png);
+}
+
+.job .arrow-left {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 222;
+  cursor: pointer;
+}
+.job .arrow-right {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 222;
+  cursor: pointer;
+}
+
+.job .product-display {
+  width: 90%;
+  margin: 0 auto;
+  height: 20rem;
+  background-image: url(../../assets/images/job/Product_Display.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  position: relative;
+}
+
+.job .product-display .materials-text {
+  color: rgba(0, 0, 0, 0.55);
+  color: color(display-p3 0 0 0 / 0.55);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.job .product-display .product-display-header {
+  color: rgba(0, 0, 0, 0.55);
+  color: color(display-p3 0 0 0 / 0.55);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi-Black;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.job .start-job-button {
+  width: 6.437rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 100% 100%;
+  color: rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+  color: color(display-p3 0 0 0 / 0.55);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi-Black;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  opacity: 0.4;
+  transition: all 0.2s ease;
+}
+
+.job .start-job-button.active {
+  opacity: 1;
+}
+
+.job .start-job-button.ponsonbys {
+  background-image: url(../../assets/images/job/ponsonbys-btn.png);
+}
+
+.job .start-job-button.suburban {
+  background-image: url(../../assets/images/job/suburban-btn.png);
+}
+.job .start-job-button.binco {
+  background-image: url(../../assets/images/job/binco-btn.png);
+}
+
+.job .active-worker-text {
+  color: rgba(0, 0, 0, 0.55);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi-Bold;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}

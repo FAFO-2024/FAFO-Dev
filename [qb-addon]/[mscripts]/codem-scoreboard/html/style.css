@@ -1,0 +1,592 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Joyride;
+    src: url(./fonts/JOYRIDE-REGULAR.OTF);
+}
+
+@font-face {
+    font-family: Joyride-Outline;
+    src: url(./fonts/JOYRIDE-OUTLINE.OTF);
+}
+
+@font-face {
+    font-family: SF Pro Rounded;
+    src: url(./fonts/SF-Pro-Rounded-Regular.otf);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+
+}
+
+
+
+.left-panel {
+    width: 25rem;
+    height: 100%;
+    background-image: url(./images/left-panel.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    row-gap: 1.75rem;
+    padding: 1.5rem 0;
+    position: relative;
+    z-index: 3;
+}
+
+.left-panel-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    row-gap: 1.75rem;
+    padding: 1.5rem 0;
+    position: relative;
+    z-index: 33;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.server-name {
+    background: radial-gradient(1887.98% 104.52% at 0% 50%, #FFF 0%, rgba(255, 255, 255, 0.17) 34.97%, #FFF 80.83%, rgba(255, 255, 255, 0.35) 100%);
+    background: radial-gradient(1887.98% 104.52% at 0% 50%, color(display-p3 1 1 1) 0%, color(display-p3 1 1 1 / 0.17) 34.97%, color(display-p3 1 1 1) 80.83%, color(display-p3 1 1 1 / 0.35) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Joyride;
+
+    font-size: 1.5377rem;
+    font-style: normal;
+    font-weight: 400;
+
+}
+
+.scoreboard-title {
+    background: radial-gradient(1887.98% 104.52% at 0% 50%, #FFF 0%, rgba(255, 255, 255, 0.17) 34.97%, #FFF 80.83%, rgba(255, 255, 255, 0.35) 100%);
+    background: radial-gradient(1887.98% 104.52% at 0% 50%, color(display-p3 1 1 1) 0%, color(display-p3 1 1 1 / 0.17) 34.97%, color(display-p3 1 1 1) 80.83%, color(display-p3 1 1 1 / 0.35) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-family: Joyride-Outline;
+
+
+    font-size: 1.5377rem;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.line {
+    background: rgba(255, 255, 255, 0.17);
+    width: 100%;
+    height: 0.0625rem;
+}
+
+.player-information {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2rem;
+
+}
+
+.player-information-left {
+    display: flex;
+    align-items: center;
+    column-gap: .75rem;
+
+}
+
+.player-pp-container {
+    border: 0.125rem solid white;
+    width: 3.3836rem;
+    height: 3.3925rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.player-pp {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: scale-down;
+}
+
+.player-name-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: .3rem;
+}
+
+.player-name {
+    color: #FFF;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Pro Rounded;
+    font-size: 0.9575rem;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.player-job {
+    color: rgba(255, 255, 255, 0.22);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Pro Rounded;
+    font-size: 0.7365rem;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.player-information-right {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    padding: .25rem .75rem;
+    border-radius: 0.5rem;
+    border: 0.0625rem solid rgba(255, 255, 255, 0.28);
+    background: rgba(217, 217, 217, 0.24);
+    cursor: pointer;
+    transition: all .2s ease;
+    position: relative;
+}
+
+.showPlayers.player-information-right::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -.6rem;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+    background: #FFF;
+    box-shadow: 0rem 0rem 0.625rem 0rem #FFF;
+    width: 1.125rem;
+    height: 0.125rem;
+}
+
+.player-information-right:hover {
+    opacity: 0.8;
+}
+
+
+.players-icon {
+    width: 1.375rem;
+    height: 0.9375rem;
+    object-fit: scale-down;
+}
+
+.players-count {
+    color: rgba(255, 255, 255, 0.22);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Pro Rounded;
+    font-size: 0.7365rem;
+    font-style: normal;
+    font-weight: 600;
+}
+
+
+.job-container {
+    width: 5.5rem;
+    height: 6rem;
+
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    row-gap: .5rem;
+}
+
+.setjob-container {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    position: absolute;
+    right: .15rem;
+    bottom: .15rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .2s ease;
+
+}
+
+.setjob-container:hover {
+    opacity: 0.9;
+}
+
+
+
+.job-container p {
+    text-align: center;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Pro Rounded;
+    font-size: 0.9821rem;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+
+
+
+
+
+.pp-overlay {
+    position: absolute;
+    width: 100%;
+    height: 13rem;
+    object-fit: cover;
+    filter: blur(1.25rem);
+}
+
+.close-button {
+    position: absolute;
+    right: -1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all .2s ease;
+    z-index: 2222;
+}
+
+.close-button:hover {
+    opacity: 0.8;
+}
+
+.robberies {
+
+    width: 100%;
+    flex: 1;
+    min-height: 1rem;
+
+}
+
+.robberies-wrapper {
+
+    width: 100%;
+    height: 100%;
+
+    row-gap: 1rem;
+    padding: 0 1rem;
+    overflow: auto;
+}
+
+.robbery {
+    width: 100%;
+    height: 11.25rem;
+    position: relative;
+    border-radius: 0.9375rem;
+    background-image: url(./images/robbery-overlay.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    cursor: pointer;
+
+}
+
+.robbery-image {
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    object-fit: cover;
+    border-radius: 0.9375rem;
+
+}
+
+.robbery-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    row-gap: .75rem;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.robbery-toggle-button {
+    width: 3.0625rem;
+    height: 2.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./images/toggle-button.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.robbery-toggle-button:hover {
+    opacity: 0.8;
+}
+
+
+.robbery-wrapper h1 {
+
+    text-edge: cap;
+    font-family: SF Pro Rounded;
+    font-size: 1.6875rem;
+    font-style: normal;
+    font-weight: 500;
+    color: white;
+}
+
+.robbery-button {
+    border-radius: 0.4375rem;
+    background: #51FF76;
+    width: 8.625rem;
+    height: 1.625rem;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Pro Rounded;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+
+.robbery-button.active {
+    background: #51FF76;
+    color: #22602D;
+}
+
+.robbery-button.disabled {
+    background: #FF565E;
+    color: #7C292C;
+
+}
+
+.robbery-wrapper p {
+    color: #FFF;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Pro Rounded;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.robbery-wrapper p:hover {
+    opacity: 0.9;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+
+.open-enter-active {
+    animation: .8s open ease;
+}
+
+.open-leave-active {
+    animation: .8s open ease reverse;
+
+}
+
+
+
+.robberyAnim {
+    animation: .8s robberyAnim ease;
+
+}
+
+
+@keyframes robberyAnim {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes open {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+.players-text-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    width: 100%;
+
+}
+
+.search-input-container {
+    padding: 0 2rem;
+    width: 100%;
+    height: 2rem;
+    position: relative;
+}
+
+.search-input-container input {
+    width: 100%;
+    height: 100%;
+    padding-left: .75rem;
+    padding-right: 2rem;
+
+    appearance: none;
+    border: none;
+    outline: none;
+    border-radius: 0.3125rem;
+    background: rgba(217, 217, 217, 0.10);
+    color: rgba(255, 255, 255, 0.9);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Pro Rounded;
+    font-size: 0.75rem;
+    font-style: normal;
+    line-height: normal;
+}
+
+.search-input-container input::placeholder {
+    color: rgba(255, 255, 255, 0.32);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Pro Rounded;
+    font-size: 0.75rem;
+    font-style: normal;
+    line-height: normal;
+}
+
+.search-input-container img {
+    width: 0.75rem;
+    height: 0.75rem;
+    object-fit: scale-down;
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+
+.players-text-header h1 {
+    color: #FFF;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Pro Rounded;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+.back {
+    cursor: pointer;
+    transition: all .2s ease;
+    width: 1.1875rem;
+    height: 0.75rem;
+    object-fit: scale-down;
+}
+
+.back:hover {
+    opacity: 0.9;
+}
+
+.players {
+    width: 100%;
+    flex: 1;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    overflow: auto;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.player-left {
+    display: flex;
+    align-items: center;
+    column-gap: .6rem;
+}
+
+.player-right {
+    display: flex;
+    align-items: center;
+    column-gap: .6rem;
+
+}
+
+.player-right img {
+    width: 0.625rem;
+    height: 0.625rem;
+    object-fit: scale-down;
+}
+
+.player-right p {
+    color: #FFF;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: SF Pro Rounded;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

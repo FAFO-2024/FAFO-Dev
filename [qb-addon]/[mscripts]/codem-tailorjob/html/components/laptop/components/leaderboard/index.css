@@ -1,0 +1,139 @@
+.leaderboard {
+  width: 95%;
+  margin: 0 auto;
+  height: 75%;
+  margin-top: 2rem;
+}
+
+.leaderboard .leaderboard-title {
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.leaderboard .leaderboard-input {
+  appearance: none;
+  border: none;
+  outline: none;
+  padding: 0 0.75rem;
+  color: rgba(255, 255, 255, 0.18);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  width: 12.625rem;
+
+  height: 2.5rem;
+  border-radius: 0.3125rem;
+  border: 2px solid rgba(255, 255, 255, 0.04);
+  background: rgba(217, 217, 217, 0.07);
+}
+
+.leaderboard .leaderboard-your-number {
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.leaderboard .leaderboard-list {
+  height: 80%;
+  margin-top: 1rem;
+  overflow: auto;
+  width: 100%;
+}
+.leaderboard .leaderboard-list .player-name {
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Gilroy-Bold;
+  font-size: 1rem;
+  word-spacing: 7rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width:30rem;
+  text-align: center;
+  font-style: normal;
+  line-height: 99.5%; /* 0.995rem */
+  font-weight: 400;
+}
+.leaderboard .leaderboard-list .shop-num {
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Display;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.15rem;
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.6);
+}
+.leaderboard .leaderboard-list .shop-name {
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Display;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.075rem;
+}
+.leaderboard .leaderboard-list .leaderboard-list-item .player-pp{
+border: 2px solid #FFCCD7;
+border-radius: 50%;
+width: 5rem;
+height: 5rem;
+object-fit: cover;
+}
+
+.leaderboard .leaderboard-list .leaderboard-list-item  .player-level{
+    color: #FFF;
+color: color(display-p3 1 1 1);
+text-align: right;
+leading-trim: both;
+text-edge: cap;
+font-family: Gilroy-Bold;
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 400;
+line-height: 99.5%; /* 1.24375rem */
+}
+.leaderboard .leaderboard-list .leaderboard-list-item {
+  margin-bottom: 1rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.07);
+  background: rgba(217, 217, 217, 0.07);
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.leaderboard .leaderboard-list .leaderboard-list-item:first-child {
+  border-radius: 0.5rem;
+  background: rgba(255, 204, 215, 0.24);
+}

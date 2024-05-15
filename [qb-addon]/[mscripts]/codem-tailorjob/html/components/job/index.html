@@ -1,0 +1,295 @@
+<div class="job">
+  <div
+    class="hidden-overlay"
+    @click="upgradeMachineModal=false;workersModal=false"
+    v-if="upgradeMachineModal || workersModal"
+  ></div>
+  <div v-if="workersModal" class="upgrade-machine-modal">
+    <h1 class="modal-header">{{locales.put_worker}}</h1>
+    <div class="modal-overflow no-scrollbar p-2">
+      <div
+        class="flex flex-col items-center cursor-pointer"
+        @click="selectedWorker=data"
+        v-for="data in jobData.workers"
+        :style="{display: data?.isworking ? 'none' : 'flex'}"
+      >
+        <img :src="'./assets/images/laptop/'+data?.image" />
+        <h1>{{data.name}}</h1>
+        <p>{{data.proffesion_label}}</p>
+      </div>
+    </div>
+  </div>
+  <div v-if="upgradeMachineModal" class="upgrade-machine-modal">
+    <h1 class="modal-header">{{locales.enhance_machine}}</h1>
+    <img src="./assets/images/job/machine-icon.png" />
+    <template
+      v-if="upgradeData[(jobData.machines?.[jobData.machineid?.toString()] + 1)?.toString()]"
+    >
+      <h1 class="modal-header">
+        {{locales.upgrade_machine.format((jobData.machines?.[jobData.machineid?.toString()]
+        + 1))}}
+      </h1>
+      <div class="new-features-list">
+        <p
+          v-for="text in upgradeData?.[(jobData.machines?.[jobData.machineid?.toString()] + 1)?.toString()].desc"
+        >
+          <img src="./assets/images/job/plus.png" />
+          {{text}}
+        </p>
+      </div>
+      <div class="flex items-center justify-around w-full">
+        <div class="material-box active">
+          <img
+            class="item-img"
+            :src="'./assets/images/laptop/'+upgradeData?.[(jobData.machines?.[jobData.machineid?.toString()] + 1)?.toString()].requiredItems[0]?.image"
+          />
+          <p class="item-label2">
+            {{upgradeData?.[(jobData.machines?.[jobData.machineid?.toString()] +
+            1).toString()].requiredItems[0].label}}
+          </p>
+        </div>
+        <p class="upgrade-price">
+          ${{upgradeData?.[(jobData.machines?.[jobData.machineid?.toString()] +
+          1).toString()].cost}}
+        </p>
+        <div class="material-box active">
+          <img
+            class="item-img"
+            :src="'./assets/images/laptop/'+upgradeData?.[(jobData.machines?.[jobData.machineid?.toString()] + 1)?.toString()].requiredItems[1]?.image"
+          />
+          <p class="item-label2">
+            {{upgradeData?.[(jobData.machines?.[jobData.machineid?.toString()] +
+            1).toString()].requiredItems[1].label}}
+          </p>
+        </div>
+      </div>
+      <div
+        @click="upgradeMachine(upgradeData[(jobData.machines?.[jobData.machineid?.toString()] + 1)?.toString()].requiredItems, upgradeData[(jobData.machines[jobData.machineid?.toString()] + 1)?.toString()].cost)"
+        class="upgrade-button"
+      >
+        {{locales.upgrade}}
+      </div>
+    </template>
+    <h1 v-else class="modal-header text-center">{{locales.full_level}}</h1>
+  </div>
+  <p class="machine-name px-5">
+    {{locales.sewing_machine}} {{jobData.machineid}}
+  </p>
+  <img class="w-[80%]" src="./assets/images/job/line-1.png" />
+  <div class="flex px-5 items-center justify-between">
+    <div v-if="!selectedWorker" class="flex items-center gap-x-3">
+      <img src="./assets/images/job/active_workericon.png" />
+      <p class="active-worker-text">{{locales.no_active_worker}}</p>
+    </div>
+    <div
+      @click="selectedWorker=false"
+      v-else
+      class="flex cursor-pointer items-center gap-x-3"
+    >
+      <img :src="'./assets/images/laptop/'+selectedWorker?.image" />
+      <p class="active-worker-text">{{selectedWorker.name}}</p>
+    </div>
+    <img
+      @click="workersModal=true"
+      src="./assets/images/job/addworkerbtn.png"
+    />
+  </div>
+  <div class="flex px-5 items-center justify-between">
+    <div class="flex items-center gap-x-3">
+      <img src="./assets/images/job/upgrade_icon.png" />
+      <p class="active-worker-text">
+        {{locales.level}} {{jobData.machines?.[jobData.machineid?.toString()] ?
+        jobData.machines[jobData.machineid?.toString()] : '1'}}
+        {{locales.machine}}
+      </p>
+    </div>
+    <img
+      @click="upgradeMachineModal=true"
+      src="./assets/images/job/upgradebtn.png"
+    />
+  </div>
+  <img class="w-[80%]" src="./assets/images/job/line-1.png" />
+  <p class="select-product px-5">{{locales.select_product}}</p>
+  <div class="start-job-buttons px-5">
+    <div
+      @click="setSelectedOutfit('binco')"
+      class="start-job-button binco"
+      :class="{active:selectedOutfit == 'binco'}"
+    >
+      Binco
+    </div>
+    <div
+      @click="setSelectedOutfit('suburban')"
+      class="start-job-button suburban"
+      :class="{active:selectedOutfit == 'suburban'}"
+    >
+      Suburban
+    </div>
+    <div
+      @click="setSelectedOutfit('ponsonbys')"
+      class="start-job-button ponsonbys"
+      :class="{active:selectedOutfit == 'ponsonbys'}"
+    >
+      Ponsonbys
+    </div>
+  </div>
+
+  <div class="product-display">
+    <img
+      src="./assets/images/job/arrow-left.png"
+      :style="{display : hasActiveJob ? 'none' : 'block'}"
+      class="arrow-left"
+    />
+    <img
+      src="./assets/images/job/arrow-right.png"
+      :style="{display : hasActiveJob ? 'none' : 'block'}"
+      class="arrow-right"
+    />
+    <div class="swiper" :class="{'swiper-no-swiping':hasActiveJob}">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" v-for="data in outfits[selectedOutfit]">
+          <h1 class="product-display-header">
+            {{selectedOutfit.toUpperCase()}} {{locales.clothes}}
+          </h1>
+          <p class="product-display-text">{{data.label}}</p>
+          <img
+            v-if="data.businessLevel > jobData.level"
+            class="lock"
+            src="./assets/images/job/lock.png"
+          />
+          <img
+            v-else
+            class="clothing-img"
+            :src="'./assets/images/outfits/'+data.name+'.png'"
+          />
+          <p class="materials-text" v-if="data.businessLevel > jobData.level">
+            {{locales.level_required.format(data.businessLevel)}}
+          </p>
+          <p class="materials-text" v-else>{{locales.materials}}</p>
+          <template v-if="data.businessLevel > jobData.level">
+            <div class="flex w-full items-center">
+              <img class="h-[2px]" src="./assets/images/job/line.png" />
+              <div class="material-box">
+                <img src="./assets/images/job/x.png" />
+              </div>
+              <img class="h-[2px]" src="./assets/images/job/line.png" />
+              <div class="material-box">
+                <img src="./assets/images/job/x.png" />
+              </div>
+              <img class="h-[2px]" src="./assets/images/job/line.png" />
+              <div class="material-box">
+                <img src="./assets/images/job/x.png" />
+              </div>
+              <img class="h-[2px]" src="./assets/images/job/line.png" />
+              <div class="material-box">
+                <img src="./assets/images/job/x.png" />
+              </div>
+              <img class="h-[2px]" src="./assets/images/job/line.png" />
+            </div>
+          </template>
+          <template v-else>
+            <div class="flex w-full items-center">
+              <img class="h-[2px]" src="./assets/images/job/line.png" />
+              <div
+                class="material-box"
+                :class="{active : data.requiredItems[0]}"
+              >
+                <template v-if="data.requiredItems[0]">
+                  <img
+                    class="item-img"
+                    :src="'./assets/images/laptop/'+data.requiredItems[0].name+'.png'"
+                  />
+                </template>
+                <img v-else src="./assets/images/job/x.png" />
+                <p class="item-label2">{{data.requiredItems[0].label}}</p>
+                <p class="item-amount2">
+                  {{data.requiredItems[0].amount}}{{data.requiredItems[0] &&
+                  'x'}}
+                </p>
+              </div>
+              <img class="h-[2px]" src="./assets/images/job/line.png" />
+              <div
+                class="material-box"
+                :class="{active : data.requiredItems[1]}"
+              >
+                <template v-if="data.requiredItems[1]">
+                  <img
+                    class="item-img"
+                    :src="'./assets/images/laptop/'+data.requiredItems[1].name+'.png'"
+                  />
+                </template>
+                <img v-else src="./assets/images/job/x.png" />
+                <p class="item-label2">{{data.requiredItems[1].label}}</p>
+                <p class="item-amount2">
+                  {{data.requiredItems[1].amount}}{{data.requiredItems[1] &&
+                  'x'}}
+                </p>
+              </div>
+              <img class="h-[2px]" src="./assets/images/job/line.png" />
+              <div
+                class="material-box"
+                :class="{active : data.requiredItems[2]}"
+              >
+                <template v-if="data.requiredItems[2]">
+                  <img
+                    class="item-img"
+                    :src="'./assets/images/laptop/'+data.requiredItems[2].name+'.png'"
+                  />
+                </template>
+                <img v-else src="./assets/images/job/x.png" />
+                <p class="item-label2">{{data.requiredItems[2]?.label}}</p>
+                <p class="item-amount2">
+                  {{data.requiredItems[2]?.amount}}{{data.requiredItems[2] &&
+                  'x'}}
+                </p>
+              </div>
+              <img class="h-[2px]" src="./assets/images/job/line.png" />
+              <div
+                class="material-box"
+                :class="{active : data.requiredItems[2]}"
+              >
+                <template
+                  v-if="data.requiredItems[3]"
+                  :class="{active : data.requiredItems[3]}"
+                >
+                  <img
+                    class="item-img"
+                    :src="'./assets/images/laptop/'+data.requiredItems[3].name+'.png'"
+                  />
+                </template>
+                <img v-else src="./assets/images/job/x.png" />
+                <p class="item-label2">{{data.requiredItems[3]?.label}}</p>
+                <p class="item-amount2">
+                  {{data.requiredItems[3]?.amount}}{{data.requiredItems[3] &&
+                  'x'}}
+                </p>
+              </div>
+              <img class="h-[2px]" src="./assets/images/job/line.png" />
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="time-box">
+    {{locales.produce_time.format(outfits[selectedOutfit][currentSlideIndex
+    ]?.processTime)}}
+  </div>
+  <div class="amount-box">
+    <input v-model="processAmount" type="text" :placeholder="locales.amount" />
+  </div>
+  <div
+    v-if="!this.jobData.activeJobs?.[this.jobData.machineid?.toString()]?.isReadyToTake"
+    @click="startSewing"
+    class="start-btn"
+  >
+    {{secondsLabel > 0 ? secondsLabel + 's' : locales.start_sewing}}
+  </div>
+  <div v-else @click="takeItem" class="start-btn start-btn-2">{{locales.take_item}}</div>
+  <p
+    class="text-center cancel-text"
+    v-if="!this.jobData.activeJobs?.[this.jobData.machineid?.toString()]?.isReadyToTake && secondsLabel > 0"
+  >
+    {{locales.press_to_cancel}}
+  </p>
+</div>

@@ -1,0 +1,20 @@
+<div class="storage">
+    <div class="flex storage-header items-center justify-between">
+        <div class="flex items-center gap-x-3">
+            <div @click="page='outfits'"   :class="{active : page == 'outfits'}" class="storage-button">{{locales.clothes}}</div>
+            <div @click="page='materials'" :class="{active : page == 'materials'}" class="storage-button">{{locales.materials}}</div>
+        </div>
+        <div class="flex items-center gap-x-4">
+            <input v-model="search" type="text" :placeholder="locales.search_clothes">
+            <h1>{{jobData.inventory?.length}} {{locales.items}}</h1>
+        </div>
+    </div>
+    <img src="./assets/images/laptop/line-2.png" />
+    <div class="items no-scrollbar">
+        <div class="item" v-for="i in getItems()">
+            <img class="item-img" :src="'./assets/images/laptop/'+i.image">
+            <p class="item-amount">{{i.amount}}x</p>
+            <div class="item-label">{{i.label}}</div>
+        </div>
+    </div>
+</div>

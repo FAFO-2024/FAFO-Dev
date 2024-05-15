@@ -1,0 +1,501 @@
+.business {
+  width: 93%;
+  margin: 0 auto;
+  margin-top: 2rem;
+
+  height: 45.75rem;
+  border-radius: 0.3125rem;
+  border: 2px solid rgba(255, 255, 255, 0.04);
+  background: radial-gradient(
+      84.73% 84.73% at 50% 50%,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.72) 100%
+    ),
+    radial-gradient(
+      84.73% 84.73% at 50% 50%,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.72) 100%
+    ),
+    rgba(217, 217, 217, 0.05);
+  display: flex;
+  column-gap: 1rem;
+  padding: 1rem;
+}
+
+.business .money-input {
+  appearance: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 2.5rem;
+  background: #fff;
+  border: 2.647px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.4375rem;
+  color: rgba(0, 0, 0, 0.32);
+  color: color(display-p3 0 0 0 / 0.32);
+  margin-top: 1rem;
+  font-family: SF Pro Display;
+  text-align: center;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 143.836%; /* 1.25856rem */
+}
+
+.business .business-information {
+  flex: 3;
+  height: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.07);
+  background: rgba(217, 217, 217, 0.07);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.business .business-log {
+  flex: 6;
+  height: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.07);
+  background: rgba(217, 217, 217, 0.07);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.business .business-log-list {
+  height: 90%;
+  overflow: auto;
+  width: 100%;
+  margin-top: 1rem;
+}
+.business .business-log-list .log-earn {
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  text-align: right;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.625rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.0375rem;
+}
+.business .business-log-list .log-date {
+  color: #fef1c3;
+  color: color(display-p3 0.9882 0.9451 0.7843);
+  text-align: right;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.045rem;
+}
+.business .business-log-list .log-desc {
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.625rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.0375rem;
+}
+.business .business-log-list .log-title {
+  color: #ffccd7;
+  color: color(display-p3 1 0.8083 0.8422);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.045rem;
+}
+
+.business .business-log-list .business-log-list-item {
+  width: 100%;
+  height: 4.125rem;
+  background-image: url(../../../../assets/images/laptop/log-container.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 02rem;
+  justify-content: space-between;
+}
+
+.business .business-log input {
+  appearance: none;
+  border: none;
+  outline: none;
+  border-radius: 0.3125rem;
+  border: 2px solid rgba(255, 255, 255, 0.04);
+  background: rgba(217, 217, 217, 0.07);
+  width: 10.0625rem;
+  padding: 0 0.5rem;
+  height: 2rem;
+  color: rgba(255, 255, 255, 0.18);
+  color: color(display-p3 1 1 1 / 0.18);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.business .business-log .business-log-text {
+  color: #fff;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Display;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.06rem;
+}
+.business .business-settings .business-name {
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Display;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.06rem;
+}
+
+.business .business-settings .change-business-name-text {
+  color: rgba(255, 255, 255, 0.6);
+  color: color(display-p3 1 1 1 / 0.6);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Display;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 1rem;
+}
+.business .business-settings .transfer-text {
+  color: rgba(255, 255, 255, 0.6);
+  color: color(display-p3 1 1 1 / 0.6);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Display;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.business .business-settings .transfer-input {
+  appearance: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 1.875rem;
+  border-radius: 0.4375rem;
+  border: 2px solid rgba(255, 255, 255, 0.07);
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.31) 0%,
+      rgba(0, 0, 0, 0.31) 100%
+    ),
+    rgba(255, 255, 255, 0.2);
+  padding: 0 0.5rem;
+  color: rgba(255, 255, 255, 0.24);
+  color: color(display-p3 1 1 1 / 0.24);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Display;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.business .business-settings .upload-desc {
+  color: rgba(255, 255, 255, 0.6);
+  color: color(display-p3 1 1 1 / 0.6);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Display;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.business .business-settings .upload-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 0.4375rem;
+  border: 2.647px solid rgba(0, 0, 0, 0.2);
+  background: #fff;
+  margin-top: 0.75rem;
+
+  color: #000;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Display;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 143.836%; /* 1.25856rem */
+}
+.business .business-settings .insert-image-input {
+  appearance: none;
+  border: none;
+  margin-top: 0.75rem;
+
+  outline: none;
+  padding: 0 0.5rem;
+  width: 100%;
+  height: 1.875rem;
+  border-radius: 0.4375rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.24);
+  color: color(display-p3 1 1 1 / 0.24);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Display;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.business .business-settings .by-link {
+  color: rgba(255, 255, 255, 0.6);
+  color: color(display-p3 1 1 1 / 0.6);
+  leading-trim: both;
+  text-edge: cap;
+  margin-top: 0.75rem;
+  font-family: SF Pro Display;
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.business .business-settings .no-logo-text {
+  color: rgba(255, 255, 255, 0.6);
+  color: color(display-p3 1 1 1 / 0.6);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Display;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.business .business-settings .logo-container {
+  width: 100%;
+  height: 8.875rem;
+  border-radius: 0.25069rem;
+  background: #1f1f1f;
+  background: color(display-p3 0.1208 0.1208 0.1208);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.business .business-settings .name-input {
+  appearance: none;
+  border: none;
+  outline: none;
+  height: 1.875rem;
+  width: 100%;
+  border-radius: 0.4375rem;
+  border: 2px solid rgba(255, 255, 255, 0.07);
+  padding: 0 0.75rem;
+  color: rgba(255, 255, 255, 0.24);
+  color: color(display-p3 1 1 1 / 0.24);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Rounded;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.31) 0%,
+      rgba(0, 0, 0, 0.31) 100%
+    ),
+    rgba(255, 255, 255, 0.2);
+}
+
+.business .business-settings {
+  flex: 3;
+  height: 100%;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.07);
+  background: rgba(217, 217, 217, 0.07);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.business .business-information .business-information-text {
+  color: #fff;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Display;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  letter-spacing: 0.06rem;
+}
+
+.business .business-information .level-container {
+  background-image: url(../../../../assets/images/laptop/level_container.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20rem;
+  height: 19.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 0.75rem;
+}
+
+.business .business-information .xp-container {
+  width: 100%;
+  height: 1.25rem;
+  background-color: rgba(255, 255, 255, 0.11);
+  border-radius: 0.35rem;
+  margin-top: 1rem;
+}
+
+.business .business-information .total-vault-amount-text {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Display;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.06rem;
+  text-align: center;
+}
+
+.business .business-information .deposit-btn {
+  border-radius: 0.4375rem;
+  border: 2.647px solid rgba(0, 0, 0, 0.2);
+  background: #fef1c3;
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  color: color(display-p3 0 0 0);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Text;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  margin-top: 1rem;
+  line-height: 143.836%; /* 1.25856rem */
+  cursor: pointer;
+}
+.business .business-information .withdraw-btn {
+  border-radius: 0.4375rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  border: 2.647px solid rgba(0, 0, 0, 0.2);
+  background: #ffccd7;
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  color: color(display-p3 0 0 0);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Text;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 143.836%; /* 1.25856rem */
+}
+.business .business-information .total-vault-amount-btn {
+  background-image: url(../../../../assets/images/laptop/vault-amount-btn.png);
+  width: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 2.30694rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.55);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.97225rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.business .business-information .xp-text {
+  margin-top: 0.5rem;
+
+  color: rgba(255, 255, 255, 0.4);
+  color: color(display-p3 1 1 1 / 0.4);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Display;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 99.5%; /* 0.87063rem */
+}
+
+.business .business-information .xp-inner {
+  height: 100%;
+  border-radius: 0.35rem;
+
+  width: 30%;
+  background-color: #ffccd7;
+  transition: all 0.2s ease;
+}
+
+.business .business-information .level-container .level-text {
+  color: #ffd1db;
+  text-align: right;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Gilroy-Bold;
+  font-size: 1.225rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 99.5%; /* 1.21888rem */
+}

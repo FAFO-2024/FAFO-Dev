@@ -1,0 +1,184 @@
+<div class="start-left-panel">
+  <div class="tutorial" v-if="showTutorial">
+    <div class="tutorial-wrapper">
+      <h1 class="tutorial-header">TAILORJOB TUTORIAL</h1>
+      <img src="./assets/images/start/line-big.png" class="w-[90%] relative mt-3 left-2" />
+      <img @click="setShowTutorial(false)" src="./assets/images/start/close-tutorial.png" class="close-tutorial" />
+      <div class="flex w-full mt-3 gap-x-3 px-7" v-if="currentTutorial == 'tailor'">
+        <div class="step-container items-center flex flex-col gap-y-2">
+          <h1 class="step-header">STEP 1</h1>
+          <div class="step">
+            <img src="./assets/images/start/step-1.png" class="w-[100%] h-[7.875rem]" />
+            <p>
+              After starting the business from the lady go to inside of your
+              office.
+            </p>
+            <img src="./assets/images/start/step-2.png" class="w-[100%] h-[7.875rem]" />
+            <p>Open the laptop and give your shop a name.</p>
+            <img src="./assets/images/start/step-3.png" class="w-[100%] h-[7.875rem]" />
+            <p>In the laptop you can get orders from the orders section.</p>
+            <img src="./assets/images/start/step-4.png" class="w-[100%] h-[7.875rem]" />
+            <p>After you get the orders its time to produce clothes.</p>
+          </div>
+        </div>
+        <div class="step-container items-center flex flex-col gap-y-2">
+          <h1 class="step-header">STEP 2</h1>
+
+          <div class="step">
+            <img src="./assets/images/start/step-5.png" class="w-[100%] h-[7.875rem]" />
+            <p>To produce clothes you’ll need materials.</p>
+            <img src="./assets/images/start/step-6.png" class="w-[100%] h-[7.875rem]" />
+            <p>Go to material shop section on the laptop.</p>
+            <img src="./assets/images/start/step-7.png" class="w-[100%] h-[7.875rem]" />
+            <p>Order the materials you need it for your order.</p>
+            <img src="./assets/images/start/step-8.png" class="w-[100%] h-[7.875rem]" />
+            <p>
+              After you ordered the materials they will go to shop’s storage.
+            </p>
+          </div>
+        </div>
+        <div class="step-container items-center flex flex-col gap-y-2">
+          <h1 class="step-header">STEP 3</h1>
+          <div class="step">
+            <img src="./assets/images/start/step-9.png" class="w-[100%] h-[7.875rem]" />
+            <p>Get the materials from the storage place in your shop</p>
+            <img src="./assets/images/start/step-10.png" class="w-[100%] h-[7.875rem]" />
+            <p>
+              Than go to any sewing machine and produce the clothes you want.
+            </p>
+            <img src="./assets/images/start/step-11.png" class="w-[100%] h-[7.875rem]" />
+            <p>
+              After the production go to your laptop and open the orders
+              section.
+            </p>
+            <img src="./assets/images/start/step-12.png" class="w-[100%] h-[7.875rem]" />
+            <p>Than click on ship order to deliver orders.</p>
+          </div>
+        </div>
+        <div class="step-container items-center flex flex-col gap-y-2">
+          <h1 class="step-header">STEP 4</h1>
+          <div class="step">
+            <img src="./assets/images/start/step-13.png" class="w-[100%] h-[7.875rem]" />
+            <p>Than go to your storage location and pack the orders.</p>
+            <img src="./assets/images/start/step-14.png" class="w-[100%] h-[7.875rem]" />
+            <p>After packing go outside you’ll see shops VAN.</p>
+            <img src="./assets/images/start/step-15.png" class="w-[100%] h-[7.875rem]" />
+            <p>Go back on the VAN and load the packs in there.</p>
+            <img src="./assets/images/start/step-16.png" class="w-[100%] h-[7.875rem]" />
+            <p>
+              Go to the location that set on your map and deliver the package.
+              DONE!
+            </p>
+          </div>
+        </div>
+        <div @click="toggleCurrentTutorial" class="workers-tutorial relative top-6">
+          <h1>{{currentTutorial == 'tailor' ? 'WORKERS' : 'TAILOR' }}</h1>
+          <h1>TUTORIAL</h1>
+        </div>
+      </div>
+      <div class="flex w-full mt-3 gap-x-3 px-7" v-else>
+        <div class="step-container items-center flex flex-col gap-y-2">
+          <h1 class="step-header">STEP 1</h1>
+          <div class="step">
+            <img src="./assets/images/start/step-17.png" class="w-[100%] h-[7.875rem]" />
+            <p>
+              Go to laptop in the office.
+            </p>
+            <img src="./assets/images/start/step-18.png" class="w-[100%] h-[7.875rem]" />
+            <p>Open Workers section
+              on the laptop</p>
+            <img src="./assets/images/start/step-19.png" class="w-[100%] h-[7.875rem]" />
+            <p>In this section you can hire
+              workers.</p>
+            <img src="./assets/images/start/step-20.png" class="w-[100%] h-[7.875rem]" />
+            <p>Workers needs their salary
+              to start the work.</p>
+          </div>
+        </div>
+        <div class="step-container items-center flex flex-col gap-y-2">
+          <h1 class="step-header">STEP 2</h1>
+
+          <div class="step">
+            <img src="./assets/images/start/step-21.png" class="w-[100%] h-[7.875rem]" />
+            <p>To pay their salaries you
+              need to deposit money to vault.</p>
+            <img src="./assets/images/start/step-22.png" class="w-[100%] h-[7.875rem]" />
+            <p>After you hired workers
+              go to any sewing machine.</p>
+            <img src="./assets/images/start/step-23.png" class="w-[100%] h-[7.875rem]" />
+            <p>In the menu you will see
+              worker section.</p>
+            <img src="./assets/images/start/step-24.png" class="w-[100%] h-[7.875rem]" />
+            <p>
+              You can append workers to
+              sewing machine.
+            </p>
+          </div>
+        </div>
+        <div class="step-container items-center flex flex-col gap-y-2">
+          <h1 class="step-header">STEP 3</h1>
+          <div class="step">
+            <img src="./assets/images/start/step-25.png" class="w-[100%] h-[7.875rem]" />
+            <p>Every worker has their own
+              professions.</p>
+            <img src="./assets/images/start/step-26.png" class="w-[100%] h-[7.875rem]" />
+            <p>
+              Binco or other + profession
+              workes does the job %20 faster.
+            </p>
+            <img src="./assets/images/start/step-27.png" class="w-[100%] h-[7.875rem]" />
+            <p>
+              Binco or other + profession
+              workes does the job %20 faster.
+            </p>
+            <img src="./assets/images/start/step-28.png" class="w-[100%] h-[7.875rem]" />
+            <p>You can check the workers status
+              from the tablet as well.</p>
+          </div>
+        </div>
+        <div class="step-container items-center flex flex-col gap-y-2">
+          <h1 class="step-header">STEP 4</h1>
+          <div class="step">
+            <img src="./assets/images/start/step-29.png" class="w-[100%] h-[7.875rem]" />
+            <p>When the workers finish the job,
+              clothes automaticly goes to storage.</p>
+            <img src="./assets/images/start/step-30.png" class="w-[100%] h-[7.875rem]" />
+            <p>You can check how many clothes
+              in your laptop as well.</p>
+            <img src="./assets/images/start/step-31.png" class="w-[100%] h-[7.875rem]" />
+            <p>You can automate sewing machines
+              with workers to get jobs done.</p>
+            <img src="./assets/images/start/step-32.png" class="w-[100%] h-[7.875rem]" />
+            <p>
+              You can automate up to 8
+              machines in the business.
+            </p>
+          </div>
+        </div>
+        <div @click="toggleCurrentTutorial" class="workers-tutorial relative top-6">
+          <h1>{{currentTutorial == 'tailor' ? 'WORKERS' : 'TAILOR' }}</h1>
+          <h1>TUTORIAL</h1>
+        </div>
+      </div>
+      <div @click="setShowTutorial(false)" class="got-it-button">GOT IT</div>
+    </div>
+  </div>
+
+
+  <h1 class="job-name-header">{{jobData.name ? jobData.name : ''}}</h1>
+  <img class="w-11/12" src="./assets/images/start/line-1.png" />
+  <h1 class="welcome-title">{{locales.welcome}}</h1>
+  <div class="video-container">
+    <video class="w-full h-full" loop autoplay src="./assets/TailorVID.mp4"></video>
+  </div>
+  <img class="w-12/12" src="./assets/images/start/line-2.png" />
+  <h1 class="tailorshop-title">Tailorshop</h1>
+  <p class="tailorshop-desc">{{locales.start_business}}</p>
+  <img class="w-12/12" src="./assets/images/start/line-2.png" />
+  <div @click="setShowTutorial(true)" class="tutorial-button">
+    {{locales.tutorial}}
+  </div>
+  <div @click="toggleJob" class="start-button">
+    {{jobData.started ? locales.finish_job : locales.start}}
+  </div>
+</div>

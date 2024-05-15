@@ -1,0 +1,93 @@
+<div class="laptop">
+  <div class="laptop-wrapper">
+    <div class="notch"></div>
+    <div class="laptop-header">
+      <div class="flex items-center gap-x-2">
+        <img class="small-logo" :src="jobData.logo == 'default' ? './assets/images/laptop/tailor-logo-small.png' : jobData.logo" />
+        <p class="tailor-job-text-small">{{jobData.name}}</p>
+      </div>
+      <div class="flex items-center gap-x-5">
+        <img src="./assets/images/laptop/battery.png" />
+        <p class="date-text">{{dayLabel}} {{monthLabel}} {{day}}</p>
+        <p class="time-text">{{hour}}:{{minute}}</p>
+      </div>
+    </div>
+
+    <div
+      v-if="this.page != 'name'"
+      class="flex items-center justify-between mt-6 px-4"
+    >
+      <div class="flex items-center gap-x-3">
+        <img class="med-logo" :src="jobData.logo == 'default' ? './assets/images/laptop/tailor-logo-med.png' : jobData.logo" />
+        <p class="tailor-job-text-small">{{jobData.name}}</p>
+      </div>
+
+      <div class="flex items-center gap-x-2">
+        <div class="flex flex-col gap-y-2">
+          <p class="player-name">{{jobData.playerName}}</p>
+          <div class="flex items-center justify-end gap-x-1">
+            <p class="player-level">Lv.{{jobData.level}}</p>
+            <img src="./assets/images/laptop/level.png" />
+          </div>
+        </div>
+        <img class="pp w-[3.125rem] h-[3.125rem]" :src="jobData.pp" />
+      </div>
+    </div>
+    <div v-if="this.page != 'name'" class="flex items-center gap-x-3 mt-6 px-4">
+      <div
+        @click="setActivePage('overview')"
+        :class="{active : page == 'overview'}"
+        class="menu-button"
+      >
+        {{locales.overview}}
+      </div>
+      <div
+        @click="setActivePage('orders')"
+        :class="{active : page == 'orders'}"
+        class="menu-button"
+      >
+        {{locales.orders}}
+      </div>
+      <div
+        @click="setActivePage('workers')"
+        :class="{active : page == 'workers'}"
+        class="menu-button"
+      >
+        {{locales.workers}}
+      </div>
+
+      <div   :class="{active : page == 'storage'}"
+        @click="setActivePage('storage')" class="menu-button">{{locales.storage}}</div>
+      <div
+        :class="{active : page == 'materialshop'}"
+        @click="setActivePage('materialshop')"
+        class="menu-button"
+      >
+        {{locales.material_shop}}
+      </div>
+      <div
+        :class="{active : page == 'leaderboard'}"
+        @click="setActivePage('leaderboard')"
+        class="menu-button"
+      >
+        {{locales.leaderboard}}
+      </div>
+      <div
+        :class="{active : page == 'business'}"
+        @click="setActivePage('business')"
+        class="menu-button"
+      >
+        {{locales.business}}
+      </div>
+    </div>
+    <name v-if="this.page == 'name'"></name>
+    <overview v-if="this.page == 'overview'" />
+    <orders v-if="this.page == 'orders'" />
+    <workers v-if="this.page == 'workers'" />
+    <materialshop v-if="this.page == 'materialshop'" />
+    <leaderboard v-if="this.page == 'leaderboard'" />
+    <business v-if="this.page == 'business'" />
+    <storage v-if="this.page == 'storage'" />
+
+  </div>
+</div>

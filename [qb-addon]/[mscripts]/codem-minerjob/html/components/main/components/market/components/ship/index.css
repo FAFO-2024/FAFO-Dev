@@ -1,0 +1,88 @@
+.ship {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 3rem;
+  column-gap: 3rem;
+}
+
+.ship-bg {
+  width: 22.375rem;
+  height: 24.0625rem;
+  background-image: url(../../../../../../assets/images/ship-bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-img-1 {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  height: 5rem;
+  width: 5rem;
+}
+.item-img-2 {
+  position: absolute;
+  top: 3.5rem;
+  left: 3.5rem;
+  height: 5rem;
+  width: 5rem;
+}
+
+.factory-name-header {
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Gilroy-Bold;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 99.5%; /* 1.11938rem */
+  color: black;
+}
+.factory-name-label {
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Gilroy-Bold;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 99.5%; /* 1.11938rem */
+  color: black;
+}
+
+.offer-text {
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Gilroy-Bold;
+  font-size: 1.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 99.5%; /* 1.92781rem */
+}
+
+.ship-btn {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url(../../../../../../assets/images/ship-btn.png);
+  width: 100%;
+  height: 2.9375rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Gilroy-Bold;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 99.5%; /* 1.24375rem */
+  color: white;
+  cursor: pointer;
+}

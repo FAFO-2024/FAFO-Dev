@@ -1,0 +1,48 @@
+<div class="workers">
+  <div class="flex items-center justify-between">
+    <div class="worker-buttons">
+      <div
+        @click="setActivePage('workers')"
+        :class="{active : page == 'workers'}"
+        class="worker-button"
+      >
+        {{locales.avaliable_workers}}
+      </div>
+      <div
+        @click="setActivePage('myworkers')"
+        :class="{active : page == 'myworkers'}"
+        class="worker-button"
+      >
+        {{locales.my_workers}}
+      </div>
+    </div>
+    <h1 class="total-worker-text">
+      {{getAvaliableWorkers.length}} {{locales.total_worker}}
+    </h1>
+  </div>
+  <img class="mx-auto w-full" src="./assets/images/laptop/line-2.png" />
+  <div class="flex items-center flex-wrap gap-x-3 gap-y-4">
+    <div
+      class="card"
+      :class="{[data.type]:true}"
+      v-for="data in getAvaliableWorkers"
+    >
+      <template v-if="jobData.level < data.level">
+        <div class="locked-overlay"></div>
+        <img src="./assets/images/laptop/locked.png" class="locked-icon" />
+        <p class="level-required">{{locales.level_required.format(data.level)}}</p>
+      </template>
+      <img :src="'./assets/images/laptop/'+data.image" />
+      <p class="worker-name">{{data.name}}</p>
+      <p class="worker-proffesion">{{data.proffesion_label}}</p>
+      <p class="worker-salary">${{data.salary}} {{locales.salary}}</p>
+      <div
+        @click="HireWorker(data)"
+        class="hire-button"
+        :class="{[data.type]:true}"
+      >
+        {{page == 'workers' ? locales.hire_worker : locales.fire_worker}}
+      </div>
+    </div>
+  </div>
+</div>

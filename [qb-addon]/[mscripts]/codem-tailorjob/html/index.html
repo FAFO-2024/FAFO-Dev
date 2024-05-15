@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/vuex@4.0.0/dist/vuex.global.js"></script>
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="./responsive.css" />
+
+  <link rel="stylesheet" href="./components/start/index.css" />
+  <link rel="stylesheet" href="./components/laptop/index.css" />
+  <link rel="stylesheet" href="./components/laptop/components/name/index.css" />
+  <link rel="stylesheet" href="./components/laptop/components/materialshop/index.css" />
+  <link rel="stylesheet" href="./components/laptop/components/orders/index.css" />
+  <link rel="stylesheet" href="./components/laptop/components/orders/index.css" />
+  <link rel="stylesheet" href="./components/laptop/components/leaderboard/index.css" />
+  <link rel="stylesheet" href="./components/laptop/components/overview/index.css" />
+  <link rel="stylesheet" href="./components/laptop/components/workers/index.css" />
+  <link rel="stylesheet" href="./components/laptop/components/business/index.css" />
+  <link rel="stylesheet" href="./components/laptop/components/storage/index.css" />
+  <link rel="stylesheet" href="./components/inventory/index.css" />
+
+  <link rel="stylesheet" href="./components/job/index.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <start v-if="currentPage == 'start'"></start>
+    <laptop v-if="currentPage == 'laptop'"></laptop>
+    <job v-if="currentPage == 'job'"></job>
+    <inventory v-if="currentPage == 'inventory'"></inventory>
+
+  </div>
+</body>
+<script src="./utils/postNui.js"></script>
+<script type="module" src="./index.js"></script>
+
+</html>

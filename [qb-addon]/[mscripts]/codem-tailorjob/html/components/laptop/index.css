@@ -1,0 +1,309 @@
+.laptop {
+  width: 111.75rem;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(../../assets/images/laptop/laptop.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.small-logo {
+  width: 1.125rem;
+  height: 1.5rem;
+}
+.med-logo {
+  width: 1.5rem;
+  height: 2.4375rem;
+}
+
+.laptop-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 1rem 12rem;
+}
+
+.laptop .laptop-header {
+  width: 87.125rem;
+  height: 2.1875rem;
+  display: flex;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  padding: 0 1rem;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.2);
+  background: color(display-p3 1 1 1 / 0.2);
+  backdrop-filter: blur(1.1844rem);
+}
+
+.laptop .tailor-job-text-small {
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Display;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.06rem;
+}
+
+.laptop .notch {
+  position: absolute;
+  left: 50%;
+  top: 1rem;
+  width: 10.25rem;
+  z-index: 1;
+  height: 1.875rem;
+  background-color: #000;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+
+  transform: translateX(-50%);
+}
+
+.laptop .date-text {
+  color: rgba(255, 255, 255, 0.9);
+  color: color(display-p3 1 1 1 / 0.9);
+  text-align: right;
+  text-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
+  text-shadow: 0rem 0.125rem 0.25rem color(display-p3 0 0 0 / 0.15);
+  font-family: SF Pro Text;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.02188rem;
+}
+
+.laptop .time-text {
+  color: rgba(255, 255, 255, 0.9);
+  color: color(display-p3 1 1 1 / 0.9);
+  text-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
+  text-shadow: 0rem 0.125rem 0.25rem color(display-p3 0 0 0 / 0.15);
+  font-family: SF Pro Text;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.02188rem;
+}
+
+.laptop .tailor-job-text-med {
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: SF Pro Text;
+  font-size: 1.60463rem;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+}
+
+.laptop .welcome-text {
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.laptop .welcome-text span {
+  color: #ffd1d4;
+}
+
+.laptop .name-input-container {
+  width: 22.875rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+.laptop .name-input-container h1 {
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.laptop .name-input-container input {
+  appearance: none;
+  outline: none;
+  border-radius: 0.75rem;
+  border: 0.125rem solid #ffccd7;
+  border: 0.125rem solid color(display-p3 1 0.8083 0.8422);
+  background: rgba(0, 0, 0, 0.65);
+  background: color(display-p3 0 0 0 / 0.65);
+  height: 3.125rem;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.laptop .name-input-container input::placeholder {
+  color: rgba(255, 255, 255, 0.58);
+  color: color(display-p3 1 1 1 / 0.58);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.laptop .continue-button {
+  display: flex;
+  width: 13.3125rem;
+  height: 2.35rem;
+  margin: 0 auto;
+  margin-top: 10rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.375rem;
+  background: #ffccd7;
+  box-shadow: 0rem 0rem 0.0187rem 0.25rem #735359,
+    0rem 0rem 0.0938rem 0.0625rem #ffe7ec inset;
+  color: #000;
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi-Black;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.laptop .tailorshop-name {
+  color: #ffd1d4;
+  color: color(display-p3 1 0.8275 0.8353);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 8rem;
+}
+
+.laptop .player-name {
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  text-align: right;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Gilroy-Bold;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 99.5%; /* 0.995rem */
+}
+
+.laptop .player-level {
+  color: rgba(255, 255, 255, 0.4);
+  color: color(display-p3 1 1 1 / 0.4);
+  text-align: right;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Gilroy-Bold;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 99.5%; /* 0.87063rem */
+}
+
+.laptop .pp {
+  border-radius: 50%;
+  border: 0.125rem solid #d9d9d9;
+}
+
+.laptop .laptop-line {
+  background-image: url(../../assets/images/laptop/line-2.png);
+  flex: 1;
+  height: 3rem;
+  background-repeat: no-repeat;
+}
+
+.laptop .menu-button {
+  width: 11.25rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 0.3125rem;
+  border: 0.125rem solid rgba(255, 255, 255, 0.04);
+  border: 0.125rem solid color(display-p3 1 1 1 / 0.04);
+  background: rgba(217, 217, 217, 0.07);
+  background: color(display-p3 0.851 0.851 0.851 / 0.07);
+  opacity: 0.4;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.laptop .menu-button:hover {
+  opacity: 1;
+}
+
+.laptop .menu-button:hover::after {
+  content: url(../../assets/images/laptop/active-button.png);
+  width: 0.9375rem;
+  height: 0.8125rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1rem;
+}
+.laptop .menu-button.active {
+  opacity: 1;
+}
+.laptop .menu-button.active::after {
+  content: url(../../assets/images/laptop/active-button.png);
+  width: 0.9375rem;
+  height: 0.8125rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1rem;
+}

@@ -1,0 +1,76 @@
+<div class="job">
+  <div :class="{jobStarted:mineStarted}" class="job-bg" :style="getBG"></div>
+  <p
+    :class="{[currentMine] : true, jobStarted:mineStarted}"
+    class="mine-place-label"
+  >
+    {{mineLabels[currentMine]}}
+  </p>
+  <img
+    :class="{jobStarted:mineStarted}"
+    class="my-8"
+    :src="styles[currentMine].line"
+  />
+  <p :class="{jobStarted:mineStarted}" class="welcome-text">
+    Welcome to {{mineLabels[currentMine]}}, You can mine 3 different ore in this
+    area...
+  </p>
+  <img
+    :class="{jobStarted:mineStarted}"
+    class="my-8"
+    src="./assets/images/mine-line.png"
+  />
+  <p :class="{jobStarted:mineStarted}" class="possible-ore-text">
+    Possible Ores In This Area
+  </p>
+  <div class="ores-container mt-8">
+    <div :style="getBigOreContainer" class="big-ore-container">
+      <p :class="{jobStarted:mineStarted}">{{ores[currentMine].first.label}}</p>
+      <img
+        :src="'./assets/images/item_images/'+ores[currentMine].first.image"
+      />
+    </div>
+    <div :style="getSmallOreContainer" class="small-ore-container first-ore">
+      <p :class="{jobStarted:mineStarted}">
+        {{ores[currentMine].second.label}}
+      </p>
+      <img
+        :src="'./assets/images/item_images/'+ores[currentMine].second.image"
+      />
+    </div>
+    <div :style="getSmallOreContainer" class="small-ore-container second-ore">
+      <p :class="{jobStarted:mineStarted}">{{ores[currentMine].third.label}}</p>
+      <img
+        :src="'./assets/images/item_images/'+ores[currentMine].third.image"
+      />
+    </div>
+  </div>
+  <div class="required-pickaxe mt-40" v-if="!mineStarted">
+    <div class="pickaxe-container">
+      <img :src="'./assets/images/item_images/'+pickaxes[currentMine].image" />
+    </div>
+    <p :class="{jobStarted:mineStarted}" class="required-pickaxe-text">
+      You need "<span :style="{color : styles[currentMine].pickaxeText}"
+        >{{pickaxes[currentMine].label}}</span
+      >" to mine in this area.
+    </p>
+  </div>
+  <div v-if="mineStarted" class="item-logs flex items-center gap-x-2 mt-40">
+    <div
+      class="item-log"
+      :style="{filter: index == 2 ?  'drop-shadow(0px 0px 29.2px rgba(255, 255, 255, 0.56))' : ''}"
+      v-for="(item, index) in itemLogs"
+    >
+      <p :class="{jobStarted:mineStarted}" class="item-log-label">
+        {{item.label}}
+      </p>
+      <img :src="'./assets/images/item_images/'+item.item+'.png'" />
+    </div>
+  </div>
+  <div :class="{jobStarted:mineStarted}" class="start-buttons mt-6">
+    <div class="key-button" :style="getKeyButton">E</div>
+    <div class="start-button" :style="getStartButton">
+      {{mineStarted ? 'STOP MINING' : 'START MINING'}}
+    </div>
+  </div>
+</div>

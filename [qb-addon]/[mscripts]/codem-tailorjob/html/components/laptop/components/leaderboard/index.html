@@ -1,0 +1,27 @@
+<div class="leaderboard">
+  <div class="flex items-center justify-between ">
+    <p class="leaderboard-title">{{locales.leaderboard}}</p>
+    <div class="flex items-center gap-x-4">
+      <input v-model="filterPlayer" type="text" class="leaderboard-input" :placeholder="locales.search_any_player">
+      <p class="leaderboard-your-number"> {{locales.leaderboard_level.format(getPlayerLevel)}}</p>
+    </div>
+  </div>
+  <div class="leaderboard-list no-scrollbar">
+    <div v-for="(i, index) in getFilteredLeaderboard" class="leaderboard-list-item relative">
+      <div class="flex items-center gap-x-3">
+        <p class="shop-num">#{{index+1}}</p>
+        <p class="shop-name">{{i.name}}</p>
+      </div>
+      <div class="flex items-center absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2">
+        <p class="player-name">{{i.playerName}}</p>
+        <img class="player-pp" :src="i.pp">
+
+      </div>
+      <div class="flex items-center gap-x-3">
+        <p class="player-level">Lv.{{i.level}}</p>
+        <img  src="./assets/images/laptop/level-icon.png">
+
+      </div>
+    </div>
+  </div>
+</div>

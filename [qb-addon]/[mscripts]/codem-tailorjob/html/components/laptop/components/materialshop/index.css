@@ -1,0 +1,300 @@
+.materialshop {
+  margin-top: 2rem;
+  width: 100%;
+  height: 70%;
+  display: flex;
+  padding: 0 1rem;
+  column-gap: 1.25rem;
+}
+
+.materialshop .shop-container {
+  flex: 8;
+  border-radius: 0.3125rem;
+
+  height: 100%;
+  border-radius: 0.3125rem;
+  border: 2px solid rgba(255, 255, 255, 0.04);
+  background: radial-gradient(
+      84.73% 84.73% at 50% 50%,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.72) 100%
+    ),
+    rgba(217, 217, 217, 0.05);
+  padding: 1rem;
+}
+
+.materialshop .item-amount-input{
+  appearance: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  color: color(display-p3 1 1 1 / 0.5);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.materialshop .shop-container .shop-items {
+  height: 88%;
+  margin-top: 0.75rem;
+  overflow: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  align-content: start;
+}
+
+.materialshop .shop-container .shop-items .shop-item {
+  width: 9.375rem;
+  height: 9.375rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.07);
+  background: rgba(217, 217, 217, 0.07);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.materialshop .shop-container .shop-items .shop-item .shop-item-price {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  text-align: right;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.materialshop .shop-container .shop-items .shop-item .shop-item-label {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: rgba(53, 51, 52, 0.31);
+  backdrop-filter: blur(8.550000190734863px);
+  width: 9.375rem;
+  height: 1.5625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.materialshop .card-container {
+  padding: 1rem;
+  flex: 4;
+  height: 100%;
+  border-radius: 0.3125rem;
+
+  border: 2px solid rgba(255, 255, 255, 0.04);
+  background: radial-gradient(
+      84.73% 84.73% at 50% 50%,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.72) 100%
+    ),
+    rgba(217, 217, 217, 0.05);
+}
+.materialshop .card-container .my-cash {
+  color: rgba(255, 255, 255, 0.44);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.materialshop  .card-container .total-cart {
+color: rgba(255, 255, 255, 0.44);
+color: color(display-p3 1 1 1 / 0.44);
+leading-trim: both;
+text-edge: cap;
+font-family: Satoshi;
+font-size: 1rem;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.materialshop .card-container  .pay-button {
+  width: 9.375rem;
+  height: 3.125rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  background: #ffccd7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.materialshop .card-container .cart-items {
+  height: 75%;
+  width: 100%;
+  overflow: auto;
+}
+
+.materialshop .card-container .cart-items .cart-item {
+  width: 100%;
+  margin-bottom: 0.75rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.07);
+  background: rgba(217, 217, 217, 0.07);
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.materialshop .card-container .cart-items .cart-item .amount {
+  color: rgba(255, 255, 255, 0.5);
+  color: color(display-p3 1 1 1 / 0.5);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.materialshop .card-container .cart-items .cart-item .shop-item-label {
+  color: #fff;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.materialshop .card-container .cart-items .cart-item .item-img {
+  width: 2.875rem;
+  height: 3.0625rem;
+  object-fit: contain;
+}
+.materialshop .card-container .cart-items .cart-item .shop-item-price {
+  color: rgba(255, 255, 255, 0.33);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.materialshop .card-container .my-cart-btn {
+  width: 6.4375rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  color: color(display-p3 1 1 1);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 0.3125rem;
+  border: 2px solid rgba(255, 255, 255, 0.04);
+  background: rgba(217, 217, 217, 0.07);
+}
+
+.materialshop .card-container .my-cash {
+  color: rgba(255, 255, 255, 0.44);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.materialshop .shop-buttons {
+  display: flex;
+  align-items: center;
+  column-gap: 0.75rem;
+}
+
+.materialshop .shop-buttons .shop-button {
+  color: #fff;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.3125rem;
+  border: 2px solid rgba(255, 255, 255, 0.04);
+  opacity: 0.4;
+  background: rgba(217, 217, 217, 0.07);
+  transition: all 0.2s ease;
+}
+
+.materialshop .shop-buttons .shop-button.active {
+  opacity: 1;
+}
+
+.materialshop .shop-container input {
+  appearance: none;
+  border: none;
+  outline: none;
+  width: 12.625rem;
+  height: 2.5rem;
+  border-radius: 0.3125rem;
+  border: 2px solid rgba(255, 255, 255, 0.04);
+  background: rgba(217, 217, 217, 0.07);
+  padding: 0 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Satoshi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.materialshop .shop-container input::placeholder {
+  color: rgba(255, 255, 255, 0.18);
+}

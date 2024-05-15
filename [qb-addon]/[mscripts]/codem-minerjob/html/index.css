@@ -1,0 +1,143 @@
+@font-face {
+  font-family: Gilroy-Bold;
+  src: url(./assets/fonts/GILROY-BOLD.TTF);
+}
+
+@font-face {
+  font-family: Gilroy-Black;
+  src: url(./assets/fonts/GILROY-BLACK.TTF);
+}
+
+@font-face {
+  font-family: Gilroy-ExtraBold;
+  src: url(./assets/fonts/GILROY-EXTRABOLD.TTF);
+}
+
+@font-face {
+  font-family: Gilroy-Semibold;
+  src: url(./assets/fonts/GILROY-SEMIBOLD.TTF);
+}
+
+@font-face {
+  font-family: Gilroy-Medium;
+  src: url(./assets/fonts/GILROY-MEDIUM.TTF);
+}
+
+@font-face {
+  font-family: Helvetica;
+  src: url(./assets/fonts/Helvetica.ttf);
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url(./assets/fonts/SF-Pro-Text-Regular.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  user-select: none;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.notifications-container {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 3;
+}
+
+.notification {
+  background-image: url(./assets/images/Notification.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  min-width: 21.5rem;
+  min-height: 5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  column-gap: 1rem;
+}
+
+.notification-header {
+  color: #fff;
+
+  font-family: "SF Pro Text";
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.notification-message {
+  color: rgba(255, 255, 255, 0.59);
+  font-family: "SF Pro Text";
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.minigame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  transform: translate(-50%, -50%);
+}
+
+.track {
+  stroke: #06ffd130;
+  fill: none;
+  stroke-width: 10;
+}
+
+.progress {
+  stroke: #FF0606;
+  fill: none;
+  stroke-width: 10;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.indicator {
+  stroke: #06FFD2;
+  fill: none;
+  stroke-width: 10;
+  stroke-dasharray: 630;
+  transform-origin: center;
+}
+
+.key {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20%;
+  color: white;
+  transform-origin: center;
+  animation: key 1s ease-in-out infinite;
+  background-image: url(./assets/images/R_KEY.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+

@@ -1,0 +1,54 @@
+<div class="leaderboard">
+  <img src="./assets/images/railway.png" class="railway" />
+  <p class="you-are-text">You are #{{leaderboard.playerOrder}}</p>
+  <div class="leaderboard-others">
+    <div
+      class="leaderboard-other"
+      v-for="(i, index) in leaderboard.data"
+      v-show="index > 2"
+    >
+      <div class="leaderboard-other-level">#{{index+1}}</div>
+      <p class="leaderboard-other-playername">{{i.name}}</p>
+      <div class="leaderboard-other-playerlevel">
+        <p>Lv.{{i.level}}</p>
+        <img src="./assets/images/leaderboard-player-level.png" />
+      </div>
+    </div>
+  </div>
+  <div class="leaderboard-1" v-if="leaderboard.data[0]">
+    <div class="leaderboard-1-pp-holder">
+      <img
+        :src="leaderboard.data[0].avatar"
+        v-if="leaderboard.data[0].avatar"
+      />
+    </div>
+    <div class="leaderboard-1-bottom">
+      <p class="leaderboard-playername">{{leaderboard.data[0].name}}</p>
+      <p class="leaderboard-playerlevel">#1</p>
+    </div>
+    <div class="leaderboard-2" v-if="leaderboard.data[1]">
+      <div class="leaderboard-2-pp-holder">
+        <img
+          v-if="leaderboard.data[1].avatar"
+          :src="leaderboard.data[1].avatar"
+        />
+      </div>
+      <div class="leaderboard-2-bottom">
+        <p class="leaderboard-2-playername">{{leaderboard.data[1].name}}</p>
+        <p class="leaderboard-2-playerlevel">#2</p>
+      </div>
+    </div>
+    <div class="leaderboard-3" v-if="leaderboard.data[2]">
+      <div class="leaderboard-2-pp-holder">
+        <img
+          v-if="leaderboard.data[2].avatar"
+          :src="leaderboard.data[2].avatar"
+        />
+      </div>
+      <div class="leaderboard-2-bottom">
+        <p class="leaderboard-2-playername">{{leaderboard.data[2].name}}</p>
+        <p class="leaderboard-2-playerlevel">#3</p>
+      </div>
+    </div>
+  </div>
+</div>

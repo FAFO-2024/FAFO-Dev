@@ -1,0 +1,27 @@
+
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
+	('advanced_pickaxe', 'Advanced Pickaxe', 1, 0, 1),
+	('blackpowder', 'Black Powder', 1, 0, 1),
+	('coal', 'Coal', 1, 0, 1),
+	('concrete', 'Concrete', 1, 0, 1),
+	('concrete_package', 'Concrete Package', 1, 0, 1),
+	('copper_ingot', 'Copper Ingot', 1, 0, 1),
+	('copper_ore', 'Copper Ore', 1, 0, 1),
+	('diamond_ingot', 'Diamond Ingot', 1, 0, 1),
+	('diamond_ore', 'Diamond Ore', 1, 0, 1),
+	('glass', 'Glass', 1, 0, 1),
+	('glass_mold', 'Glass Mold', 1, 0, 1),
+	('goldingot', 'Gold Ingot', 1, 0, 1),
+	('gold_ore', 'Gold Ore', 1, 0, 1),
+	('ingot_mold', 'Ingot Mold', 1, 0, 1),
+	('iron_ingot', 'Iron Ingot', 1, 0, 1),
+	('iron_ore', 'Iron Ore', 1, 0, 1),
+	('limestone', 'Lime Stone', 1, 0, 1),
+	('normal_pickaxe', 'Normal Pickaxe', 1, 0, 1),
+	('professional_pickaxe', 'Professional Pickaxe', 1, 0, 1),
+	('rock', 'Rock', 1, 0, 1),
+	('sandstone', 'Sand Stone', 1, 0, 1),
+	('special_water', 'Special Water', 1, 0, 1),
+	('sticky_gel', 'Sticky Gel', 1, 0, 1),
+	('sulfur', 'Sulfur', 1, 0, 1);
+	

@@ -1,0 +1,76 @@
+<div class="materialshop">
+  <div class="shop-container">
+    <div class="flex items-center justify-between">
+      <div class="shop-buttons">
+        <div
+          class="shop-button"
+          @click="page='materials'"
+          :class="{active:page == 'materials'}"
+        >
+          {{locales.materials}}
+        </div>
+        <div
+          class="shop-button"
+          @click="page='upgrade_items'"
+          :class="{active:page == 'upgrade_items'}"
+        >
+          {{locales.upgrade_items}}
+        </div>
+      </div>
+      <input
+        v-model="searchMaterial"
+        type="text"
+        :placeholder="locales.search_material"
+      />
+    </div>
+    <div class="shop-items no-scrollbar">
+      <div
+        @click="addToCart(item)"
+        class="shop-item"
+        v-for="item in getMarketItems"
+      >
+        <img :src="'./assets/images/laptop/'+item?.image" />
+        <div class="shop-item-label">{{item.label}}</div>
+        <p class="shop-item-price">${{item.price}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="flex items-center justify-between">
+      <div class="my-cart-btn">{{locales.my_cart}}</div>
+      <p class="my-cash">{{locales.you_have.format(cash)}}</p>
+    </div>
+    <div class="cart-items mt-2 no-scrollbar">
+      <div class="cart-item" v-for="(item, index) in cartItems">
+        <div class="flex items-center gap-x-3">
+          <img class="item-img" :src="'./assets/images/laptop/'+item?.image" />
+          <div class="flex flex-col gap-y-1">
+            <p class="shop-item-label">{{item.label}}</p>
+            <p class="shop-item-price">${{item.price}}</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-x-6">
+          <img
+            @click="decreaseFromCart(item.name)"
+            src="./assets/images/laptop/decrease.png"
+          />
+          <input
+            type="text"
+            class="item-amount-input"
+            v-model="item.amount"
+            :key="index"
+          />
+          <img
+            @click="increaseFromCart(item.name)"
+            src="./assets/images/laptop/increase.png"
+          />
+        </div>
+      </div>
+    </div>
+    <img class="mx-auto w-full" src="./assets/images/laptop/line-2.png" />
+    <div class="flex mt-4 items-center justify-between">
+      <p class="total-cart">{{locales.total}} ${{getCartTotal}}</p>
+      <div @click="buyItems" class="pay-button">{{locales.pay_all}}</div>
+    </div>
+  </div>
+</div>

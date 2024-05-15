@@ -1,0 +1,187 @@
+<div class="main">
+  <div class="mine-map" :style="getStyle">
+    <p class="mine-label">{{areas[selectedArea]?.label}}</p>
+    <div class="flex icons-container flex-col gap-y-3 mt-8">
+      <div class="flex items-center gap-x-2">
+        <img src="./assets/images/items-icon.png" />
+        <p>{{areas[selectedArea]?.itemsLabel}}</p>
+      </div>
+      <div class="flex items-center gap-x-2">
+        <img src="./assets/images/required-level-icon.png" />
+        <p>Level {{areas[selectedArea]?.level}} Required</p>
+      </div>
+      <div class="flex items-center gap-x-2">
+        <img src="./assets/images/pickaxe-icon.png" />
+        <p>{{areas[selectedArea]?.toolLabel}}</p>
+      </div>
+    </div>
+    <div class="select-area-btn mt-8" @click="selectArea">SELECT AREA</div>
+    <div class="mine-areas">
+      <div
+        class="mine-area"
+        :class="{selected : selectedArea == 'redwood'}"
+        @click="setSelectedArea('redwood')"
+      >
+        <div class="level-container">Lv.1</div>
+        <p class="mine-area-label">Redwood Lights Area</p>
+        <img src="./assets/images/unlocked-icon.png" class="lock-icon" />
+      </div>
+      <div
+        class="mine-area"
+        :class="{selected : selectedArea == 'david_quartz'}"
+        @click="setSelectedArea('david_quartz')"
+      >
+        <div class="level-container">Lv.{{areas['david_quartz']?.level}}</div>
+        <p class="mine-area-label">David Quartz Area</p>
+        <img
+          v-if="areas['david_quartz']?.level > playerData.level"
+          src="./assets/images/locked-icon.png"
+          class="lock-icon"
+        />
+        <img src="./assets/images/unlocked-icon.png" class="lock-icon" v-else />
+      </div>
+      <div
+        class="mine-area"
+        :class="{selected : selectedArea == 'abandoned_mine'}"
+        @click="setSelectedArea('abandoned_mine')"
+      >
+        <div class="level-container">Lv.{{areas['abandoned_mine']?.level}}</div>
+        <p class="mine-area-label">Abandoned Mines</p>
+        <img
+          v-if="areas['abandoned_mine']?.level > playerData.level"
+          src="./assets/images/locked-icon.png"
+          class="lock-icon"
+        />
+        <img src="./assets/images/unlocked-icon.png" class="lock-icon" v-else />
+      </div>
+    </div>
+  </div>
+  <div class="main-bottom mt-6">
+    <div class="daily-mission-container">
+      <div class="daily-mission-header">
+        <img src="./assets/images/dailymission-icon.png" />
+        <p class="daily-mission-header-label">Daily Missions</p>
+        <p class="daily-mission-hours-left">{{getDailyMissionRemainHours}}hr</p>
+      </div>
+      <div class="daily-missions no-scrollbar">
+        <div v-for="i in playerData.dailyMissions.data" class="daily-mission">
+          <p class="daily-mission-header-text">{{i.header}}</p>
+          <p class="daily-mission-desc-text">{{i.label}}</p>
+          <div class="daily-mission-xp-container">
+            <p>{{i.process}}/{{i.max}}</p>
+            <p>+{{i.xp}}xp</p>
+          </div>
+          <div class="daily-mission-progress">
+            <div
+              class="daily-mission-progress-inner"
+              :style="{width : getPercentage(i.max, i.process) + '%'}"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="select-vehicle-container">
+      <img
+        @click="decreaseSelectedTruck"
+        src="./assets/images/left-arrow-select.png"
+        class="left-arrow-select"
+      />
+      <img
+        @click="increaseSelectedTruck"
+        src="./assets/images/right-arrow-select.png"
+        class="right-arrow-select"
+      />
+      <p
+        class="select-vehicle-header"
+        v-if="trucks[selectedTruck].level > playerData.level"
+      >
+        Lv.{{trucks[selectedTruck].level}} Required
+      </p>
+      <p v-else class="select-vehicle-header">Select The Vehicle</p>
+      <p class="select-vehicle-name">{{trucks[selectedTruck].label}}</p>
+      <img
+        class="select-vehicle-img"
+        :src="'./assets/images/'+trucks[selectedTruck].image"
+      />
+      <div class="select-veh-btn mt-20" @click="selectVehicle">
+        SELECT VEHICLE
+      </div>
+      <img
+        class="truck-locked-icon"
+        v-if="trucks[selectedTruck].level > playerData.level"
+        src="./assets/images/truck-locked-icon.png"
+      />
+      <img
+        class="truck-overlay"
+        v-if="trucks[selectedTruck].level > playerData.level"
+        src="./assets/images/truck-overlay.png"
+      />
+    </div>
+    <div class="get-ready-container">
+      <div class="get-ready-container-bg">
+        <div class="flex items-center gap-x-5">
+          <img src="./assets/images/getting-ready-icon.png" />
+          <p class="get-ready-text">Getting Ready!</p>
+        </div>
+        <div class="flex items-center gap-x-3 mt-6">
+          <img
+            v-if="selectedVehicle"
+            class="progressbar"
+            src="./assets/images/progress-bar-completed.png"
+          />
+          <img
+            v-else
+            class="progressbar"
+            src="./assets/images/progress-bar-uncompleted.png"
+          />
+          <p class="progress-text">Select the vehicle!</p>
+        </div>
+        <img
+          v-if="selectedVehicle"
+          class="progressbar-line pl-2 mt-1"
+          v-for="i in 3"
+          src="./assets/images/progressbar-completed-line.png"
+        />
+        <img
+          v-else
+          class="progressbar-line pl-2 mt-1"
+          v-for="i in 3"
+          src="./assets/images/progress-bar-uncompleted.png"
+        />
+        <div class="flex items-center gap-x-3 mt-1">
+          <img
+            v-if="selectedAreaProgress"
+            class="progressbar"
+            src="./assets/images/progress-bar-completed.png"
+          />
+          <img
+            v-else
+            class="progressbar"
+            src="./assets/images/progress-bar-uncompleted.png"
+          />
+          <p class="progress-text">Select an area!</p>
+        </div>
+        <img
+          v-if="selectedAreaProgress"
+          class="progressbar-line pl-2 mt-1"
+          v-for="i in 3"
+          src="./assets/images/progressbar-completed-line.png"
+        />
+        <img
+          v-else
+          class="progressbar-line pl-2 mt-1"
+          v-for="i in 3"
+          src="./assets/images/progress-bar-uncompleted.png"
+        />
+        <div class="flex items-center gap-x-3 mt-1">
+          <img
+            class="progressbar"
+            src="./assets/images/progress-bar-uncompleted.png"
+          />
+          <p class="progress-text">Start the job!</p>
+        </div>
+      </div>
+      <div @click="startJob" class="start-btn">START JOB</div>
+    </div>
+  </div>
+</div>

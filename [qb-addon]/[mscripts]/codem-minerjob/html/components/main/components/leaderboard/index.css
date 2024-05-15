@@ -1,0 +1,231 @@
+.leaderboard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.railway {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+}
+
+.leaderboard-1 {
+  position: absolute;
+  left: 52%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.leaderboard-2 {
+  position: absolute;
+  left: -150%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.leaderboard-3 {
+  position: absolute;
+  left: 150%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.leaderboard-1-pp-holder {
+  background-image: url(../../../../assets/images/Leader_1.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 12.5rem;
+  position: relative;
+  z-index: 22;
+  height: 12.5rem;
+  overflow: hidden;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leaderboard-1-pp-holder img {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.leaderboard-1-bottom {
+  background-image: url(../../../../assets/images/Leader_1_bottom.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 9.375rem;
+  height: 16rem;
+  position: relative;
+  left: 1.5rem;
+  bottom: 5.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.leaderboard-2-pp-holder {
+  background-image: url(../../../../assets/images/Leader_2.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 10rem;
+  position: relative;
+  z-index: 22;
+  height: 10rem;
+  overflow: hidden;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leaderboard-2-pp-holder img {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.leaderboard-2-bottom {
+  background-image: url(../../../../assets/images/Leader_2_bottom.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 6.65044rem;
+  height: 11.19488rem;
+  position: relative;
+  left: 1.5rem;
+  bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+
+.leaderboard-playername {
+  color: #b59352;
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Gilroy-SemiBold;
+  font-size: 1.0625rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.leaderboard-playerlevel {
+  leading-trim: both;
+  text-edge: cap;
+  color: #b59352;
+  font-family: Gilroy-SemiBold;
+  font-size: 3.95394rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.leaderboard-2-playername {
+  color: #06ffd2;
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Gilroy-SemiBold;
+  font-size: 0.75369rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.leaderboard-2-playerlevel {
+  leading-trim: both;
+  text-edge: cap;
+  color: #06ffd2;
+  font-family: Gilroy-SemiBold;
+  font-size: 2.80488rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.you-are-text {
+  position: absolute;
+  left: 52%;
+  transform: translateX(-50%);
+  bottom: 22rem;
+  color: #00bd9b;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Gilroy-Bold;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.leaderboard-others {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.15rem;
+}
+
+.leaderboard-other {
+  width: 100%;
+  height: 4rem;
+  background-image: url(../../../../assets/images/leaderboard-other.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+  padding: 0 2.25rem;
+  position: relative;
+}
+
+.leaderboard-other-playerlevel p {
+  color: #ffffff6b;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Gilroy-Bold;
+  font-size: 1.5295rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 99.5%; /* 1.52181rem */
+}
+.leaderboard-other-playerlevel {
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.leaderboard-other-playername {
+  color: #ffffff71;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Gilroy-Bold;
+  font-size: 1.48106rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.leaderboard-other-level {
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff71;
+  font-family: Gilroy-SemiBold;
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

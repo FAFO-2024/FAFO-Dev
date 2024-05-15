@@ -3,7 +3,7 @@ Config.Framework = 'qb' -- autodetect, qb, oldqb, esx, oldesx
 Config.SQL = "oxmysql"          -- oxmysql, ghmattimysql, mysql-async
 Config.ItemImagesFolder = "nui://qb-inventory/html/images/"
 Config.MenuKey = 38
-Config.InteractionHandler = 'drawtext' -- drawtext, ox_target, qb_target, qb_textui, esx_textui
+Config.InteractionHandler = 'qb_target' -- drawtext, ox_target, qb_target, qb_textui, esx_textui
 Config.AdminMenuCommand = "admin"
 Config.OutfitBugFixed = false          -- added to test a new code
 Config.DefaultImage = 'https://cdn.discordapp.com/attachments/983471660684423240/1147567519712940044/example-pp.png'
@@ -15,7 +15,7 @@ Config.Admins = {
     "moderator",
 }
 Config.newManagementSystem = true -- true is qb-banking false qb-managment
-Config.CreateJobAccount = false    -- is only for qb-banking, if there is no data for profession in sql, it creates automatically
+Config.CreateJobAccount = true    -- is only for qb-banking, if there is no data for profession in sql, it creates automatically
 
 Config.Certifications = {
     {
