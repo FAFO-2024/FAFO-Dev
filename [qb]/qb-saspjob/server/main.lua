@@ -592,13 +592,13 @@ QBCore.Functions.CreateCallback('sasp:server:IssaspForcePresent', function(_, cb
 end)
 
 -- Events
-AddEventHandler('onResourceStart', function(resourceName)
+--[[ AddEventHandler('onResourceStart', function(resourceName)
     if resourceName == GetCurrentResourceName() then
         CreateThread(function()
             MySQL.query("DELETE FROM stashitems WHERE stash = 'sasptrash'")
         end)
     end
-end)
+end) ]]
 
 RegisterNetEvent('sasp:server:saspAlert', function(text)
     local src = source

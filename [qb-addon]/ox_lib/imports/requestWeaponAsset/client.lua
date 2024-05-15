@@ -17,10 +17,10 @@
 
 ---Load a weapon asset. When called from a thread, it will yield until it has loaded.
 ---@param weaponType string | number
----@param timeout number? Number of ticks to wait for the asset to load. Default is 500.
+---@param timeout number? Approximate milliseconds to wait for the asset to load. Default is 10000.
 ---@param weaponResourceFlags WeaponResourceFlags? Default is 31.
 ---@param extraWeaponComponentFlags ExtraWeaponComponentFlags? Default is 0.
----@return string | number? weaponType
+---@return string | number weaponType
 function lib.requestWeaponAsset(weaponType, timeout, weaponResourceFlags, extraWeaponComponentFlags)
     if HasWeaponAssetLoaded(weaponType) then return weaponType end
 
@@ -38,23 +38,7 @@ function lib.requestWeaponAsset(weaponType, timeout, weaponResourceFlags, extraW
         error(("expected extraWeaponComponentFlags to have type 'number' (received %s)"):format(type(extraWeaponComponentFlags)))
     end
 
-    RequestWeaponAsset(weaponType, weaponResourceFlags or 31, extraWeaponComponentFlags or 0)
-
-    if coroutine.isyieldable() then
-        timeout = tonumber(timeout) or 500
-
-        for _ = 1, timeout do
-            if HasWeaponAssetLoaded(weaponType) then
-                return weaponType
-            end
-
-            Wait(0)
-        end
-
-        print(("failed to load weaponType '%s' after %s ticks"):format(weaponType, timeout))
-    end
-
-    return weaponType
+    return lib.streamingRequest(RequestWeaponAsset, HasWeaponAssetLoaded, 'weaponHash', weaponType, timeout, weaponResourceFlags or 31, extraWeaponComponentFlags or 0)
 end
 
 return lib.requestWeaponAsset

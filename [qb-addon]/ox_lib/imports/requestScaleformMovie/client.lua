@@ -1,6 +1,6 @@
 ---Load a scaleform movie. When called from a thread, it will yield until it has loaded.
 ---@param scaleformName string
----@param timeout number? Number of ticks to wait for the scaleform movie to load. Default is 500.
+---@param timeout number? Approximate milliseconds to wait for the scaleform movie to load. Default is 1000.
 ---@return number? scaleform
 function lib.requestScaleformMovie(scaleformName, timeout)
     if type(scaleformName) ~= 'string' then
@@ -9,23 +9,9 @@ function lib.requestScaleformMovie(scaleformName, timeout)
 
     local scaleform = RequestScaleformMovie(scaleformName)
 
-    if HasScaleformMovieLoaded(scaleform) then return scaleform end
-
-    if coroutine.isyieldable() then
-        timeout = tonumber(timeout) or 500
-
-        for _ = 1, timeout do
-            if HasScaleformMovieLoaded(scaleform) then
-                return scaleform
-            end
-
-            Wait(0)
-        end
-
-        print(("failed to load scaleformName '%s' after %s ticks"):format(scaleformName, timeout))
-    end
-
-    return scaleform
+    return lib.waitFor(function()
+        if HasScaleformMovieLoaded(scaleform) then return scaleform end
+    end, ("failed to load scaleformMovie '%s'"):format(scaleformName), timeout)
 end
 
 return lib.requestScaleformMovie

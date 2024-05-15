@@ -592,13 +592,13 @@ QBCore.Functions.CreateCallback('police:server:IsPoliceForcePresent', function(_
 end)
 
 -- Events
-AddEventHandler('onResourceStart', function(resourceName)
+--[[ AddEventHandler('onResourceStart', function(resourceName)
     if resourceName == GetCurrentResourceName() then
         CreateThread(function()
             MySQL.query("DELETE FROM stashitems WHERE stash = 'policetrash'")
         end)
     end
-end)
+end) ]]
 
 RegisterNetEvent('police:server:policeAlert', function(text)
     local src = source

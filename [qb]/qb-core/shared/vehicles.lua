@@ -755,7 +755,6 @@ local Vehicles = {
     { model = 'f550ambows',    name = 'Ambulance',                     brand = 'Ford',            price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
     { model = 'stretcher',     name = 'stretcher',                     brand = 'Redneck',         price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' }, 
     { model = 'fdsilverado',   name = 'FireChief',                     brand = 'Chevy',           price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
-    { model = 'arrowb',        name = 'Arrow',                         brand = 'Pierce',          price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
     { model = 'quantum',       name = 'Quantum',                       brand = 'Pierce',          price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
     { model = 'f250pov',       name = 'FireChief',                     brand = 'Ford',            price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },
     { model = 'f150pov',       name = 'MedicalChief',                  brand = 'Ford',            price = 100000,  category = 'VC_EMERGENCY',   type = 'automobile', shop = 'pdm' },

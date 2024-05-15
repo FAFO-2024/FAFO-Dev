@@ -41,22 +41,18 @@ Config.AuthorizedVehicles = {
 	-- Grade 1
 	[1] = {
 		["quantum"] = "Quantum",
-        ["arrowb"] = "Arrow",
 	},
 	-- Grade 2
 	[2] = {
 		["quantum"] = "Quantum",
-        ["arrowb"] = "Arrow",
 	},
 	-- Grade 3
 	[3] = {
 		["quantum"] = "Quantum",
-        ["arrowb"] = "Arrow",
 	},
 	-- Grade 4
 	[4] = {
 		["quantum"] = "Quantum",
-        ["arrowb"] = "Arrow",
         ["fdsilverado"] = "Chief's Truck",
 	},
 }

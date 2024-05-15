@@ -592,13 +592,13 @@ QBCore.Functions.CreateCallback('sheriff:server:IssheriffForcePresent', function
 end)
 
 -- Events
-AddEventHandler('onResourceStart', function(resourceName)
+--[[ AddEventHandler('onResourceStart', function(resourceName)
     if resourceName == GetCurrentResourceName() then
         CreateThread(function()
             MySQL.query("DELETE FROM stashitems WHERE stash = 'sherifftrash'")
         end)
     end
-end)
+end) ]]
 
 RegisterNetEvent('sheriff:server:sheriffAlert', function(text)
     local src = source

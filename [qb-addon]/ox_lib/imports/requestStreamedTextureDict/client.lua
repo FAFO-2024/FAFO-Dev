@@ -1,7 +1,7 @@
 ---Load a texture dictionary. When called from a thread, it will yield until it has loaded.
 ---@param textureDict string
----@param timeout number? Number of ticks to wait for the dictionary to load. Default is 500.
----@return string? textureDict
+---@param timeout number? Approximate milliseconds to wait for the dictionary to load. Default is 10000.
+---@return string textureDict
 function lib.requestStreamedTextureDict(textureDict, timeout)
     if HasStreamedTextureDictLoaded(textureDict) then return textureDict end
 
@@ -9,23 +9,7 @@ function lib.requestStreamedTextureDict(textureDict, timeout)
         error(("expected textureDict to have type 'string' (received %s)"):format(type(textureDict)))
     end
 
-    RequestStreamedTextureDict(textureDict, false)
-
-    if coroutine.isyieldable() then
-        timeout = tonumber(timeout) or 500
-
-        for _ = 1, timeout do
-            if HasStreamedTextureDictLoaded(textureDict) then
-                return textureDict
-            end
-
-            Wait(0)
-        end
-
-        print(("failed to load textureDict '%s' after %s ticks"):format(textureDict, timeout))
-    end
-
-    return textureDict
+    return lib.streamingRequest(RequestStreamedTextureDict, HasStreamedTextureDictLoaded, 'textureDict', textureDict, timeout)
 end
 
 return lib.requestStreamedTextureDict

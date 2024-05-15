@@ -9,7 +9,9 @@ Config.AvailableJobs = {                                     -- Only used when n
     ['reporter'] = { ['label'] = 'News Reporter', ['isManaged'] = false },
     ['garbage'] = { ['label'] = 'Garbage Collector', ['isManaged'] = false },
     ['bus'] = { ['label'] = 'Bus Driver', ['isManaged'] = false },
-    ['hotdog'] = { ['label'] = 'Hot Dog Stand', ['isManaged'] = false }
+    ['hotdog'] = { ['label'] = 'Hot Dog Stand', ['isManaged'] = false },
+    ['miner'] = { ['label'] = 'Ore Miner', ['isManaged'] = false },
+    ['tailor'] = { ['label'] = 'Clothes Maker', ['isManaged'] = false }
 }
 
 Config.Cityhalls = {
