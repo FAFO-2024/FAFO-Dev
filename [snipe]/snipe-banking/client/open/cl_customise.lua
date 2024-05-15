@@ -21,7 +21,19 @@ function SendPoliceAlertForFlaggedAccount()
         })
     elseif Config.Dispatch == "ps" then
         -- check readme for the changes to be made in ps-dispatch
-        exports["ps-dispatch"]:FlaggedAccount()
+        -- exports["ps-dispatch"]:FlaggedAccount()
+        exports["ps-dispatch"]:CustomAlert({
+            coords = GetEntityCoords(PlayerPedId()),
+            message = "Flagged Account Accessed",
+            dispatchCode = "10-15",
+            description = "A flagged account has been detected.",
+            length = 3,
+            radius = 0,
+            sprite = 140,
+            color = 3,
+            scale = 1.0,
+            code = '10-15',
+        })
     elseif Config.Dispatch == "moz" then
         exports["moz-dispatch"]:FlaggedAccount()
     elseif Config.Dispatch == "other" then

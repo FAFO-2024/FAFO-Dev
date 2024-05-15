@@ -183,7 +183,7 @@ RegisterNetEvent("ps-housing:server:createApartmentStash", function(citizenId, p
     local stashId = string.format("property_%s", propertyId)
 
     -- Check for existing apartment and corresponding stash
-    local result = MySQL.query.await('SELECT items, stash FROM stashitems WHERE stash IN (SELECT name FROM apartments WHERE citizenid = ?)', { citizenId }) 
+    local result = MySQL.query.await('SELECT items, stash FROM codem_new_stash WHERE stash IN (SELECT name FROM apartments WHERE citizenid = ?)', { citizenId }) 
    
     local items = {}
     if result[1] ~= nil then
@@ -194,7 +194,7 @@ RegisterNetEvent("ps-housing:server:createApartmentStash", function(citizenId, p
     end
 
     -- This will create the stash for the apartment (without requiring player to have first opened and placed item in it)
-    TriggerEvent('ps-inventory:server:SaveStashItems', stashId, items)
+    TriggerEvent('codem-inventory:server:SaveStashItems', stashId, items)
 end)
 
 RegisterNetEvent('qb-apartments:returnBucket', function()

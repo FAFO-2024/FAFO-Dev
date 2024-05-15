@@ -10,7 +10,7 @@ Config = {}
 Config.Target = "qb" -- "ox" or "qb"
 Config.Notify = "qb" -- "ox" or "qb"
 Config.Radial = "qb" -- "ox" or "qb"
-Config.Inventory = "qb" -- "ox" or "qb"
+Config.Inventory = "codem-inventory" -- "ox" or "qb"
 Config.Logs = "qb" -- "qb"
 
 -- Anyone provided with keys to a property has the ability to modify its furnishings.
@@ -62,7 +62,7 @@ Config.Commissions = {
 }
 
 -- Set this value to false if you don't want to assign a starting apartment.
-Config.StartingApartment = true
+Config.StartingApartment = false
 
 --- With this enabled, the customizer will open when starting apartment is false.
 Config.ShowCustomizerWhenNoStartingApartment = true

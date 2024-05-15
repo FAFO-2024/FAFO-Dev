@@ -13,7 +13,15 @@ local function AddRadialParkingOption()
 end
 
 local function updateRadial()
-    if QBCore.Functions.GetPlayerData().job.name == 'police' then
+    if QBCore.Functions.GetPlayerData().job.name == 'police'  then
+        AddRadialParkingOption()
+    elseif QBCore.Functions.GetPlayerData().job.name == 'sheriff'  then
+        AddRadialParkingOption()
+    elseif QBCore.Functions.GetPlayerData().job.name == 'sasp'  then
+        AddRadialParkingOption()
+    elseif QBCore.Functions.GetPlayerData().job.name == 'ambulance'  then
+        AddRadialParkingOption()
+    elseif QBCore.Functions.GetPlayerData().job.name == 'firefighter'  then
         AddRadialParkingOption()
     elseif MenuItemId ~= nil then
         exports['qb-radialmenu']:RemoveOption(MenuItemId)
@@ -29,6 +37,38 @@ RegisterNetEvent('km-lockbox:client:getstash', function()
     local Player = PlayerPedId()
     if IsPedInAnyVehicle(Player) then
         if QBCore.Functions.GetPlayerData().job.name == 'police' then
+            local Vehicle = GetVehiclePedIsIn(Player, false)
+            local id = GetVehicleNumberPlateText(Vehicle)
+            TriggerServerEvent("inventory:server:OpenInventory", "stash", "Lock Box " .. id, {
+                maxweight = Config.lockbox['weight'],
+                slots = Config.lockbox['slots'],
+            })
+            TriggerEvent("inventory:client:SetCurrentStash", "Lock Box " .. id)
+        elseif QBCore.Functions.GetPlayerData().job.name == 'sheriff' then
+            local Vehicle = GetVehiclePedIsIn(Player, false)
+            local id = GetVehicleNumberPlateText(Vehicle)
+            TriggerServerEvent("inventory:server:OpenInventory", "stash", "Lock Box " .. id, {
+                maxweight = Config.lockbox['weight'],
+                slots = Config.lockbox['slots'],
+            })
+            TriggerEvent("inventory:client:SetCurrentStash", "Lock Box " .. id)
+        elseif QBCore.Functions.GetPlayerData().job.name == 'sasp' then
+            local Vehicle = GetVehiclePedIsIn(Player, false)
+            local id = GetVehicleNumberPlateText(Vehicle)
+            TriggerServerEvent("inventory:server:OpenInventory", "stash", "Lock Box " .. id, {
+                maxweight = Config.lockbox['weight'],
+                slots = Config.lockbox['slots'],
+            })
+            TriggerEvent("inventory:client:SetCurrentStash", "Lock Box " .. id)
+        elseif QBCore.Functions.GetPlayerData().job.name == 'ambulance' then
+            local Vehicle = GetVehiclePedIsIn(Player, false)
+            local id = GetVehicleNumberPlateText(Vehicle)
+            TriggerServerEvent("inventory:server:OpenInventory", "stash", "Lock Box " .. id, {
+                maxweight = Config.lockbox['weight'],
+                slots = Config.lockbox['slots'],
+            })
+            TriggerEvent("inventory:client:SetCurrentStash", "Lock Box " .. id)
+        elseif QBCore.Functions.GetPlayerData().job.name == 'firefighter' then
             local Vehicle = GetVehiclePedIsIn(Player, false)
             local id = GetVehicleNumberPlateText(Vehicle)
             TriggerServerEvent("inventory:server:OpenInventory", "stash", "Lock Box " .. id, {

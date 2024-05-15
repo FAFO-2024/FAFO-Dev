@@ -43,6 +43,9 @@ local function SetAccountMoney(account, amount)
 end
 
 local function GetJobGangAccounts()
+    while not jobsLoaded do
+        Wait(100)
+    end
     return jobGangAccounts
 end
 

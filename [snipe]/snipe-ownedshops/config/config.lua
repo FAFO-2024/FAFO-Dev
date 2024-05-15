@@ -21,7 +21,7 @@ Config.OpenAdminCommand = "createshop"
     for qb = "nui://qb-inventory/html/images/"
     for lj = "nui://lj-inventory/html/images/"
 ]]--
-Config.ImagePath = "nui://ps-inventory/html/images/"
+Config.ImagePath = "nui://codem-inventory/html/images/"
 
 Config.AllowedDurability = 50 -- (how much a item durability should be to be able to add it in the store) (only for ox inventory)
 
