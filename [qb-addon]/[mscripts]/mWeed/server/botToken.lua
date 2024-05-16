@@ -1,2 +1,0 @@
-botToken = 'MTIzNzgxNDQ0ODEzMTkzNjM0OQ.Ga35Zq.OAY8nZWCnMVYverj_EnBuK0HYDspohM_S-JCtI' -- https://www.youtube.com/watch?v=-m-Z7Wav-fM&ab_channel=GAKventure
-defaultPhoto = 'https://cdn.discordapp.com/attachments/950484538012864572/1163120429276340285/example-pp.png?ex=653e6b50&is=652bf650&hm=7dc1897622a7d164e3ca4c6be34f51ddf27aec35dc290760bed0ae7d31b104f6&'
