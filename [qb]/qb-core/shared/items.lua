@@ -383,6 +383,12 @@ QBShared.Items = {
     -- Clothing Bag
     ["kq_outfitbag"] 			 = {["name"] = "kq_outfitbag", 				    ["label"] = "Outfit bag",	 		    ["weight"] = 4000, 		["type"] = "item", 		["image"] = "kq_outfitbag.png", 	    ["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Holds different outfits"},
 
+    -- Snipe MLO
+    ["furniture_stash_box"]      = {["name"] = "furniture_stash_box",           ["label"] = "Furniture Stash Box",      ["weight"] = 0,         ["type"] = "item",      ["image"] = "furniture_stash_box.png",  ["unique"] = true,      ["useable"] = true,     ["shouldClose"] = true,     ["combinable"] = nil,   ["description"] = "A stash box to store your stuff in"},
+
+    -- Police Tape
+    ['tape']                     = {['name'] = 'tape',                          ['label'] = 'Police Tape',              ['weight'] = 500,       ['type'] = 'item',      ['image'] = 'policetape.png',           ['unique'] = false,     ['useable'] = true,     ['shouldClose'] = true,     ['combinable'] = nil,       ['description'] = 'A roll of police tape'},
+
     -- Harness
     ["harness"] 				 = {["name"] = "harness", 			  	  		["label"] = "Racing Harness", 			["weight"] = 1000, 		["type"] = "item", 		["image"] = "harness.png", 				["unique"] = true,      ["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "Stops you from being YEETED"},
     

@@ -13,12 +13,12 @@ Config.Locations = {
         [4] = vector4(-1029.8, -1367.18, 5.01, 74.6), -- Bay 4
     },
     ["helicopter"] = {
-        [1] = vector4(-1052.43, -1436.63, 9.89, 354.28), -- Left helipad
+        [1] = vector4(-1053.0, -1438.4, 10.31, 344.27), -- Left helipad
         --[[ [2] = vector4(183.34, -1661.44, 29.8, 239.46), -- DAVIS
         [3] = vector4(1198.45, -1548.8, 39.4, 12.04), -- FS7 ]]
     },
     ["armory"] = {
-        [1] = vector3(-1033.19, -1389.67, 4.97), -- HQ
+        --[1] = vector3(-1033.19, -1389.67, 4.97), -- HQ
         --[[ [2] = vector3(198.71, -1649.07, 29.8), -- DAVIS
         [3] = vector3(1193.86, -1476.25, 34.86), -- FS7 ]]
     },
@@ -57,7 +57,7 @@ Config.AuthorizedVehicles = {
 	},
 }
 
-Config.Helicopter = "polmav"
+Config.Helicopter = "as365"
 
 Config.Items = {
     label = "Firefighter Armory",

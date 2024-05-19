@@ -11,7 +11,7 @@ Config.UseOxNotif = false -- Set this to false if you want to use the default fr
 Config.UseOxInventory = false -- Set this to true if you use ox_inventory
 Config.UsedInventory = '' -- qs or ox or nothing(default)
 
-Config.webHook = ''
+Config.webHook = 'https://discord.com/api/webhooks/1240510162758799382/EcNiDTBObF7-rp8vNZd6Jv3YWAl35ikhgyGo1O8_9zHGsqiNgMw2KyGi30R1VMMnDkA2'
 Config.webHookName = 'OSP Development - Ambulance' -- Name of the WebHook bot
 Config.webHookLogo = 'https://cdn.discordapp.com/attachments/1102704629025886360/1227748671211180062/image.png?ex=6629890d&is=6617140d&hm=60043a8694fb72acc6cd4b1a7f21194d6dfc5df1ce2c79b34545ab358a3bf8c6&' -- Logo of the WebHook bot
 
@@ -30,10 +30,11 @@ Config.ServerDelay = 100 -- How many ms the server is behind by. Recommended to 
 Config.Debug = false -- Enable or disable debug mode to investigate issues with the script
 
 Config.CustomDeathScreen = false -- Enable of disable a customised death timer screen, keep at false if you don't know what you are doing
+Config.PopUpSkelly = true
 
 Config.AmbulanceJobs = {
     'ambulance',
-    'ambulance2',
+    'firefighter',
 }
 
 Config.InteractionDict = 'anim@heists@narcotics@funding@gang_idle'
@@ -44,7 +45,7 @@ Config.MinimalDoctors = 1 -- How many players with the ambulance job to prevent 
 Config.DocCooldown = 1 -- Cooldown between doctor calls allowed, in minutes
 Config.AIHealTimer = 10 -- How long it will take to be healed after checking in, in seconds
 Config.WipeInventoryOnRespawn = false -- Enable or disable removing all the players items when they respawn at the hospital
-Config.Helicopter = "polmav" -- Helicopter model that players with the ambulance job can use
+Config.Helicopter = "c3medhawk" -- Helicopter model that players with the ambulance job can use
 Config.BillCost = 500 -- Price that players are charged for using the hospital check-in system
 Config.LastStandTime = 240 -- How long before the player is percived as medically dead (in seconds)
 Config.RespawnTime = 120 -- How long before the player can respawn (in seconds)
@@ -165,6 +166,18 @@ Config.Ambulances = {
         offsetinstart = vector3(-1.5, 1.1, -0.72),
         offsetinstop = vector3(1.5, 1.1, -0.72),
         offsetoutstart = vector3(0.0, 1.1, -0.72),
+        offsetoutstop = vector3(-2.5, 1.1, -0.72),
+        rotation = vector3(0.0, 0.0, 177.0),
+
+        stretcheroffset = vector3(0.0,-0.80,-0.2),
+        stretcherrotation = vector3(90.0, -95.0, -193.0),
+        playeroffset = vector3(0.05,1.1,0.97),
+        playerrotation = vector3(0.0, 0.0, 90.0),
+    },
+    ["c3medhawk"] = {
+        offsetinstart = vector3(-1.5, -0.7, 0.63),
+        offsetinstop = vector3(1.5, 1.1, -0.63),
+        offsetoutstart = vector3(0.0, 1.7, 0.63),
         offsetoutstop = vector3(-2.5, 1.1, -0.72),
         rotation = vector3(0.0, 0.0, 177.0),
 
@@ -403,6 +416,9 @@ Config.Locations = {
     ["checking"] = {
 	    vector3(310.26, -582.47, 43.27),
     },
+    ["boss"] = {
+        --vector3(-1031.41, -1418.68, 4.97),
+    },
     ["duty"] = {
         vector3(-1031.41, -1418.68, 4.97),
     },
@@ -412,10 +428,13 @@ Config.Locations = {
         vector4(-1025.66, -1348.39, 4.48, 75.64),   --bay 7
     },
     ["helicopter"] = {
-        vector4(-1039.93, -1440.39, 9.89, 344.91),  --right helipad
+        vector4(-1036.16, -1441.18, 9.29, 347.06),  --right helipad
     },
     ["shop"] = {
-        vector3(-1041.12, -1421.56, 4.97),
+        --vector3(-1041.12, -1421.56, 4.97),
+    },
+    ["cloakroom"] = {
+        --vector3(-1041.12, -1421.56, 4.97),
     },
     ["roof"] = {
         vector4(338.5, -583.85, 74.16, 245.5),

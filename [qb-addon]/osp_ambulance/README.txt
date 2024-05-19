@@ -6,6 +6,8 @@ This script fully replaces your ambulancejob, so you'll need to stop or delete y
 - Download the file attached in the payment confirmation email or go into discord and download the zip file in the ambulance customer channel
 - Unpack that file and install the two resources within, xsound and ambulanceprops
 - Install all dependencies and start them in the following order
+- Install screenshot-basic, if you don't have it in your server
+- Remember to start all dependencies BEFORE the ambulancejob in the cfg
 
 - For more information, read our docs over at: https://osp-development.gitbook.io/ambulance-job/
 

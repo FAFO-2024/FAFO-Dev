@@ -30,8 +30,8 @@ Config.Locations = {
         [1] = vector3(-366.14, -368.71, 24.44),
     },
     ["helicopter"] = {
-        [1] = vector4(-377.53, -354.72, 73.23, 79.86),
-        [2] = vector4(-393.06, -335.7, 73.23, 145.98),
+        [1] = vector4(-377.26, -354.89, 72.59, 80.35), --left
+        [2] = vector4(-393.55, -336.17, 72.6, 144.94), --right
     },
     ["armory"] = {
         --[1] = vector3(-403.11, -377.45, 25.1),
@@ -55,7 +55,7 @@ Config.Locations = {
 
 Config.ArmoryWhitelist = {}
 
-Config.PoliceHelicopter = "swathel"
+Config.PoliceHelicopter = "c3swathawk"
 
 Config.SecurityCameras = {
     hideradar = true,

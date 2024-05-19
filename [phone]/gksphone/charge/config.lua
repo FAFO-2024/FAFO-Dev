@@ -14,7 +14,7 @@ FastCharging = 3  -- Adjust this part how much you want to fill in how many seco
 FastChargingPropName = "gks_charge_fast"
 FastChargePay = 60  -- pay * percent
 
-ChargeEyeTarget = false
+ChargeEyeTarget = true
 
 Charge = {
     ["twitterdata"] = 0.1,

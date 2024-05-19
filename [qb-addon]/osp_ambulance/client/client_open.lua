@@ -55,7 +55,7 @@ if Config.Framework == 'qb' then
     end
 
     function FullFuel(veh)
-        exports['cdn-fuel']:SetFuel(veh, 100.0)
+        exports['LegacyFuel']:SetFuel(veh, 100.0)
     end
 
     function IfInJail()
@@ -931,6 +931,12 @@ function dispatchNotify()
     -- Place custom dispatch notify code here
 end
 
+function disableAllSystems()
+    return false
+    -- Place custom code here when you want to block all medical systems (eg when in paintball)
+    -- To disable all system trigger this inside a if statment:    return true
+end
+
 
 function disabledControls()
     DisableAllControlActions(0)
@@ -1120,6 +1126,72 @@ function ReloadJobInteractions()
                 onExit = onExit
             })
         end
+
+        
+
+        for k, v in pairs(Config.Locations["boss"]) do
+            local function inside(self)
+                for _,x in pairs(Config.AmbulanceJobs) do
+                    if onDuty and PlayerJob.name == x and GetPlayerData().job.grade_name == 'boss' then
+                        lib.showTextUI('[E] Bossmenu', {
+                            position = "left-center",
+                        })
+                        if IsControlJustPressed(0, 38) then 
+                            TriggerEvent('esx_society:openBossMenu', 'ambulance', function(data, menu)
+                                menu.close()
+                            end, { wash = false })
+                        end
+                    end
+                end
+            end
+            
+            local function onExit(self)
+                lib.hideTextUI()
+            end
+
+            lib.zones.box({
+                coords = vec3(v.x, v.y, v.z),
+                name = "boss" .. k,
+                size = vec3(1.5, 1.5, 1.5),
+                rotation = 20,
+                debug = false,
+                inside = inside,
+                onEnter = onEnter,
+                onExit = onExit
+            })
+        end
+
+        for k, v in pairs(Config.Locations["cloakroom"]) do
+            local function inside(self)
+                for _,x in pairs(Config.AmbulanceJobs) do
+                    if onDuty and PlayerJob.name == x then
+                        lib.showTextUI('[E] Cloakroom', {
+                            position = "left-center",
+                        })
+                        if IsControlJustPressed(0, 38) then
+                            OpenCloakroom()
+                        end
+                    end
+                end
+            end
+            
+            local function onExit(self)
+                lib.hideTextUI()
+            end
+
+            lib.zones.box({
+                coords = vec3(v.x, v.y, v.z),
+                name = "cloakroom" .. k,
+                size = vec3(1.5, 1.5, 1.5),
+                rotation = 20,
+                debug = false,
+                inside = inside,
+                onEnter = onEnter,
+                onExit = onExit
+            })
+        end
+
+
     end)
     
     
@@ -1401,13 +1473,21 @@ openMedicalMenu = false
 cachedPlayer = nil
 RegisterKeyMapping('medicalsystem', 'Medical System UI', 'keyboard', Config.OpenKey)
 RegisterCommand("medicalsystem", function(source, args, rawCommand)
-
     if keycooldown then return end
     if BodyDamage.isDead then return end
     if BodyDamage.inLastStand then return end
     keycooldown = true
     if Config.LockMedicalMenu then
         if not IsAuthorized() then return end
+    end
+    local isOnline = false
+    for k,v in pairs(GetPlayers()) do
+        if GetPlayerServerId(v) == cachedPlayer then
+            isOnline = true
+        end
+    end
+    if isOnline == false then
+        cachedPlayer = nil
     end
     openMedicalMenu = true
     if cachedPlayer == nil then
@@ -1416,6 +1496,7 @@ RegisterCommand("medicalsystem", function(source, args, rawCommand)
         ent = Player(cachedPlayer)
     end
     local stat = ent.state.BodyDamage
+    DebugPrint('Player state data ', stat, stat.isDead)
     -- Citizen.CreateThread(function()
     --     while true do
     --         if cachedPlayer == nil then
@@ -1464,6 +1545,8 @@ RegisterCommand("code", function(source, args, rawCommand)
     xSound:destroyOnFinish("codeblue", true)
 
 end, false)
+
+
 
 
 local openSkelly = false
@@ -1516,12 +1599,9 @@ AddEventHandler("osp_ambulance:SendAttachCl", function(ped, pos)
     AddEventHandler("osp_ambulance:ChockCl", function(currentjoule)
         joule = currentjoule
         if GetEntityHealth(PlayerPedId()) >= 100 and BodyDamage.cardiacState == 'NSR' and not (BodyDamage.isDead or BodyDamage.inLastStand) then
-            SetEntityHealth(PlayerPedId(), 0)
-            BodyDamage.cardiacState = 'asystole'
-            BodyDamage.Conscious = false
-            BodyDamage.Pulse = 0
-            BodyDamage.BloodPressure[1] = 0
-            BodyDamage.BloodPressure[2] = 0
+            deathTime = 0
+            OnDeath()
+            DeathTimer()
         end
         if (BodyDamage.isDead or BodyDamage.inLastStand) then
             if (joule > 20) and (joule < 80) then
@@ -1850,12 +1930,10 @@ end)
 -- Example code snippet of how a custom item can be used to heal a player
 
 RegisterNetEvent('osp_ambulance:useIfak', function()
-    TriggerServerEvent('osp_ambulance:removeItem', 'ifak', 1)
     local dict, anim = Config.InteractionDict , Config.InteractionAnim
     ProgressBar(lang.update1.useIfak, 4000, dict, anim)
-    TriggerServerEvent('osp_ambulance:addItem', 'bandage', 1)
-    TriggerServerEvent('osp_ambulance:addItem', 'painkillers', 1)
-    TriggerServerEvent('osp_ambulance:addItem', 'temporary_tourniquet', 1)
+    TriggerServerEvent('osp_ambulance:addItem', 'field_dressing', 1)
+    TriggerServerEvent('osp_ambulance:addItem', 'ecg', 1)
 end)
 
 RegisterNetEvent('osp_ambulance:useBandage', function()
@@ -2075,3 +2153,38 @@ Weapons = {
     [`weapon_animal`]               = {['name'] = 'weapon_animal',	['label'] = 'Animal',	['weapontype'] = 'Animals',	['ammotype'] = nil,	['damagereason'] = 'Mauled'},
     [`weapon_cougar`]               = {['name'] = 'weapon_cougar',	['label'] = 'Cougar',	['weapontype'] = 'Animals',	['ammotype'] = nil,	['damagereason'] = 'Mauled'},
 }
+
+
+function OpenCloakroom()
+    lib.registerContext({
+        id = 'cloakroom',
+        title = 'Cloakroom',
+        options = {
+        {
+            title = 'Civilian Wear',
+            description = 'Your offduty civilian clothes',
+            icon = 'hand',
+            onSelect = function()
+                ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
+                    TriggerEvent('skinchanger:loadSkin', skin)
+                end)
+            end,
+        },
+        {
+            title = 'Job Wear',
+            description = 'Your onduty ambulance clothes',
+            icon = 'hand',
+            onSelect = function()
+                ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
+                    if skin.sex == 0 then
+                        TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_male)
+                    else
+                        TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_female)
+                    end
+                end)
+            end,
+        },
+        }
+    })
+    lib.showContext('cloakroom')
+end

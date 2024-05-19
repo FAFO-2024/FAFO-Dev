@@ -1,0 +1,2187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureDictionary>
+ <Item>
+  <Name>mh_V_fh_doorSlide_d</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="32" />
+  <Height value="32" />
+  <MipLevels value="4" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mh_V_fh_doorSlide_d.dds</FileName>
+ </Item>
+ <Item>
+  <Name>OS_V_FH_FrameWood_NEWDARK</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>OS_V_FH_FrameWood_NEWDARK.dds</FileName>
+ </Item>
+ <Item>
+  <Name>gz_DLC_aph_floor_wood2</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>gz_DLC_aph_floor_wood2.dds</FileName>
+ </Item>
+ <Item>
+  <Name>P_MI_StlBat_Cb_DM</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>P_MI_StlBat_Cb_DM.dds</FileName>
+ </Item>
+ <Item>
+  <Name>prompt_vfd_���lightproj</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="9" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>prompt_vfd_���lightproj.dds</FileName>
+ </Item>
+ <Item>
+  <Name>prop_vw_casino_silver_reflection</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>prop_vw_casino_silver_reflection.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Wood_Ebonized_512_normal_(1)</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Wood_Ebonized_512_normal_(1).dds</FileName>
+ </Item>
+ <Item>
+  <Name>OS_V_CashDepot_metal_duct2</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>OS_V_CashDepot_metal_duct2.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Wood_Ebonized_512_albedo_(1)</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Wood_Ebonized_512_albedo_(1).dds</FileName>
+ </Item>
+ <Item>
+  <Name>57ae7dd982024dc3a7d1b14298c98f8c_Rack_metallic</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>57ae7dd982024dc3a7d1b14298c98f8c_Rack_metallic.dds</FileName>
+ </Item>
+ <Item>
+  <Name>P_MI_StlBat_Ca_NM</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>P_MI_StlBat_Ca_NM.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Wood_Ebonized_512_albedo</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Wood_Ebonized_512_albedo.dds</FileName>
+ </Item>
+ <Item>
+  <Name>wood_Metallic</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>wood_Metallic.dds</FileName>
+ </Item>
+ <Item>
+  <Name>P_MI_DspPap_S2_Aa_DM</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>P_MI_DspPap_S2_Aa_DM.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mh_v_solidwhite_dmh_v_solidwhite_d</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="4" />
+  <Height value="4" />
+  <MipLevels value="1" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mh_v_solidwhite_dmh_v_solidwhite_d.dds</FileName>
+ </Item>
+ <Item>
+  <Name>jbib_diff_001_a_uni</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>jbib_diff_001_a_uni.dds</FileName>
+ </Item>
+ <Item>
+  <Name>OS_Glass_dirtyOS_Glass_dirty_a</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>OS_Glass_dirtyOS_Glass_dirty_a.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Pavement_Tactile2_512_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Pavement_Tactile2_512_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>reddoor_wood</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>reddoor_wood.dds</FileName>
+ </Item>
+ <Item>
+  <Name>gz_V_Sub_stairs_N</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>gz_V_Sub_stairs_N.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mph_ovenhobmod_s</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mph_ovenhobmod_s.dds</FileName>
+ </Item>
+ <Item>
+  <Name>61cc3869aab8431182990003a73185f7_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, Y1024, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="1024" />
+  <Height value="1024" />
+  <MipLevels value="9" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>61cc3869aab8431182990003a73185f7_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>gz_v_247_wall01</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>gz_v_247_wall01.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_V_CashDepot_signs_s</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_V_CashDepot_signs_s.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Plastic_PolypropyleneRough_512_albedo_(1)</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Plastic_PolypropyleneRough_512_albedo_(1).dds</FileName>
+ </Item>
+ <Item>
+  <Name>mph_ovenglass1mph_ovenglass1_a</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>mph_ovenglass1mph_ovenglass1_a.dds</FileName>
+ </Item>
+ <Item>
+  <Name>New_Graph_basecolor</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>New_Graph_basecolor.dds</FileName>
+ </Item>
+ <Item>
+  <Name>prop_glass_02prop_glass_02_a</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>prop_glass_02prop_glass_02_a.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mph_labwirerack_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mph_labwirerack_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_V_CashDepot_door_maintenance</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_V_CashDepot_door_maintenance.dds</FileName>
+ </Item>
+ <Item>
+  <Name>vfd_red</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>vfd_red.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Metal_Threadplate2_512_albedo</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Metal_Threadplate2_512_albedo.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_v_michael_floor_wood</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_v_michael_floor_wood.dds</FileName>
+ </Item>
+ <Item>
+  <Name>prop_metal_strips_01</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>prop_metal_strips_01.dds</FileName>
+ </Item>
+ <Item>
+  <Name>Rack_albedo</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, Y1024, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="1024" />
+  <Height value="1024" />
+  <MipLevels value="9" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>Rack_albedo.dds</FileName>
+ </Item>
+ <Item>
+  <Name>IM_DT1_02_Carpark_01</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="512" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>IM_DT1_02_Carpark_01.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Wood_Worn2_512_albedo</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Wood_Worn2_512_albedo.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Concrete_WallCast_512_normal_(1)</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Concrete_WallCast_512_normal_(1).dds</FileName>
+ </Item>
+ <Item>
+  <Name>rsn_os_polystyreneceiling_1_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>rsn_os_polystyreneceiling_1_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>Material_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>Material_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>ah_abbdrainnew_N</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>ah_abbdrainnew_N.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Tiles_Plain_512_albedo</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Tiles_Plain_512_albedo.dds</FileName>
+ </Item>
+ <Item>
+  <Name>36_cream_wallpaper_texture-seamless</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>36_cream_wallpaper_texture-seamless.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Wood_CompositeDecking3_512_albedo</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Wood_CompositeDecking3_512_albedo.dds</FileName>
+ </Item>
+ <Item>
+  <Name>wood_Normal_DirectX</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>wood_Normal_DirectX.dds</FileName>
+ </Item>
+ <Item>
+  <Name>Material_albedo</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>Material_albedo.dds</FileName>
+ </Item>
+ <Item>
+  <Name>NXG_tl_V_Office_wall1</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>NXG_tl_V_Office_wall1.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mph_kitchenunitsdark_d</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mph_kitchenunitsdark_d.dds</FileName>
+ </Item>
+ <Item>
+  <Name>gz_V_Sub_stairs</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>gz_V_Sub_stairs.dds</FileName>
+ </Item>
+ <Item>
+  <Name>metal_tile_01_2k_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, Y1024, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="1024" />
+  <Height value="1024" />
+  <MipLevels value="9" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>metal_tile_01_2k_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Concrete_WallAbstract_512_albedo</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Concrete_WallAbstract_512_albedo.dds</FileName>
+ </Item>
+ <Item>
+  <Name>XJ_V_BLACK</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>XJ_V_BLACK.dds</FileName>
+ </Item>
+ <Item>
+  <Name>Material_metallic</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>Material_metallic.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mph_kitchenunit05_d</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mph_kitchenunit05_d.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tiles_red</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>tiles_red.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Brick_StoneWall_512_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Brick_StoneWall_512_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>P_MI_StlBat_Aa_NM</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>P_MI_StlBat_Aa_NM.dds</FileName>
+ </Item>
+ <Item>
+  <Name>gz_V_dirtyglass2b_N</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>gz_V_dirtyglass2b_N.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mph_kitchuten_d</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mph_kitchuten_d.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Stone_TilesGranite_Closeup_512_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Stone_TilesGranite_Closeup_512_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>metal_tile_01_2k_baseColor</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, Y64, X256, X512, X1024, Y1024, X2048, Y2048, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="2844" />
+  <Height value="2844" />
+  <MipLevels value="1" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>metal_tile_01_2k_baseColor.dds</FileName>
+ </Item>
+ <Item>
+  <Name>M_MRPD_PVC_Floor_01_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>M_MRPD_PVC_Floor_01_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Concrete_FloorPolished_512_albedo</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Concrete_FloorPolished_512_albedo.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mph_ovenhobmod</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mph_ovenhobmod.dds</FileName>
+ </Item>
+ <Item>
+  <Name>steel_grating_pxr128_bmp_1</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, Y1024, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="1024" />
+  <Height value="1024" />
+  <MipLevels value="9" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>steel_grating_pxr128_bmp_1.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_V_CashDepot_pipes_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_V_CashDepot_pipes_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>M_MRPD_PVC_Floor_01_specular</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>M_MRPD_PVC_Floor_01_specular.dds</FileName>
+ </Item>
+ <Item>
+  <Name>P_MI_StlBat_Aa_DM</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>P_MI_StlBat_Aa_DM.dds</FileName>
+ </Item>
+ <Item>
+  <Name>ENV_NOISE_CONCRETE</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_ATI2</Format>
+  <FileName>ENV_NOISE_CONCRETE.dds</FileName>
+ </Item>
+ <Item>
+  <Name>cj_prop_cooker_top</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>cj_prop_cooker_top.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mh_V_shadowSquare_a</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mh_V_shadowSquare_a.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_V_Office_shadowtl_V_Office_shadow_A</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>tl_V_Office_shadowtl_V_Office_shadow_A.dds</FileName>
+ </Item>
+ <Item>
+  <Name>km_v_firehelmet</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X256, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="1" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>km_v_firehelmet.dds</FileName>
+ </Item>
+ <Item>
+  <Name>firemen-the-modern-fire-truck-mike-savad</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X128, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="1172" />
+  <Height value="500" />
+  <MipLevels value="1" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>firemen-the-modern-fire-truck-mike-savad.dds</FileName>
+ </Item>
+ <Item>
+  <Name>prompt_vfd_signs2</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>prompt_vfd_signs2.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Wood_CompositeDecking3_512_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Wood_CompositeDecking3_512_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>cj_prop_cooker_top_s</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>cj_prop_cooker_top_s.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Wood_ParquetStrip2_New_512_albedo</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Wood_ParquetStrip2_New_512_albedo.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Brick_StoneWall_512_albedo</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Brick_StoneWall_512_albedo.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_V_CashDepot_wall_panels</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_V_CashDepot_wall_panels.dds</FileName>
+ </Item>
+ <Item>
+  <Name>P_MI_DspPap_S2_Aa_SM</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>P_MI_DspPap_S2_Aa_SM.dds</FileName>
+ </Item>
+ <Item>
+  <Name>gz_v_tp_floorstrip</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="64" />
+  <MipLevels value="5" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>gz_v_tp_floorstrip.dds</FileName>
+ </Item>
+ <Item>
+  <Name>im_roadblends001_s</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>im_roadblends001_s.dds</FileName>
+ </Item>
+ <Item>
+  <Name>cj_prop_sink_01</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, X1024, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="1024" />
+  <Height value="1024" />
+  <MipLevels value="9" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>cj_prop_sink_01.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Concrete_WallCast_512_height</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Concrete_WallCast_512_height.dds</FileName>
+ </Item>
+ <Item>
+  <Name>wood_Base_color</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>wood_Base_color.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_V_CashDepot_signs_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_V_CashDepot_signs_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_dlc_vw_casino_metal_beams_01</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_dlc_vw_casino_metal_beams_01.dds</FileName>
+ </Item>
+ <Item>
+  <Name>firefighter_posters</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, Y1024, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="1024" />
+  <Height value="1024" />
+  <MipLevels value="9" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>firefighter_posters.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mh_v_fh_switches_d</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mh_v_fh_switches_d.dds</FileName>
+ </Item>
+ <Item>
+  <Name>cj_prop_cooker_top_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>cj_prop_cooker_top_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>gz_v_g2_polysteceiling</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>gz_v_g2_polysteceiling.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mh_v_aph_haloLight_d</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mh_v_aph_haloLight_d.dds</FileName>
+ </Item>
+ <Item>
+  <Name>ah_busshitbeams</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>ah_busshitbeams.dds</FileName>
+ </Item>
+ <Item>
+  <Name>gz_v_cf_paintconc_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>gz_v_cf_paintconc_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_V_Michael_floor_wood_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_V_Michael_floor_wood_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>ah_abbdrainnewA</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>ah_abbdrainnewA.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_V_CashDepot_door_maintenance_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_V_CashDepot_door_maintenance_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>M_MRPD_PVC_Floor_01_diffuse</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>M_MRPD_PVC_Floor_01_diffuse.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mph_flatnormal_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="8" />
+  <Height value="8" />
+  <MipLevels value="2" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mph_flatnormal_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Concrete_WallAbstract_512_height</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Concrete_WallAbstract_512_height.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Paint_Scratched_512_albedo_(1)</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Paint_Scratched_512_albedo_(1).dds</FileName>
+ </Item>
+ <Item>
+  <Name>become-a-ff</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X1024, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="1920" />
+  <Height value="556" />
+  <MipLevels value="1" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>become-a-ff.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_V_CashDepot_pipes</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_V_CashDepot_pipes.dds</FileName>
+ </Item>
+ <Item>
+  <Name>cj_prop_sink_01_s</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, X1024, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="1024" />
+  <Height value="1024" />
+  <MipLevels value="9" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>cj_prop_sink_01_s.dds</FileName>
+ </Item>
+ <Item>
+  <Name>yellow</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="8" />
+  <Height value="8" />
+  <MipLevels value="2" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>yellow.dds</FileName>
+ </Item>
+ <Item>
+  <Name>prop_glass_02_s</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>prop_glass_02_s.dds</FileName>
+ </Item>
+ <Item>
+  <Name>New_Graph_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>New_Graph_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_v_bank2_chrome_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_v_bank2_chrome_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>NXG_tl_V_PsycheOffice_wall1_N</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>NXG_tl_V_PsycheOffice_wall1_N.dds</FileName>
+ </Item>
+ <Item>
+  <Name>IM_DT1_02_Carpark_01_S</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="512" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>IM_DT1_02_Carpark_01_S.dds</FileName>
+ </Item>
+ <Item>
+  <Name>XJ_V_SOCKET</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>XJ_V_SOCKET.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Stone_TilesGranite_Closeup_512_albedo</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Stone_TilesGranite_Closeup_512_albedo.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_V_CashDepot_metal_duct</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_V_CashDepot_metal_duct.dds</FileName>
+ </Item>
+ <Item>
+  <Name>cj_prop_sink_01_n3</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, X1024, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="1024" />
+  <Height value="1024" />
+  <MipLevels value="9" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>cj_prop_sink_01_n3.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mph_kitchenunit04_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mph_kitchenunit04_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mph_labwirerack</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="64" />
+  <Height value="64" />
+  <MipLevels value="5" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mph_labwirerack.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mh_V_downlight01_d</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mh_V_downlight01_d.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mph_kitchenunit04_s</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mph_kitchenunit04_s.dds</FileName>
+ </Item>
+ <Item>
+  <Name>ah_abbdrainnew</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>ah_abbdrainnew.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Concrete_FloorPolished_512_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Concrete_FloorPolished_512_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>gz_V_FA_CarpetTears_N</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>gz_V_FA_CarpetTears_N.dds</FileName>
+ </Item>
+ <Item>
+  <Name>V_GLASS_S_N</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>V_GLASS_S_N.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_dlc_vw_casino_metal_beams_01_s</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_dlc_vw_casino_metal_beams_01_s.dds</FileName>
+ </Item>
+ <Item>
+  <Name>IM_DT1_02_Carpark_01_N</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="512" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>IM_DT1_02_Carpark_01_N.dds</FileName>
+ </Item>
+ <Item>
+  <Name>white_neon</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="4" />
+  <Height value="4" />
+  <MipLevels value="1" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>white_neon.dds</FileName>
+ </Item>
+ <Item>
+  <Name>P_MI_DspPap_S2_Aa_NM</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>P_MI_DspPap_S2_Aa_NM.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Metal_Threadplate2_512_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Metal_Threadplate2_512_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>gz_V_ML_WallNormal_N</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="512" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>gz_V_ML_WallNormal_N.dds</FileName>
+ </Item>
+ <Item>
+  <Name>P_MI_StlBat_Ca_sM</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>P_MI_StlBat_Ca_sM.dds</FileName>
+ </Item>
+ <Item>
+  <Name>Maneken_UV_lambert1_Normal_1001</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>Maneken_UV_lambert1_Normal_1001.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Concrete_WallCast_512_albedo_(1)</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>TexturesCom_Concrete_WallCast_512_albedo_(1).dds</FileName>
+ </Item>
+ <Item>
+  <Name>im_roadblends001_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>im_roadblends001_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_V_Bank2_chrome</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_V_Bank2_chrome.dds</FileName>
+ </Item>
+ <Item>
+  <Name>black_metal_s</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="10" />
+  <Format>D3DFMT_BC7</Format>
+  <FileName>black_metal_s.dds</FileName>
+ </Item>
+ <Item>
+  <Name>km_v_firehelmet_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>km_v_firehelmet_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>gz_V_BK_Light01</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>gz_V_BK_Light01.dds</FileName>
+ </Item>
+ <Item>
+  <Name>prop_glass_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>prop_glass_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Wall_BrickPlain4_2x2_512_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="10" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Wall_BrickPlain4_2x2_512_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>green_wall</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>green_wall.dds</FileName>
+ </Item>
+ <Item>
+  <Name>v_mph_kitchenvent_s</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>v_mph_kitchenvent_s.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Paint_Scratched_512_metallic_(1)</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Paint_Scratched_512_metallic_(1).dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_V_cashdepot_notices</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_V_cashdepot_notices.dds</FileName>
+ </Item>
+ <Item>
+  <Name>gz_V_CS_carptearsOS_V_CS_carptears_A</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="512" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>gz_V_CS_carptearsOS_V_CS_carptears_A.dds</FileName>
+ </Item>
+ <Item>
+  <Name>v_glass_d_DARKgreen</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="4" />
+  <Height value="4" />
+  <MipLevels value="1" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>v_glass_d_DARKgreen.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_V_CashDepot_signs02</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_V_CashDepot_signs02.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_OutdoorFloor2_512_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_OutdoorFloor2_512_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>Maneken_UV_lambert1_Diffuse</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>Maneken_UV_lambert1_Diffuse.dds</FileName>
+ </Item>
+ <Item>
+  <Name>lowr_diff_000_a_uni</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>lowr_diff_000_a_uni.dds</FileName>
+ </Item>
+ <Item>
+  <Name>os_v_fh_framewood_newlight</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>os_v_fh_framewood_newlight.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mh_v_wndrbrstrp_d</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="32" />
+  <Height value="32" />
+  <MipLevels value="4" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>mh_v_wndrbrstrp_d.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_V_Lab_wall_panels_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_V_Lab_wall_panels_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>HC_Console_Inspire_Treadmills-enlarge</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="1" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>HC_Console_Inspire_Treadmills-enlarge.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Wall_BrickPlain4_2x2_512_albedo</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>TexturesCom_Wall_BrickPlain4_2x2_512_albedo.dds</FileName>
+ </Item>
+ <Item>
+  <Name>pattern_fd_s</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>pattern_fd_s.dds</FileName>
+ </Item>
+ <Item>
+  <Name>ah_busshitbeams_N</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>ah_busshitbeams_N.dds</FileName>
+ </Item>
+ <Item>
+  <Name>OS_V_CashDepot_metal_duct_N</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>OS_V_CashDepot_metal_duct_N.dds</FileName>
+ </Item>
+ <Item>
+  <Name>v_glass_d</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="4" />
+  <Height value="4" />
+  <MipLevels value="1" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>v_glass_d.dds</FileName>
+ </Item>
+ <Item>
+  <Name>v_mph_kitchenvent_d</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>v_mph_kitchenvent_d.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Wood_Worn2_512_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Wood_Worn2_512_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>tl_V_CashDepot_signs</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>tl_V_CashDepot_signs.dds</FileName>
+ </Item>
+ <Item>
+  <Name>XJ_V_SMOKINGSIGN</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>XJ_V_SMOKINGSIGN.dds</FileName>
+ </Item>
+ <Item>
+  <Name>pattern_fd</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>pattern_fd.dds</FileName>
+ </Item>
+ <Item>
+  <Name>os_v_fh_framewood</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>os_v_fh_framewood.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mph_ovenglass1_s</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="128" />
+  <Height value="128" />
+  <MipLevels value="6" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mph_ovenglass1_s.dds</FileName>
+ </Item>
+ <Item>
+  <Name>gz_V_FA_CarpetTearsgz_V_FA_CarpetTears_A</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>gz_V_FA_CarpetTearsgz_V_FA_CarpetTears_A.dds</FileName>
+ </Item>
+ <Item>
+  <Name>Maneken_UV_lambert1_Normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>Maneken_UV_lambert1_Normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Plastic_PolypropyleneRough_512_normal_(1)</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Plastic_PolypropyleneRough_512_normal_(1).dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Concrete_WallAbstract_512_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Concrete_WallAbstract_512_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mph_kitchenUnits_d</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>mph_kitchenUnits_d.dds</FileName>
+ </Item>
+ <Item>
+  <Name>CLB_Stainless_em</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>CLB_Stainless_em.dds</FileName>
+ </Item>
+ <Item>
+  <Name>prompt_vfd_signs</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>prompt_vfd_signs.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_Tiles_Plain_512_normal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_Tiles_Plain_512_normal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>37_white_wallpaper_texture-seamless</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>37_white_wallpaper_texture-seamless.dds</FileName>
+ </Item>
+ <Item>
+  <Name>TexturesCom_OutdoorFloor2_512_albedo</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>TexturesCom_OutdoorFloor2_512_albedo.dds</FileName>
+ </Item>
+ <Item>
+  <Name>black_metal</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="10" />
+  <Format>D3DFMT_BC7</Format>
+  <FileName>black_metal.dds</FileName>
+ </Item>
+ <Item>
+  <Name>mh_v_wndrbrstrp_n</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="32" />
+  <Height value="32" />
+  <MipLevels value="4" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>mh_v_wndrbrstrp_n.dds</FileName>
+ </Item>
+ <Item>
+  <Name>gz_V_Sub_stairs_S</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="256" />
+  <Height value="256" />
+  <MipLevels value="7" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>gz_V_Sub_stairs_S.dds</FileName>
+ </Item>
+ <Item>
+  <Name>nxg_tl_v_michael_wall1_s</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>nxg_tl_v_michael_wall1_s.dds</FileName>
+ </Item>
+ <Item>
+  <Name>im_roadblends001</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, X64, X128, X512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>im_roadblends001.dds</FileName>
+ </Item>
+ <Item>
+  <Name>xj_v_white</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X32, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="4" />
+  <Height value="4" />
+  <MipLevels value="1" />
+  <Format>D3DFMT_DXT1</Format>
+  <FileName>xj_v_white.dds</FileName>
+ </Item>
+ <Item>
+  <Name>Maneken_UV_lambert1_Diffuse_1001</Name>
+  <Unk32 value="128" />
+  <Usage>DEFAULT</Usage>
+  <UsageFlags>X64, Y64, X256, Y512, UNK24</UsageFlags>
+  <ExtraFlags value="0" />
+  <Width value="512" />
+  <Height value="512" />
+  <MipLevels value="8" />
+  <Format>D3DFMT_DXT5</Format>
+  <FileName>Maneken_UV_lambert1_Diffuse_1001.dds</FileName>
+ </Item>
+</TextureDictionary>

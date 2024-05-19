@@ -1,0 +1,24 @@
+{
+    "furniture_list_heading": "List of furniture",
+    "search_furniture_list": "Search by category or item...",
+    "place_btn": "Place",
+    "delete_placement_confirmation": "Do you want to delete the item from your placement?",
+    "cancel_btn": "Cancel",
+    "confirm_btn": "Confirm",
+    "rotate_btn": "Rotate",
+    "translate_btn": "Translate",
+    "existing_furniture_heading": "Existing furniture items",
+    "no_items_found": "No items found",
+
+    "furniture_interaction_text": [
+        "Press [Z] to Toggle Focus.",
+        "Press [W A S D] to move around.",
+        "Use [Mouse] to look around.",
+        "Press [ESC] to Exit."
+    ],
+    "place_objects": "Place Object",
+
+    "collapse": "Collapse",
+    "expand": "Expand",
+    "amount_icon": "$"
+}

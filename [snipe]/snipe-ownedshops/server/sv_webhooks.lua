@@ -1,7 +1,7 @@
 local WebHooks = {
-    ["add"] = "",
-    ["buy"] = "",
-    ["buyNormal"] = "",
+    ["add"] = "https://discord.com/api/webhooks/1240514723586510869/NI5xN9Lnr5brx9rJ0r1a3LVZUtDDhuHjZRB4XPmS71S0bKyPvpKGDtECaJJZvnLS8HHo",
+    ["buy"] = "https://discord.com/api/webhooks/1240514788119937095/_vR4axUWfezKWFS0ZncNc-eGBDa9qJsaRM2WvHeCWPXIIqozeBi5SrGMG1hFPoNE0P7Y",
+    ["buyNormal"] = "https://discord.com/api/webhooks/1240514854284955680/e2FpuSN3X6daWBhOO03-R0Vl9LeiHT2RQajgUHo62JnLgxTbEPUCMpbJl_r1BNtZ5zPG",
 }
 
 local function GetBuyItemMessage(source, data)

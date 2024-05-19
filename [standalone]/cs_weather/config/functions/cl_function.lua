@@ -15,6 +15,11 @@ AddEventHandler('playerSpawned', function()
     TriggerServerEvent('cs:weather:server:RequestStateSync')
 end)
 
+
+Citizen.CreateThread(function()
+    TriggerServerEvent('cs:weather:server:RequestStateSync')
+end)
+
 --- compatibilty support for other weather system's ---
 
 -- [qb-weathersync]

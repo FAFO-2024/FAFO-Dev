@@ -9,6 +9,7 @@ lua54 'yes'
 client_scripts {
     'cl_utils.lua',
     'cl_smartsigns.lua',
+    'cl_setuputil.lua'
 }
 
 shared_script 'config.lua'

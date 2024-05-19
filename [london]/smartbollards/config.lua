@@ -1,6 +1,6 @@
 config = {
 
-    enableDeveloperMode = false,
+    enableDeveloperMode = true,
     -- This allows you to use the spooner to create, edit and delete bollard sets
     -- If enabled ANY user on the server will have access, so make sure this is disabled on your live server
 
@@ -27,7 +27,7 @@ config = {
 
         ["police"] = {
 
-            permittedVehicles = {`fbi`, `police4`}, -- Vehicles which are permitted to lower the bollards
+            permittedVehicles = {`sonomcc`, `18chargerl2`, `18fpisl2`, `19tahoel2`, `20fpiul2`, `f250l2nc`, `bmwbike`}, -- Vehicles which are permitted to lower the bollards
             permissions = {
                 acePermissions = {
                     enabled = false,
@@ -36,7 +36,7 @@ config = {
                 ESX = {
                     enabled = false,
                     checkJob = {
-                        enabled = true, -- Enable this to use ESX job check
+                        enabled = false, -- Enable this to use ESX job check
                         jobs = {"police"} -- A user can have any of the following jobs, allowing you to add multiple
                     }
                 },
@@ -57,7 +57,7 @@ config = {
                     enabled = true,
                     checkJob = {
                         enabled = true, -- Enable this to use QBCore job check
-                        jobs = {"police"}, -- A user can have any of the following jobs, meaning you can add different jobs
+                        jobs = {"police", "sasp", "sheriff", "admin"}, -- A user can have any of the following jobs, meaning you can add different jobs
                     },
                     checkPermission = {
                         enabled = false, -- Enable this to use QBCore permission check
@@ -68,7 +68,7 @@ config = {
         },
         ["fire"] = {
 
-            permittedVehicles = {`firetruk`}, -- Vehicles which are permitted to lower the bollards
+            permittedVehicles = {`quantum`, `fdsilverado`, `f250pov`}, -- Vehicles which are permitted to lower the bollards
             permissions = {
                 acePermissions = {
                     enabled = false,
@@ -77,7 +77,7 @@ config = {
                 ESX = {
                     enabled = false,
                     checkJob = {
-                        enabled = true, -- Enable this to use ESX job check
+                        enabled = false, -- Enable this to use ESX job check
                         jobs = {"fire"} -- A user can have any of the following jobs, allowing you to add multiple
                     }
                 },
@@ -98,7 +98,7 @@ config = {
                     enabled = true,
                     checkJob = {
                         enabled = true, -- Enable this to use QBCore job check
-                        jobs = {"fire"}, -- A user can have any of the following jobs, meaning you can add different jobs
+                        jobs = {"fire", "admin"}, -- A user can have any of the following jobs, meaning you can add different jobs
                     },
                     checkPermission = {
                         enabled = false, -- Enable this to use QBCore permission check
@@ -109,7 +109,7 @@ config = {
         },
         ["ambulance"] = {
 
-            permittedVehicles = {`ambulance`}, -- Vehicles which are permitted to lower the bollards
+            permittedVehicles = {`f550ambows`, `durangopru`, `f150pov`}, -- Vehicles which are permitted to lower the bollards
             permissions = {
                 acePermissions = {
                     enabled = false,
@@ -118,7 +118,7 @@ config = {
                 ESX = {
                     enabled = false,
                     checkJob = {
-                        enabled = true, -- Enable this to use ESX job check
+                        enabled = false, -- Enable this to use ESX job check
                         jobs = {"police", "admin"} -- A user can have any of the following jobs, allowing you to add multiple
                     }
                 },
@@ -139,7 +139,7 @@ config = {
                     enabled = true,
                     checkJob = {
                         enabled = true, -- Enable this to use QBCore job check
-                        jobs = {"police", "admin"}, -- A user can have any of the following jobs, meaning you can add different jobs
+                        jobs = {"ambulance", "admin"}, -- A user can have any of the following jobs, meaning you can add different jobs
                     },
                     checkPermission = {
                         enabled = false, -- Enable this to use QBCore permission check

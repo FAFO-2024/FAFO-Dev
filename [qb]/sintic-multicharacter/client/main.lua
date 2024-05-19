@@ -106,33 +106,6 @@ RegisterNetEvent('qb-multicharacter:client:chooseChar', function()
     openCharMenu(true)
 end)
 
-RegisterNetEvent('qb-multicharacter:client:spawnLastLocation', function(coords, cData)
-    local result = lib.callback.await('ps-housing:cb:GetOwnedApartment', source, cData.citizenid)
-    if result then
-        TriggerEvent("apartments:client:SetHomeBlip", result.type)
-    end
-    local ped = PlayerPedId()
-    SetEntityCoords(ped, coords.x, coords.y, coords.z)
-    SetEntityHeading(ped, coords.w)
-    FreezeEntityPosition(ped, false)
-    SetEntityVisible(ped, true)
-    local PlayerData = QBCore.Functions.GetPlayerData()
-    local insideMeta = PlayerData.metadata["inside"]
-    DoScreenFadeOut(500)
-    if insideMeta.propertyId then
-        TriggerServerEvent('ps-housing:server:enterProperty', tostring(insideMeta.propertyId))
-    else
-        SetEntityCoords(ped, coords.x, coords.y, coords.z)
-        SetEntityHeading(ped, coords.w)
-        FreezeEntityPosition(ped, false)
-        SetEntityVisible(ped, true)
-    end
-    TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
-    TriggerEvent('QBCore:Client:OnPlayerLoaded')
-    Wait(2000)
-    DoScreenFadeIn(250)
-end)
-
 -- NUI Callbacks
 
 RegisterNUICallback('closeUI', function(_, cb)

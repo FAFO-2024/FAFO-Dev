@@ -31,12 +31,12 @@ Config.PropActive       = true
 Config.CryptoName       = "qbit"
 Config.HospitalAmbulanceAlert = false
 Config.Fahrenheit       = false
-Config.EyeTarget        = false                 -- required qb-target (You can use it for contacts sharing and phone booth)
+Config.EyeTarget        = true                 -- required qb-target (You can use it for contacts sharing and phone booth)
 Config.TargetExport     = "qb-target"           -- exports["qb-target"]  -- Resource Name
 Config.UsableItem       = true                  -- If you want to use without items set it to false
 Config.OxInvetory       = false                 -- Set to true if you are using Ox Inventory
-Config.AirDropID        = false                -- Activate the AirDrop feature if you want the player to see the ID.
-Config.AutoMessageDelete    = true             -- Automatically deletes messages (Messages,Mail,Group Messages,Tinder Messages,Advertising)
+Config.AirDropID        = true                -- Activate the AirDrop feature if you want the player to see the ID.
+Config.AutoMessageDelete    = false             -- Automatically deletes messages (Messages,Mail,Group Messages,Tinder Messages,Advertising)
 Config.AutoDeleteTime       = 4                -- How many days ago you want to delete data
 Config.AutoWantedTime       = 4                -- How many days ago you want to delete data (Automatic deletion of wanted people in MDT application after how many days if deletion is forgotten)
 Config.WaitPhone            = 2                -- Cycle time when phone is on
@@ -52,7 +52,7 @@ Config.UseTokoVoIP      = false
 Config.SaltyChat        = false               -- SaltyChat (Only v2.6 and lower | Not tested in v2.6 higher versions)
 
 --- ## CALL COMMAND ### ---
-Config.OnlineContactPlayers = false    -- Activate to see active players in the contacts
+Config.OnlineContactPlayers = true    -- Activate to see active players in the contacts
 Config.CallAnswer = "answer"  -- quick answer (registercommand)
 Config.EndCall = "endcall"  -- to close call (registercommand)
 
@@ -67,7 +67,7 @@ Config.SpecificNumber = {
 
 
 -- ### TAXI APP ### ---
-Config.TaxiPrice        = 75     -- Taxi Price ( 75$/KM )
+Config.TaxiPrice        = 10000000     -- Taxi Price ( 75$/KM )
 Config.TaxiJobCode      = "taxi"  -- Job Code
 
 -- ### House APP ### ---
@@ -75,8 +75,8 @@ Config.loafHouse        = false   -- Activate if you are using Loaf House (https
 Config.bcs_housing      = false   -- Activate if you are using BCS Housing (https://masbagus.tebex.io/package/5090952)
 
 -- ### BANK APP ### ---
-Config.BankTransferCom      = 10     -- Bank transfer commission rate
-Config.OfflineBankTransfer  = true
+Config.BankTransferCom      = 150     -- Bank transfer commission rate
+Config.OfflineBankTransfer  = false
 
 ---### Dispatch ### ---
 
@@ -92,7 +92,7 @@ Config.loafGarages      = false  -- Activate if you are using Loaf Garage (https
 Config.OwnedVehicles    = "player_vehicles"   -- ## SQL TABLE NAME (VEHICLES)
 Config.ValespawnRadius  = 170.0   -- Distance to spaw your car
 Config.ValePrice        = 100    -- Vale Price
-Config.ValeNPC          = true   -- Activate if you want the valet to bring the car to you.
+Config.ValeNPC          = false   -- Activate if you want the valet to bring the car to you.
 Config.ImpoundVale      = true   -- Set to true to not fetch impounded cars
 
 Config.ClassList = {
@@ -148,8 +148,8 @@ Config.AdvertisingSendBlockCommand = "blockAdd" -- (/blockAdd true/false)
 Config.TwitterVerifyCommand = "twitterverify"   -- (/twitterverify true/false username) yellow tick
 Config.TwitterSendBlockCommand = "blocktwitter" -- (/blockTwitter true/false)
 Config.TwitterSendBanCommand = "bantwitter" -- (/bantwitter true/false username)
-Config.TwitterSubsDate = 5 -- Twitter subs subscription renewal time
-Config.TwitterSubsPay = 15 -- Twitter Subscription fee
+Config.TwitterSubsDate = 7 -- Twitter subs subscription renewal time
+Config.TwitterSubsPay = 2500 -- Twitter Subscription fee
 
 -- ### Instagram APP ### ---
 Config.InstagramVerifyCommand = "instagramverify"  -- (/instagramverify true/false username)
@@ -169,7 +169,7 @@ Config.NewNumberChange = "phonenumberchange" -- /phonenumberchange playerid newn
 
 -- ## PHONE Box -- ##
 
-Config.PhoneBox = true
+Config.PhoneBox = false
 Config.PhoneBoxKey = "E"
 Config.PhoneBoxRegCom = "phonebox"
 Config.PhoneBoothMoney = { actived = true, money = 500 }
@@ -193,32 +193,32 @@ Config.PhoneBootNumber = "22222"
 -- You can add or turn off any crypto you want. (https://api.coingecko.com/api/v3/coins/list?include_platform=false) Crypto list that can be added
 -- The id option will be the first value, and the second value will be true or false.
 Config.Crytos = {
-    ["bitcoin"] = true,
-    ["ethereum"] = true,
-    ["tether"] = true,
-    ["binance-usd"] = true,
-    ["uniswap"] = true,
-    ["binancecoi"] = true,
-    ["terra-luna"] = true,
-    ["avalanche-2"] = true,
-    ["cardano"] = true,
-    ["ripple"] = true,
-    ["usd-coin"] = true,
-    ["dogecoin"] = true,
-    ["litecoin"] = true,
-    ["chainlink"] = true,
-    ["stellar"] = true,
-    ["tron"] = true,
-    ["eos"] = true,
-    ["monero"] = true,
-    ["iota"] = true
+    ["bitcoin"] = false,
+    ["ethereum"] = false,
+    ["tether"] = false,
+    ["binance-usd"] = false,
+    ["uniswap"] = false,
+    ["binancecoi"] = false,
+    ["terra-luna"] = false,
+    ["avalanche-2"] = false,
+    ["cardano"] = false,
+    ["ripple"] = false,
+    ["usd-coin"] = false,
+    ["dogecoin"] = false,
+    ["litecoin"] = false,
+    ["chainlink"] = false,
+    ["stellar"] = false,
+    ["tron"] = false,
+    ["eos"] = false,
+    ["monero"] = false,
+    ["iota"] = false
 }
 
 ---##  Spam ## ---
 
-Config.SpamLimit = 6  -- Default: 6
+Config.SpamLimit = 30  -- Default: 6
 Config.SpamReset = 10  -- seconds
-Config.SpamPlayerKick = true
+Config.SpamPlayerKick = false
 Config.SpamDropPlayer = "You were kicked from the server for spamming too much"
 
 
@@ -226,9 +226,6 @@ Config.SpamDropPlayer = "You were kicked from the server for spamming too much"
 
 -- JOBs that will use the Business APP
 Config.UseBusinessJobs = {
-    mechanic = true,
-    ambulance = true,
-    police = true
 }
 
 
@@ -236,15 +233,16 @@ Config.UseBillingCommission = true  -- Invoice commission true/false
 -- This is a percentage (0.10) == 10% ( Must be active to receive commission - If the player is not in the game, she/he cannot receive a commission.)
 Config.BillingCommissions = {
     mechanic = 0.10,
-    police = 0.20
+    police = 0.20,
+    sasp = 0.20,
+    sheriff = 0.20,
+    ambulance = 0.20,
+    firefighter = 0.20
 }
 
 
 -- People who can use the application at a high level (jobs and lowest rank)
 Config.JobGrade  = {
-    ["police"] = 3,
-    ["ambulance"] = 2,
-    ["mechanic"] = 2
 }
 
 

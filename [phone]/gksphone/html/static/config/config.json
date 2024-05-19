@@ -5,7 +5,7 @@
   "ImageSizeLimitMB": 10,
   "PictureType": "jpg",
   "NotifiKonumDebug" : false,
-  "Valebring": true,
+  "Valebring": false,
   "Facetime": true,
   "GroupCall": true,
   "MessageRecordMic": true,
@@ -13,21 +13,24 @@
   "RealTime" : true,
   "AirDrop": true,
   "RingtoneXsound": true,
-  "JobMessageAnonymous": true,
+  "JobMessageAnonymous": false,
   "CurrencyComma" : true,
   "GamblingGame" : true,
-  "qbitPurchase": true,
-  "qbitSell": true,
-  "qbitTransfer": true,
-  "RaceNOSPhasing": true,
-  "Race30sPhasing": true,
-  "RaceFullPhasing": true,
+  "qbitPurchase": false,
+  "qbitSell": false,
+  "qbitTransfer": false,
+  "RaceNOSPhasing": false,
+  "Race30sPhasing": false,
+  "RaceFullPhasing": false,
   "HomePageSkip": false,
   "LiveAPPGIF": 5000,
   "NewBill": true,
   "NewsPerm" : {
     "police" : true,
-    "newspaper" : true
+    "sasp" : true,
+    "sheriff" : true,
+    "ambulance" : true,
+    "firefighter" : true
   },
 
   "Squawk": {
@@ -42,33 +45,27 @@
 
   "YellowFilter": {
     "mechanic" : "Mechanic",
-    "bartender" : "Bartender",
-    "lawyer" : "Lawyer"
+    "leo" : "Law Enforcement",
+    "lsfr" : "Los Santos First Responders"
   },
 
   "JobApplication": {
-    "police": "Police",
-    "ambulance": "Ambulance"
   },
 
   "JobApplicationQuestions": {
-    "1": "Why are you applying for this job?",
-    "2": "Tell about yourself"
   },
 
   "JobCategory": {
     "police" : "Deparments",
     "ambulance" : "Ambulance",
     "mechanic" : "Mechanic",
-    "lawyer" : "Lawyer"
+    "firefighter" : "Fire Department"
   },
 
   "JobMessages": [
-    {"label" : "PD", "jobname" : ["police", "sheriff", "#####"], "logoname": "police", "category": "police"},
+    {"label" : "PD", "jobname" : ["police", "sheriff", "sasp"], "logoname": "police", "category": "police"},
     {"label" : "EMS", "jobname" : ["ambulance"], "logoname": "ambulance", "category": "ambulance"},
-    {"label" : "GKSHOP Mechanic", "jobname" : ["mechanic"], "logoname": "mechanic", "category": "mechanic"},
-    {"label" : "GKSHOP Mechanic2", "jobname" : ["mechanic2"], "logoname": "mechanic", "category": "mechanic"},
-    {"label" : "GKSHOP Lawyer", "jobname" : ["lawyer"], "logoname": "mechanic", "category": "lawyer"}
+    {"label" : "Fire", "jobname" : ["firefighter"], "logoname": "ambulance", "category": "firefighter"}
   ],
 
 
@@ -130,7 +127,6 @@
   },
 
   "StarterApp" : [
-    {"name": "Info",  "categori": "social",  "icons": "/html/static/img/icons/edge.png", "routeName": "IframeWeb", "signal": true, "show":true},
     {"name": "Messages",  "categori": "social", "icons": "/html/static/img/icons/messages.png", "routeName": "messages", "puceRef": "nbMessagesUnread", "signal": true, "show":true},
     {"name": "Camera",    "categori": "jobs", "icons": "/html/static/img/icons/camera.png", "routeName": "photo", "signal": true, "show":true},
     {"name": "Jobs",      "categori": "jobs", "icons": "/html/static/img/icons/jobm.png", "routeName": "jobm", "puceRef": "nbJobMessRead", "signal": true, "show":true},
@@ -207,8 +203,8 @@
       "routeName": "vale",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": true,
-      "show": true
+      "signal": false,
+      "show": false
     },
     {
       "name": "Games",
@@ -247,8 +243,8 @@
       "routeName": "borsaa",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": true,
-      "show": true
+      "signal": false,
+      "show": false
     },
     {
       "name": "Race",
@@ -260,8 +256,8 @@
         "ambulance": "ambulance"
       }],
       "allowjob": [],
-      "signal": true,
-      "show": true
+      "signal": false,
+      "show": false
     },
     {
       "name": "Note",
@@ -290,8 +286,8 @@
       "routeName": "getir",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": true,
-      "show": true
+      "signal": false,
+      "show": false
     },
     {
       "name": "MarketPlace",
@@ -300,8 +296,8 @@
       "routeName": "ebay",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": true,
-      "show": true
+      "signal": false,
+      "show": false
     },
     {
       "name": "Rent A Car",
@@ -310,8 +306,8 @@
       "routeName": "rentcar",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": true,
-      "show": true
+      "signal": false,
+      "show": false
     },
     {
       "name": "Car Seller",
@@ -320,8 +316,8 @@
       "categori": "jobs",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": true,
-      "show": true
+      "signal": false,
+      "show": false
     },
     {
       "name": "Calculator",
@@ -340,8 +336,8 @@
       "routeName": "taxi",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": true,
-      "show": true
+      "signal": false,
+      "show": false
     },
     {
       "name": "Matchme",
@@ -392,8 +388,8 @@
       "allowjob": [{
         "police": "police"
       }],
-      "signal": true,
-      "show": true
+      "signal": false,
+      "show": false
     },
     {
       "name": "House",
@@ -402,8 +398,8 @@
       "routeName": "qbhouse",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": true,
-      "show": true
+      "signal": false,
+      "show": false
     },
     {
       "name": "Qbit",
@@ -412,8 +408,8 @@
       "routeName": "qbcrypto",
       "blockedjobs": [],
       "allowjob": [],
-      "signal": true,
-      "show": true
+      "signal": false,
+      "show": false
     },
     {
       "name": "Business",
@@ -432,8 +428,8 @@
         "hotdog": "hotdog"
       }],
       "allowjob": [],
-      "signal": true,
-      "show": true
+      "signal": false,
+      "show": false
     },
     {
       "name": "Special Application 1",

@@ -548,7 +548,7 @@ config = {
             enabled = true,
             checkJob = {
                 enabled = true, -- Enable this to use QBCore job check
-                jobs = {"police", "ambulance", "firefighter"}, -- A user can have any of the following jobs, meaning you can add different jobs
+                jobs = {"police", "sasp", "sheriff", "ambulance", "firefighter"}, -- A user can have any of the following jobs, meaning you can add different jobs
             },
             checkPermission = {
                 enabled = true, -- Enable this to use QBCore permission check

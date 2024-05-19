@@ -34,6 +34,7 @@ if Config.Framework == 'qb' then
     RegisterServerEvent("osp_ambulance:addItem")
     AddEventHandler("osp_ambulance:addItem", function(name, amount)
         if amount == nil then amount = 1 end
+        if name ~= 'stretcher' and name ~= 'tourniquet' and name ~= 'ecg' then return end
         local src = source
         local player = QBCore.Functions.GetPlayer(src)
         if Config.UsedInventory == 'qs' then
@@ -43,6 +44,26 @@ if Config.Framework == 'qb' then
         end
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[name], "add")
     end)
+
+    function AddItem(src, name, amount)
+        local player = QBCore.Functions.GetPlayer(src)
+        if Config.UsedInventory == 'qs' then
+            exports['qs-inventory']:AddItem(src, name, amount)
+        else
+            player.Functions.AddItem(name, amount)
+        end
+        TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[name], "add")
+    end
+
+    function RemoveItem(src, name, amount)
+        local player = QBCore.Functions.GetPlayer(src)
+        if Config.UsedInventory == 'qs' then
+            exports['qs-inventory']:RemoveItem(src, name, amount)
+        else
+            player.Functions.RemoveItem(name, amount)
+        end
+        TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[name], "remove")
+    end
 
     RegisterServerEvent("osp_ambulance:removeItem")
     AddEventHandler("osp_ambulance:removeItem", function(name, amount)
@@ -57,28 +78,20 @@ if Config.Framework == 'qb' then
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[name], "remove")
     end)
 
-    lib.callback.register('osp_ambulance:CheckMoney', function(source, data)
+    function CheckMoney(source)
         local src = source
         local player = QBCore.Functions.GetPlayer(src)
         local currentCash = player.Functions.GetMoney('bank')
         return currentCash
-    end)
+    end
 
-    RegisterServerEvent("osp_ambulance:RemoveMoney")
-    AddEventHandler("osp_ambulance:RemoveMoney", function(amount, source)
+    function RemoveMoney(source, amount)
         local src = source
         local player = QBCore.Functions.GetPlayer(src)
         if player then
             player.Functions.RemoveMoney('bank', amount)
         end
-    end)
-
-    RegisterServerEvent("osp_ambulance:AddMoney")
-    AddEventHandler("osp_ambulance:AddMoney", function(amount)
-        local src = source
-        local player = QBCore.Functions.GetPlayer(src)
-        player.Functions.AddMoney('cash', amount)
-    end)
+    end
 
 
     -- Commands
@@ -233,6 +246,10 @@ elseif Config.Framework == 'esx' then
         return ESX.GetPlayerFromId(source)
     end
 
+    if GetResourceState("esx_society") ~= 'missing' then
+        TriggerEvent('esx_society:registerSociety', 'ambulance', 'Ambulance', 'society_ambulance', 'society_ambulance', 'society_ambulance', {type = 'public'})
+    end
+
     function CreateUseableItem(name, cb)
         if Config.UsedInventory == 'qs' then
             exports['qs-inventory']:CreateUsableItem(name, cb)
@@ -264,8 +281,10 @@ elseif Config.Framework == 'esx' then
 
     RegisterServerEvent("osp_ambulance:addItem")
     AddEventHandler("osp_ambulance:addItem", function(item, amount)
+        if amount == nil then amount = 1 end
+        if name ~= 'stretcher' and name ~= 'tourniquet' and name ~= 'ecg' then return end
         local src = source
-        local player = GetPlayer(source)
+        local player = GetPlayer(src)
         if Config.UsedInventory == 'qs' then
             exports['qs-inventory']:AddItem(src, item, amount)
         else
@@ -273,10 +292,29 @@ elseif Config.Framework == 'esx' then
         end
     end)
 
+    function AddItem(src, name, amount)
+        local player = GetPlayer(src)
+        if Config.UsedInventory == 'qs' then
+            exports['qs-inventory']:AddItem(src, name, amount)
+        else
+            player.addInventoryItem(name, amount)
+        end
+    end
+
+    function RemoveItem(src, name, amount)
+        local player = GetPlayer(src)
+        if Config.UsedInventory == 'qs' then
+            exports['qs-inventory']:RemoveItem(src, name, amount)
+        else
+            player.removeInventoryItem(name, amount)
+        end
+    end
+
     RegisterServerEvent("osp_ambulance:removeItem")
     AddEventHandler("osp_ambulance:removeItem", function(name, amount)
+        if amount == nil then amount = 1 end
         local src = source
-        local player = GetPlayer(source)
+        local player = GetPlayer(src)
         if Config.UsedInventory == 'qs' then
             exports['qs-inventory']:RemoveItem(src, name, amount)
         else
@@ -284,12 +322,21 @@ elseif Config.Framework == 'esx' then
         end
     end)
 
-    lib.callback.register('osp_ambulance:CheckMoney', function(source, data)
+    function CheckMoney(source)
         local src = source
         local player = GetPlayer(source)
         local currentCash = player.getAccount('bank').money
         return currentCash
-    end)
+    end
+
+    function RemoveMoney(source, amount)
+        local src = source
+        local player = GetPlayer(src)
+        if player then
+            player.removeAccountMoney('bank', tonumber(amount))
+        end
+    end
+
 
     lib.callback.register('osp_ambulance:getName', function(source, data)
 		local player = GetPlayer(source)
@@ -307,23 +354,6 @@ elseif Config.Framework == 'esx' then
 			return {firstname = result[1].firstname, lastname = result[1].lastname}
 		end
     end)
-
-    RegisterServerEvent("osp_ambulance:RemoveMoney")
-    AddEventHandler("osp_ambulance:RemoveMoney", function(amount, source)
-        local src = source
-        local player = GetPlayer(src)
-        if player then
-            player.removeAccountMoney('bank', tonumber(amount))
-        end
-    end)
-
-    RegisterServerEvent("osp_ambulance:AddMoney")
-    AddEventHandler("osp_ambulance:AddMoney", function(amount)
-        local src = source
-        local player = GetPlayer(source)
-        player.addMoney(amount)
-    end)
-
 
     -- Commands
 
@@ -522,11 +552,48 @@ end)
 
 CreateUseableItem('ifak', function(source, item)
     TriggerClientEvent('osp_ambulance:useIfak', source)
+    RemoveItem(source, 'ifak', 1)
+    Wait(4000)
+    AddItem(source, 'bandage', 1)
+    AddItem(source, 'painkillers', 1)
+    AddItem(source, 'temporary_tourniquet', 1)
 end)
 
 
 
-
+RegisterNetEvent('osp_ambulance:buyItemSv', function(data, input, price, name)
+    local src = source
+    if data.amount then
+        if data.amount > 0 then
+            if data.amount >= input[1] then
+                local money = CheckMoney(src)
+                if money*input[1] > price*input[1] then
+                    RemoveMoney(src, price*input[1])
+                    for i=1,input[1] do
+                        AddItem(src, name, 1)
+                    end
+                    if data.index then
+                        TriggerEvent('osp_ambulance:RemoveItemFromStock', data.index, input[1])
+                    end
+                else
+                    TriggerClientEvent('osp_ambulance:SendTextMessage', src, lang.interactions.medicalHeader, lang.error.not_enough_money, 5000, "error")
+                end
+            end
+        else
+            print('no stock')
+        end
+    else
+        local money = CheckMoney(src)
+        if money > price then
+            RemoveMoney(src, price)
+            for i=1,input[1] do
+                AddItem(src, name, 1)
+            end
+        else
+            TriggerClientEvent('osp_ambulance:SendTextMessage', src, lang.interactions.medicalHeader, lang.error.not_enough_money, 5000, "error")
+        end
+    end
+end)
 
 
 

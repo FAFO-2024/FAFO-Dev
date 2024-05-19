@@ -1,9 +1,9 @@
 local WebHooks = {
-    ["exploit"] = "https://discord.com/api/webhooks/1125136833492287488/t9Pn2X6w5Q9wAflJ7l3XTWmUMpf4TlOM1K_Urp4ZtqM74ztl2OH75Hx-BIXaV7JAGgqA",
-    ["triggered"] = "https://discord.com/api/webhooks/1125136883777802411/InHC88rd-43LmXcAlkDvViYIuKiIUxa7EoafHnLWZalh-h1P6cxy3ic3HNfcc4u9uzYj",
-    ["report"] = "https://discord.com/api/webhooks/1125136935128670378/P6z3fq8-DSSH81HylDnllxyjYEyRnvyw0KI9ZRpE2uDSEiatmGt_MPrierzR_dFq_mZm",
-    ["transcript"] = "https://discord.com/api/webhooks/1125136990531231754/9nCtnUv7EKtDxulOAIbjYy-t4RMSYJDULUMakDjnNvOmrkh_t_SZhAalycX2TUeEZjCV",
-    ["bans"] = "https://discord.com/api/webhooks/1140777672574771341/95mURZIj9tGGIYKC0hrPpXFHtAfBroAMi_psFyw4NSu2jm4feyHgDbUlfSuUDiTYHsK4",
+    ["exploit"] = "https://discord.com/api/webhooks/1240509290679369811/n5hV0uxI0PTNLzbjrnfut5JWdO0TwaRI_Hacl9AT8AuoWsone1EbFMbktK1iNL8Ufce-",
+    ["triggered"] = "https://discord.com/api/webhooks/1240509375244800031/rH5OARBAywsgfPd8MoxufLC1JnhPrCKBF1LWwY7IDdqrNhhN6ZBeW4bH69ZwVx1OrKrH",
+    ["report"] = "https://discord.com/api/webhooks/1240509450293612554/HK0WxAFMFgvFwrRFFj0-2HKo3ywhUKgqUkNDw41XFl1UWxIE-lrsKdonA0yot6A1tb7H",
+    ["transcript"] = "https://discord.com/api/webhooks/1240509523819757648/yyxcKPMfKYkvEtC3OUlQEL1Bx0PnpaAEP1765te_rUGOVofmerqAQan2HH_y_IVBGdZ3",
+    ["bans"] = "https://discord.com/api/webhooks/1240509615012057161/i4yhV4M5HnVbwl4SG7q3NHnUKUE1pyujMLj8mGL5tbFJKCJ4J7HPKthy4cNRdsyj48L4",
 }
 
 function SendLogs(source, type, message)
