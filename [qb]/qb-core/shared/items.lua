@@ -218,14 +218,21 @@ QBShared.Items = {
     emp_ammo                     = { name = 'emp_ammo', label = 'EMP Ammo', weight = 200, type = 'item', image = 'emp_ammo.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Ammo for EMP Launcher' },
 
     -- Card ITEMS
-    id_card                      = { name = 'id_card', label = 'ID Card', weight = 0, type = 'item', image = 'id_card.png', unique = true, useable = true, shouldClose = false, combinable = nil, description = 'A card containing all your information to identify yourself' },
-    driver_license               = { name = 'driver_license', label = 'Drivers License', weight = 0, type = 'item', image = 'driver_license.png', unique = true, useable = true, shouldClose = false, combinable = nil, description = 'Permit to show you can drive a vehicle' },
     lawyerpass                   = { name = 'lawyerpass', label = 'Lawyer Pass', weight = 0, type = 'item', image = 'lawyerpass.png', unique = true, useable = true, shouldClose = false, combinable = nil, description = 'Pass exclusive to lawyers to show they can represent a suspect' },
-    weaponlicense                = { name = 'weaponlicense', label = 'Weapon License', weight = 0, type = 'item', image = 'weapon_license.png', unique = true, useable = true, shouldClose = true, combinable = nil, description = 'Weapon License' },
     bank_card                    = { name = 'bank_card', label = 'Bank Card', weight = 0, type = 'item', image = 'bank_card.png', unique = true, useable = true, shouldClose = true, combinable = nil, description = 'Used to access ATM' },
     security_card_01             = { name = 'security_card_01', label = 'Security Card A', weight = 0, type = 'item', image = 'security_card_01.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A security card... I wonder what it goes to' },
     security_card_02             = { name = 'security_card_02', label = 'Security Card B', weight = 0, type = 'item', image = 'security_card_02.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A security card... I wonder what it goes to' },
 
+    -- CS IDs
+    id_card                      = { name = 'id_card', label = 'ID Card', weight = 0, type = 'item', image = 'driver_license.png', unique = true, useable = true, shouldClose = false, combinable = nil, description = 'A card containing all your information to identify yourself' },
+    driving_card                 = { name = 'driving_card', label = 'Drivers License', weight = 0, type = 'item', image = 'driver_license.png', unique = true, useable = true, shouldClose = false, combinable = nil, description = 'Permit to show you can drive a vehicle' },
+    weapon_card                  = { name = 'weapon_card', label = 'Weapon License', weight = 0, type = 'item', image = 'weapon_card.png', unique = true, useable = true, shouldClose = true, description = 'Weapon License' },
+    police_card                  = { name = 'police_card', label = 'Police Card', weight = 0, type = 'item', image = 'police_card.png', unique = true, useable = true, shouldClose = false, combinable = nil, description = 'A card containing all your information to identify yourself' },
+    sasp_card                    = { name = 'sasp_card',   label = 'SASP Card', weight = 0, type = 'item', image = 'police_card.png', unique = true, useable = true, shouldClose = false, combinable = nil, description = 'A card containing all your information to identify yourself' },
+    sheriff_card                 = { name = 'sheriff_card', label = 'Sheriff Card', weight = 0, type = 'item', image = 'police_card.png', unique = true, useable = true, shouldClose = false, combinable = nil, description = 'A card containing all your information to identify yourself' },
+    firefighter_card             = { name = 'firefighter_card', label = 'Firefighter Card', weight = 0, type = 'item', image = 'firefighter_card.png', unique = true, useable = true, shouldClose = false, combinable = nil, description = 'A card containing all your information to identify yourself' },
+    ems_card                     = { name = 'ems_card', label = 'EMS Card', weight = 0, type = 'item', image = 'firefighter_card.png', unique = true, useable = true, shouldClose = false, combinable = nil, description = 'A card containing all your information to identify yourself' },
+    
     -- Eat ITEMS
     tosti                        = { name = 'tosti', label = 'Grilled Cheese Sandwich', weight = 200, type = 'item', image = 'tosti.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Nice to eat' },
     twerks_candy                 = { name = 'twerks_candy', label = 'Twerks', weight = 100, type = 'item', image = 'twerks_candy.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Some delicious candy :O' },
@@ -392,8 +399,11 @@ QBShared.Items = {
     -- Harness
     ["harness"] 				 = {["name"] = "harness", 			  	  		["label"] = "Racing Harness", 			["weight"] = 1000, 		["type"] = "item", 		["image"] = "harness.png", 				["unique"] = true,      ["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "Stops you from being YEETED"},
     
-    --Phone
+    -- Phone
     ["powerbank"] 			     = {["name"] = "powerbank", 			 	    ["label"] = "Power Bank",		        ["weight"] = 100, 		["type"] = "item", 		["image"] = "powerbank.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "It gives your phone power"},
+
+    -- CS
+    ["alcohol_tester"]		     = {["name"] = "alcohol_tester", 			    ["label"] = "Alcohol Tester",	        ["weight"] = 100, 		["type"] = "item", 		["image"] = "alcohol_tester.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "It test your BAC"},
 
     -- cdn_fuel
     ["syphoningkit"]			 = {["name"] = "syphoningkit", 					["label"] = "Syphoning Kit", 			["weight"] = 5000, 		["type"] = "item", 		["image"] = "syphoningkit.png", 		["unique"] = true, 		["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "A kit made to siphon gasoline from vehicles."},

@@ -1,0 +1,493 @@
+{
+  "emailDomain": "gkshop.org",
+  "RealTime": false,
+  "Picturequality": 0.85,
+  "ImageSizeLimitMB": 10,
+  "PictureType": "jpg",
+  "Valebring": false,
+  "GamblingGame" : true,
+  "qbitPurchase": false,
+  "qbitSell": false,
+  "qbitTransfer": false,
+  "LiveAPPGIF": 5000,
+  "debug": false,
+  "NewsPerm" : {
+    "police" : true,
+    "sasp" : true,
+    "sheriff" : true,
+    "firefighter" : true,
+    "ambulance" : true,
+    "newspaper" : true
+  },
+
+  "Settings": {
+    "DefaultSound": "Marimba",
+    "Sounds": {
+      "Marimba": "/html/sounds/marimba.wav"
+    },
+    "DefaultNotification": "Crystal",
+    "Notifications": {
+      "Crystal": "/html/sounds/notification/Crystal.mp3",
+      "Arrived": "/html/sounds/notification/arrived.mp3"
+    },
+    "DefaultWallpaper": "/html/img/wallpapers/newphone.jpg",
+    "DefaultWallpaperMD": "/html/img/wallpapers/newphonemd.jpg",
+    "Wallpapers": {
+      "1": "/html/img/wallpapers/car.jpg",
+      "2": "/html/img/wallpapers/gta5.jpg",
+      "3": "/html/img/wallpapers/iluminacion.jpg",
+      "4": "/html/img/wallpapers/newphone.jpg",
+      "5": "/html/img/wallpapers/oscuridad.jpg"
+    }
+  },
+
+  "SetupScreen": {
+    "Languages" : {
+      "af": "Afrikaans",
+      "de": "Deutsch",
+      "en": "English",
+      "fr": "Français",
+      "tr": "Türkçe"
+    }
+  },
+
+  "Squawk": {
+    "image": true,
+    "video": true,
+    "audio": true,
+    "poll": true,
+    "emoji": true,
+    "CharacterLimit": 500,
+    "verify": true
+  },
+
+  "YellowFilter": {
+    "mechanic" : "Mechanic",
+    "leo" : "Law Enforcement",
+    "lsfr" : "Los Santos First Responders"
+  },
+
+  "JobApplication": {
+  },
+
+  "JobApplicationQuestions": {
+  },
+
+  "BussinessCreateBillingJobs" : {
+    "police": "Police",
+    "sasp": "SASP",
+    "sheriff": "Sheriff",
+    "firefighter": "Fire Department",
+    "ambulance": "EMS",
+    "mechanic": "Mechanic"
+  },
+
+  "AppStore": [
+    {
+      "name": "SIM",
+      "icons": "/html/img/icons/simapp2.png",
+      "categori": "jobs",
+      "url": "/simapp",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "startbottom": false,
+      "startapp": true,
+      "show": false
+    },
+    {
+      "name": "Camera",
+      "icons": "/html/img/icons/camera.png",
+      "categori": "mix",
+      "url": "/camera",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "startbottom": false,
+      "startapp": true,
+      "show": false
+    },
+    {
+      "name": "Contact",
+      "icons": "/html/img/icons/contacts.png",
+      "categori": "mix",
+      "url": "/contacts",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "startbottom": true,
+      "startapp": false,
+      "show": false
+    },
+    {
+      "name": "Settings",
+      "icons": "/html/img/icons/settings.png",
+      "categori": "mix",
+      "url": "/settings",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "startapp": true,
+      "show": false
+    },
+    {
+      "name": "Gallery",
+      "icons": "/html/img/icons/photos.png",
+      "categori": "mix",
+      "url": "/gallery",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "startapp": true,
+      "show": false
+    },
+    {
+      "name": "Phone",
+      "icons": "/html/img/icons/call.png",
+      "categori": "mix",
+      "url": "/call/",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "startbottom": true,
+      "startapp": true,
+      "show": false
+    },
+    {
+      "name": "Messages",
+      "icons": "/html/img/icons/messages.png",
+      "categori": "mix",
+      "url": "/messages",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "startbottom": true,
+      "startapp": true,
+      "show": false
+    },
+    {
+      "name": "Mail",
+      "icons": "/html/img/icons/mail.png",
+      "categori": "mix",
+      "url": "/mail",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "startbottom": true,
+      "startapp": true,
+      "show": false
+    },
+    {
+      "name": "Bank",
+      "icons": "/html/img/icons/wallet.png",
+      "categori": "mix",
+      "url": "/bank",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "startapp": true,
+      "show": false
+    },
+    {
+      "name": "Billing",
+      "icons": "/html/img/icons/billing.png",
+      "categori": "mix",
+      "url": "/billing",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "startapp": true,
+      "show": false
+    },
+    {
+      "name": "Dispatch",
+      "icons": "/html/img/icons/jobdispatch.png",
+      "categori": "mix",
+      "url": "/dispatch",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": false,
+      "startbottom": false,
+      "startapp": false,
+      "show": false
+    },
+    {
+      "name": "App Gallery",
+      "icons": "/html/img/icons/appstore.png",
+      "categori": "mix",
+      "url": "/appstore",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "startapp": true,
+      "show": false
+    },
+    {
+      "name": "Squawk",
+      "icons": "/html/img/icons/Squawk.png",
+      "categori": "social",
+      "url": "/squawk",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": true
+    },
+    {
+      "name": "Dark Chat",
+      "icons": "/html/img/icons/darkchat.png",
+      "categori": "social",
+      "url": "/darkchat",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": true
+    },
+    {
+      "name": "Advertising",
+      "icons": "/html/img/icons/advertising.png",
+      "categori": "social",
+      "url": "/advertising",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": true
+    },
+    {
+      "name": "News",
+      "icons": "/html/img/icons/news.png",
+      "categori": "jobs",
+      "url": "/news",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": true
+    },
+    {
+      "name": "PlayTube",
+      "icons": "/html/img/icons/PlayTube.png",
+      "categori": "social",
+      "url": "/playtube",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": true
+    },
+    {
+      "name": "Vale",
+      "icons": "/html/img/icons/vale.png",
+      "categori": "jobs",
+      "url": "/vale",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": false,
+      "show": false
+    },
+    {
+      "name": "Games",
+      "icons": "/html/img/icons/games.png",
+      "categori": "mix",
+      "url": "/games",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": true
+    },
+    {
+      "name": "GPS",
+      "icons": "/html/img/icons/gps.png",
+      "categori": "mix",
+      "url": "/gps",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": true
+    },
+    {
+      "name": "Stock Market",
+      "icons": "/html/img/icons/stocks.png",
+      "categori": "finance",
+      "url": "/stockmarket",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": false,
+      "show": false
+    },
+    {
+      "name": "Notes",
+      "icons": "/html/img/icons/notes.png",
+      "categori": "mix",
+      "url": "/note",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": true
+    },
+    {
+      "name": "Rent A Car",
+      "icons": "/html/img/icons/rentacar.png",
+      "categori": "jobs",
+      "url": "/rentacar",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": false,
+      "show": false
+    },
+    {
+      "name": "Car Seller",
+      "icons": "/html/img/icons/carseller.png",
+      "url": "/carseller",
+      "categori": "jobs",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": false,
+      "show": false
+    },
+    {
+      "name": "Calculator",
+      "icons": "/html/img/icons/calculator.png",
+      "categori": "mix",
+      "url": "/calculator",
+      "blockedjobs": {},
+      "allowjob": {},
+      "startapp": true,
+      "signal": true,
+      "show": false
+    },
+    {
+      "name": "Taxi",
+      "icons": "/html/img/icons/taxijob.png",
+      "categori": "jobs",
+      "url": "/taxi",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": false,
+      "show": false
+    },
+    {
+      "name": "LiveStream",
+      "icons": "/html/img/icons/liveapp.png",
+      "categori": "social",
+      "url": "/livestream",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": true
+    },
+    {
+      "name": "Giggles",
+      "icons": "/html/img/icons/Giggles.png",
+      "categori": "social",
+      "url": "/giggles",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": true
+    },
+    {
+      "name": "Tuneify",
+      "icons": "/html/img/icons/tuneify.png",
+      "categori": "mix",
+      "url": "/tuneify",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": true
+    },
+    {
+      "name": "MDT",
+      "icons": "/html/img/icons/mdt.png",
+      "categori": "jobs",
+      "url": "/mdt",
+      "blockedjobs": {},
+      "allowjob": {
+        "police": "police"
+      },
+      "signal": false,
+      "show": false
+    },
+    {
+      "name": "House",
+      "icons": "/html/img/icons/house.png",
+      "categori": "mix",
+      "url": "/house",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": true
+    },
+    {
+      "name": "Qbit",
+      "icons": "/html/img/icons/qbit.png",
+      "categori": "finance",
+      "url": "/qbit",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": false,
+      "show": false
+    },
+    {
+      "name": "Business",
+      "icons": "/html/img/icons/business.png",
+      "categori": "jobs",
+      "url": "/bussiness",
+      "blockedjobs": {
+        "bus": "bus",
+        "judge": "judge",
+        "lawyer": "lawyer",
+        "reporter": "reporter",
+        "trucker": "trucker",
+        "tow": "tow",
+        "garbage": "garbage",
+        "vineyard": "vineyard",
+        "hotdog": "hotdog"
+      },
+      "allowjob": {},
+      "signal": true,
+      "show": true
+    },
+    {
+      "name": "Special Application 1",
+      "icons": "/html/img/icons/qbit.png",
+      "categori": "finance",
+      "appurl": "gksphone-app/ui/index.html",
+      "url": "/special1",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": false
+    },
+    {
+      "name": "Special Application 2",
+      "icons": "/html/img/icons/qbit.png",
+      "categori": "finance",
+      "appurl": "gksphone-app/ui/index.html",
+      "url": "/special2",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": false
+    },
+    {
+      "name": "Special Application 3",
+      "icons": "/html/img/icons/qbit.png",
+      "categori": "finance",
+      "appurl": "gksphone-app/ui/index.html",
+      "url": "//special3",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": false
+    },
+    {
+      "name": "Special Application 4",
+      "icons": "/html/img/icons/qbit.png",
+      "categori": "finance",
+      "appurl": "gksphone-app/ui/index.html",
+      "url": "//special4",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": false
+    }
+  ]
+}

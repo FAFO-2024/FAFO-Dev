@@ -569,6 +569,17 @@ RegisterNetEvent('osp_ambulance:SaveBodyDamageCl', function()
 end)
 
 
+
+function textUi(txt)
+    lib.showTextUI(txt, {
+        position = "left-center",
+    })
+end
+
+function removeTextUi()
+    lib.hideTextUI()
+end
+
 function TargetingBoxZone(name, coords, x,y,z, list1, list2, list3)
     if Config.UseOxTarget then
         exports.ox_target:addBoxZone({
@@ -931,6 +942,7 @@ function dispatchNotify()
     -- Place custom dispatch notify code here
 end
 
+
 function disableAllSystems()
     return false
     -- Place custom code here when you want to block all medical systems (eg when in paintball)
@@ -961,6 +973,19 @@ function isPedMovingCheck(ped)
             break
         end
     end
+end
+
+
+function GetPlayers()
+    local maxplayers = GetConvarInt('sv_maxclients', 255) - 1
+    local players = {}
+
+    for i=0, maxplayers do
+        if NetworkIsPlayerActive(i) then
+            table.insert(players, i)
+        end
+    end
+    return players
 end
 
 local SlowEffect1 = false
@@ -1072,9 +1097,7 @@ function ReloadJobInteractions()
                 local function onEnter(self)
                     for _,x in pairs(Config.AmbulanceJobs) do
                         if onDuty and PlayerJob.name == x then
-                            lib.showTextUI(lang.text.veh_button, {
-                                position = "left-center",
-                            })
+                            textUi(lang.text.veh_button)
                             EMSVehicle(k)
                         end
                     end
@@ -1082,7 +1105,7 @@ function ReloadJobInteractions()
                 
                 local function onExit(self)
                     CheckVehicle = false
-                    lib.hideTextUI()
+                    removeTextUi()
                 end
         
                 lib.zones.box({
@@ -1102,9 +1125,7 @@ function ReloadJobInteractions()
             local function onEnter(self)
                 for _,x in pairs(Config.AmbulanceJobs) do
                     if onDuty and PlayerJob.name == "ambulance" then
-                        lib.showTextUI(lang.text.heli_button, {
-                            position = "left-center",
-                        })
+                        textUi(lang.text.heli_button)
                         EMSHelicopter(k)
                     end
                 end
@@ -1112,7 +1133,7 @@ function ReloadJobInteractions()
             
             local function onExit(self)
                 CheckHeli = false
-                lib.hideTextUI()
+                removeTextUi()
             end
     
             lib.zones.box({
@@ -1133,9 +1154,8 @@ function ReloadJobInteractions()
             local function inside(self)
                 for _,x in pairs(Config.AmbulanceJobs) do
                     if onDuty and PlayerJob.name == x and GetPlayerData().job.grade_name == 'boss' then
-                        lib.showTextUI('[E] Bossmenu', {
-                            position = "left-center",
-                        })
+                        textUi('[E] Bossmenu')
+
                         if IsControlJustPressed(0, 38) then 
                             TriggerEvent('esx_society:openBossMenu', 'ambulance', function(data, menu)
                                 menu.close()
@@ -1146,7 +1166,7 @@ function ReloadJobInteractions()
             end
             
             local function onExit(self)
-                lib.hideTextUI()
+                removeTextUi()
             end
 
             lib.zones.box({
@@ -1165,9 +1185,7 @@ function ReloadJobInteractions()
             local function inside(self)
                 for _,x in pairs(Config.AmbulanceJobs) do
                     if onDuty and PlayerJob.name == x then
-                        lib.showTextUI('[E] Cloakroom', {
-                            position = "left-center",
-                        })
+                        textUi('[E] Cloakroom')
                         if IsControlJustPressed(0, 38) then
                             OpenCloakroom()
                         end
@@ -1176,7 +1194,7 @@ function ReloadJobInteractions()
             end
             
             local function onExit(self)
-                lib.hideTextUI()
+                removeTextUi()
             end
 
             lib.zones.box({
@@ -1278,21 +1296,18 @@ function ReloadJobInteractions()
             for k, v in pairs(Config.Locations["duty"]) do
                 local function onEnter(self)
                     if not onDuty then
-                        lib.showTextUI(lang.text.onduty_button, {
-                            position = "left-center",
-                        })
+                        textUi(lang.text.onduty_button)
+
                         EMSControls("sign")
                     else
-                        lib.showTextUI(lang.text.offduty_button, {
-                            position = "left-center",
-                        })
+                        textUi(lang.text.offduty_button)
                         EMSControls("sign")
                     end
                 end
                 
                 local function onExit(self)
                     check = false
-                    lib.hideTextUI()
+                    removeTextUi()
                 end
     
                 signPoly[#signPoly + 1] = lib.zones.box({
@@ -1312,16 +1327,14 @@ function ReloadJobInteractions()
     
                 local function onEnter(self)
                     if onDuty then
-                        lib.showTextUI(lang.text.pstash_button, {
-                            position = "left-center",
-                        })
+                        textUi(lang.text.pstash_button)
                         EMSControls("stash")
                     end
                 end
                 
                 local function onExit(self)
                     check = false
-                    lib.hideTextUI()
+                    removeTextUi()
                 end
     
                 stashPoly[#stashPoly + 1] = lib.zones.box({
@@ -1340,16 +1353,15 @@ function ReloadJobInteractions()
     
                 local function onEnter(self)
                     if onDuty then
-                        lib.showTextUI(lang.text.store_button, {
-                            position = "left-center",
-                        })
+                        textUi(lang.text.store_button)
+
                         EMSControls("shop")
                     end
                 end
                 
                 local function onExit(self)
                     check = false
-                    lib.hideTextUI()
+                    removeTextUi()
                 end
     
                 shopPoly[#shopPoly + 1] = lib.zones.box({
@@ -1367,15 +1379,14 @@ function ReloadJobInteractions()
             for k, v in pairs(Config.Locations["roof"]) do
     
                 local function onEnter(self)
-                    lib.showTextUI(lang.text.elevator_main, {
-                        position = "left-center",
-                    })
+                    textUi(lang.text.elevator_main)
+
                     EMSControls("main")
                 end
                 
                 local function onExit(self)
                     check = false
-                    lib.hideTextUI()
+                    removeTextUi()
                 end
     
                 roofPoly[#roofPoly + 1] = lib.zones.box({
@@ -1394,15 +1405,14 @@ function ReloadJobInteractions()
             for k, v in pairs(Config.Locations["main"]) do
     
                 local function onEnter(self)
-                    lib.showTextUI(lang.text.elevator_roof, {
-                        position = "left-center",
-                    })
+                    textUi(lang.text.elevator_roof)
+
                     EMSControls("roof")
                 end
                 
                 local function onExit(self)
                     check = false
-                    lib.hideTextUI()
+                    removeTextUi()
                 end
     
                 mainPoly[#mainPoly + 1] = lib.zones.box({
@@ -1421,6 +1431,93 @@ function ReloadJobInteractions()
 end
 Wait(500)
 ReloadJobInteractions()
+
+
+if Config.UseTarget then
+    CreateThread(function()
+        for k, v in pairs(Config.Locations["checking"]) do
+            TargetingBoxZone("checking"..k, v, 3.5,2,2,
+                {
+                    type = "client",
+                    icon = "fa fa-clipboard",
+                    event = "osp_ambulance:checkin",
+                    label = lang.text.check_in,
+                } 
+            )
+        end
+        for k, v in pairs(Config.Locations["beds"]) do
+            TargetingBoxZone("beds"..k, v.coords, 2.3,2.3,1,
+                {
+                    type = "client",
+                    event = "osp_ambulance:beds",
+                    icon = "fas fa-bed",
+                    label = lang.update1.lay_in_bed,
+                }
+            )
+        end
+    end)
+else
+    CreateThread(function()
+        local checkingPoly = {}
+        for k, v in pairs(Config.Locations["checking"]) do
+            local function onEnter(self)
+                if doctorCount >= Config.MinimalDoctors then
+                    CheckInControls("checkin")
+                    textUi(lang.text.call_doc)
+
+                else
+                    CheckInControls("checkin")
+                    textUi(lang.text.check_in)
+                end
+            end
+            
+            local function onExit(self)
+                listen = false
+                removeTextUi()
+            end
+
+            checkingPoly[#checkingPoly+1] = lib.zones.box({
+                coords = vec3(v.x, v.y, v.z),
+                name = "checkin"..k,
+                size = vec3(3.5, 2.0, 2.0),
+                rotation = -70,
+                debug = false,
+                inside = inside,
+                onEnter = onEnter,
+                onExit = onExit
+            })
+
+
+        end
+        local bedPoly = {}
+        for k, v in pairs(Config.Locations["beds"]) do
+            local function onEnter(self)
+                if not isInHospitalBed then
+                    textUi(lang.text.lie_bed)
+
+                    CheckInControls("beds")
+                end
+            end
+            
+            local function onExit(self)
+                listen = false
+                removeTextUi()
+            end
+
+            bedPoly[#bedPoly+1] = lib.zones.box({
+                coords = vec3(v.coords.x, v.coords.y, v.coords.z),
+                name = "beds"..k,
+                size = vec3(2.5, 2.3, 2.3),
+                rotation = -20,
+                debug = false,
+                inside = inside,
+                onEnter = onEnter,
+                onExit = onExit
+            })
+        end
+    end)
+end
+
 
 
 
@@ -1496,7 +1593,11 @@ RegisterCommand("medicalsystem", function(source, args, rawCommand)
         ent = Player(cachedPlayer)
     end
     local stat = ent.state.BodyDamage
-    DebugPrint('Player state data ', stat, stat.isDead)
+    if stat ~= nil then
+        DebugPrint('Player state data ', stat, stat.isDead, cachedPlayer)
+    else
+        DebugPrint('stat is nil', cachedPlayer)
+    end
     -- Citizen.CreateThread(function()
     --     while true do
     --         if cachedPlayer == nil then
@@ -1896,7 +1997,7 @@ RegisterNetEvent('hospital:client:Revive', function()
         SetEntityInvincible(player, true)
         canLeaveBed = true
     else
-        ClearPedTasksImmediately(PlayerPedId())
+        -- ClearPedTasksImmediately(PlayerPedId())
     end
     RestorePlayer(player)
     SetExtraTimecycleModifier("fp_vig_red")
@@ -1917,7 +2018,6 @@ RegisterNetEvent('hospital:client:Revive', function()
         TriggerServerEvent('osp_ambulance:setDeathStatus', false)
         ESX.SetPlayerData('dead', false)
     end
-    -- ClearPedTasksImmediately(PlayerPedId())
 end)
 
 

@@ -12,7 +12,7 @@ function OpenStash(stash_id)
         TriggerServerEvent("snipe-apartments:server:registerStash", "motel_stash_"..stash_id, "mf")
         exports['mf-inventory']:openOtherInventory("motel_stash_"..stash_id)
     elseif Config.Inventory == "codem" then
-        exports["codem-inventory"]:OpenStash("motel_stash_"..stash_id, Config.StashSize, Config.StashSlots)
+        TriggerServerEvent('codem-inventory:server:openstash', 'motelstash'..stash_id, Config.StashSlots ,Config.StashSize, 'STASH')
     end
     -- elseif Config.Inventory == "esx" then
     --     TriggerEvent("esx_inventoryhud:openStash", "apartment-" .. tostring(roomNumber))

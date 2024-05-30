@@ -22,11 +22,11 @@ if Config.Framework == 'qb' then
 
     function ClearInventory(Player)
         if Config.UsedInventory == 'qs' then
-            exports['qs-inventory']:ClearInventory(Player.PlayerData.source)
+            exports['qs-inventory']:ClearInventory(Player.PlayerData.source, Config.ExcludeItems)
         elseif Config.UsedInventory == 'ox' then
-            exports.ox_inventory:ClearInventory(Player.PlayerData.source, {'iphone'})
+            exports.ox_inventory:ClearInventory(Player.PlayerData.source, Config.ExcludeItems)
         else
-            Player.Functions.ClearInventory()
+            Player.Functions.ClearInventory(Player.PlayerData.source, Config.ExcludeItems)
         end
         MySQL.update('UPDATE players SET inventory = ? WHERE citizenid = ?', { json.encode({}), Player.PlayerData.citizenid })
     end
@@ -145,6 +145,7 @@ if Config.Framework == 'qb' then
         if source == nil then return end
         local src = source
         local Player = QBCore.Functions.GetPlayer(src)
+        if Player == nil then return end
         local sqlQuery = [[
             SELECT `woundData` FROM players WHERE `citizenid` = @citizenid
         ]]
@@ -267,22 +268,26 @@ elseif Config.Framework == 'esx' then
 
     function ClearInventory(Player)
         if Config.UsedInventory == 'qs' then
-            exports['qs-inventory']:ClearInventory(Player.source)
+            exports['qs-inventory']:ClearInventory(Player.source, Config.ExcludeItems)
         elseif Config.UsedInventory == 'ox' then
-            exports.ox_inventory:ClearInventory(Player.source, {'iphone'})
+            exports.ox_inventory:ClearInventory(Player.source, Config.ExcludeItems)
         else
             for i = 1, #Player.inventory, 1 do
                 if Player.inventory[i].count > 0 then
+                    for k,v in pairs(Config.ExcludeItems) do
+                        if v == Player.inventory[i].name then return end
+                    end
                     Player.setInventoryItem(Player.inventory[i].name, 0)
                 end
             end
         end
     end
 
+
     RegisterServerEvent("osp_ambulance:addItem")
     AddEventHandler("osp_ambulance:addItem", function(item, amount)
         if amount == nil then amount = 1 end
-        if name ~= 'stretcher' and name ~= 'tourniquet' and name ~= 'ecg' then return end
+        if item ~= 'stretcher' and item ~= 'tourniquet' and item ~= 'ecg' then return end
         local src = source
         local player = GetPlayer(src)
         if Config.UsedInventory == 'qs' then
@@ -676,6 +681,7 @@ RegisterNetEvent('hospital:server:RespawnAtHospital', function()
                     end
                     Player.Functions.RemoveMoney("bank", Config.BillCost, "respawned-at-hospital")
                     exports['qb-management']:AddMoney("ambulance", Config.BillCost)
+                    -- exports['qb-banking']:AddMoney('ambulance', Config.BillCost, 'Player treatment') -- Uncomment if you're using latest qb
                     TriggerClientEvent('hospital:client:SendBillEmail', src, Config.BillCost)
                     return
                 end
@@ -688,6 +694,7 @@ RegisterNetEvent('hospital:server:RespawnAtHospital', function()
             end
             Player.Functions.RemoveMoney("bank", Config.BillCost, "respawned-at-hospital")
                 exports['qb-management']:AddMoney("ambulance", Config.BillCost)
+                -- exports['qb-banking']:AddMoney('ambulance', Config.BillCost, 'Player treatment') -- Uncomment if you're using latest qb
             TriggerClientEvent('hospital:client:SendBillEmail', src, Config.BillCost)
         else
             for k, v in pairs(Config.Locations["beds"]) do
@@ -700,7 +707,8 @@ RegisterNetEvent('hospital:server:RespawnAtHospital', function()
                     end
                     Player.Functions.RemoveMoney("bank", Config.BillCost, "respawned-at-hospital")
                     exports['qb-management']:AddMoney("ambulance", Config.BillCost)
-                    TriggerClientEvent('hospital:client:SendBillEmail', src, Config.BillCost)
+                    TriggerClientEvent('hospital:client:SendBillEmail', src, Config.BillCost) 
+                    -- exports['qb-banking']:AddMoney('ambulance', Config.BillCost, 'Player treatment') -- Uncomment if you're using latest qb
                     return
                 end
             end
@@ -713,6 +721,7 @@ RegisterNetEvent('hospital:server:RespawnAtHospital', function()
             Player.Functions.RemoveMoney("bank", Config.BillCost, "respawned-at-hospital")
             exports['qb-management']:AddMoney("ambulance", Config.BillCost)
             TriggerClientEvent('hospital:client:SendBillEmail', src, Config.BillCost)
+            -- exports['qb-banking']:AddMoney('ambulance', Config.BillCost, 'Player treatment') -- Uncomment if you're using latest qb
         end
     else
         for k, v in pairs(Config.Locations["beds"]) do
@@ -873,3 +882,7 @@ RegisterNetEvent('osp_ambulance:requestScreenshotSv', function(target)
     TriggerClientEvent('osp_ambulance:requestScreenshotCl', target)
 end)
 
+RegisterServerEvent("osp_ambulance:wipeECGTable")
+AddEventHandler("osp_ambulance:wipeECGTable", function()
+    MySQL.Async.execute("DELETE FROM ecg",function()end)
+end)

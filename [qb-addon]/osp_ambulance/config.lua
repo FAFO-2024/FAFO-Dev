@@ -57,6 +57,7 @@ Config.AutomaticAmbulanceAlert = false -- Enable or disable the automatic ambula
 Config.inLastStandHealth = 150 -- The health the player should have when they are in last stand
 Config.DeathHealth = 200 -- The health the player should have when they are dead
 
+
 Config.MutePlayerOnLastStand = false
 Config.MutePlayerOnDeath = true
 

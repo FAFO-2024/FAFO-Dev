@@ -7,7 +7,7 @@ Config.CamCoords = vector4(2273.394, 2916.506, -84.80, 85.37) -- Camera coordina
 Config.EnableDeleteButton = true -- Define if the player can delete the character or not
 Config.customNationality = false -- Defines if Nationality input is custom of blocked to the list of Countries
 
-Config.DefaultNumberOfCharacters = 5 -- Define maximum amount of default characters (maximum 5 characters defined by default)
+Config.DefaultNumberOfCharacters = 3 -- Define maximum amount of default characters (maximum 5 characters defined by default)
 Config.PlayersNumberOfCharacters = { -- Define maximum amount of player characters by rockstar license (you can find this license in your server's database in the player table)
     { license = "license:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", numberOfChars = 2 },
 }

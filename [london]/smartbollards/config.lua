@@ -27,7 +27,12 @@ config = {
 
         ["police"] = {
 
-            permittedVehicles = {`sonomcc`, `18chargerl2`, `18fpisl2`, `19tahoel2`, `20fpiul2`, `f250l2nc`, `bmwbike`}, -- Vehicles which are permitted to lower the bollards
+            permittedVehicles = {`sonomcc`, `18chargerl2`, `18fpisl2`, `19tahoel2`, `20fpiul2`, `f250l2nc`, `bmwbike`}, -- Vehicle models which are permitted to lower the bollards
+
+            -- Vehicle classes that are permitted to lower the bollards
+            -- A list of vehicle classes can be found at https://docs.fivem.net/natives/?_0x29439776AAA00A62
+            -- E.g. {18, 20} for emergency + commercial
+            permittedVehicleClasses = {18}, 
             permissions = {
                 acePermissions = {
                     enabled = false,
@@ -36,7 +41,7 @@ config = {
                 ESX = {
                     enabled = false,
                     checkJob = {
-                        enabled = false, -- Enable this to use ESX job check
+                        enabled = true, -- Enable this to use ESX job check
                         jobs = {"police"} -- A user can have any of the following jobs, allowing you to add multiple
                     }
                 },
@@ -98,7 +103,7 @@ config = {
                     enabled = true,
                     checkJob = {
                         enabled = true, -- Enable this to use QBCore job check
-                        jobs = {"fire", "admin"}, -- A user can have any of the following jobs, meaning you can add different jobs
+                        jobs = {"firefighter", "admin"}, -- A user can have any of the following jobs, meaning you can add different jobs
                     },
                     checkPermission = {
                         enabled = false, -- Enable this to use QBCore permission check
@@ -118,7 +123,7 @@ config = {
                 ESX = {
                     enabled = false,
                     checkJob = {
-                        enabled = false, -- Enable this to use ESX job check
+                        enabled = true, -- Enable this to use ESX job check
                         jobs = {"police", "admin"} -- A user can have any of the following jobs, allowing you to add multiple
                     }
                 },

@@ -12,7 +12,7 @@ Config.debug = false
 Config.esxSettings = {
     enabled = false,
     -- Whether or not to use the new ESX export method
-    useNewESXExport = false
+    useNewESXExport = true
 }
 
 --- SETTINGS FOR QBCORE
