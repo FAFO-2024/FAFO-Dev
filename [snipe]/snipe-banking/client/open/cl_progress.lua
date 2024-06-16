@@ -1,4 +1,15 @@
-function DoProgress(isBank)
+function DoProgress(isBank, coords)
+    if not isBank and Config.OnlyOnePersonToAccessOneATMAtOneTime then
+        if not AtmInUse[coords] then
+            TriggerServerEvent("snipe-banking:server:atmInUse", coords, true)
+            AtmInUse[coords] = true
+            atmOpen = coords
+            
+        else
+            ShowNotification(Locales["atm_in_use"], "error")
+            return
+        end
+    end
     if Config.Framework == "qb" and Config.Progress == "qb" then
         TaskStartScenarioInPlace(cache.ped, 'PROP_HUMAN_ATM', 0, true)
         QBCore.Functions.Progressbar("open_atm_bank", isBank and Locales["open_bank"] or Locales["open_atm"], 5000, false, true, {
@@ -10,7 +21,7 @@ function DoProgress(isBank)
             if isBank then
                 OpenBank()
             else
-                OpenAtm()
+                OpenAtm(coords)
             end
         end, function()
         end)
@@ -30,7 +41,7 @@ function DoProgress(isBank)
             if isBank then
                 OpenBank()
             else
-                OpenAtm()
+                OpenAtm(coords)
             end
 		else 
 			ClearPedTasksImmediately(PlayerPedId())

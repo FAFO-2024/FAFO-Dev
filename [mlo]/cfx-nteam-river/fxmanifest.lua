@@ -4,7 +4,7 @@ version '1.0.1'
 lua54 'yes'
 this_is_a_map 'yes'
 
-description 'NTeam Development Los Santos River'
+
 
 data_file('DLC_ITYP_REQUEST')('stream/nteam_damm.ytyp')
 

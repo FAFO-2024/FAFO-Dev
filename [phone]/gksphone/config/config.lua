@@ -164,7 +164,7 @@ Config.LiveAPPDonateTax = 0.20 -- deduction rate from incoming money
 --- SIM CARD SETTINGS ---
 
 Config.DefaultOperator = "GKS"
-Config.DefaultPackage = 0
+Config.DefaultPackage = 1
 Config.UseSIMPackage = true -- Set to true to use the SIM package system
 Config.LimitPhoneNumbers = 3 -- Set the number of phone numbers that can be purchased (default: 3)
 

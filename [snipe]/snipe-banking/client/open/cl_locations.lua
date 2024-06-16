@@ -1,5 +1,25 @@
-if Config.Options == "drawtext" then
+if Config.Options == "drawtext" or Config.Options == "3dtext" then
 -- creating bank points
+    local function DrawText3D(x, y, z, text)
+        local onScreen, _x, _y = World3dToScreen2d(x, y, z)
+        local px,py,pz=table.unpack(GetGameplayCamCoords())
+        
+        if onScreen then
+            SetTextScale(0.35, 0.35)
+            SetTextFont(4)
+            SetTextProportional(1)
+            SetTextColour(255, 255, 255, 215)
+            SetTextDropShadow(0, 0, 0, 55)
+            SetTextEdge(0, 0, 0, 150)
+            SetTextDropShadow()
+            SetTextOutline()
+            SetTextEntry("STRING")
+            SetTextCentre(1)
+            AddTextComponentString(text)
+            DrawText(_x,_y)
+        end
+    end
+
     local textShown = false
     local ATMCoords = nil
     local NearbyModel = false
@@ -11,25 +31,35 @@ if Config.Options == "drawtext" then
             })
             
             function point:onEnter()
-                textShown = true
-                lib.showTextUI(Locales["open_bank_text"])
+                
+                if Config.Options == "drawtext" then
+                    textShown = true
+                    lib.showTextUI(Locales["open_bank_text"])
+                end
             end
             
             function point:onExit()
-                textShown = false
-                lib.hideTextUI()
+                if Config.Options == "drawtext" then
+                    textShown = false
+                    lib.hideTextUI()
+                end
             end
 
             function point:nearby()
                 if IsControlJustPressed(0, 38) then
                     DoProgress(true)
                 end
-                if bankOpen and textShown then
-                    lib.hideTextUI()
-                    textShown = false
-                elseif not bankOpen and not textShown then
-                    lib.showTextUI(Locales["open_bank_text"])
-                    textShown = true
+
+                if Config.Options == "drawtext" then
+                    if bankOpen and textShown then
+                        lib.hideTextUI()
+                        textShown = false
+                    elseif not bankOpen and not textShown then
+                        lib.showTextUI(Locales["open_bank_text"])
+                        textShown = true
+                    end
+                else
+                    DrawText3D(v.coords.x, v.coords.y, v.coords.z, Locales["open_bank_text"])
                 end
             end
         end
@@ -42,10 +72,10 @@ if Config.Options == "drawtext" then
             local PlayerCoords = GetEntityCoords(PlayerPedId())
             local modelFound = false
             for k, v in pairs(Config.ATMModels) do
-                if type(v) ~= "number" then
-                    v = joaat(v)
+                if type(k) ~= "number" then
+                    k = joaat(k)
                 end
-                ATM = GetClosestObjectOfType(PlayerCoords, 2.0, v, false, false, false)
+                ATM = GetClosestObjectOfType(PlayerCoords, 2.0, k, false, false, false)
                 if ATM ~= 0 then
                     ATMCoords = GetEntityCoords(ATM)
                     if not ATMOpen then
@@ -73,16 +103,20 @@ if Config.Options == "drawtext" then
             local WaitTime = 350
             if NearbyModel then
                 WaitTime = 0
-                if not textShown and not ATMOpen then
-                    lib.showTextUI(Locales["open_atm_text"])
-                    textShown = true
-                end
-                if ATMOpen and textShown then
-                    lib.hideTextUI()
-                    textShown = false
+                if Config.Options == "drawtext" then
+                    if not textShown and not ATMOpen then
+                        lib.showTextUI(Locales["open_atm_text"])
+                        textShown = true
+                    end
+                    if ATMOpen and textShown then
+                        lib.hideTextUI()
+                        textShown = false
+                    end
+                else
+                    DrawText3D(ATMCoords.x, ATMCoords.y, ATMCoords.z + 1.0, Locales["open_atm_text"])
                 end
                 if IsControlJustReleased(0, 38) and not ATMOpen then
-                    DoProgress(false)
+                    DoProgress(false, ATMCoords)
                 end
             else
                 if textShown then
@@ -104,19 +138,37 @@ elseif Config.Options == "target" then
         FreezeEntityPosition(entity, true)
         SetEntityInvincible(entity, true)
         SetBlockingOfNonTemporaryEvents(entity, true)
-        exports['qb-target']:AddTargetEntity(entity, { 
-        options = { 
-            { 
-                type = "client", 
-                icon = 'fas fa-building-columns',
-                label = Locales["target_label_open_bank"],
-                action = function(entity)
-                    DoProgress(true)
-                end,
-            }
-        },
-            distance = 2.5, 
-        })
+        if Config.Interact and GetResourceState("interact") == "started" then
+            exports.interact:AddLocalEntityInteraction({
+                entity = entity,
+                offset = vector3(0.0, 0.0, 0.2),
+                label = "Banking",
+                distance  = 6.0,
+                interactDst = 2.0, -- optional
+                ignoreLos = true, -- optional
+                options = {
+                    label = Locales["target_label_open_bank"],
+                    action = function(entity)
+                        DoProgress(true)
+                    end,
+                }
+            })
+        else
+
+            exports['qb-target']:AddTargetEntity(entity, { 
+            options = { 
+                { 
+                    type = "client", 
+                    icon = 'fas fa-building-columns',
+                    label = Locales["target_label_open_bank"],
+                    action = function(entity)
+                        DoProgress(true)
+                    end,
+                }
+            },
+                distance = 2.5, 
+            })
+        end
         return entity
     end
     
@@ -138,40 +190,63 @@ elseif Config.Options == "target" then
         end
     end)
 
-    exports["qb-target"]:AddTargetModel(Config.ATMModels, {
-        options = {
-            {
-                type = "client",
-                icon = "fas fa-money-bill",
-                label = Locales["target_label_open_atm"],
-                action = function(entity)
-                    DoProgress(false)
-                end,
-            }
-        },
-        distance = 1.5
-    })
-
-
-    for k, v in pairs(ATMLocations) do
-        exports['qb-target']:AddBoxZone("snipe_bank_atm_" .. k, v, 1, 1, {
-            name = "snipe_bank_atm_" .. k,
-            debugPoly = false,
-            heading = -20,
-            minZ = v.z - 2,
-            maxZ = v.z + 2,
-        }, {
+    if Config.Interact and GetResourceState("interact") == "started" then
+        for k, v in pairs(Config.ATMModels) do
+            exports.interact:AddModelInteraction({
+                model = k,
+                offset = v,
+                distance = 4.0, -- optional
+                interactDst = 1.0, -- optional
+                ignoreLos = true, -- optional
+                options = {
+                    {
+                        label = 'ATM',
+                        action = function(entity)
+                            DoProgress(false, GetEntityCoords(entity))
+                        end,
+                    },
+                }
+            })
+        end
+    else
+        local atmmodels = {} 
+        for k, v in pairs(Config.ATMModels) do
+            table.insert(atmmodels, k)
+        end
+        exports["qb-target"]:AddTargetModel(atmmodels, {
             options = {
                 {
                     type = "client",
                     icon = "fas fa-money-bill",
                     label = Locales["target_label_open_atm"],
                     action = function(entity)
-                        DoProgress(false)
+                        DoProgress(false, GetEntityCoords(entity))
                     end,
                 }
             },
             distance = 1.5
         })
+    
+        for k, v in pairs(ATMLocations) do
+            exports['qb-target']:AddBoxZone("snipe_bank_atm_" .. k, v, 1, 1, {
+                name = "snipe_bank_atm_" .. k,
+                debugPoly = false,
+                heading = -20,
+                minZ = v.z - 2,
+                maxZ = v.z + 2,
+            }, {
+                options = {
+                    {
+                        type = "client",
+                        icon = "fas fa-money-bill",
+                        label = Locales["target_label_open_atm"],
+                        action = function(entity)
+                            DoProgress(false, v)
+                        end,
+                    }
+                },
+                distance = 1.5
+            })
+        end
     end
 end

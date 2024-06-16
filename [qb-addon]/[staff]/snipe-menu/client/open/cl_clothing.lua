@@ -6,8 +6,8 @@ RegisterNetEvent("snipe-menu:client:revertClothing", function()
             TriggerServerEvent("qb-clothes:loadPlayerSkin") -- LOADING PLAYER'S CLOTHES
         elseif Config.Skin == "fivem-appearance" then
             TriggerEvent("fivem-appearance:client:reloadSkin")
-        elseif Config.Skin == "illenium-appearance" then
-            TriggerEvent("illenium-appearance:client:reloadSkin")
+        elseif Config.Skin == "codem-appearance" then
+            TriggerEvent("codem-appearance:client:reloadSkin")
         elseif Config.Other == "other" then
             -- add your custom clothing script event here
         end
@@ -23,8 +23,8 @@ RegisterNetEvent("snipe-menu:client:revertClothing", function()
             end)
             local skin = Citizen.Await(p)
             TriggerEvent('skinchanger:loadSkin', skin)
-        elseif Config.Skin == "illenium-appearance" then
-            TriggerEvent("illenium-appearance:client:reloadSkin")
+        elseif Config.Skin == "codem-appearance" then
+            TriggerEvent("codem-appearance:client:reloadSkin")
         elseif Config.Other == "other" then
             -- add your custom clothing script event here
         end

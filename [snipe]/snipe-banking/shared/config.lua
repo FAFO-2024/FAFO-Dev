@@ -27,8 +27,15 @@ Config.JobAccounts = true -- If you want to use job accounts inside my banking, 
 Config.DefaultIdentifier = "12345" -- set the identifier for the player to whom the loans should be transferred when a player who has given out loans deletes their character
 
 
-Config.Options = "drawtext" -- target || drawtext (if draw text, it will show draw text ui using lib or if you select target, it will be target based. Code is open in client/open/cl_locations.lua)
+Config.Options = "target" -- target || drawtext || 3dtext (if draw text, it will show draw text ui using lib or if you select target, it will be target based. 3d text is 3d text Code is open in client/open/cl_locations.lua)
+
+Config.Interact = true -- if you want to use the interact (https://github.com/darktrovx/interact) Only works with the Config.Options is "target"
+
 Config.BankConfig = "default" -- gabz || default (If you use some other banks, make sure to create a file in locations folder and put the file name here!!)
+
+-- if true, only one person can access one atm model at one time. If false, multiple people can access the same atm model at the same time.
+Config.OnlyOnePersonToAccessOneATMAtOneTime = false
+
 Blips = {
     unique_blips = false, -- this will create each blip which will show individually in the side bar. If you see flashing side bar due to the high number of blips, set this to false.
     blip_scale = 0.6,
@@ -37,11 +44,12 @@ Blips = {
     generic_blip_color = 2 -- only shows if you set unique_blips to false
 }
 
+-- the vector is offset (x, y, z) from the object for the interact
 Config.ATMModels = {
-    `prop_atm_01`,
-    `prop_atm_02`,
-    `prop_atm_03`,
-    `prop_fleeca_atm`
+    [`prop_atm_01`] = vec3(0.0, 0.0, 1.0),
+    [`prop_atm_02`] = vec3(0.0, 0.0, 1.0),
+    [`prop_atm_03`] = vec3(0.0, 0.0, 1.0),
+    [`prop_fleeca_atm`] = vec3(0.0, 0.0, 1.0)
 }
 
 

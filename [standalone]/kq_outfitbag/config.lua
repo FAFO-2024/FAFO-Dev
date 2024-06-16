@@ -85,4 +85,4 @@ Config.keybinds = {
 }
 
 -- Whether to save outfits using Illenium-appearance (this will make players their outfit upon relog)
-Config.illeniumSaving = true
+Config.illeniumSaving = false

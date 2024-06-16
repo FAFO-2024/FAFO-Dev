@@ -1,6 +1,6 @@
 config = {
 
-    enableDeveloperMode = true,
+    enableDeveloperMode = false,
     -- This allows you to use the spooner to create, edit and delete bollard sets
     -- If enabled ANY user on the server will have access, so make sure this is disabled on your live server
 

@@ -82,8 +82,8 @@ This is how the script applies the outfit internally
 ]]--
 function OnPlayerApplyOutfit(outfitData, name)
     if Config.illeniumSaving then
-        local appearance = exports['illenium-appearance']:getPedAppearance(PlayerPedId())
+        local appearance = exports['codem-appearance']:getPedAppearance(PlayerPedId())
 
-        TriggerServerEvent("illenium-appearance:server:saveAppearance", appearance)
+        TriggerServerEvent("codem-appearance:server:saveAppearance", appearance)
     end
 end

@@ -11,6 +11,16 @@ function debugprint(...)
     end
 end
 
+function TableFilter(tbl, func)
+    local newtbl = {}
+    for i, v in ipairs(tbl) do
+        if func(v) then
+            table.insert(newtbl, v)
+        end
+    end
+    return newtbl
+end
+
 Locales = {}
 
 function LocalesSettings()

@@ -35,5 +35,9 @@ Locales = {
 
     ["wait_until_data_loaded"] = "Wait!", -- shown when data is not loaded
     ["cannot_give_loan_to_self"] = "Cannot give Loan to self",
-    ['account_already_flagged_or_frozen'] = "Account already flagged or frozen"
+
+    -- Added after 6/1
+    ['account_already_flagged_or_frozen'] = "Account already flagged or frozen",
+
+    ["atm_in_use"] = "ATM currently in use"
 }

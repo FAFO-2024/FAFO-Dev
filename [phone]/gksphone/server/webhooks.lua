@@ -375,7 +375,7 @@ function WebhookLogs(logType, source, logData)
     tweetType = logData.tweetType
     pollTime = logData.pollTime
 
-    if TweetUserData.avatar == "/html/img/icons/valeuser.png" then
+    if TweetUserData.avatar == "/html/img/icons/avatar.png" then
       TweetUserData.avatar = "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png"
     end
 

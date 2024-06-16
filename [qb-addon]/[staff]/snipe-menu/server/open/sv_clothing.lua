@@ -39,8 +39,8 @@ RegisterServerEvent("snipe-menu:server:giveOutfits", function(id)
             else
                 TriggerClientEvent("fivem-appearance:pickNewOutfit", id, {id = 1, number = 2})
             end
-        elseif Config.Skin == "illenium-appearance" then
-            TriggerClientEvent("illenium-appearance:openOutfitMenu", id)
+        elseif Config.Skin == "codem-appearance" then
+            TriggerClientEvent("codem-appearance:openOutfitMenu", id)
         elseif Config.Skin == "esx_skin" then
             -- ESX Skin does not have outfits options
         elseif Config.Skin == "other" then
