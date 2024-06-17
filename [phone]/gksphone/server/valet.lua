@@ -160,7 +160,6 @@ Config.Core.Functions.CreateCallback("gksphone:server:vale:vehiclebring", functi
                     fizzPed = CreatePedInsideVehicle(vehicleBring, 0, 999748158, -1, true, true)
                     while not DoesEntityExist(tonumber(fizzPed)) do Wait(10) end
                 else
-                    coords = GetEntityCoords(ped)
                     local heading = coords.w and coords.w or 0.0
                     vehicleBring = VehicleSpawn(source, model, coords, heading, true, true)
                     SetVehicleNumberPlateText(vehicleBring, plate)

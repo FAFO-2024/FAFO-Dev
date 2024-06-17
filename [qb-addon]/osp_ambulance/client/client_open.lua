@@ -8,12 +8,13 @@ stationaryScreenRot = 15
 ecgScreenOffset = vector3(-0.075, -0.099999999, 0.26)
 PlayerJob = {}
 PlayerLoaded = true
-xSound = exports.xsound
+soundTable = {}
 
 lastStandDict = "combat@damage@writhe"
 lastStandAnim = "writhe_loop"
 deadAnimDict = "dead"
 deadAnim = "dead_a"
+
 
 if Config.Framework == 'qb' then
     QBCore = exports['qb-core']:GetCoreObject()
@@ -677,7 +678,7 @@ end
 
 function RemoveZone(entity)
     if Config.UseOxTarget then
-        
+        exports.ox_target:removeZone(entity)
     else
         exports[Config.TargetName]:RemoveZone(entity)
     end
@@ -803,7 +804,19 @@ function DebugPrint(...)
     end
 end
 
-
+function TriggerSound(sound, coords, distance)
+    while not RequestScriptAudioBank('audiodirectory/custom_sounds', false) do Wait(0) end
+    local soundId = GetSoundId()
+    PlaySoundFromCoord(soundId, sound, coords, 'special_soundset', false, distance)
+    soundTable[soundId] = sound
+    Citizen.CreateThread(function()
+        while not HasSoundFinished(soundId) do Wait(1) end
+        StopSound(soundId)
+        ReleaseSoundId(soundId)
+        soundTable[soundId] = nil
+	end)
+    return soundId
+end
 
 
 
@@ -950,6 +963,20 @@ function disableAllSystems()
 end
 
 
+function webHookPacket(data)
+    DebugPrint(data, data.playerName, data.weaponLabel, data.killerName)
+    local whData = {
+        title = "Player Died",
+        color = 2123412,
+        message = 
+        '**[Player Name & ID]: **'..data.playerName..'\n'..
+        '**[Cause of Death]: **'..data.weaponLabel..'\n'..
+        '**[Killer Name & ID]: **'..data.killerName..'\n'..
+        '**[Player Screenshots:]:**\n',
+    }
+    TriggerServerEvent('osp_ambulance:sendWebhook', whData)
+end
+
 function disabledControls()
     DisableAllControlActions(0)
     EnableControlAction(0, 1, true) -- LookLeftRight
@@ -987,6 +1014,7 @@ function GetPlayers()
     end
     return players
 end
+
 
 local SlowEffect1 = false
 local SlowEffect2 = false
@@ -1354,7 +1382,6 @@ function ReloadJobInteractions()
                 local function onEnter(self)
                     if onDuty then
                         textUi(lang.text.store_button)
-
                         EMSControls("shop")
                     end
                 end
@@ -1377,7 +1404,6 @@ function ReloadJobInteractions()
             end
     
             for k, v in pairs(Config.Locations["roof"]) do
-    
                 local function onEnter(self)
                     textUi(lang.text.elevator_main)
 
@@ -1464,7 +1490,6 @@ else
                 if doctorCount >= Config.MinimalDoctors then
                     CheckInControls("checkin")
                     textUi(lang.text.call_doc)
-
                 else
                     CheckInControls("checkin")
                     textUi(lang.text.check_in)
@@ -1494,7 +1519,6 @@ else
             local function onEnter(self)
                 if not isInHospitalBed then
                     textUi(lang.text.lie_bed)
-
                     CheckInControls("beds")
                 end
             end
@@ -1597,6 +1621,7 @@ RegisterCommand("medicalsystem", function(source, args, rawCommand)
         DebugPrint('Player state data ', stat, stat.isDead, cachedPlayer)
     else
         DebugPrint('stat is nil', cachedPlayer)
+        cachedPlayer = nil
     end
     -- Citizen.CreateThread(function()
     --     while true do
@@ -1640,10 +1665,9 @@ RegisterCommand("code", function(source, args, rawCommand)
             room = "Monitor 5"
         }))
     end
-
-    xSound:PlayUrlPos("codeblue",'codeblue.mp3', 1.0, Config.IncomingScreenSoundPos, false)
-    xSound:Distance("codeblue", Config.IncomingScreenSoundRange)
-    xSound:destroyOnFinish("codeblue", true)
+    for k,v in pairs(Config.IncomingScreenSoundPos) do
+        TriggerSound('codeblue', v, Config.IncomingScreenSoundRange)
+    end
 
 end, false)
 
@@ -2288,3 +2312,4 @@ function OpenCloakroom()
     })
     lib.showContext('cloakroom')
 end
+

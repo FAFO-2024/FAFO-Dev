@@ -2,7 +2,7 @@ locales["en"] = {
     ["press_to_exit"] = "Press ~INPUT_REPLAY_TOGGLE_TIMELINE~ to ~r~exit~s~",
     ["press_to_confirm"] = "Press ~INPUT_CELLPHONE_SELECT~ to ~g~confirm~s~",
 
-    ["press_to_select"] = "Press ~INPUT_ATTACK~ to ~g~select~s~ the closest door",
+    ["press_to_select"] = "Press ~INPUT_ATTACK~ to ~g~select~s~ a door",
     ["hold_to_highlight"] = "Hold ~INPUT_CHARACTER_WHEEL~ to ~y~highlight~s~ all close doors",
 
     ["icon_up_down"] = "Press ~INPUT_CELLPHONE_UP~ and ~INPUT_CELLPHONE_DOWN~ move up/down the icon",
@@ -30,7 +30,6 @@ locales["en"] = {
     ["press_to_close"] = "Press ~y~[E]~s~ to close",
     ["press_to_open"] = "Press ~y~[E]~s~ to open",
 
-    ["choose_door_tip"] = "If you can't select a door, press H to fix",
     ["new_door_model_added"] = "The new door ~g~model~s~ has been added",
 
     ["only_admins_can_do_that"] = "Only admins can do that",
@@ -47,5 +46,8 @@ locales["en"] = {
     ["press_to_place_manually"] = "Press ~INPUT_JUMP~ to place ~y~manually~s~",
     ["toggle_lock"] = "Toggle lock",
     ["lockpick"] = "Lockpick",
-    ["please_wait"] = "Please wait..."
+    ["please_wait"] = "Please wait...",
+
+    ["hold_to_move"] = "Hold ~INPUT_SPRINT~ to ~y~move~s~",
+    ["this_is_not_a_valid_door"] = "This is ~r~not a valid door~s~!"
 }

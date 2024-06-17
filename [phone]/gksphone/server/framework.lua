@@ -96,6 +96,37 @@ function SetItemData(source, item, data)
   return false
 end
 
+--- Updates the metadata of an item for a player based on the provided datatype and data.
+--- @param source number The player's source ID.
+--- @param item table The item to update the metadata for.
+--- @param datatype string The type of metadata to update.
+--- @param data any The new data to set for the specified metadata type.
+function UpdateItemData(source, item, datatype, data)
+  debugprint('UpdateItemData', source, item, datatype, data)
+  local src = source
+  local metadata = item.metadata or item.info
+  metadata[datatype] = data
+  if Config.OxInvetory then
+    exports.ox_inventory:SetMetadata(src, item.slot, metadata)
+  elseif Config.CoreInventory then
+    local Player = Config.Core.Functions.GetPlayer(src)
+    if Player == nil then return false end
+    local inventory = 'content-' ..  Player.PlayerData.citizenid
+    exports['core_inventory']:updateMetadata(inventory, item.id, metadata)
+  elseif Config.qsInvetory then
+    exports['qs-inventory']:SetItemMetadata(src, item.slot, metadata)
+  else
+    local Player = Config.Core.Functions.GetPlayer(src)
+    if Player then
+      local itemData = Player.Functions.GetItemBySlot(item.slot)
+      if itemData ~= nil then
+        Player.PlayerData.items[itemData.slot].info = metadata
+        Player.Functions.SetInventory(Player.PlayerData.items)
+      end
+    end
+  end
+end
+
 --- Get Item Data ---
 
 function GetItemData(source, phoneUniqID)
@@ -142,8 +173,11 @@ end
 function SocietyRemoveMoney(job, amount)
   local process = false
   if GetResourceState("qb-banking") == "started" then
-    if exports['qb-banking']:RemoveMoney(job, amount) then
-      process = true
+    local jobPrice = SocietyGetMoney(job)
+    if jobPrice >= amount then
+      if exports['qb-banking']:RemoveMoney(job, amount) then
+        process = true
+      end
     end
   end
   return process

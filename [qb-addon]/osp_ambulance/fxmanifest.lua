@@ -30,11 +30,41 @@ server_script {
 
 files {
     'html/*',
-    'html/img/*'
+    'html/img/*',
+    'sound/data/audioexample_sounds.dat54.rel',
+	'sound/audiodirectory/custom_sounds.awc',
+	'vehicles.meta',
+	'carvariations.meta',
+	'handling.meta',
 }
 
+
+
+
+data_file 'DLC_ITYP_REQUEST' 'stream/v_med_crutch01.ytyp'
+data_file 'HANDLING_FILE'			'handling.meta'
+data_file 'VEHICLE_METADATA_FILE'	'vehicles.meta'
+data_file 'VEHICLE_VARIATION_FILE'	'carvariations.meta'
+data_file 'DLC_ITYP_REQUEST' 'stream/ems_props.ytyp'
+
+data_file 'AUDIO_WAVEPACK' 'sound/audiodirectory'
+data_file 'AUDIO_SOUNDDATA' 'sound/data/audioexample_sounds.dat'
+
+
+files {
+	'vehicles.meta',
+	'carvariations.meta',
+	'handling.meta'
+}
+
+data_file 'DLC_ITYP_REQUEST' 'stream/v_med_crutch01.ytyp'
+data_file 'HANDLING_FILE'			'handling.meta'
+data_file 'VEHICLE_METADATA_FILE'	'vehicles.meta'
+data_file 'VEHICLE_VARIATION_FILE'	'carvariations.meta'
+data_file 'DLC_ITYP_REQUEST' 'stream/ems_props.ytyp'
+
 ui_page {
-    'html/new.html'
+    'html/ui.html'
 }
 
 escrow_ignore {
@@ -50,4 +80,7 @@ export {
     'isDead',
 }
 dependency '/assetpacks'
+
+
+
 dependency '/assetpacks'

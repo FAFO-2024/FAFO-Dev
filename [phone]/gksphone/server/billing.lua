@@ -638,7 +638,8 @@ Config.Core.Functions.CreateCallback('gksphone:server:deleteBill', function(sour
                 for k,v in pairs(BillingTable) do
                     if v.id == res.id then
                         WebhookLogs('bussinesBillDelete', src, BillingTable[k])
-                        BillingTable[k] = nil
+                        table.remove(BillingTable, k)
+                        break
                     end
                 end
 
@@ -663,7 +664,8 @@ Config.Core.Functions.CreateCallback('gksphone:server:deleteBill', function(sour
                 for k,v in pairs(BillingTable) do
                     if v.id == res.id then
                         WebhookLogs('bussinesBillDelete', src, BillingTable[k])
-                        BillingTable[k] = nil
+                        table.remove(BillingTable, k)
+                        break
                     end
                 end
             end

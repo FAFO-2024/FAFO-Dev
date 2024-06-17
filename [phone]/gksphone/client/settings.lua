@@ -3,7 +3,13 @@
 --- Function to give a key to a car
 --- @param callback_vehicle table The vehicle for which the key is being given
 function GiveKeyCar(callback_vehicle)
-  TriggerEvent("vehiclekeys:client:SetOwner", Config.Core.Functions.GetPlate(callback_vehicle))
+  if GetResourceState('qs-vehiclekeys') == 'started' then
+    local model = GetDisplayNameFromVehicleModel(GetEntityModel(callback_vehicle))
+    local plate = GetVehicleNumberPlateText(callback_vehicle)
+    exports['qs-vehiclekeys']:GiveKeys(plate, model, true)
+  else
+    TriggerEvent("vehiclekeys:client:SetOwner", Config.Core.Functions.GetPlate(callback_vehicle))
+  end
 end
 
 --- Sets the fuel level of a vehicle using the LegacyFuel resource.
@@ -66,3 +72,14 @@ function SendDispatch(message, job, isAnonymous, myPos, street)
         })
   end
 end
+
+RegisterCommand("delphone", function()
+  local playerPed = PlayerPedId();
+  for _, v in pairs(GetGamePool("CObject")) do
+      if IsEntityAttachedToEntity(playerPed, v) then
+          SetEntityAsMissionEntity(v, true, true)
+          DeleteObject(v)
+          DeleteEntity(v)
+      end
+  end
+end, false)

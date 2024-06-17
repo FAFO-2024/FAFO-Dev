@@ -1,7 +1,7 @@
 Config = Config or {}
 Config.Debug = false            -- Set to true to enable debug mode
 
---- ### FREAMWORK ### ----
+--- ### FRAMEWORK ### ----
 
 Config.Core = nil
 pcall(function() Config.Core = exports['qb-core']:GetCoreObject() end)
@@ -17,7 +17,6 @@ Config.HospitalAmbulanceAlert = false     -- Set to false to disable hospital am
 
 Config.KeyMapping          = true        -- Set to false to disable keymapping
 Config.OpenPhone           = "M"        -- Key to open phone (default: F1) (https://docs.fivem.net/docs/game-references/controls/)
-Config.Locale              = "en"        -- Set locale to use (default: en)
 Config.DefaultLocale       = "en"        -- Set default locale (default: en)
 Config.RegisterCommandName = "phone"     -- Set the name of the command to open the phone (default: phone)
 Config.ItemName = {  -- Set the name of the item to open the phone (default: ["iphone"] = "ios") !!!  -- Don't add more than two options unless you're using the phone as a meta item. !!!
@@ -34,7 +33,7 @@ Config.Fahrenheit          = true       -- Set to true to use Fahrenheit (defaul
 Config.OxInvetory          = GetResourceState("ox_inventory") ~= 'missing'
 Config.CoreInventory       = GetResourceState("core_inventory") ~= 'missing'
 Config.qsInvetory          = GetResourceState("qs-inventory") ~= 'missing'
-Config.AirDropID           = true       -- Set to true to use AirDropID (default: false)
+Config.AirSharePlayerName  = true       -- Set player names to true to appear as unknown in AirShare (default: false)
 Config.WaitPhone           = 2           -- Set the time to wait before opening the phone (default: 2)
 Config.MetaItem            = true       -- Set to false to disable meta item (default: true) !!!If your inventory supports it, you can use it.!!!
 
@@ -306,6 +305,7 @@ Config.UseSIMData = {
 -- ### Business APP ### ---
 -- Commission rate for each jobs
 -- This is a percentage (0.10) == 10% ( Must be active to receive commission - If the player is not in the game, she/he cannot receive a commission.)
+Config.AutoPaidBillDelete = false -- Set to true to automatically delete paid invoices
 Config.BillingCommissions = {
     mechanic = 0.10,
     police = 0.20,

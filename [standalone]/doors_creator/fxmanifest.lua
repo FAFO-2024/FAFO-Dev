@@ -1,4 +1,4 @@
-version '5.3'
+version '5.4.1'
 author 'jaksam1074'
 
 client_scripts {
@@ -120,12 +120,10 @@ lua54 'yes'
 this_is_a_map 'yes'
 
 data_file 'DLC_ITYP_REQUEST' 'stream/L1_1.ytyp' 
-data_file 'DLC_ITYP_REQUEST' 'stream/blackhawk.ytyp'
 
 files {
     'stream/L1_1.ytyp',
     'stream/L1_1.ydr',
-    'stream/blackhawk.ydr',
 }
 
 escrow_ignore {
