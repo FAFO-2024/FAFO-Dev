@@ -75,6 +75,8 @@ Config.bcs_housing      = false   -- Activate if you are using BCS Housing (http
 
 Config.BankTransferTax      = 10     -- Bank transfer commission rate
 Config.OfflineBankTransfer  = false   -- Enable offline bank transfer
+Config.MetaBankTransfer     = false   -- Being able to transfer money from someone else's phone
+
 
 --- ### Garage/Vale Settings ### ---
 
@@ -306,6 +308,7 @@ Config.UseSIMData = {
 -- Commission rate for each jobs
 -- This is a percentage (0.10) == 10% ( Must be active to receive commission - If the player is not in the game, she/he cannot receive a commission.)
 Config.AutoPaidBillDelete = false -- Set to true to automatically delete paid invoices
+Config.UseBillingCommission = true -- Set to true to use billing commission
 Config.BillingCommissions = {
     mechanic = 0.10,
     police = 0.20,

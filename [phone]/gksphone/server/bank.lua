@@ -6,18 +6,28 @@ Config.Core.Functions.CreateCallback('gksphone:server:bank:transfer', function(s
     local info = {status = false}
     debugprint("bank transfer start", {money, number, name, phoneUniq})
     if money == nil or number == nil or name == nil or type(money) ~= 'number' then
-        debugprint("bank transfer error1")
+        debugprint("bank transfer error 1")
         cb(info)
         return
     end
     if money <= 0 then
-        debugprint("bank transfer error2")
+        debugprint("bank transfer error 2")
         cb(info)
         return
     end
     if PhonesData[phoneUniq] ~= nil then
         local phonedata = PhonesData[phoneUniq]
+        if not Config.MetaBankTransfer then
+            if phonedata.identifier ~= phonedata.setup_owner then
+                debugprint("bank transfer error 4")
+                cb(info)
+                return
+            end
+        end
         local xPlayer = Config.Core.Functions.GetPlayerByCitizenId(phonedata.setup_owner)
+        if xPlayer == nil then
+            xPlayer = Config.Core.Functions.GetOfflinePlayerByCitizenId(phonedata.setup_owner)
+        end
         local yPhoneData = GetPhoneDataByNumber(number)
         if yPhoneData == nil then
             cb(info)
@@ -112,9 +122,12 @@ Config.Core.Functions.CreateCallback('gksphone:server:bank:transfer', function(s
                 WebhookLogs("bank", source, {phonedata.phone_number, yPhoneData.phone_number, money, xPlayerTransferDesc, yPlayerTransferDesc, xPlayer.PlayerData.citizenid, yPlayer.PlayerData.citizenid})
             end
             cb(info)
+        else
+            debugprint("bank transfer error 5")
+            cb(info)
         end
     else
-        debugprint("bank transfer error3")
+        debugprint("bank transfer error 3")
         cb(info)
     end
 end)

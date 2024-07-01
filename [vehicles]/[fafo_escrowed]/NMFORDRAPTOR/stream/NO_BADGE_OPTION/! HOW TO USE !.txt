@@ -1,0 +1,1 @@
+Replace the .yft files in the steam folder with the files in the NO_BADGE_OPTION folder.

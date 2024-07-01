@@ -2,7 +2,7 @@ fx_version 'cerulean'
 games { 'gta5' }
 lua54 'yes'
 description 'GKSPHONEv2'
-version '2.0.1'
+version '2.0.3'
 
 ui_page 'html/index.html'
 

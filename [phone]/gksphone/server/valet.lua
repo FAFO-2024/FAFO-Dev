@@ -92,9 +92,10 @@ Config.Core.Functions.CreateCallback("gksphone:server:vale:vehichlepoint", funct
     end
 end)
 
-Config.Core.Functions.CreateCallback("gksphone:server:vale:vehiclebring", function(source, cb, plate, coords)
+Config.Core.Functions.CreateCallback("gksphone:server:vale:vehiclebring", function(source, cb, plate, coords, modelType)
     local vehicle = IsVehicleOut(plate)
     if (vehicle == false) then
+        modelType = modelType or "automobile"
         local xPlayer = Config.Core.Functions.GetPlayer(source)
         if not xPlayer then cb(false) end
         local citizenid = xPlayer.PlayerData.citizenid
@@ -146,28 +147,21 @@ Config.Core.Functions.CreateCallback("gksphone:server:vale:vehiclebring", functi
                     end
                 end
 
-                local ped = GetPlayerPed(source)
                 local model = GetHashKey(vehicles.vehicle)
                 model = type(model) == 'string' and joaat(model) or model
 
-                local fizzPed = nil
-                local vehicleBring = nil
-                if Config.ValeNPC then
-                    local heading = coords.w and coords.w or 0.0
-                    vehicleBring = VehicleSpawn(source, model, coords, heading, true, true)
-                    SetVehicleNumberPlateText(vehicleBring, plate)
-                    SetEntityHeading(vehicleBring, heading)
-                    fizzPed = CreatePedInsideVehicle(vehicleBring, 0, 999748158, -1, true, true)
-                    while not DoesEntityExist(tonumber(fizzPed)) do Wait(10) end
-                else
-                    local heading = coords.w and coords.w or 0.0
-                    vehicleBring = VehicleSpawn(source, model, coords, heading, true, true)
-                    SetVehicleNumberPlateText(vehicleBring, plate)
-                    SetEntityHeading(vehicleBring, heading)
+                local heading = coords.w and coords.w or 0.0
+                local vehicleBring = VehicleSpawn(source, model, coords, heading, modelType)
+                Wait(1000)
+                debugprint("vehicleBring", vehicleBring, model, coords, heading, modelType)
+                if not vehicleBring  or not DoesEntityExist(vehicleBring) then
+                    debugprint("gksphone:server:vale:vehiclebring | Vehicle not spawned | CitizenID: " .. citizenid .. " | Plate: " .. plate)
+                    xPlayer.Functions.AddMoney('bank', Config.ValePrice, "vale")
+                    cb("error")
+                    return
                 end
 
-
-
+                local oxyNetId = NetworkGetNetworkIdFromEntity(vehicleBring)
 
                 if Config.cdGarages then
                     MySQL.Async.execute('UPDATE player_vehicles SET  `in_garage` = @in_garage WHERE `plate` = @plate', {
@@ -178,25 +172,19 @@ Config.Core.Functions.CreateCallback("gksphone:server:vale:vehiclebring", functi
                 else
                     MySQL.Async.execute('UPDATE player_vehicles SET `state` = @state WHERE `plate` = @plate', {
                         ['@plate'] = plate,
-                        ['@state'] = 1,
+                        ['@state'] = 0,
                     })
                     debugprint("gksphone:server:vale:vehiclebring | Qb Vehicle state changed | CitizenID: " .. citizenid .. " | Plate: " .. plate .. " | State: 0")
                 end
-
-                local pedNetId = NetworkGetNetworkIdFromEntity(fizzPed)
-				local oxyNetId = NetworkGetNetworkIdFromEntity(vehicleBring)
-
+                
                 debugprint("gksphone:server:vale:vehiclebring | Vehicle spawned | CitizenID: " .. citizenid .. " | Plate: " .. plate)
-                debugprint("Test", {vehicleBring, vehicles, fizzPed})
-                cb(oxyNetId, vehicles, pedNetId)
+                debugprint("Test", {vehicleBring, vehicles})
+                cb(oxyNetId, vehicles)
             else
                 debugprint("gksphone:server:vale:vehiclebring | Not enough money | CitizenID: " .. citizenid .. " | Plate: " .. plate)
                 cb("nomoney")
                 return
             end
-
-
-
         end)
 
     else
@@ -205,8 +193,12 @@ Config.Core.Functions.CreateCallback("gksphone:server:vale:vehiclebring", functi
     end
 end)
 
-function VehicleSpawn(source, model, coords, heading, isNetwork, netMissionEntity)
-    local veh = CreateVehicle(model, coords.x, coords.y, coords.z, heading, isNetwork, netMissionEntity)
-    while not DoesEntityExist(veh) do Wait(0) end
-    return veh
+function VehicleSpawn(source, model, coords, heading, modelType)
+    debugprint("VehicleSpawn | Model: " .. model .. " | Coords: " .. json.encode(coords) .. " | Heading: " .. heading .. " | ModelType: " .. modelType)
+    local createdVehicle = CreateVehicleServerSetter(model, modelType, coords.x, coords.y, coords.z, heading)
+    Wait(1000)
+    if not DoesEntityExist(createdVehicle) then
+        return print("[^1GKSPHONE ERROR^7] Unfortunately, this vehicle has not spawned")
+    end
+    return createdVehicle
 end

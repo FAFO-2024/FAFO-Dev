@@ -415,7 +415,7 @@ Config.UseGarageSystem = true
 
 Config.Locations = {
     ["checking"] = {
-	    vector3(310.26, -582.47, 43.27),
+	    vector3(310.53,-585.88,43.27),
     },
     ["boss"] = {
         --vector3(-1031.41, -1418.68, 4.97),

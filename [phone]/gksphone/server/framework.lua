@@ -127,6 +127,46 @@ function UpdateItemData(source, item, datatype, data)
   end
 end
 
+function SearchPhoneItems(source)
+  local src = source
+  local Player = Config.Core.Functions.GetPlayer(src)
+  local itemData = {}
+  local items = {}
+  local data = {}
+  if Player then
+    if Config.qsInvetory then
+      local player = Player.PlayerData.citizenid
+      items = {}
+      data = exports['qs-inventory']:GetInventory(src)
+    end
+    for k, v in pairs(Config.ItemName) do
+      if Config.OxInvetory then
+        itemData = exports.ox_inventory:Search(src, 1, k)
+      elseif Config.CoreInventory then
+        local inventory = 'content-' ..  Player.PlayerData.citizenid
+        itemData = exports['core_inventory']:getItems(inventory, k)
+      elseif Config.qsInvetory then
+        if data and type(data) =="table" then
+          for _, l in pairs(data) do
+            if l.name == k then
+              items[#items+1] = l
+            end
+          end
+        end
+        if #items > 0 then
+          itemData = items
+        end
+      else
+        itemData = Player.Functions.GetItemsByName(k)
+      end
+      if #itemData > 0 then
+        return itemData
+      end
+    end
+  end
+  return itemData
+end
+
 --- Get Item Data ---
 
 function GetItemData(source, phoneUniqID)

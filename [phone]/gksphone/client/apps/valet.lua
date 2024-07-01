@@ -1,6 +1,53 @@
 --================================================================================================
 --==            --    XenKnighT --        https://discord.gg/XUck63E                            ==
 --================================================================================================
+-- Credits to txAdmin for the list.
+local isCarSpawned = false
+VehClassNamesEnum = {
+    [8] = "bike",
+    [11] = "trailer",
+    [13] = "bike",
+    [14] = "boat",
+    [15] = "heli",
+    [16] = "plane",
+    [21] = "train",
+}
+
+MismatchedTypes = {
+    [`airtug`] = "automobile", -- trailer
+    [`avisa`] = "submarine", -- boat
+    [`blimp`] = "heli", -- plane
+    [`blimp2`] = "heli", -- plane
+    [`blimp3`] = "heli", -- plane
+    [`caddy`] = "automobile", -- trailer
+    [`caddy2`] = "automobile", -- trailer
+    [`caddy3`] = "automobile", -- trailer
+    [`chimera`] = "automobile", -- bike
+    [`docktug`] = "automobile", -- trailer
+    [`forklift`] = "automobile", -- trailer
+    [`kosatka`] = "submarine", -- boat
+    [`mower`] = "automobile", -- trailer
+    [`policeb`] = "bike", -- automobile
+    [`ripley`] = "automobile", -- trailer
+    [`rrocket`] = "automobile", -- bike
+    [`sadler`] = "automobile", -- trailer
+    [`sadler2`] = "automobile", -- trailer
+    [`scrap`] = "automobile", -- trailer
+    [`slamtruck`] = "automobile", -- trailer
+    [`Stryder`] = "automobile", -- bike
+    [`submersible`] = "submarine", -- boat
+    [`submersible2`] = "submarine", -- boat
+    [`thruster`] = "heli", -- automobile
+    [`towtruck`] = "automobile", -- trailer
+    [`towtruck2`] = "automobile", -- trailer
+    [`tractor`] = "automobile", -- trailer
+    [`tractor2`] = "automobile", -- trailer
+    [`tractor3`] = "automobile", -- trailer
+    [`trailersmall2`] = "trailer", -- automobile
+    [`utillitruck`] = "automobile", -- trailer
+    [`utillitruck2`] = "automobile", -- trailer
+    [`utillitruck3`] = "automobile", -- trailer
+}
 
 
 
@@ -8,88 +55,67 @@
 -- Made by GKSHOP  | https://discord.gg/XUck63E
 -- Version: 2.0.0
 
-local function DoCarDamage(currentVehicle, stats, props)
-    local engine = stats.engine + 0.0
-    local body = stats.body + 0.0
-    SetVehicleEngineHealth(currentVehicle, engine)
-    SetVehicleBodyHealth(currentVehicle, body)
-    if not next(props) then return end
-    if props.doorStatus then
-        for k, v in pairs(props.doorStatus) do
-            if v then SetVehicleDoorBroken(currentVehicle, tonumber(k), true) end
+local function BringCar(netId, vehicleData)
+    debugprint('BringCar Test', {netId, vehicleData})
+
+    local player = PlayerPedId()
+    local playerCoords = GetEntityCoords(player)
+    local vehId = NetToVeh(netId)
+
+    SetVehicleEngineOn(vehId, true, true, false)
+    local carBlip = AddBlipForEntity(vehId)
+    SetBlipSprite(carBlip, 225)--Blip Spawning.
+    SetBlipFlashes(carBlip, true)
+    SetBlipColour(carBlip, 0)
+    SetBlipFlashes(carBlip, false)
+    BeginTextCommandSetBlipName("STRING")
+    AddTextComponentString("Vale Car")
+    EndTextCommandSetBlipName(carBlip)
+
+    Config.Core.Functions.SetVehicleProperties(vehId, vehicleData.mods)
+    GiveKeyCar(vehId)
+    if Config.ValeNPC then
+        RequestModel("s_m_y_valet_01")
+        local timeout = 0
+        while not HasModelLoaded("s_m_y_valet_01") and timeout < 1500 do
+            timeout = timeout + 1
+            Wait(1)
         end
-    end
-    if props.tireBurstState then
-        for k, v in pairs(props.tireBurstState) do
-            if v then SetVehicleTyreBurst(currentVehicle, tonumber(k), true) end
-        end
-    end
-    if props.windowStatus then
-        for k, v in pairs(props.windowStatus) do
-            if not v then SmashVehicleWindow(currentVehicle, tonumber(k)) end
-        end
-    end
-end
-
-local function BringCar(netId, vehicleData, pedId)
-    debugprint('BringCar Test', {netId, vehicleData, pedId})
-    if pedId then
-        local player = PlayerPedId()
-        local playerCoords = GetEntityCoords(player)
-        local driverPed = NetToPed(pedId)
-        local veh = NetToVeh(netId)
-        debugprint(vehicleData.mods)
-        Config.Core.Functions.SetVehicleProperties(veh, vehicleData.mods)
-
-        GiveKeyCar(veh)
-        SetFuel(veh, vehicleData)
-
-        DoCarDamage(veh, vehicleData, vehicleData.mods)
-        SetVehicleEngineOn(veh, true, true)
-
-        carBlip = AddBlipForEntity(veh)
-        SetBlipSprite(carBlip, 225)--Blip Spawning.
-        SetBlipFlashes(carBlip, true)
-        SetBlipColour(carBlip, 0)
-        SetBlipFlashes(carBlip, false)
-        BeginTextCommandSetBlipName("STRING")
-        AddTextComponentString(plate)
-        EndTextCommandSetBlipName(carBlip)
-
-        SetDriverAbility(ped, 1.0)
-        SetDriverAggressiveness(ped, 0.0)
-        TaskVehicleDriveToCoordLongrange(driverPed, veh, playerCoords.x, playerCoords.y, playerCoords.z, 30.0, 39, 7.0)
+        local ValePed = CreatePedInsideVehicle(vehId, 5, "s_m_y_valet_01", -1, true, false)
+        Wait(1000)
+        SetDriverAbility(ValePed, 1.0)
+        SetDriverAggressiveness(ValePed, 0.0)
+        TaskVehicleDriveToCoordLongrange(ValePed, vehId, playerCoords.x, playerCoords.y, playerCoords.z, 30.0, 39, 7.0)
 
         while true do
-            local pedCoords = GetEntityCoords(driverPed)
+            local pedCoords = GetEntityCoords(ValePed)
             local distance = #(playerCoords - pedCoords)
             if distance > 200.0 then
-                SetPedCoordsKeepVehicle(driverPed, playerCoords.x, playerCoords.y, playerCoords.z)
+                SetPedCoordsKeepVehicle(ValePed, playerCoords.x, playerCoords.y, playerCoords.z)
             end
-            if GetScriptTaskStatus(driverPed, 567490903) == 7 then
-                TaskLeaveVehicle(driverPed, veh, 0)
+            if GetScriptTaskStatus(ValePed, 567490903) == 7 then
+                TaskLeaveVehicle(ValePed, vehId, 0)
                 Wait(1000)
-                TaskWanderStandard(driverPed, 10.0, 10)
+                TaskWanderStandard(ValePed, 10.0, 10)
                 Wait(10000)
-                DeleteEntity(driverPed)
+                DeleteEntity(ValePed)
                 RemoveBlip(carBlip)
                 break
             end
-            if GetPedInVehicleSeat(veh, -1) == 0 then
-                DeleteEntity(driverPed)
+            if GetPedInVehicleSeat(vehId, -1) == 0 then
+                DeleteEntity(ValePed)
                 RemoveBlip(carBlip)
                 break
             end
             Wait(250)
         end
     else
-        local veh = NetToVeh(netId)
-        Config.Core.Functions.SetVehicleProperties(veh, vehicleData.mods)
-        GiveKeyCar(veh)
-        SetFuel(veh, vehicleData)
-        DoCarDamage(veh, vehicleData, vehicleData.mods)
-        SetVehicleEngineOn(veh, true, true)
+        Wait(1000)
+        RemoveBlip(carBlip)
     end
+
+    SetFuel(vehId, vehicleData)
+    isCarSpawned = false
 end
 
 function WaitTaskToEnd(ped, task)
@@ -142,12 +168,28 @@ RegisterNUICallback('gksphone:vale:track', function(data, cb)
 end)
 
 RegisterNUICallback('gksphone:vale:bring', function(data, cb)
-    debugprint('Car Spawn', data.plate)
+    debugprint('Car Spawn', data.plate, data.model, isCarSpawned)
+    if isCarSpawned then return end
+    isCarSpawned = true
+    local model = type(data.model) == "string" and joaat(data.model) or data.model
+    if not IsModelInCdimage(model) then
+        debugprint('Model not found in CDImage', data.model)
+        return
+    end
+
+    local modelType
+    if MismatchedTypes[model] then
+        modelType = MismatchedTypes[model]
+    else
+        local modelClassNumber = GetVehicleClassFromName(model)
+        modelType = VehClassNamesEnum[modelClassNumber] or "automobile"
+    end
+
     local coords = GetEntityCoords(PlayerPedId())
     local found, spawnPos, spawnHeading = GetClosestVehicleNodeWithHeading(coords.x + math.random(-Config.ValespawnRadius, Config.ValespawnRadius), coords.y + math.random(-Config.ValespawnRadius, Config.ValespawnRadius), coords.z, 0, 3, 0)
     local coordinates = {x = spawnPos.x, y = spawnPos.y, z = spawnPos.z, spawnHeading}
-    Config.Core.Functions.TriggerCallback('gksphone:server:vale:vehiclebring', function(netId, vehicleData, pedId)
-        debugprint('Car Spawn2', {netId, vehicleData, pedId})
+    Config.Core.Functions.TriggerCallback('gksphone:server:vale:vehiclebring', function(netId, vehicleData)
+        debugprint('Car Spawn2', {netId, vehicleData})
         if netId == "nomoney" then
             local notify = {
                 title = _T(lastItemData?.info?.phoneLang, "ValeAPP.APP_VALE_TITLE"), -- The title of the notification
@@ -196,7 +238,7 @@ RegisterNUICallback('gksphone:vale:bring', function(data, cb)
                 duration = 20000, -- The duration for which the notification should be displayed (in milliseconds)
             }
             exports["gksphone"]:Notification(notify)
-        else
+        elseif type(netId) == "number" then
             local notify = {
                 title = _T(lastItemData?.info?.phoneLang, "ValeAPP.APP_VALE_TITLE"), -- The title of the notification
                 message = _T(lastItemData?.info?.phoneLang, "ValeAPP.APP_VALE_SUCESS_BRING"), -- The message of the notification
@@ -204,9 +246,10 @@ RegisterNUICallback('gksphone:vale:bring', function(data, cb)
                 duration = 20000, -- The duration for which the notification should be displayed (in milliseconds)
             }
             exports["gksphone"]:Notification(notify)
-            BringCar(netId, vehicleData, pedId)
+            BringCar(netId, vehicleData)
         end
-    end, data.plate, coordinates)
+        isCarSpawned = false
+    end, data.plate, coordinates, modelType)
     cb('ok')
 end)
 

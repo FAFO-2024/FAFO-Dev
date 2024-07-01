@@ -154,5 +154,13 @@ QBShared.Jobs = {
 			['4'] = { name = 'Manager', isboss = true, payment = 150, bankAuth = true },
 		},
 	},
+	lux = {
+		label = 'LUX Car Dealer',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Staff', isboss = true, payment = 0, bankAuth = true },
+		},
+	},
 	
 }

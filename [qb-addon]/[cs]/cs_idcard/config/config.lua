@@ -37,7 +37,7 @@ CodeStudio.ID_IssueLoc = {   -- if CodeStudio.OpenUI is enabled [This is where p
             'sheriff',
         },
         coords = {      --You can Add Multiple Coords 
-            vector4(-394.27, -335.07, 32.4, 73.75),
+            vector4(617.87, 7.14, 82.79, 237.5),
         },
 
         Available_Cards = {       --Includes Public/Job ID    (Check: CodeStudio.ID_Cards, CodeStudio.Job_Cards)
@@ -78,7 +78,7 @@ CodeStudio.ID_IssueLoc = {   -- if CodeStudio.OpenUI is enabled [This is where p
     [4] = {
         job = false,
         coords = {  --weapons license pick up
-            vector4(-377.12, -347.07, 31.65, 143.31),
+            vector4(619.98, 8.0, 82.79, 59.23),
         },
 
         Available_Cards = {

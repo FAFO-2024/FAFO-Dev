@@ -15,6 +15,9 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function(data)
             JobUpdate()
         end
     end
+    if Config.OxInvetory then
+        exports.ox_inventory:displayMetadata({eSIMNumber = 'Phone Number'})
+    end
 end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate')

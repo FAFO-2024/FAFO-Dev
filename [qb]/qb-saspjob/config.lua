@@ -17,7 +17,7 @@ Config.LicenseRank = 2
 Config.UseTarget = GetConvar('UseTarget', 'true') == 'true'
 Config.Locations = {
     ["duty"] = {
-        [1] = vector3(-380.88, -345.24, 31.65),
+        [1] = vector3(619.31, 12.8, 82.79),
     },
     ["vehicle"] = {
         --[[ [1] = vector4(-380.33, -357.09, 24.44, 80.35),
@@ -27,11 +27,10 @@ Config.Locations = {
         --[1] = vector3(-394.81, -381.0, 25.1),
     },
     ["impound"] = {
-        [1] = vector3(-366.14, -368.71, 24.44),
+        [1] = vector3(539.93, -14.71, 70.32),
     },
     ["helicopter"] = {
-        [1] = vector4(-377.26, -354.89, 72.59, 80.35), --left
-        [2] = vector4(-393.55, -336.17, 72.6, 144.94), --right
+        [1] = vector4(581.05, 12.07, 103.0, 90.58),
     },
     ["armory"] = {
         --[1] = vector3(-403.11, -377.45, 25.1),
@@ -41,10 +40,10 @@ Config.Locations = {
         --[2] = vector3(-401.43, -376.13, 25.1),
     },
     ["fingerprint"] = {
-        [1] = vector3(-392.34, -416.12, 25.1),
+        [1] = vector3(544.39, 44.98, 70.63),
     },
     ["evidence"] = {
-        [1] = vector3(-414.03, -400.25, 166.94),
+        [1] = vector3(572.49, 43.71, 70.63),
     },
     ["stations"] = {
         --[1] = {label = "SASP Station Paleto", coords = vector4(-451.55, 6014.25, 31.716, 223.81)},

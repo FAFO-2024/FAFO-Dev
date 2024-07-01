@@ -1,5 +1,6 @@
 {
   "emailDomain": "gkshop.org",
+  "xsound": false,
   "RealTime": false,
   "Picturequality": 0.85,
   "ImageSizeLimitMB": 10,
@@ -447,44 +448,21 @@
       "show": true
     },
     {
-      "name": "Special Application 1",
-      "icons": "/html/img/icons/qbit.png",
-      "categori": "finance",
-      "appurl": "gksphone-app/ui/index.html",
-      "url": "/special1",
+      "name": "Music",
+      "icons": "/html/img/icons/music.png",
+      "categori": "social",
+      "url": "/mhome",
       "blockedjobs": {},
       "allowjob": {},
       "signal": true,
-      "show": false
+      "show": true
     },
     {
-      "name": "Special Application 2",
+      "name": "Custom App",
       "icons": "/html/img/icons/qbit.png",
-      "categori": "finance",
-      "appurl": "gksphone-app/ui/index.html",
-      "url": "/special2",
-      "blockedjobs": {},
-      "allowjob": {},
-      "signal": true,
-      "show": false
-    },
-    {
-      "name": "Special Application 3",
-      "icons": "/html/img/icons/qbit.png",
-      "categori": "finance",
-      "appurl": "gksphone-app/ui/index.html",
-      "url": "//special3",
-      "blockedjobs": {},
-      "allowjob": {},
-      "signal": true,
-      "show": false
-    },
-    {
-      "name": "Special Application 4",
-      "icons": "/html/img/icons/qbit.png",
-      "categori": "finance",
-      "appurl": "gksphone-app/ui/index.html",
-      "url": "//special4",
+      "categori": "mix",
+      "appurl": "https://cfx-nui-gksphone-app/ui/index.html",
+      "url": "/customapp",
       "blockedjobs": {},
       "allowjob": {},
       "signal": true,

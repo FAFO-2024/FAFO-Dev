@@ -20,5 +20,6 @@
 
     "collapse": "Collapse",
     "expand": "Expand",
-    "amount_icon": "$"
+    "amount_icon": "$",
+    "delete_title" : "Delete"
 }

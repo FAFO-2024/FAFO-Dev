@@ -86,31 +86,20 @@ function translateEverything() {
 	})
 } 
 
-function refreshTranslations(locale) {
-	$.ajax({
-		url: `menu_translations/en.json`,
-		success: function (translationsJSON) {
-			ENGLISH_TRANSLATIONS = JSON.parse(translationsJSON);
+async function refreshTranslations(locale) {
+	let rawEnglishTranslations = await $.get("menu_translations/en.json");
+	ENGLISH_TRANSLATIONS = typeof rawEnglishTranslations == "object" ? rawEnglishTranslations : JSON.parse(rawEnglishTranslations);
 
-			$.ajax({
-				url: `menu_translations/${locale}.json`,
-				success: function (translationsJSON) {
-					TRANSLATIONS = JSON.parse(translationsJSON);
-		
-					translateEverything();
-				}
-			});
-		}
-	});
+	let rawTranslations = await $.get(`menu_translations/${locale}.json`);
+	TRANSLATIONS = typeof rawTranslations == "object" ? rawTranslations : JSON.parse(rawTranslations);
+
+	translateEverything();
 }
 
-function loadTranslations() {
-	$.ajax({
-		url: `https://${resName}/getLocale`,
-		success: function (locale) {
-			refreshTranslations(locale);
-		}
-	});
+async function loadTranslations() {
+	const locale = await $.post(`https://${resName}/getLocale`);
+
+	refreshTranslations(locale);
 } loadTranslations();
 
 function getLocalizedText(text) {
