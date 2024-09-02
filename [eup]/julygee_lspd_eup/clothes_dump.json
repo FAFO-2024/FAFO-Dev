@@ -1,0 +1,3290 @@
+[
+  {
+    "DlcCollectionName": "mp_m_julygee_lspd_eup",
+    "PedName": "mp_m_freemode_01",
+    "ComponentVariations": [
+      {
+        "NameHash": "CLO_DCT_ARMOR_0_0_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 62,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_0_1_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 62,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_0_2_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 62,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_1_0_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 63,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_1_1_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 63,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_1_2_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 63,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_2_0_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 64,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_2_1_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 64,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_2_2_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 64,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_2_3_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 64,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_3_0_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 65,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_3_1_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 65,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_4_0_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 66,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_4_1_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 66,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_0_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_1_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_2_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_3_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_4_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_5_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_6_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_7_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_8_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 8,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_6_0_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 68,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_6_1_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 68,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_6_2_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 68,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_7_0_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 69,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_7_1_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 69,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_7_2_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 69,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_8_0_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 70,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_8_1_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 70,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_9_0_M",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 71,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 9
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_0_0_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 111,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_0_1_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 111,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_0_2_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 111,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_0_3_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 111,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_0_4_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 111,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_0_5_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 111,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_1_0_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 112,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_1_1_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 112,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_1_2_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 112,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_2_0_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 113,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_2_1_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 113,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_2_2_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 113,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_2_3_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 113,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_2_4_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 113,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_2_5_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 113,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_2_6_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 113,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_2_7_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 113,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_2_8_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 113,
+        "TextureId": 8,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_3_0_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 114,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_3_1_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 114,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_3_2_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 114,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_3_3_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 114,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_3_4_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 114,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_3_5_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 114,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_3_6_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 114,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_3_7_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 114,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_3_8_M",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 114,
+        "TextureId": 8,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_0_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 193,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_1_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 193,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_2_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 193,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_3_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 193,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_4_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 193,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_5_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 193,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_6_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 193,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_7_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 193,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_0_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 194,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_1_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 194,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_2_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 194,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_3_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 194,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_4_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 194,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_5_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 194,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_6_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 194,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_7_M",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 194,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_0_0_M",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 193,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_0_1_M",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 193,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_1_0_M",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 194,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_2_0_M",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 195,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_3_0_M",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 196,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_4_0_M",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 197,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_4_1_M",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 197,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_5_0_M",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 198,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_6_0_M",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 199,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_7_0_M",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 200,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_7_1_M",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 200,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_0_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 524,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_1_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 525,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_1_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 525,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_2_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 526,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_2_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 526,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_3_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 527,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_3_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 527,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_4_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 528,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_4_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 528,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 529,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 529,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_2_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 529,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_3_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 529,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_4_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 529,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_5_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 529,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 530,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 530,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_2_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 530,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_3_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 530,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 531,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 531,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_2_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 531,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_3_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 531,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_4_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 531,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_5_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 531,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_6_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 531,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_7_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 531,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_8_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 531,
+        "TextureId": 8,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_9_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 531,
+        "TextureId": 9,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_10_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 531,
+        "TextureId": 10,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_11_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 531,
+        "TextureId": 11,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_8_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 532,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_8_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 532,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_8_2_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 532,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_8_3_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 532,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_9_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 533,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 9
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_9_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 533,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 9
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_9_2_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 533,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 9
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_9_3_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 533,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 9
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_10_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 534,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 10
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_10_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 534,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 10
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_10_2_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 534,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 10
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_10_3_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 534,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 10
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_11_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 535,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 11
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_11_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 535,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 11
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_11_2_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 535,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 11
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_11_3_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 535,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 11
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_11_4_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 535,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 11
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_11_5_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 535,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 11
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_12_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 536,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 12
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_12_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 536,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 12
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_12_2_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 536,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 12
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_12_3_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 536,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 12
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_13_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 537,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 13
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_13_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 537,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 13
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_13_2_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 537,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 13
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_13_3_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 537,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 13
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_13_4_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 537,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 13
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 538,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 538,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_2_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 538,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_3_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 538,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_4_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 538,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_5_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 538,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_6_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 538,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_7_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 538,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_8_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 538,
+        "TextureId": 8,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_9_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 538,
+        "TextureId": 9,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_10_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 538,
+        "TextureId": 10,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_15_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 539,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 15
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_15_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 539,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 15
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_15_2_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 539,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 15
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_15_3_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 539,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 15
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_15_4_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 539,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 15
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_15_5_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 539,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 15
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_15_6_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 539,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 15
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_16_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 540,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 16
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_16_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 540,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 16
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_16_2_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 540,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 16
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_16_3_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 540,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 16
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_17_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 541,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 17
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_18_0_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 542,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 18
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_18_1_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 542,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 18
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_18_2_M",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 542,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 18
+      },
+      {
+        "NameHash": "CLO_DCT_UNDERSHIRT_0_0_M",
+        "ComponentType": "PV_COMP_ACCS",
+        "ComponentId": 8,
+        "DrawableId": 207,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_UNDERSHIRT_0_1_M",
+        "ComponentType": "PV_COMP_ACCS",
+        "ComponentId": 8,
+        "DrawableId": 207,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_UNDERSHIRT_0_2_M",
+        "ComponentType": "PV_COMP_ACCS",
+        "ComponentId": 8,
+        "DrawableId": 207,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_UNDERSHIRT_1_0_M",
+        "ComponentType": "PV_COMP_ACCS",
+        "ComponentId": 8,
+        "DrawableId": 208,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 1
+      }
+    ],
+    "Props": [
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_0_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_1_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_2_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_3_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_4_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_5_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_6_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_7_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_8_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 8,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_9_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 9,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_1_0_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 215,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_1_1_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 215,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_1_2_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 215,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_1_3_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 215,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_1_4_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 215,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_1_5_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 215,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_2_0_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 216,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_3_0_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 217,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_4_0_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 218,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_4_1_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 218,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_5_0_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 219,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_5_1_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 219,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_6_0_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 220,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_6_1_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 220,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_7_0_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 221,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_8_0_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 222,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_8_1_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 222,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_8_2_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 222,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_8_3_M",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 222,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 8
+      }
+    ]
+  },
+  {
+    "DlcCollectionName": "mp_f_julygee_lspd_eup",
+    "PedName": "mp_f_freemode_01",
+    "ComponentVariations": [
+      {
+        "NameHash": "CLO_DCT_ARMOR_0_0_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 62,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_0_1_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 62,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_0_2_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 62,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_1_0_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 63,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_1_1_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 63,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_1_2_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 63,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_1_3_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 63,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_2_0_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 64,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_2_1_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 64,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_2_2_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 64,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_3_0_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 65,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_3_1_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 65,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_4_0_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 66,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_4_1_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 66,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_0_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_1_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_2_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_3_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_4_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_5_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_6_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_7_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_5_8_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 67,
+        "TextureId": 8,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_6_0_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 68,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_6_1_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 68,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_6_2_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 68,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_7_0_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 69,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_7_1_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 69,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_7_2_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 69,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_8_0_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 70,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_8_1_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 70,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_ARMOR_9_0_F",
+        "ComponentType": "PV_COMP_TASK",
+        "ComponentId": 9,
+        "DrawableId": 71,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 9
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_0_0_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 111,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_0_1_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 111,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_0_2_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 111,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_0_3_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 111,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_0_4_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 111,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_0_5_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 111,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_0_6_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 111,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_0_7_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 111,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_0_8_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 111,
+        "TextureId": 8,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_1_0_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 112,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_1_1_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 112,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_1_2_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 112,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_1_3_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 112,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_1_4_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 112,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_1_5_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 112,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_1_6_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 112,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_1_7_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 112,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_1_8_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 112,
+        "TextureId": 8,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_2_0_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 113,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_2_1_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 113,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_2_2_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 113,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_3_0_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 114,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_3_1_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 114,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_3_2_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 114,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_3_-1_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 114,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_3_-1_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 114,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_BAG_3_-1_F",
+        "ComponentType": "PV_COMP_HAND",
+        "ComponentId": 5,
+        "DrawableId": 114,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_0_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 209,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_1_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 209,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_2_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 209,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_3_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 209,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_4_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 209,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_5_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 209,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_6_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 209,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_0_7_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 209,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_0_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 210,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_1_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 210,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_2_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 210,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_3_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 210,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_4_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 210,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_5_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 210,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_6_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 210,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_DECAL_1_7_F",
+        "ComponentType": "PV_COMP_DECL",
+        "ComponentId": 10,
+        "DrawableId": 210,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_0_0_F",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 207,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_0_1_F",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 207,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_1_0_F",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 208,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_2_0_F",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 209,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_3_0_F",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 210,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_4_0_F",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 211,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_5_0_F",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 212,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_5_1_F",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 212,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_6_0_F",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 213,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_7_0_F",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 214,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_8_0_F",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 215,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_LEGS_8_1_F",
+        "ComponentType": "PV_COMP_LOWR",
+        "ComponentId": 4,
+        "DrawableId": 215,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_0_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 565,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_1_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 566,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_1_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 566,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_2_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 567,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_2_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 567,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_3_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 568,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_3_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 568,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_4_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 569,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_4_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 569,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_4_2_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 569,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_4_3_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 569,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_4_4_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 569,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_4_5_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 569,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 570,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 570,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_2_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 570,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_3_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 570,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_4_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 570,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_5_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 570,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_6_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 570,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_7_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 570,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_8_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 570,
+        "TextureId": 8,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_9_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 570,
+        "TextureId": 9,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_10_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 570,
+        "TextureId": 10,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_5_11_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 570,
+        "TextureId": 11,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 571,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 571,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_2_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 571,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_3_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 571,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_4_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 571,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_5_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 571,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_6_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 571,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_7_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 571,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_8_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 571,
+        "TextureId": 8,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_9_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 571,
+        "TextureId": 9,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_10_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 571,
+        "TextureId": 10,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_6_11_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 571,
+        "TextureId": 11,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 572,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 572,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_2_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 572,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_7_3_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 572,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_8_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 573,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_8_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 573,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_8_2_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 573,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_8_3_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 573,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_9_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 574,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 9
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_9_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 574,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 9
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_9_2_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 574,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 9
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_9_3_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 574,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 9
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_10_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 575,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 10
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_10_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 575,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 10
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_10_2_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 575,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 10
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_10_3_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 575,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 10
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_11_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 576,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 11
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_11_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 576,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 11
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_11_2_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 576,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 11
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_11_3_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 576,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 11
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_11_4_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 576,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 11
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_11_5_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 576,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 11
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_12_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 577,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 12
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_12_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 577,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 12
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_12_2_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 577,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 12
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_12_3_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 577,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 12
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_13_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 578,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 13
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_13_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 578,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 13
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_13_2_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 578,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 13
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_13_3_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 578,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 13
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_13_4_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 578,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 13
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 579,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 579,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_2_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 579,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_3_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 579,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_4_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 579,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_5_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 579,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_14_6_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 579,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 14
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_15_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 580,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 15
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_15_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 580,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 15
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_15_2_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 580,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 15
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_15_3_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 580,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 15
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_16_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 581,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 16
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_17_0_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 582,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 17
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_17_1_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 582,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 17
+      },
+      {
+        "NameHash": "CLO_DCT_TOP_17_2_F",
+        "ComponentType": "PV_COMP_JBIB",
+        "ComponentId": 11,
+        "DrawableId": 582,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 17
+      },
+      {
+        "NameHash": "CLO_DCT_UNDERSHIRT_0_0_F",
+        "ComponentType": "PV_COMP_ACCS",
+        "ComponentId": 8,
+        "DrawableId": 253,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_UNDERSHIRT_0_1_F",
+        "ComponentType": "PV_COMP_ACCS",
+        "ComponentId": 8,
+        "DrawableId": 253,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_UNDERSHIRT_0_2_F",
+        "ComponentType": "PV_COMP_ACCS",
+        "ComponentId": 8,
+        "DrawableId": 253,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_UNDERSHIRT_1_0_F",
+        "ComponentType": "PV_COMP_ACCS",
+        "ComponentId": 8,
+        "DrawableId": 254,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_UNDERSHIRT_1_1_F",
+        "ComponentType": "PV_COMP_ACCS",
+        "ComponentId": 8,
+        "DrawableId": 254,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_UNDERSHIRT_1_2_F",
+        "ComponentType": "PV_COMP_ACCS",
+        "ComponentId": 8,
+        "DrawableId": 254,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_UNDERSHIRT_2_0_F",
+        "ComponentType": "PV_COMP_ACCS",
+        "ComponentId": 8,
+        "DrawableId": 255,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 2
+      }
+    ],
+    "Props": [
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_0_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 213,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_1_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 213,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_2_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 213,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_3_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 213,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_4_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 213,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_5_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 213,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_6_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 213,
+        "TextureId": 6,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_7_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 213,
+        "TextureId": 7,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_8_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 213,
+        "TextureId": 8,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_0_9_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 213,
+        "TextureId": 9,
+        "RelativeCollectionDrawableId": 0
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_1_0_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_1_1_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_1_2_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_1_3_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_1_4_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 4,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_1_5_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 214,
+        "TextureId": 5,
+        "RelativeCollectionDrawableId": 1
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_2_0_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 215,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 2
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_3_0_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 216,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 3
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_4_0_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 217,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_4_1_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 217,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 4
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_5_0_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 218,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_5_1_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 218,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 5
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_6_0_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 219,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_6_1_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 219,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 6
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_7_0_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 220,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 7
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_8_0_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 221,
+        "TextureId": 0,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_8_1_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 221,
+        "TextureId": 1,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_8_2_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 221,
+        "TextureId": 2,
+        "RelativeCollectionDrawableId": 8
+      },
+      {
+        "NameHash": "CLO_DCT_PROPHEAD_8_3_F",
+        "AnchorPoint": "ANCHOR_HEAD",
+        "ComponentId": 0,
+        "DrawableId": 221,
+        "TextureId": 3,
+        "RelativeCollectionDrawableId": 8
+      }
+    ]
+  }
+]
