@@ -24,7 +24,7 @@ end
 Locales = {}
 
 function LocalesSettings()
-    local languages = {"af", "de", "en", "fr", "tr"}
+    local languages = Config.Locales
     for _, lang in ipairs(languages) do
         local jsonData = json.decode(LoadResourceFile("gksphone", "config/locales/" .. lang .. ".json"))
         Locales[lang] = jsonData

@@ -7,7 +7,7 @@ if Config.Framework == 'qb' then
 
     function CreateUseableItem(name, cb)
         if Config.UsedInventory == 'qs' then
-            exports['qs-inventory']:CreateUsableItem(name, cb)
+            exports['qs-inventory']:CreateUseableItem(name, cb)
         else
             QBCore.Functions.CreateUseableItem(name, cb)
         end
@@ -39,8 +39,11 @@ if Config.Framework == 'qb' then
         local player = QBCore.Functions.GetPlayer(src)
         if Config.UsedInventory == 'qs' then
             exports['qs-inventory']:AddItem(src, name, amount)
+        elseif Config.UsedInventory == 'ox' then
+            exports.ox_inventory:AddItem(src, name, amount)
         else
             player.Functions.AddItem(name, amount)
+            -- exports['qb-inventory']:AddItem(source, name, amount, false, false, 'ambulancejob')
         end
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[name], "add")
     end)
@@ -49,8 +52,11 @@ if Config.Framework == 'qb' then
         local player = QBCore.Functions.GetPlayer(src)
         if Config.UsedInventory == 'qs' then
             exports['qs-inventory']:AddItem(src, name, amount)
+        elseif Config.UsedInventory == 'ox' then
+            exports.ox_inventory:AddItem(src, name, amount)
         else
             player.Functions.AddItem(name, amount)
+            -- exports['qb-inventory']:AddItem(source, name, amount, false, false, 'ambulancejob')
         end
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[name], "add")
     end
@@ -59,8 +65,11 @@ if Config.Framework == 'qb' then
         local player = QBCore.Functions.GetPlayer(src)
         if Config.UsedInventory == 'qs' then
             exports['qs-inventory']:RemoveItem(src, name, amount)
+        elseif Config.UsedInventory == 'ox' then
+            exports.ox_inventory:RemoveItem(src, name, amount)
         else
             player.Functions.RemoveItem(name, amount)
+            -- exports['qb-inventory']:RemoveItem(source, name, amount, false, 'ambulancejob')
         end
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[name], "remove")
     end
@@ -72,8 +81,11 @@ if Config.Framework == 'qb' then
         local player = QBCore.Functions.GetPlayer(src)
         if Config.UsedInventory == 'qs' then
             exports['qs-inventory']:RemoveItem(src, name, amount)
+        elseif Config.UsedInventory == 'ox' then
+            exports.ox_inventory:RemoveItem(src, name, amount)
         else
             player.Functions.RemoveItem(name, amount)
+            -- exports['qb-inventory']:RemoveItem(source, name, amount, false, 'ambulancejob')
         end
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[name], "remove")
     end)
@@ -195,6 +207,15 @@ if Config.Framework == 'qb' then
             end)
         end
     end)
+
+    RegisterNetEvent('hospital:server:SetArmourStatus', function(armor) -- Used to set the death status of a player, used by other qbcore scripts for easy intregration
+        local src = source
+        local Player = QBCore.Functions.GetPlayer(src)
+        if Player then
+            Player.Functions.SetMetaData("armor", armor)
+        end
+    end)
+    
 
     RegisterNetEvent('hospital:server:SetDeathStatus', function(isDead) -- Used to set the death status of a player, used by other qbcore scripts for easy intregration
         local src = source
@@ -370,7 +391,7 @@ elseif Config.Framework == 'esx' then
         local coords = GetEntityCoords(ped)
         local serverPlayers = GetPlayers()
         for k,v in pairs(serverPlayers) do
-            local Player = GetPlayer(k)
+            local Player = GetPlayer(v)
             if Player then
                 for _,x in pairs(Config.AmbulanceJobs) do
                     if Player.job.name == x then
@@ -527,6 +548,8 @@ CreateUseableItem('pager', function(source, item)
     TriggerClientEvent('osp_ambulance:incoming', source)
 end)
 
+
+
 CreateUseableItem('stretcher', function(source, item)
     TriggerClientEvent('osp_ambulance:SpawnStretcher', source)
 end)
@@ -607,7 +630,7 @@ RegisterNetEvent('osp_ambulance:revive', function(player)
     TriggerClientEvent('hospital:client:Revive', player)
 end)
 
-RegisterNetEvent('osp_ambulance:partialRevive', function(player)
+RegisterNetEvent('osp_ambulance:partialReviveSv', function(player)
     TriggerClientEvent('osp_ambulance:partialRevive', player)
 end)
 
@@ -619,33 +642,33 @@ AddEventHandler('txAdmin:events:healedPlayer', function(eventData)
     TriggerClientEvent('hospital:client:Revive', eventData.id)
 end)
 
--- CreateThread(function()
---     Wait(1000)
---     while true do
---         doctorCount = 0
---         local serverPlayers = GetPlayers()
---         for k,v in pairs(serverPlayers) do
---             local Player = GetPlayer(v)
---             if Player then
---                 if Config.Framework == 'qb' then
---                     for _,x in pairs(Config.AmbulanceJobs) do
---                         if Player.PlayerData.job.name == x then
---                             doctorCount = doctorCount + 1
---                         end
---                     end
---                 else
---                     for _,x in pairs(Config.AmbulanceJobs) do
---                         if Player.job.name == x then
---                             doctorCount = doctorCount + 1
---                         end
---                     end
---                 end
---             end
---         end
---         Wait(5*60*1000)
---         TriggerClientEvent("hospital:client:SetDoctorCount", -1, doctorCount)
---     end
--- end)
+CreateThread(function()
+    Wait(1000)
+    while true do
+        doctorCount = 0
+        local serverPlayers = GetPlayers()
+        for k,v in pairs(serverPlayers) do
+            local Player = GetPlayer(v)
+            if Player then
+                if Config.Framework == 'qb' then
+                    for _,x in pairs(Config.AmbulanceJobs) do
+                        if Player.PlayerData.job.name == x then
+                            doctorCount = doctorCount + 1
+                        end
+                    end
+                else
+                    for _,x in pairs(Config.AmbulanceJobs) do
+                        if Player.job.name == x then
+                            doctorCount = doctorCount + 1
+                        end
+                    end
+                end
+            end
+        end
+        Wait(2*60*1000)
+        TriggerClientEvent("hospital:client:SetDoctorCount", -1, doctorCount)
+    end
+end)
 
 RegisterNetEvent('hospital:server:SendToBed', function(bedId, isRevive)
     local src = source
@@ -885,4 +908,63 @@ end)
 RegisterServerEvent("osp_ambulance:wipeECGTable")
 AddEventHandler("osp_ambulance:wipeECGTable", function()
     MySQL.Async.execute("DELETE FROM ecg",function()end)
+end)
+
+
+-- Functions
+function UpdateBlips()
+    local dutyPlayers = {}
+    local players = GetPlayers()
+    for _, v in pairs(players) do
+        local Player = GetPlayer(v)
+        if Player then
+            if Config.Framework == 'qb' then 
+                for _,x in pairs(Config.AmbulanceJobs) do
+                    if Player.PlayerData.job.name == x then
+                        local coords = GetEntityCoords(GetPlayerPed(v))
+                        local heading = GetEntityHeading(GetPlayerPed(v))
+                        dutyPlayers[#dutyPlayers+1] = {
+                            source = v,
+                            label = Player.PlayerData.charinfo.firstname .. ' ' .. Player.PlayerData.charinfo.lastname,
+                            job = Player.PlayerData.job.name,
+                            location = {
+                                x = coords.x,
+                                y = coords.y,
+                                z = coords.z,
+                                w = heading
+                            }
+                        }
+                    end
+                end
+            else
+                for _,x in pairs(Config.AmbulanceJobs) do
+                    if Player.job.name == x then
+                        local coords = GetEntityCoords(GetPlayerPed(v))
+                        local heading = GetEntityHeading(GetPlayerPed(v))
+                        dutyPlayers[#dutyPlayers+1] = {
+                            source = v,
+                            label = Player.name,
+                            job = Player.job.name,
+                            location = {
+                                x = coords.x,
+                                y = coords.y,
+                                z = coords.z,
+                                w = heading
+                            }
+                        }
+                    end
+                end
+            end
+        end
+    end
+    TriggerClientEvent("osp_ambulance:jobBlipsCl", -1, dutyPlayers)
+end
+
+CreateThread(function()
+    while true do
+        Wait(5000)
+        if Config.JobBlips then
+            UpdateBlips()
+        end
+    end
 end)

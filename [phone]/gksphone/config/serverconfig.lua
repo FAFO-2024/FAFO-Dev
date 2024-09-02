@@ -5,11 +5,32 @@ Cfg.TebexTransactionID = "tbx-25211824a71387-b895e9" --- Required for PlayTube a
 
 
 --## Media Service Settings ## --
---## To use the media service of gkshop => GKSMedia (https://service.gkshop.org/package/5563991)
-Cfg.MediaServices   = "discord" --- ## gkshop(picture,audio,video), discord(picture,audio,video), imgur(only picture), imgbb(only picture)
-Cfg.MediaToken      = ""        --- ## Media Service Token (if you are using discord leave this blank)
-Cfg.VoiceMail       = "https://discord.com/api/webhooks/1240505540417818644/G15uzgOuCZi-F5m1pFY6Qpou8xTCn22Db9W7vFxcEXkAMQ_ylv-nchuk0R7ZGH1OQmyT"        --- ## Discord Webhook for VoiceMail
-Cfg.PhotoWebHook    = "https://discord.com/api/webhooks/1240505767283523634/gnclD5xH_7xtw1tRKEwyJL8fFVIABQam133LEi_w96f199UnSrCftG78Drw0DUfIOMuu"        --- ## Discord Webhook for Photo
+-- Media service is used for uploading images, videos and audio files to the server.
+-- If you want to use your own media service, you need to change the URL, field, AuthHeader and AuthToken fields.
+-- https://docs.gkshop.org/qb-information/gksphonev2/installation#step-3-serverconfig.lua (other media service providers)
+Cfg.MediaServices = {
+    ImgService = {
+        url = "https://discord.com/api/webhooks/1240505767283523634/gnclD5xH_7xtw1tRKEwyJL8fFVIABQam133LEi_w96f199UnSrCftG78Drw0DUfIOMuu",
+        field = "file",
+        AuthHeader = "",
+        AuthToken = "",
+        returnIndex = "attachments.0.url"
+    },
+    AudioService = {
+        url = "https://discord.com/api/webhooks/1240505540417818644/G15uzgOuCZi-F5m1pFY6Qpou8xTCn22Db9W7vFxcEXkAMQ_ylv-nchuk0R7ZGH1OQmyT",
+        field = "file",
+        AuthHeader = "",
+        AuthToken = "",
+        returnIndex = "attachments.0.url"
+    },
+    VideoService = {
+        url = "https://discord.com/api/webhooks/1265450088013234361/3Opq7sXJ_9Ejd4SJ9GCTrtZ9VySbuzPX8GZ40aAeU_d_26_qkaFZ7BVTBC9TVyDQnRhS",
+        field = "file",
+        AuthHeader = "",
+        AuthToken = "",
+        returnIndex = "attachments.0.url"
+    },
+}
 
 -- ## Discord webhook for logs  ## --
 

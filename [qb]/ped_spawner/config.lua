@@ -34,6 +34,96 @@ Config.PedList = {
 	    isRendered = false,
         ped = nil,
     },
+	{
+		model = "s_m_m_pilot_02", --The model name. See above for the URL of the list.
+		coords = vector3(-697.57, -1423.4, 5.0), --Helicopter Shop
+		heading = 49.03, --Must be a float value. This means it needs a decimal and a number after the decimal.
+		gender = "male", --Use male or female
+		--animDict = "", --The animation dictionary. Optional. Comment out or delete if not using.
+		--animName = "", --The animation name. Optional. Comment out or delete if not using.
+	    isRendered = false,
+        ped = nil,
+    },
+	{
+		model = "mp_m_shopkeep_01", --The model name. See above for the URL of the list.
+		coords = vector3(24.43, -1346.62, 29.5), --9066 24/7
+		heading = 267.27, --Must be a float value. This means it needs a decimal and a number after the decimal.
+		gender = "male", --Use male or female
+		--animDict = "", --The animation dictionary. Optional. Comment out or delete if not using.
+		--animName = "", --The animation name. Optional. Comment out or delete if not using.
+	    isRendered = false,
+        ped = nil,
+    },
+	{
+		model = "mp_m_shopkeep_01", --The model name. See above for the URL of the list.
+		coords = vector3(-1486.62, -377.7, 40.16), --7169 24/7
+		heading = 137.4, --Must be a float value. This means it needs a decimal and a number after the decimal.
+		gender = "male", --Use male or female
+		--animDict = "", --The animation dictionary. Optional. Comment out or delete if not using.
+		--animName = "", --The animation name. Optional. Comment out or delete if not using.
+	    isRendered = false,
+        ped = nil,
+    },
+	{
+		model = "mp_m_shopkeep_01", --The model name. See above for the URL of the list.
+		coords = vector3(-2966.4, 390.84, 15.04), --5067 24/7
+		heading = 83.21, --Must be a float value. This means it needs a decimal and a number after the decimal.
+		gender = "male", --Use male or female
+		--animDict = "", --The animation dictionary. Optional. Comment out or delete if not using.
+		--animName = "", --The animation name. Optional. Comment out or delete if not using.
+	    isRendered = false,
+        ped = nil,
+    },
+	{
+		model = "mp_m_shopkeep_01", --The model name. See above for the URL of the list.
+		coords = vector3(-3039.5, 584.34, 7.91), --5047 24/7
+		heading = 19.84, --Must be a float value. This means it needs a decimal and a number after the decimal.
+		gender = "male", --Use male or female
+		--animDict = "", --The animation dictionary. Optional. Comment out or delete if not using.
+		--animName = "", --The animation name. Optional. Comment out or delete if not using.
+	    isRendered = false,
+        ped = nil,
+    },
+	{
+		model = "mp_m_shopkeep_01", --The model name. See above for the URL of the list.
+		coords = vector3(-3242.89, 1000.06, 12.83), --5038 24/7
+		heading = 356.3, --Must be a float value. This means it needs a decimal and a number after the decimal.
+		gender = "male", --Use male or female
+		--animDict = "", --The animation dictionary. Optional. Comment out or delete if not using.
+		--animName = "", --The animation name. Optional. Comment out or delete if not using.
+	    isRendered = false,
+        ped = nil,
+    },
+	{
+		model = "mp_m_shopkeep_01", --The model name. See above for the URL of the list.
+		coords = vector3(372.67, 327.12, 103.57), --7093 24/7
+		heading = 249.34, --Must be a float value. This means it needs a decimal and a number after the decimal.
+		gender = "male", --Use male or female
+		--animDict = "", --The animation dictionary. Optional. Comment out or delete if not using.
+		--animName = "", --The animation name. Optional. Comment out or delete if not using.
+	    isRendered = false,
+        ped = nil,
+    },
+	{
+		model = "mp_m_shopkeep_01", --The model name. See above for the URL of the list.
+		coords = vector3(549.14, 2670.67, 42.16), --4019 24/7
+		heading = 98.11, --Must be a float value. This means it needs a decimal and a number after the decimal.
+		gender = "male", --Use male or female
+		--animDict = "", --The animation dictionary. Optional. Comment out or delete if not using.
+		--animName = "", --The animation name. Optional. Comment out or delete if not using.
+	    isRendered = false,
+        ped = nil,
+    },
+	{
+		model = "u_f_m_casinoshop_01", --The model name. See above for the URL of the list.
+		coords = vector3(205.64, -1395.16, 30.57), --Driver License
+		heading = 326.52, --Must be a float value. This means it needs a decimal and a number after the decimal.
+		gender = "female", --Use male or female
+		--animDict = "", --The animation dictionary. Optional. Comment out or delete if not using.
+		--animName = "", --The animation name. Optional. Comment out or delete if not using.
+	    isRendered = false,
+        ped = nil,
+    },
 	----------------------------------------
 	---         MECHANIC SHOPS           ---
 	----------------------------------------

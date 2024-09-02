@@ -8,7 +8,6 @@ RegisterNetEvent("gksphone:server:musicListen", function (musicid, volume, actio
     elseif action == "volume" then
         TriggerClientEvent("gksphone:client:music", -1, action, nil, volume, nil, src)
     elseif action == "pause" or action == "resume" or action == "stop" or action == "stopcall" then
-        print("Music action: " .. action)
         TriggerClientEvent("gksphone:client:music", -1, action,  nil, nil, nil, src)
     elseif action == "seek" then
         TriggerClientEvent("gksphone:client:music", -1, action, nil, nil, nil, src, time)
@@ -16,7 +15,5 @@ RegisterNetEvent("gksphone:server:musicListen", function (musicid, volume, actio
         local getPlayerPed = GetPlayerPed(src)
         local getPlayerCoords = GetEntityCoords(getPlayerPed)
         TriggerClientEvent("gksphone:client:music", -1, action, musicid, volume, getPlayerCoords, src)
-    else
-        print("Invalid action: " .. action)
     end
 end)

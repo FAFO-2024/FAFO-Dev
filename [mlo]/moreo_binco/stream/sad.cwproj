@@ -1,0 +1,43 @@
+<CodeWalkerProject>
+  <Name>New CodeWalker Project</Name>
+  <Version value="1" />
+  <YmapFilenames />
+  <YtypFilenames>
+    <Item>v_int_51.ytyp</Item>
+  </YtypFilenames>
+  <YbnFilenames>
+    <Item>v_clotheslo.ybn</Item>
+  </YbnFilenames>
+  <YndFilenames />
+  <YnvFilenames />
+  <TrainsFilenames />
+  <ScenarioFilenames />
+  <AudioRelFilenames />
+  <YdrFilenames>
+    <Item>moreo_binco_door.ydr</Item>
+    <Item>moreo_binco_door_r.ydr</Item>
+    <Item>moreo_binco_room_door.ydr</Item>
+    <Item>moreo_binco_text.ydr</Item>
+    <Item>moreo_clothing02.ydr</Item>
+    <Item>moreo_clothing07.ydr</Item>
+    <Item>moreo_clothing08.ydr</Item>
+    <Item>moreo_cloth_mankan.ydr</Item>
+    <Item>v_51_clothing02.ydr</Item>
+    <Item>v_51_clothing03.ydr</Item>
+    <Item>v_51_clothing07.ydr</Item>
+    <Item>v_51_clothing08.ydr</Item>
+    <Item>v_51_counter.ydr</Item>
+    <Item>v_51_det_back.ydr</Item>
+    <Item>v_51_main_det.ydr</Item>
+    <Item>v_51_masks.ydr</Item>
+    <Item>v_51_v_clotheslo.ydr</Item>
+    <Item>v_51_windows01.ydr</Item>
+    <Item>v_51_windows02.ydr</Item>
+    <Item>v_51_windows03.ydr</Item>
+    <Item>v_51_windows04.ydr</Item>
+    <Item>v_51_windows05.ydr</Item>
+  </YdrFilenames>
+  <YddFilenames />
+  <YftFilenames />
+  <YtdFilenames />
+</CodeWalkerProject>

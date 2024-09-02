@@ -5,6 +5,7 @@ PlayerData = {}
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function(data)
     debugprint('QBCore:Client:OnPlayerLoaded')
+    Wait(5000)
     local PlayerData = Config.Core.Functions.GetPlayerData()
     if PlayerData ~= nil then
         if PlayerData.job ~= nil then
@@ -56,6 +57,9 @@ RegisterNetEvent('QBCore:Player:SetPlayerData', function(val)
         end
         phoneOpenBlock = true
         phoneBlockReason = "You can't use the phone while dead, handcuffed or in last stand."
+        if incall then
+            EndPhoneCall()
+        end
     else
         phoneOpenBlock = false
         phoneBlockReason = ""

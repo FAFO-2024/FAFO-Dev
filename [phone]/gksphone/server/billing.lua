@@ -155,6 +155,22 @@ end
 exports("NewBilling", NewBilling)
 
 
+
+exports("IsUnpaidBillsbyCid", function (cid)
+    local xPlayer = Config.Core.Functions.GetPlayerByCitizenId(cid)
+    local retval = false
+    if xPlayer then
+        for i = 1, #BillingTable, 1 do
+            if BillingTable[i].citizenid == cid and BillingTable[i].status == "unpaid" then
+                retval = true
+                break
+            end
+        end
+    end
+    return retval
+end)
+
+
 Config.Core.Functions.CreateCallback('gksphone:server:billing:allbillpay', function(source, cb, phoneUniq, totalAmount)
     local info = {status = false}
     if phoneUniq == nil then

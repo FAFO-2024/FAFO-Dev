@@ -232,3 +232,14 @@ function SocietyAddMoney(job, amount)
   end
   return process
 end
+
+---- IsDead Inlaststand ---
+
+function CallingPlayerStatus(source)
+  local retval = false
+  local Player = Config.Core.Functions.GetPlayer(source)
+  if Player.PlayerData.metadata["ishandcuffed"] or Player.PlayerData.metadata["isdead"] or Player.PlayerData.metadata["inlaststand"] then
+    retval = true
+  end
+  return retval
+end

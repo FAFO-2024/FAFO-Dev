@@ -13,7 +13,7 @@ local blips = {}
 
 -- Functions
 
-local function getClosestHall()
+--[[ local function getClosestHall()
     local distance = #(playerCoords - Config.Cityhalls[1].coords)
     local closest = 1
     for i = 1, #Config.Cityhalls do
@@ -25,7 +25,7 @@ local function getClosestHall()
         end
     end
     return closest
-end
+end ]]
 
 local function getClosestSchool()
     local distance = #(playerCoords - Config.DrivingSchools[1].coords)

@@ -55,67 +55,74 @@ MismatchedTypes = {
 -- Made by GKSHOP  | https://discord.gg/XUck63E
 -- Version: 2.0.0
 
-local function BringCar(netId, vehicleData)
-    debugprint('BringCar Test', {netId, vehicleData})
+local function BringCar(netId, vehicleData, pos)
+    debugprint('BringCar Test', {netId, vehicleData, pos})
 
     local player = PlayerPedId()
     local playerCoords = GetEntityCoords(player)
-    local vehId = NetToVeh(netId)
-
-    SetVehicleEngineOn(vehId, true, true, false)
-    local carBlip = AddBlipForEntity(vehId)
-    SetBlipSprite(carBlip, 225)--Blip Spawning.
-    SetBlipFlashes(carBlip, true)
-    SetBlipColour(carBlip, 0)
-    SetBlipFlashes(carBlip, false)
-    BeginTextCommandSetBlipName("STRING")
-    AddTextComponentString("Vale Car")
-    EndTextCommandSetBlipName(carBlip)
-
-    Config.Core.Functions.SetVehicleProperties(vehId, vehicleData.mods)
-    GiveKeyCar(vehId)
-    if Config.ValeNPC then
-        RequestModel("s_m_y_valet_01")
-        local timeout = 0
-        while not HasModelLoaded("s_m_y_valet_01") and timeout < 1500 do
-            timeout = timeout + 1
-            Wait(1)
-        end
-        local ValePed = CreatePedInsideVehicle(vehId, 5, "s_m_y_valet_01", -1, true, false)
-        Wait(1000)
-        SetDriverAbility(ValePed, 1.0)
-        SetDriverAggressiveness(ValePed, 0.0)
-        TaskVehicleDriveToCoordLongrange(ValePed, vehId, playerCoords.x, playerCoords.y, playerCoords.z, 30.0, 39, 7.0)
-
-        while true do
-            local pedCoords = GetEntityCoords(ValePed)
-            local distance = #(playerCoords - pedCoords)
-            if distance > 200.0 then
-                SetPedCoordsKeepVehicle(ValePed, playerCoords.x, playerCoords.y, playerCoords.z)
-            end
-            if GetScriptTaskStatus(ValePed, 567490903) == 7 then
-                TaskLeaveVehicle(ValePed, vehId, 0)
-                Wait(1000)
-                TaskWanderStandard(ValePed, 10.0, 10)
-                Wait(10000)
-                DeleteEntity(ValePed)
-                RemoveBlip(carBlip)
-                break
-            end
-            if GetPedInVehicleSeat(vehId, -1) == 0 then
-                DeleteEntity(ValePed)
-                RemoveBlip(carBlip)
-                break
-            end
-            Wait(250)
-        end
-    else
-        Wait(1000)
-        RemoveBlip(carBlip)
+    local model = type(vehicleData.vehicle) == "string" and GetHashKey(vehicleData.vehicle) or vehicleData.vehicle
+    
+    RequestModel(model)
+    while not HasModelLoaded(model) do
+        Wait(0)
     end
 
-    SetFuel(vehId, vehicleData)
-    isCarSpawned = false
+    Config.Core.Functions.SpawnVehicle(model, function (vehID)
+        Config.Core.Functions.SetVehicleProperties(vehID, vehicleData.mods)
+        SetVehicleEngineOn(vehID, true, true, false)
+        local carBlip = AddBlipForEntity(vehID)
+        SetBlipSprite(carBlip, 225)--Blip Spawning.
+        SetBlipFlashes(carBlip, true)
+        SetBlipColour(carBlip, 0)
+        SetBlipFlashes(carBlip, false)
+        BeginTextCommandSetBlipName("STRING")
+        AddTextComponentString("Vale Car")
+        EndTextCommandSetBlipName(carBlip)
+        GiveKeyCar(vehID)
+
+        if Config.ValeNPC then
+            RequestModel("s_m_y_valet_01")
+            local timeout = 0
+            while not HasModelLoaded("s_m_y_valet_01") and timeout < 1500 do
+                timeout = timeout + 1
+                Wait(1)
+            end
+            local ValePed = CreatePedInsideVehicle(vehID, 5, "s_m_y_valet_01", -1, true, false)
+            Wait(1000)
+            SetDriverAbility(ValePed, 1.0)
+            SetDriverAggressiveness(ValePed, 0.0)
+            TaskVehicleDriveToCoordLongrange(ValePed, vehID, playerCoords.x, playerCoords.y, playerCoords.z, 30.0, 39, 7.0)
+    
+            while true do
+                local pedCoords = GetEntityCoords(ValePed)
+                local distance = #(playerCoords - pedCoords)
+                if distance > 200.0 then
+                    SetPedCoordsKeepVehicle(ValePed, playerCoords.x, playerCoords.y, playerCoords.z)
+                end
+                if GetScriptTaskStatus(ValePed, 567490903) == 7 then
+                    TaskLeaveVehicle(ValePed, vehID, 0)
+                    Wait(1000)
+                    TaskWanderStandard(ValePed, 10.0, 10)
+                    Wait(10000)
+                    DeleteEntity(ValePed)
+                    RemoveBlip(carBlip)
+                    break
+                end
+                if GetPedInVehicleSeat(vehID, -1) == 0 then
+                    DeleteEntity(ValePed)
+                    RemoveBlip(carBlip)
+                    break
+                end
+                Wait(250)
+            end
+        else
+            Wait(5000)
+            RemoveBlip(carBlip)
+        end
+
+        SetFuel(vehID, vehicleData.fuel)
+        isCarSpawned = false
+    end, pos, true, false)
 end
 
 function WaitTaskToEnd(ped, task)
@@ -238,7 +245,7 @@ RegisterNUICallback('gksphone:vale:bring', function(data, cb)
                 duration = 20000, -- The duration for which the notification should be displayed (in milliseconds)
             }
             exports["gksphone"]:Notification(notify)
-        elseif type(netId) == "number" then
+        elseif netId == "spawned" then
             local notify = {
                 title = _T(lastItemData?.info?.phoneLang, "ValeAPP.APP_VALE_TITLE"), -- The title of the notification
                 message = _T(lastItemData?.info?.phoneLang, "ValeAPP.APP_VALE_SUCESS_BRING"), -- The message of the notification
@@ -246,7 +253,7 @@ RegisterNUICallback('gksphone:vale:bring', function(data, cb)
                 duration = 20000, -- The duration for which the notification should be displayed (in milliseconds)
             }
             exports["gksphone"]:Notification(notify)
-            BringCar(netId, vehicleData)
+            BringCar(netId, vehicleData, coordinates)
         end
         isCarSpawned = false
     end, data.plate, coordinates, modelType)

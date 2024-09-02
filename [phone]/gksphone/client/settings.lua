@@ -1,7 +1,7 @@
 -- GKSPHONE | @GKSHOPTeam | discord.gg/XUck63E
 
 --- Function to give a key to a car
---- @param callback_vehicle table The vehicle for which the key is being given
+--- @param callback_vehicle number The vehicle for which the key is being given
 function GiveKeyCar(callback_vehicle)
   if GetResourceState('qs-vehiclekeys') == 'started' then
     local model = GetDisplayNameFromVehicleModel(GetEntityModel(callback_vehicle))
@@ -14,10 +14,10 @@ end
 
 --- Sets the fuel level of a vehicle using the LegacyFuel resource.
 --- @param callback_vehicle number The callback vehicle ID.
---- @param vehicle table The vehicle object containing the fuel level.
-function SetFuel(callback_vehicle, vehicle)
+--- @param fuel number The fuel level to set the vehicle to.
+function SetFuel(callback_vehicle, fuel)
   if GetResourceState('LegacyFuel') == 'started' then
-    exports['LegacyFuel']:SetFuel(callback_vehicle, vehicle.fuel)
+    exports['LegacyFuel']:SetFuel(callback_vehicle, fuel)
   end
 end
 
@@ -73,6 +73,24 @@ function SendDispatch(message, job, isAnonymous, myPos, street)
   end
 end
 
+function HasItem(itemName)
+  if Config.OxInvetory then
+    local count = exports.ox_inventory:Search('count', itemName)
+    return count > 0 and true or false
+  elseif Config.qsInvetory then
+    local result = exports['qs-inventory']:Search(itemName)
+    return result > 0 and true or false
+  else
+    local items = Config.Core.Functions.GetPlayerData().items
+    for k, v in pairs(items) do
+      if v.name == itemName then
+        return true
+      end
+    end
+  end
+  return false
+end
+
 RegisterCommand("delphone", function()
   local playerPed = PlayerPedId();
   for _, v in pairs(GetGamePool("CObject")) do
@@ -83,3 +101,4 @@ RegisterCommand("delphone", function()
       end
   end
 end, false)
+

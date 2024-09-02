@@ -18,6 +18,7 @@ Config.HospitalAmbulanceAlert = false     -- Set to false to disable hospital am
 Config.KeyMapping          = true        -- Set to false to disable keymapping
 Config.OpenPhone           = "M"        -- Key to open phone (default: F1) (https://docs.fivem.net/docs/game-references/controls/)
 Config.DefaultLocale       = "en"        -- Set default locale (default: en)
+Config.Locales             = {"af", "de", "en", "fr", "nl", "tr"} -- Set the languages you want to use
 Config.RegisterCommandName = "phone"     -- Set the name of the command to open the phone (default: phone)
 Config.ItemName = {  -- Set the name of the item to open the phone (default: ["iphone"] = "ios") !!!  -- Don't add more than two options unless you're using the phone as a meta item. !!!
     ["iphone"] = "ios",

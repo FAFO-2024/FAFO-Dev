@@ -359,6 +359,11 @@ QBShared.Items = {
     police_stormram              = { name = 'police_stormram', label = 'Stormram', weight = 18000, type = 'item', image = 'police_stormram.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A nice tool to break into doors' },
     empty_evidence_bag           = { name = 'empty_evidence_bag', label = 'Empty Evidence Bag', weight = 0, type = 'item', image = 'evidence.png', unique = false, useable = false, shouldClose = false, combinable = nil, description = 'Used a lot to keep DNA from blood, bullet shells and more' },
     filled_evidence_bag          = { name = 'filled_evidence_bag', label = 'Evidence Bag', weight = 200, type = 'item', image = 'evidence.png', unique = true, useable = false, shouldClose = false, combinable = nil, description = 'A filled evidence bag to see who committed the crime >:(' },
+    bobby_pin                    = { name = 'bobby_pin', label = 'Bobby Pin', weight = 2500, type = 'item', image = 'bobby_pin.png', unique = false, useable = true, shouldClose = true, combinable = true, description = 'Can be used as a makeshift tool for picking locks' },
+
+    -- Evidence Tools
+    ['uvlight'] 			 	 = {['name'] = 'uvlight',     ['label'] = 'UV Light',     ['weight'] = 25, ['type'] = 'item', ['image'] = 'uvlight.png',     ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil,  ['description'] = 'To scan for fingerprints'},
+	['bleachwipes'] 			 = {['name'] = 'bleachwipes', ['label'] = 'Bleach Wipes', ['weight'] = 25, ['type'] = 'item', ['image'] = 'bleachwipes.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = true, ['description'] = 'To clean and sanatize'},
 
     -- Firework Tools
     firework1                    = { name = 'firework1', label = '2Brothers', weight = 1000, type = 'item', image = 'firework1.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Fireworks' },

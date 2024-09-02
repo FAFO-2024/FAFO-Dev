@@ -60,7 +60,6 @@ RegisterNetEvent('gksphone:client:music', function(action, musicid, mvolume, coo
                     musicData[sid] = {id = musicid, volume = mvolume, coords = coords, time = time, sid = sid}
                     
                     xSound:setVolume(sid, mvolume)
-                    print(mvolume)
                     if musicData[sid]?.time then
                         xSound:setTimeStamp(sid, musicData[sid].time)
                     end
@@ -69,6 +68,9 @@ RegisterNetEvent('gksphone:client:music', function(action, musicid, mvolume, coo
                             action = 'updatePlay',
                             isPlay = true
                         })
+                    end
+                    if action == "call" then
+                        xSound:setSoundLoop(sid, true)
                     end
                     CreateThread(function()
                         local checkPosition = false
@@ -142,12 +144,18 @@ RegisterNetEvent('gksphone:client:music', function(action, musicid, mvolume, coo
             onPlayEnd = function(event)
                 musicData[sid] = nil
                 debugprint("Music ended", event)
-                if sid == currentPlayerId then
-                    SendNUIMessage({
-                        action = 'updatePlay',
-                        isPlay = false,
-                        isEnd = true
-                    })
+                if musicData[sid] and action == "call" then
+                    xSound:repeatSound(sid)
+                else
+                    musicData[sid] = nil
+                    debugprint("Music ended", event)
+                    if sid == currentPlayerId then
+                        SendNUIMessage({
+                            action = 'updatePlay',
+                            isPlay = false,
+                            isEnd = true
+                        })
+                    end
                 end
             end,
             onLoading = function(event)
@@ -196,7 +204,7 @@ RegisterNetEvent('gksphone:client:music', function(action, musicid, mvolume, coo
         if action == "stopcall" then
             sid = "call" .. sid
         end
-        if musicData[sid] then
+        if musicData[sid] and xSound:soundExists(sid) then
             exports["xsound"]:Destroy(sid)
             musicData[sid] = nil
         end

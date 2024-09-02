@@ -54,9 +54,12 @@ Config.Core.Functions.CreateCallback('gksphone:server:bank:transfer', function(s
                 yPhoneData.ownerName = yPlayer.PlayerData.charinfo.firstname .. " " .. yPlayer.PlayerData.charinfo.lastname
             end
             local xPlayerTransferDesc = _T(phonedata.phone_lang, "BankAPP.APP_BANK_TRANSFERDESCRIPTION_SENDER", {name = yPhoneData.ownerName})
+            local xPlayerTransferFeeDesc = _T(phonedata.phone_lang, "BankAPP.APP_BANK_TRANSFERDESCRIPTION_FEE")
             local yPlayerTransferDesc = _T(yPhoneData.phone_lang, "BankAPP.APP_BANK_TRANSFERDESCRIPTION_RECEIVER", {name = phonedata.ownerName})
             -- bank history save
-            local bnkhistoryxPlayer = exports["gksphone"]:bankHistorySave(number, 1, amount, xPlayerTransferDesc, phoneUniq)-- xPlayer
+            local bnkhistoryxPlayer = exports["gksphone"]:bankHistorySave(number, 1, money, xPlayerTransferDesc, phoneUniq)-- xPlayer
+            local bnkhistoryFeexPlayer = exports["gksphone"]:bankHistorySave(number, 1, taxAmount, xPlayerTransferFeeDesc, phoneUniq)-- xPlayer
+
             local bnkhistoryPlayer = exports["gksphone"]:bankHistorySave(phonedata.phone_number, 2, money, yPlayerTransferDesc, yPhoneData.unique_id)-- yPlayer
 
             local bnkBalanceChangexPlayer = exports["gksphone"]:bankBalanceUpdate(phoneUniq)
@@ -105,9 +108,12 @@ Config.Core.Functions.CreateCallback('gksphone:server:bank:transfer', function(s
                     yPhoneData.ownerName = yPlayer.PlayerData.charinfo.firstname .. " " .. yPlayer.PlayerData.charinfo.lastname
                 end
                 local xPlayerTransferDesc = _T(phonedata.phone_lang, "BankAPP.APP_BANK_TRANSFERDESCRIPTION_SENDER", {name = yPhoneData.ownerName})
+                local xPlayerTransferFeeDesc = _T(phonedata.phone_lang, "BankAPP.APP_BANK_TRANSFERDESCRIPTION_FEE")
                 local yPlayerTransferDesc = _T(yPhoneData.phone_lang, "BankAPP.APP_BANK_TRANSFERDESCRIPTION_RECEIVER", {name = phonedata.ownerName})
                 -- bank history save
-                local bnkhistoryxPlayer = exports["gksphone"]:bankHistorySave(number, 1, amount, xPlayerTransferDesc, phoneUniq)-- xPlayer
+                local bnkhistoryxPlayer = exports["gksphone"]:bankHistorySave(number, 1, money, xPlayerTransferDesc, phoneUniq)-- xPlayer
+                local bnkhistoryFeexPlayer = exports["gksphone"]:bankHistorySave(number, 1, taxAmount, xPlayerTransferFeeDesc, phoneUniq)-- xPlayer
+
                 local bnkhistoryPlayer = exports["gksphone"]:bankHistorySave(phonedata.phone_number, 2, money, yPlayerTransferDesc, yPhoneData.unique_id)-- yPlayer
 
                 local bnkBalanceChangexPlayer = exports["gksphone"]:bankBalanceUpdate(phoneUniq)

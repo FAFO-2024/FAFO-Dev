@@ -2,9 +2,9 @@
   "emailDomain": "gkshop.org",
   "xsound": false,
   "RealTime": false,
-  "Picturequality": 0.85,
+  "Picturequality": 0.95,
   "ImageSizeLimitMB": 10,
-  "PictureType": "jpg",
+  "PictureType": "webp",
   "Valebring": false,
   "GamblingGame" : true,
   "qbitPurchase": false,
@@ -48,6 +48,7 @@
       "de": "Deutsch",
       "en": "English",
       "fr": "Français",
+      "nl": "Nederlands",
       "tr": "Türkçe"
     }
   },
@@ -452,6 +453,16 @@
       "icons": "/html/img/icons/music.png",
       "categori": "social",
       "url": "/mhome",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": true
+    },
+    {
+      "name": "Job Center",
+      "icons": "/html/img/icons/jobcenter.png",
+      "categori": "jobs",
+      "url": "/jobcenter",
       "blockedjobs": {},
       "allowjob": {},
       "signal": true,

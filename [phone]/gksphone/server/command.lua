@@ -115,3 +115,21 @@ Config.Core.Commands.Add("phonenewnumber", 'Create a new phone number', {{name =
       FreamworkNotify(src, 'You did not write the required information', 'error')
   end
 end, 'god')
+
+Config.Core.Commands.Add("adminauth", 'Admin Authentication', {{name = "auth", help = "true/false"}}, true, function(source, args)
+  local src = source
+  local AdminAuth = false
+  if args[1] then
+    local auth = args[1]
+    if auth == "true" then
+      AdminAuth = true
+      TriggerClientEvent('gksphone:client:adminAuth', src, AdminAuth)
+      FreamworkNotify(src, 'Admin Authentication is turned on', 'success')
+    else
+      TriggerClientEvent('gksphone:client:adminAuth', src, AdminAuth)
+      FreamworkNotify(src, 'Admin Authentication is turned off', 'success')
+    end
+  else
+    FreamworkNotify(src, 'You did not write the required information', 'error')
+  end
+end, 'god')

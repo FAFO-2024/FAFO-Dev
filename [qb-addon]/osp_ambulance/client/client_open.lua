@@ -15,6 +15,9 @@ lastStandAnim = "writhe_loop"
 deadAnimDict = "dead"
 deadAnim = "dead_a"
 
+if Config.UseXsound then
+    xSound = exports.xsound
+end
 
 if Config.Framework == 'qb' then
     QBCore = exports['qb-core']:GetCoreObject()
@@ -125,9 +128,11 @@ if Config.Framework == 'qb' then
     end
 
     RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
+        DebugPrint('loading onplayerloaded event')
         exports.spawnmanager:setAutoSpawn(false)
         initLanguages()
         Wait(Config.startDamageTimer)
+        DebugPrint('loading player data')
         local ped = PlayerPedId()
         local player = PlayerId()
         SetEntityMaxHealth(ped, 200)
@@ -135,6 +140,7 @@ if Config.Framework == 'qb' then
         SetPlayerHealthRechargeMultiplier(player, 0.0)
         SetPlayerHealthRechargeLimit(player, 0.0)
         local data = lib.callback.await('osp_ambulance:getWoundData', 1000)
+        DebugPrint('status: ', BodyDamage.isDead, BodyDamage.inLastStand)
         if data then
             BodyDamage = data
             BodyDamage.ServerId = GetPlayerServerId(NetworkGetPlayerIndexFromPed(PlayerPedId()))
@@ -153,6 +159,7 @@ if Config.Framework == 'qb' then
             else
                 if BodyDamage.playerHealth ~= nil then
                     -- SetEntityHealth(ped, BodyDamage.playerHealth)
+                    -- SetPedArmour(ped, BodyDamage.playerArmour)
                 end
             end
         end
@@ -179,7 +186,7 @@ if Config.Framework == 'qb' then
                 TriggerEvent('osp_ambulance:giveWheelChair', timeLeft.time)
             end
         end
-        TriggerServerEvent("police:server:UpdateBlips")
+        -- TriggerServerEvent("police:server:UpdateBlips")
         PlayerLoaded = true
         BodyDamage.playerName = GetCharacterName()
         LocalPlayer.state:set('BodyDamage',  BodyDamage, true)
@@ -225,7 +232,6 @@ if Config.Framework == 'qb' then
         local isauth = false
         for _,x in pairs(Config.AmbulanceJobs) do
             if PlayerJob.name == x then
-                ReloadJobInteractions()
                 onDuty = PlayerJob.onduty
                 if onDuty then
                     TriggerServerEvent("hospital:server:AddDoctor", PlayerJob.name)
@@ -235,6 +241,7 @@ if Config.Framework == 'qb' then
         if not isauth then
             TriggerServerEvent("hospital:server:RemoveDoctor", PlayerJob.name)
         end
+        ReloadJobInteractions()
     end)
     
     RegisterNetEvent('QBCore:Client:SetDuty', function(duty)
@@ -429,6 +436,7 @@ elseif Config.Framework == 'esx' then
             else
                 if BodyDamage.playerHealth ~= nil then
                     -- SetEntityHealth(ped, BodyDamage.playerHealth)
+                    -- SetPedArmour(ped, BodyDamage.playerArmour)
                 end
             end
         end
@@ -460,7 +468,6 @@ elseif Config.Framework == 'esx' then
         for _,x in pairs(Config.AmbulanceJobs) do
             if PlayerJob.name == x then
                 onDuty = true
-                ReloadJobInteractions()
                 if onDuty then
                     isauth = true
                     TriggerServerEvent("hospital:server:AddDoctor", PlayerJob.name)
@@ -471,6 +478,7 @@ elseif Config.Framework == 'esx' then
         if not isauth then
             TriggerServerEvent("hospital:server:RemoveDoctor", PlayerJob.name)
         end
+        ReloadJobInteractions()
     end)
 
     AddEventHandler('onResourceStart', function(name)
@@ -526,7 +534,7 @@ RegisterNetEvent('EMSToggle:Duty', function()
     onDuty = not onDuty
     if Config.Framework == 'qb' then
         TriggerServerEvent("QBCore:ToggleDuty")
-        TriggerServerEvent("police:server:UpdateBlips")
+        -- TriggerServerEvent("police:server:UpdateBlips")
     else
         if onDuty then
             TriggerServerEvent("hospital:server:AddDoctor", PlayerJob.name)
@@ -537,6 +545,75 @@ RegisterNetEvent('EMSToggle:Duty', function()
         end
     end
 end)
+
+
+DutyBlips = {}
+RegisterNetEvent('osp_ambulance:jobBlipsCl', function(players)
+    for _,x in pairs(Config.AmbulanceJobs) do
+        if onDuty and PlayerJob.name == x then
+            if DutyBlips then
+                for _, v in pairs(DutyBlips) do
+                    RemoveBlip(v)
+                end
+            end
+            DutyBlips = {}
+            if players then
+                for _, data in pairs(players) do
+                    local id = GetPlayerFromServerId(tonumber(data.source))
+                    CreateDutyBlips(id, data.label, data.job, data.location)
+                end
+            end
+        end
+    end
+end)
+
+Citizen.CreateThread(function()
+    while true do
+        local auth = false
+        for _,x in pairs(Config.AmbulanceJobs) do
+            if onDuty and PlayerJob.name == x then
+                auth = true
+            end
+        end
+        if not auth then
+            if DutyBlips then
+                for _, v in pairs(DutyBlips) do
+                    RemoveBlip(v)
+                end
+                DutyBlips = {}
+            else
+                break
+            end
+        end
+        Wait(5000)
+    end
+end)
+
+function CreateDutyBlips(playerId, playerLabel, playerJob, playerLocation)
+    local ped = GetPlayerPed(playerId)
+    local blip = GetBlipFromEntity(ped)
+    if not DoesBlipExist(blip) then
+        if NetworkIsPlayerActive(playerId) then
+            blip = AddBlipForEntity(ped)
+        else
+            blip = AddBlipForCoord(playerLocation.x, playerLocation.y, playerLocation.z)
+        end
+        SetBlipSprite(blip, 1)
+        ShowHeadingIndicatorOnBlip(blip, true)
+        SetBlipRotation(blip, math.ceil(playerLocation.w))
+        SetBlipScale(blip, 1.0)
+        SetBlipColour(blip, 5)
+        SetBlipAsShortRange(blip, true)
+        BeginTextCommandSetBlipName('STRING')
+        AddTextComponentString(playerLabel)
+        EndTextCommandSetBlipName(blip)
+        DutyBlips[#DutyBlips+1] = blip
+    end
+
+    if GetBlipFromEntity(PlayerPedId()) == blip then
+        RemoveBlip(blip)
+    end
+end
 
 
 function CreateBloodDropEvidence()
@@ -618,7 +695,7 @@ function TargetingBoxZone(name, coords, x,y,z, list1, list2, list3)
 end
 
 function TargetingEntityZone(entity, list1, list2, list3)
-    exports[Config.TargetName]:AddEntityZone(entity, entity, {
+    local id = exports[Config.TargetName]:AddEntityZone(entity, entity, {
         name = entity,
         heading = GetEntityHeading(entity),
         debugPoly = false,
@@ -632,6 +709,7 @@ function TargetingEntityZone(entity, list1, list2, list3)
         },
         distance = 4.0
     })
+    return id
 end
 
 function TargetEntity(entity, list1, list2, list3, list4, list5)
@@ -676,6 +754,7 @@ function RemoveTargetZone(entity)
     end
 end
 
+oxTargetIds = {}
 function RemoveZone(entity)
     if Config.UseOxTarget then
         exports.ox_target:removeZone(entity)
@@ -794,7 +873,7 @@ end
 
 function SetVehicleExtras(veh, table)
     for k,v in pairs(table) do
-        SetVehicleExtra(veh, k, v) 
+        SetVehicleExtra(veh, k, v)
     end
 end
 
@@ -805,6 +884,9 @@ function DebugPrint(...)
 end
 
 function TriggerSound(sound, coords, distance)
+    if Config.UseXsound then
+        return
+    end
     while not RequestScriptAudioBank('audiodirectory/custom_sounds', false) do Wait(0) end
     local soundId = GetSoundId()
     PlaySoundFromCoord(soundId, sound, coords, 'special_soundset', false, distance)
@@ -817,8 +899,6 @@ function TriggerSound(sound, coords, distance)
 	end)
     return soundId
 end
-
-
 
 AddEventHandler('onResourceStop', function(r)
     if r == GetCurrentResourceName() then
@@ -840,6 +920,10 @@ function CPRFunction(data)
     local performingcpr = true
     local ent = Player(data.PlayerId)
     local stat = ent.state.BodyDamage
+    if not stat.isDead then
+        SendTextMessage(lang.interactions.medicalHeader, 'The player is not dead!', 3000, "error")
+        return
+    end
     local startingPulse = stat.Pulse
     local startingState = stat.cardiacState
     local revived = false
@@ -872,13 +956,14 @@ function CPRFunction(data)
                     --     TriggerServerEvent('osp_ambulance:partialRevive', data.PlayerId)
                     --     revived = true
                     -- end
-                    TriggerServerEvent('osp_ambulance:partialRevive', data.PlayerId)
+                    TriggerServerEvent('osp_ambulance:partialReviveSv', data.PlayerId)
                     revived = true
                     ClearPedTasks(PlayerPedId())
                 end
             else
+                local ent = Player(data.PlayerId)
+                local stat = ent.state.BodyDamage
                 stat.beingPerformedCPROn = false
-                TriggerServerEvent('osp_ambulance:SaveDataSv', data.PlayerId, stat)
                 ClearPedTasks(PlayerPedId())
                 stat.Pulse = startingPulse
                 stat.cardiacState = startingState
@@ -887,13 +972,16 @@ function CPRFunction(data)
                 break
             end
             if revived then
-                ClearPedTasks(PlayerPedId())
-                table.insert(stat.MessageLog, lang.vitals.cpr_was_performed_until..' | '.. time)
-                Wait(100)
+                Wait(500)
                 local ent = Player(data.PlayerId)
                 local stat = ent.state.BodyDamage
                 stat.beingPerformedCPROn = false
+                table.insert(stat.MessageLog, lang.vitals.cpr_was_performed_until..' | '.. time)
                 TriggerServerEvent('osp_ambulance:SaveDataSv', data.PlayerId, stat)
+                ClearPedTasks(PlayerPedId())
+                break
+            end
+            if not performingcpr then
                 break
             end
             Wait(2000)
@@ -914,7 +1002,7 @@ function CPRFunction(data)
                     }
                 )
                 performingcpr = false
-                TriggerServerEvent('osp_ambulance:SaveDataSv', data.PlayerId, stat)
+                -- TriggerServerEvent('osp_ambulance:SaveDataSv', data.PlayerId, stat)
                 break
             end
             Wait(3)
@@ -944,11 +1032,13 @@ RegisterNetEvent("osp_ambulance:OnPlayerDeath", function()
 end)
 
 RegisterNetEvent("osp_ambulance:OnPlayerDead", function()
+    -- exports['pma-voice']:overrideProximityCheck()
     -- You can use this event to do something when the player dies/is dead
 end)
 
 RegisterNetEvent("osp_ambulance:OnPlayerSpawn", function()
-    -- You can use this event to do something when the player spawns
+    -- exports['pma-voice']:resetProximityCheck()
+    -- You can use this event to do something when the player spawns 
 end)
 
 function dispatchNotify()
@@ -1078,20 +1168,27 @@ roofPoly = {}
 mainPoly = {}
 function ReloadJobInteractions()
     if Config.UseTarget then
-        for k,v in pairs(Config.Locations["duty"]) do
-            RemoveZone('duty'..k)
-        end
-        for k,v in pairs(Config.Locations["stash"]) do
-            RemoveZone('stash'..k)
-        end
-        for k,v in pairs(Config.Locations["shop"]) do
-            RemoveZone('shop'..k)
-        end
-        for k,v in pairs(Config.Locations["roof"]) do
-            RemoveZone('roof'..k)
-        end
-        for k,v in pairs(Config.Locations["main"]) do
-            RemoveZone('main'..k)
+        if Config.UseOxTarget then
+            for k,v in pairs(oxTargetIds) do
+                RemoveZone(v)
+            end
+            oxTargetIds = {}
+        else
+            for k,v in pairs(Config.Locations["duty"]) do
+                RemoveZone('duty'..k)
+            end
+            for k,v in pairs(Config.Locations["stash"]) do
+                RemoveZone('stash'..k)
+            end
+            for k,v in pairs(Config.Locations["shop"]) do
+                RemoveZone('shop'..k)
+            end
+            for k,v in pairs(Config.Locations["roof"]) do
+                RemoveZone('roof'..k)
+            end
+            for k,v in pairs(Config.Locations["main"]) do
+                RemoveZone('main'..k)
+            end
         end
     else
         if #signPoly > 0 then
@@ -1246,7 +1343,7 @@ function ReloadJobInteractions()
             for k, v in pairs(Config.Locations["duty"]) do
                 for _,x in pairs(Config.AmbulanceJobs) do
                     if PlayerJob.name == x then
-                        TargetingBoxZone("duty"..k, v, 1.5,1,2,
+                        oxTargetIds[#oxTargetIds+1] = TargetingBoxZone("duty"..k, v, 1.5,1,2,
                             {
                                 type = "client",
                                 event = "EMSToggle:Duty",
@@ -1261,7 +1358,7 @@ function ReloadJobInteractions()
             for k, v in pairs(Config.Locations["stash"]) do
                 for _,x in pairs(Config.AmbulanceJobs) do
                     if PlayerJob.name == x then
-                        TargetingBoxZone("stash" .. k, v, 1,1,2,
+                        oxTargetIds[#oxTargetIds+1] = TargetingBoxZone("stash" .. k, v, 1,1,2,
                             {
                                 type = "client",
                                 event = "osp_ambulance:stash",
@@ -1276,7 +1373,7 @@ function ReloadJobInteractions()
             for k, v in pairs(Config.Locations["shop"]) do
                 for _,x in pairs(Config.AmbulanceJobs) do
                     if PlayerJob.name == x then
-                        TargetingBoxZone("shop" .. k, v, 1,1,2,
+                        oxTargetIds[#oxTargetIds+1] = TargetingBoxZone("shop" .. k, v, 1,1,2,
                             {
                                 type = "client",
                                 event = "osp_ambulance:shop",
@@ -1291,7 +1388,7 @@ function ReloadJobInteractions()
             for k, v in pairs(Config.Locations["roof"]) do
                 for _,x in pairs(Config.AmbulanceJobs) do
                     if PlayerJob.name == x then
-                        TargetingBoxZone("roof" .. k, v, 2,2,2,
+                        oxTargetIds[#oxTargetIds+1] = TargetingBoxZone("roof" .. k, v, 2,2,2,
                             {
                                 type = "client",
                                 event = "osp_ambulance:elevator_roof",
@@ -1306,7 +1403,7 @@ function ReloadJobInteractions()
             for k, v in pairs(Config.Locations["main"]) do
                 for _,x in pairs(Config.AmbulanceJobs) do
                     if PlayerJob.name == x then
-                        TargetingBoxZone("main" .. k, v, 1.5,1.5,2,
+                        oxTargetIds[#oxTargetIds+1] = TargetingBoxZone("main" .. k, v, 1.5,1.5,2,
                             {
                                 type = "client",
                                 event = "osp_ambulance:elevator_main",
@@ -1658,6 +1755,7 @@ RegisterCommand("medicalsystem", function(source, args, rawCommand)
     )
 end, false)
 
+
 RegisterCommand("code", function(source, args, rawCommand)
     for k,v in pairs(Config.IncomingScreenPos) do
         SendDuiMessage(incomingDuiObj[k], json.encode({
@@ -1667,10 +1765,14 @@ RegisterCommand("code", function(source, args, rawCommand)
     end
     for k,v in pairs(Config.IncomingScreenSoundPos) do
         TriggerSound('codeblue', v, Config.IncomingScreenSoundRange)
+        if Config.UseXsound then
+            xSound:PlayUrlPos("codeblue",'codeblue.mp3', 1.0, Config.IncomingScreenSoundPos, false)
+            xSound:Distance("codeblue", Config.IncomingScreenSoundRange)
+            xSound:destroyOnFinish("codeblue", true)
+        end
     end
 
 end, false)
-
 
 
 
@@ -1715,7 +1817,6 @@ exports('isDead', function(playerid)
     end
     return false
 end)
-
 
 RegisterNetEvent("osp_ambulance:SendAttachCl")
 AddEventHandler("osp_ambulance:SendAttachCl", function(ped, pos)
@@ -2312,4 +2413,3 @@ function OpenCloakroom()
     })
     lib.showContext('cloakroom')
 end
-

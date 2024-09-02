@@ -24,8 +24,6 @@ lang = {
         injected_saline_pack500ml = 'Started injecting a 500ml saline pack in the patient',
         done_saline_pack250ml = 'Stopped refilling the 250ml saline pack in the patient',
         done_saline_pack500ml = 'Stopped refilling the 500ml saline pack in the patient',
-        injected_saline_pack250ml = 'Started injecting a 250ml saline pack in the patient',
-        injected_saline_pack500ml = 'Started injecting a 500ml saline pack in the patient',
         cpr_was_performed_until = 'CPR was performed on the patient until'
     },
     interactions = {
@@ -282,6 +280,7 @@ lang = {
     },
     wheelchair = {
         wheelchair = 'Wheelchair',
+        crutch = 'Crutch',
         time_in_crutch = 'Time in crutch',
         time_in_wheelchair = 'Time in wheelchair',
         invalid_input = 'Invalid input',
@@ -291,6 +290,15 @@ lang = {
         minutes = 'minutes',
         select_patient = 'Select patient',
         player_id = 'Player ID:',
+    },
+    store = {
+        currency = '$',
+        stock = 'Stock:',
+        cost = 'Cost:',
+        store ='Medical Store',
+        want_to_buy = 'The amount you want to buy',
+        invalid = 'Input invalid!',
+        amount = 'Amount',
     },
     update1 = {
         no_bloodloss = 'None',

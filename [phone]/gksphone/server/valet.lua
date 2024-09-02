@@ -32,7 +32,7 @@ Config.Core.Functions.CreateCallback('gksphone:server:vale:getVehicles', functio
 
             local vehicleData = Config.Core.Shared.Vehicles[v.vehicle]
             if vehicleData then
-                v.type = vehicleData.categoryLabel
+                v.type = vehicleData.category or "Car"
                 props.model = v.vehicle
                 v.model = vehicleData.name
                 props.hash = vehicleData.hash
@@ -49,8 +49,10 @@ Config.Core.Functions.CreateCallback('gksphone:server:vale:getVehicles', functio
                 if vehicleData and (Config.Garages[v.garage] ~= nil) then
                     if v.state == 1 then
                         v.garage = Config.Garages[v.garage]["label"]
-                    else
+                    elseif v.state == 2 then
                         v.garage = "Impounded"
+                    elseif v.state == 0 then
+                        v.garage = "Out"
                     end
                 else
                     if v.state == 2 or v.state == 0 then
@@ -130,9 +132,13 @@ Config.Core.Functions.CreateCallback("gksphone:server:vale:vehiclebring", functi
                         return
                     end
                 else
-                    if tonumber(vehicles.state) ~= 1 then
+                    if vehicles.state == 2 then
                         debugprint("gksphone:server:vale:vehiclebring | Vehicle is impounded | CitizenID: " .. citizenid .. " | Plate: " .. plate)
                         cb("carimpounded")
+                        return
+                    elseif vehicles.state == 0 then
+                        debugprint("gksphone:server:vale:vehiclebring | Vehicle is not in garage | CitizenID: " .. citizenid .. " | Plate: " .. plate)
+                        cb("carnotingarage")
                         return
                     end
                 end
@@ -146,22 +152,6 @@ Config.Core.Functions.CreateCallback("gksphone:server:vale:vehiclebring", functi
                         debugprint("gksphone:server:vale:vehiclebring | Vehicle bringing fee | CitizenID: " .. citizenid .. " | Plate: " .. plate .. " | Price: " .. Config.ValePrice)
                     end
                 end
-
-                local model = GetHashKey(vehicles.vehicle)
-                model = type(model) == 'string' and joaat(model) or model
-
-                local heading = coords.w and coords.w or 0.0
-                local vehicleBring = VehicleSpawn(source, model, coords, heading, modelType)
-                Wait(1000)
-                debugprint("vehicleBring", vehicleBring, model, coords, heading, modelType)
-                if not vehicleBring  or not DoesEntityExist(vehicleBring) then
-                    debugprint("gksphone:server:vale:vehiclebring | Vehicle not spawned | CitizenID: " .. citizenid .. " | Plate: " .. plate)
-                    xPlayer.Functions.AddMoney('bank', Config.ValePrice, "vale")
-                    cb("error")
-                    return
-                end
-
-                local oxyNetId = NetworkGetNetworkIdFromEntity(vehicleBring)
 
                 if Config.cdGarages then
                     MySQL.Async.execute('UPDATE player_vehicles SET  `in_garage` = @in_garage WHERE `plate` = @plate', {
@@ -178,8 +168,7 @@ Config.Core.Functions.CreateCallback("gksphone:server:vale:vehiclebring", functi
                 end
                 
                 debugprint("gksphone:server:vale:vehiclebring | Vehicle spawned | CitizenID: " .. citizenid .. " | Plate: " .. plate)
-                debugprint("Test", {vehicleBring, vehicles})
-                cb(oxyNetId, vehicles)
+                cb("spawned", vehicles)
             else
                 debugprint("gksphone:server:vale:vehiclebring | Not enough money | CitizenID: " .. citizenid .. " | Plate: " .. plate)
                 cb("nomoney")

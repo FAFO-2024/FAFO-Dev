@@ -19,7 +19,7 @@ Config.UseTarget = true -- Set to false if you don't want to use targetting at a
 Config.UseOxTarget = false -- Set to false if you don't want to use ox_target
 Config.TargetName = 'qb-target' -- The name of the target resource (only needed if you use qb-target or qtarget)
 Config.Dispatch = 'default' -- Usable dispatch inputs: 'default', 'ps', 'other'
-
+Config.UseXsound = false -- If set to false you'll use native audio, which is to be recommended to everyone who's got it working. 
 
 
 Config.OpenKey = 'o' -- The default key to open the damage menu
@@ -27,7 +27,10 @@ Config.SkellyKey = 'k' -- The default key to open the skelly overview
 Config.LockMedicalMenu = false -- Set to true if you want to lock the medical menu to only be opened by EMS
 
 Config.ServerDelay = 100 -- How many ms the server is behind by. Recommended to keep above 100ms. Should say in your server console by how far behind your server is.
-Config.Debug = false -- Enable or disable debug mode to investigate issues with the script
+Config.Debug = false -- Enable or disable debug mode to investigate issues with the scripts
+
+
+
 
 Config.CustomDeathScreen = false -- Enable of disable a customised death timer screen, keep at false if you don't know what you are doing
 Config.PopUpSkelly = true
@@ -40,11 +43,12 @@ Config.AmbulanceJobs = {
 Config.InteractionDict = 'anim@heists@narcotics@funding@gang_idle'
 Config.InteractionAnim = 'gang_chatting_idle01'
 
-
+Config.JobBlips = true -- Whether or not ambulance personel can see eachother on the map.
 Config.MinimalDoctors = 1 -- How many players with the ambulance job to prevent the hospital check-in system from being used
 Config.DocCooldown = 1 -- Cooldown between doctor calls allowed, in minutes
 Config.AIHealTimer = 10 -- How long it will take to be healed after checking in, in seconds
 Config.WipeInventoryOnRespawn = false -- Enable or disable removing all the players items when they respawn at the hospital
+Config.ExcludeItems = {'iphone', 'anotheritem'}
 Config.Helicopter = "c3medhawk" -- Helicopter model that players with the ambulance job can use
 Config.BillCost = 500 -- Price that players are charged for using the hospital check-in system
 Config.LastStandTime = 240 -- How long before the player is percived as medically dead (in seconds)
@@ -493,7 +497,9 @@ Config.IncomingScreenPos = { -- The position of the incoming screen
     vector4(332.6308, -581.5911, 46.0, 251.2287),
     vector4(300.8384, -582.8441, 46.0, 91.7694)
 }
-Config.IncomingScreenSoundPos = vector3(306.2124, -584.6828, 43.2741)
+Config.IncomingScreenSoundPos = {
+    vector3(306.2124, -584.6828, 43.2741),
+}
 Config.IncomingScreenSoundRange = 50
 
 -- STATIONARY ECG CONFIGURATION (ICU SCREENS)
@@ -945,3 +951,5 @@ Config.BandageModifier = {
     ["QuickClot"] = {effectivenessModifiers = {["abrasion"] = 0.85, ["avulsion"] = 0.8, ["contusion"] = 1.0, ["crush"] = 0.6, ["cut"] = 0.6, ["laceration"] = 0.8, ["velocitywound"] = 0.8, ["lowvelocitywound"] = 0.5, ["mediumvelocitywound"] = 0.5, ["highvelocitywound"] = 0.5, ["puncturewound"] = 0.7, ["burn"] = 0.4 }},
     ["Packing"] = {effectivenessModifiers = {["abrasion"] = 0.7, ["avulsion"] = 0.6, ["contusion"] = 1.0, ["crush"] = 0.7, ["cut"] = 0.7, ["laceration"] = 0.7, ["velocitywound"] = 0.6, ["lowvelocitywound"] = 0.5, ["mediumvelocitywound"] = 0.5, ["highvelocitywound"] = 0.5, ["puncturewound"] = 0.7, ["burn"] = 0.4 }},
 }
+
+
