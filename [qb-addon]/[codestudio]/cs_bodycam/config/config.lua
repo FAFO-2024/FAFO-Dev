@@ -18,7 +18,7 @@ CodeStudio.Dashboard = {
         Title = 'Los Santos Police Department',  -- Department Title
         Logo = 'police.png',        --Logo from: cs_bodycam\ui\image  (*Optional)
         Location = {            -- Add Physical Location to access dashboard (*Optional Put false)
-            vector4(604.73, -8.17, 87.99, 63.51)
+            vector4(459.74, -989.2, 24.91, 279.71)--CHANGE ME
         }
     },
     ['sasp'] = {              -- These Job can use bodycame and dashcam
@@ -26,7 +26,7 @@ CodeStudio.Dashboard = {
         Title = 'San Andreas State Patrol',  -- Department Title
         Logo = 'sasp.png',        --Logo from: cs_bodycam\ui\image  (*Optional)
         Location = {            -- Add Physical Location to access dashboard (*Optional Put false)
-            vector4(601.68, -16.18, 87.99, 100.87)
+            vector4(459.74, -989.2, 24.91, 279.71)--CHANGE ME
         }
     },
     ['sheriff'] = {              -- These Job can use bodycame and dashcam
@@ -34,37 +34,45 @@ CodeStudio.Dashboard = {
         Title = 'Los Santos Sheriff Department',  -- Department Title
         Logo = 'sheriff.png',        --Logo from: cs_bodycam\ui\image  (*Optional)
         Location = {            -- Add Physical Location to access dashboard (*Optional Put false)
-            vector4(600.37, -19.93, 87.99, 65.95)
+            vector4(459.74, -989.2, 24.91, 279.71)--CHANGE ME
         }
     },
-    ['ambulance'] = {              -- These Job can use bodycame and dashcam
-        DashBoard_Access = 5,    -- Minimum rank required to view dashboard pannel
-        Title = 'Emergency Medical Services',  -- Department Title
-        Logo = 'ambulance.png',        --Logo from: cs_bodycam\ui\image  (*Optional)
+    ['ambulance'] = {             -- These Job can use bodycame and dashcam
+        DashBoard_Access = 4,     -- Minimum rank required to view dashboard pannel
+        Title = 'Pillbox Hospital Department',    -- Department Title
+        Logo = 'ambulance.png',      --Logo from: cs_bodycam\ui\image  (*Optional)
         Location = {            -- Add Physical Location to access dashboard (*Optional Put false)
-            vector4(-1030.61, -1413.59, 5.05, 78.62)
+            vector4(459.74, -989.2, 24.91, 279.71)--CHANGE ME
+        }
+    },
+    ['firefighter'] = {           -- These Job can use bodycame and dashcam
+        DashBoard_Access = 4,     -- Minimum rank required to view dashboard pannel
+        Title = 'Los Santos Fire Department',  -- Department Title
+        Logo = 'firefighter.png',        --Logo from: cs_bodycam\ui\image  (*Optional)
+        Location = {            -- Add Physical Location to access dashboard (*Optional Put false)
+            vector4(459.74, -989.2, 24.91, 279.71)--CHANGE ME
         }
     },
 
 
 
     -- EXAMPLE ON HOW TO USE WITH STANDALONE ---
-    ['put_perms_here'] = {           -- Enter Ace Group/Disocrd/Steam to which you want to be a part of this dashboard
-        DashBoard_Access = 'put_perms_here',    -- Enter Ace Group/Disocrd/Steam to which you want to allow view dashboard access
+
+    ['put_perms_here'] = {           -- Enter Ace Group/Discord/Steam to which you want to be a part of this dashboard group
+        DashBoard_Access = 'put_perms_here',    -- Enter Ace Group/Discord/Steam to which you want to allow view dashboard access
         Title = 'YOUR Department',   -- Department Title
         Logo = 'police.png'
     },
 }
 
 CodeStudio.DashBoard_InsideVehicle = {  --Allow Certain Vehicles to Access Dashboard Panel and if you want to allow on all vehicles simply put false
-[`sonomcc`] = true,
-[`nm_redeye`] = true,
-[`nm_raptor`] = true,
-[`nm_cam69`] = true,
-[`durangopru`] = true,
-[`fdsilverado`] = true,
-[`f250pov`] = true,
-[`f150pov`] = true,
+-- CodeStudio.DashBoard_InsideVehicle = false  if you to allow dashboard use in every vehicle
+    [`nm_redeye`] = true,
+    [`nm_raptor`] = true,
+    [`nm_bolide`] = true,
+    [`nm_cam69`] = true,
+    [`durangopru`] = true,
+    [`fdsilverado`] = true,
 }
 
 --- Required For Dashboard Locations Interaction ---
@@ -76,8 +84,8 @@ CodeStudio.UseTextUI = false         --Enable/Disable TextUI To access dashboard
 -- BODY CAM + RECORDING SETTINGS --
 
 CodeStudio.Default_BodyCam = {    -- This is Deault Format of Bodycam, If allowed it fetches different format's from CodeStudio.Dashboard
-    Title = "Law Enforcement",
-    SubHeading = 'Civilian',
+    Title = "Los Santos First Responders",
+    SubHeading = 'FR',
     Logo = 'default.png'
 }
 
@@ -98,9 +106,12 @@ CodeStudio.BodyCam = {
 CodeStudio.Recording = {
     Enable = true,
     Fivemanage = false, --If you are using Fivemanage API
-    WebhookAPI = 'https://discord.com/api/webhooks/1260400552693727293/3Wp9iEg8sGTnxU6zJUH1hIQGVdf4imzcO-RkP53FCxEt-CAk4CemlUpRgGICA5wdvMA9',  --If you are using Fivemanage then put api key here otherwise put discord webhook
-    RecordFPS = 45, -- At What FPS do you want recordings
+    Fivemerr = false,   --If you are using Fivemerr API
+    RecordFPS = 60, -- At What FPS do you want recordings
+    RecordMic = true,  --Microphone capture with video recordings
     Max_Recording_Time = 1    ---Max time ALlowed to Record a single clip (In Minutes)
+
+    -- RECORDING WEBHOOK OR API IS IN SV_FUNCTION.LUA --
 }
 
 
@@ -118,40 +129,21 @@ CodeStudio.DashCam = {
         CommandName = 'dashcam'
     },
     Restrict_Vehicle = {  
-        -- if you dont want to use this and allow dashcam to be used in every vehicle simply put Restrict_Vehicle = false
+        -- Restrict_Vehicle = false  if you to allow dashcam to be used in every vehicle
         -- You can restrict usage of dashcam to these vehicles --
-        [`sonomcc`] = true,
-        [`18chargerl2`] = true,
-        [`18fpisl2`] = true,
-        [`19tahoel2`] = true,
-        [`20fpiul2`] = true,
-        [`f250l2nc`] = true,
-        [`nm_redeye`] = true,
-        [`nm_raptor`] = true,
-        [`nm_cam69`] = true,
-        [`durangopru`] = true,
-        [`fdsilverado`] = true,
-        [`f250pov`] = true,
-        [`f150pov`] = true,
+        [`police`] = true,
+        [`polgauntlet`] = true,
+        [`ambulance`] = true,
     }
 }
 
 CodeStudio.DebugCamera = false -- Make it true if you want to get new camera offset for some vehicle
 CodeStudio.VehCamOffset = {
     -- The script comes with its own offset finder just set DebugCamera to true and get the camera offset.
-    [`police2`] = {-3.000000, -3.330000, -3.530000},  -- Example vehicle.
-    [`sonomcc`] = {-3.000000, -3.330000, -3.530000},
-    [`18chargerl2`] = {-3.000000, -3.330000, -3.530000},
-    [`18fpisl2`] = {-3.000000, -3.330000, -3.530000},
-    [`19tahoel2`] = {-3.000000, -3.330000, -3.530000},
-    [`20fpiul2`] = {-3.000000, -3.330000, -3.530000},
-    [`f250l2nc`] = {-3.000000, -3.330000, -3.530000},
-    [`nm_redeye`] = {-3.000000, -3.330000, -3.530000},
-    [`nm_raptor`] = {-3.000000, -3.330000, -3.530000},
-    [`nm_cam69`] = {-3.000000, -3.330000, -3.530000},
-    [`durangopru`] = {-3.000000, -3.330000, -3.530000},
-    [`fdsilverado`] = {-3.000000, -3.330000, -3.530000},
-    [`f250pov`] = {-3.000000, -3.330000, -3.530000},
-    [`f150pov`] = {-3.000000, -3.330000, -3.530000},
+    [`police2`] = {-3.000000, -3.330000, -3.530000},  -- Example vehicle. 
     -- [`vehiclespawncode`] = {0.000000, 0.510000, 0.630000},
 }
+
+
+
+

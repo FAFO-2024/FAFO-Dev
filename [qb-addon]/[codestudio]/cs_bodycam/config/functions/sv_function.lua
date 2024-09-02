@@ -5,6 +5,18 @@ elseif CodeStudio.ServerType == "ESX" then
 end
 
 
+
+--[RECORDING FEEATURE] If you are using Fivemanage or Fivemerr then put api key here otherwise put discord webhook  *[PROTECTED]
+
+lib.callback.register('cs:bodycam:fetchWebhookAPI', function(source)
+    local WebhookAPI = 'https://discord.com/api/webhooks/1276659270103859394/me8gxfeuVuWHT3um-o5in1n2uFKo5dXjg6hYBnc8njGCaszEBHx7n2sbz74SIp-fbmR2'
+    return WebhookAPI
+end)
+
+
+
+
+
 function GetIdentifier(source)
     if CodeStudio.ServerType == 'QB' then
         local Player = QBCore.Functions.GetPlayer(source)

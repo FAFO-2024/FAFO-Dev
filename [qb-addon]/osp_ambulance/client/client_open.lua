@@ -746,6 +746,20 @@ function TargetEntity(entity, list1, list2, list3, list4, list5)
 end
 
 
+function registerContext(data)
+    lib.registerContext({
+        id = data.id,
+        title = data.title,
+        options = data.options
+    })
+end
+
+function showContext(id)
+    lib.showContext(id)
+end
+
+
+
 function RemoveTargetZone(entity)
     if Config.UseOxTarget then
         exports.ox_target:removeLocalEntity(entity, entity)
@@ -2381,7 +2395,7 @@ Weapons = {
 
 
 function OpenCloakroom()
-    lib.registerContext({
+    registerContext({
         id = 'cloakroom',
         title = 'Cloakroom',
         options = {
@@ -2411,5 +2425,5 @@ function OpenCloakroom()
         },
         }
     })
-    lib.showContext('cloakroom')
+    showContext('cloakroom')
 end

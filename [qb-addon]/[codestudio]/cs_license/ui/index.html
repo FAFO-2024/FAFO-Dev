@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css'>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+     <div class="wrapper">
+        <div class="main-header">
+            <div class="main-heading-box">
+                <div class="main-heading-title">License Management Panel</div>
+                <div class="main-heading-nav-bar">
+                    <div class="create-cards-btn selected-option">Create</div>
+                    <div class="created-cards-btn">Manage</div>
+                    <div class="issued-cards-btn">Issued</div>
+                    <div class="id-panel-exit-btn-container">
+                        <div class="id-panel-esc-btn">ESC</div>
+                        <div class="id-panel-close-btn">Close</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-middle">
+            <div class="create-id-panel-container">
+                <div class="create-id-panel-main">
+                    <div class="created-cards-header">
+                        <div class="created-header-title-cont">
+                            <div class="created-header-logo">
+                                <i class="fa-solid fa-folder-plus"></i>
+                            </div>
+                            <div class="created-header-title">
+                                <div class="created-header-main-title"></div>
+                                <div class="created-header-sub-title"></div>
+                            </div>
+                        </div>
+                        <div class="created-header-search-cont">
+                            <div class="create-id-btn"></div>
+                        </div>
+                    </div>
+                    <div class="create-id-nav-container">
+                        <div class="create-id-nav-box">
+                            <div class="create-id-nav-options" data-target="layout">Layout</div>
+                            <div class="create-id-nav-options" data-target="colour">Colour</div>
+                            <div class="create-id-nav-options" data-target="logo">Logo</div>
+                            <div class="create-id-nav-options" data-target="card-content">Card Content</div>
+                            <div class="create-id-nav-options" data-target="extras">Extras</div>
+                        </div>
+                    </div>
+                    <div id="layout" class="create-id-layout-container">
+                        <div class="create-id-landscape-layout-cont selected-option" data-layout="landscape">
+                            <div class="create-id-landscape-layout-header">Landscape</div>
+                            <div class="create-id-landscape-image-box">
+                                <div class="create-id-landscape-image"></div>
+                            </div>
+                        </div>
+                        <div class="create-id-portrait-layout-cont" data-layout="portrait">
+                            <div class="create-id-portrait-layout-header">Portrait</div>
+                            <div class="create-id-portrait-image-box">
+                                <div class="create-id-portrait-image"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="colour" class="create-id-color-container">
+                        <div class="create-id-color-heading">Choose Card Color</div>
+                        <div class="create-id-color-middle">
+                            <div class="create-id-color-options-cont">
+                                <div class="create-id-color-options-box">
+                                    <div class="create-id-color-options-heading">Choose Body Colour</div>
+                                    <div class="create-id-color-options-content">
+                                        <div class="create-id-color-options-colorpicker" data-type="body">
+                                            <input type="color" id="bodyColorPicker" name="bodycolor" class="colorpicker">
+                                        </div>
+                                        <div class="create-id-color-options white" data-type="body"></div>
+                                        <div class="create-id-color-options light-blue" data-type="body"></div>
+                                        <div class="create-id-color-options light-green" data-type="body"></div>
+                                        <div class="create-id-color-options light-red" data-type="body"></div>
+                                        <div class="create-id-color-options dark-black" data-type="body"></div>
+                                        <div class="create-id-color-options dark-blue" data-type="body"></div>
+                                        <div class="create-id-color-options dark-green" data-type="body"></div>
+                                        <div class="create-id-color-options dark-red" data-type="body"></div>
+                                    </div>
+                                </div>
+                                <div class="create-id-color-options-box">
+                                    <div class="create-id-color-options-heading">Choose Body Text Colour</div>
+                                    <div class="create-id-color-options-content">
+                                        <div class="create-id-color-options-colorpicker widthCP" data-type="body-text">
+                                            <input type="color" id="bodyTextColorPicker" name="bodytextcolor" class="colorpicker">
+                                        </div>                                
+                                        <div class="create-id-color-options white" data-type="body-text"></div>
+                                        <div class="create-id-color-options light-white" data-type="body-text"></div>
+                                        <div class="create-id-color-options light-gray" data-type="body-text"></div>
+                                        <div class="create-id-color-options dark-black" data-type="body-text"></div>
+                                        <div class="create-id-color-options black" data-type="body-text"></div>
+                                    </div>
+                                </div>
+                                <div class="create-id-color-options-box">
+                                    <div class="create-id-color-options-heading">Choose Footer Colour</div>
+                                    <div class="create-id-color-options-content">
+                                        <div class="create-id-color-options-colorpicker" data-type="footer">
+                                            <input type="color" id="footerColorPicker" name="footercolor" class="colorpicker">
+                                        </div>
+                                        <div class="create-id-color-options white" data-type="footer"></div>
+                                        <div class="create-id-color-options light-blue" data-type="footer"></div>
+                                        <div class="create-id-color-options light-green" data-type="footer"></div>
+                                        <div class="create-id-color-options light-red" data-type="footer"></div>
+                                        <div class="create-id-color-options dark-black" data-type="footer"></div>
+                                        <div class="create-id-color-options dark-blue" data-type="footer"></div>
+                                        <div class="create-id-color-options dark-green" data-type="footer"></div>
+                                        <div class="create-id-color-options dark-red" data-type="footer"></div>
+                                    </div>
+                                </div>
+                                <div class="create-id-color-options-box">
+                                    <div class="create-id-color-options-heading">Choose Footer Text Colour</div>
+                                    <div class="create-id-color-options-content">
+                                        <div class="create-id-color-options-colorpicker widthCP" data-type="footer-text">
+                                            <input type="color" id="footerTextColorPicker" name="footertextcolor" class="colorpicker">
+                                        </div>
+                                        <div class="create-id-color-options white" data-type="footer-text"></div>
+                                        <div class="create-id-color-options dark-black" data-type="footer-text"></div>
+                                        <div class="create-id-color-options light-gray" data-type="footer-text"></div>
+                                        <div class="create-id-color-options dark-black" data-type="footer-text"></div>
+                                        <div class="create-id-color-options black" data-type="footer-text"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="create-id-color-demo-cont">
+                                <div class="create-id-demo-card landscape-card">
+                                    <div class="landscape-main-container">
+                                        <div class="landscape-header">
+                                            <div class="landscape-heading-title"></div>
+                                        </div>
+                                        <div class="landscape-middle"></div>
+                                        <div class="landscape-footer">
+                                            <span class="footer-text"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="create-id-demo-card portrait-card">
+                                    <div class="portrait-main-container">
+                                        <div class="portrait-header">
+                                            <div class="portrait-heading-title"></div>
+                                        </div>
+                                        <div class="portrait-middle"></div>
+                                        <div class="portrait-footer">
+                                            <span class="footer-text"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div id="logo" class="create-id-logo-container">
+                        <div class="create-id-logo-heading">Choose Logo Position</div>
+                        <div class="create-id-logo-middle">
+                            <div class="create-id-logo-options-cont" style="padding: 2vh;">
+                                <div class="create-id-logo-options-box selected-option" data-position="middle">Logo in the Middle of Card</div>
+                                <div class="create-id-logo-options-box" data-position="behind">Logo Behind Player Photo</div>
+                                <div class="create-id-logo-options-box" data-position="nologo">No Logo / Disable Logo from Card</div>                                
+                                <div class="create-id-logo-upload-box">
+                                    <div class="create-id-logo-options-heading">Upload Card Logo</div>
+                                    <div class="create-id-logo-upload-btn-cont">
+                                        <input type="url" class="create-id-logo-upload-input">
+                                        <div class="create-id-logo-upload-btn">Upload</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="create-id-logo-demo-cont">
+                                <div class="create-id-demo-card landscape-card">
+                                    <div class="landscape-center-logo-container">
+                                        <img src="image/default.png" class="landscape-center-logo">
+                                    </div>
+                                    <div class="landscape-main-container">
+                                        <div class="landscape-header">
+                                            <div class="landscape-heading-title"></div>
+                                        </div>
+                                        <div class="landscape-middle">
+                                            <div class="landscape-player-photo-container">
+                                                <div class="landscape-player-bg-logo-container">
+                                                    <img src="image/default.png" class="landscape-player-bg-logo">
+                                                </div>
+                                                <div class="landscape-player-image-container">
+                                                    <img src="image/player.png" class="landscape-player-image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="landscape-footer">
+                                            <span class="footer-text"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="create-id-demo-card portrait-card">
+                                    <div class="portrait-center-logo-container">
+                                        <img src="image/default.png" class="portrait-center-logo">
+                                    </div>
+                                    <div class="portrait-main-container">
+                                        <div class="portrait-header">
+                                            <div class="portrait-heading-title"></div>
+                                        </div>
+                                        <div class="portrait-middle">
+                                            <div class="portrait-player-photo-container">
+                                                <div class="portrait-player-bg-logo-container">
+                                                    <img src="image/default.png" class="portrait-player-bg-logo">
+                                                </div>
+                                                <div class="portrait-player-image-container">
+                                                    <img src="image/player.png" class="portrait-player-image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="portrait-footer">
+                                            <span class="footer-text"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="card-content" class="create-id-content-container">
+                        <div class="create-id-content-heading">Card Content</div>
+                        <div class="create-id-content-middle">
+                            <div class="create-id-content-options-cont">
+                                <div class="create-id-content-heading-cont">
+                                    <div class="create-id-content-options-heading">Add Card Heading</div>
+                                    <div class="create-id-content-heading-box">
+                                        <input class="create-id-heading-input">
+                                    </div>
+                                </div>
+                                <div class="create-id-content-heading-cont">
+                                    <div class="create-id-content-options-heading">Add Footer Heading</div>
+                                    <div class="create-id-content-heading-box">
+                                        <input class="create-id-footer-input">
+                                    </div>
+                                </div>
+                                <div class="create-id-content-options-box">
+                                    <div class="create-id-content-options-heading" style="height: 12%;">Add Card Inputs &nbsp;
+                                        <span style="font-size: 1.2vh; text-transform: capitalize; color: #22a77d;">(Note: You can only add upto 8 Inputs)</span>
+                                    </div>
+                                    <div class="create-id-content-options-select"></div>                                    
+                                </div>
+                            </div>
+                            <div class="create-id-content-demo-cont">
+                                <div class="create-id-demo-card landscape-card">
+                                    <div class="landscape-center-logo-container">
+                                        <img src="image/default.png" class="landscape-center-logo">
+                                    </div>
+                                    <div class="landscape-main-container">
+                                        <div class="landscape-header">
+                                            <div class="landscape-heading-title"></div>
+                                        </div>
+                                        <div class="landscape-middle">
+                                            <div class="landscape-player-photo-container">
+                                                <div class="landscape-player-bg-logo-container">
+                                                    <img src="image/default.png" class="landscape-player-bg-logo">
+                                                </div>
+                                                <div class="landscape-player-image-container">
+                                                    <img src="image/player.png" class="landscape-player-image">
+                                                </div>
+                                            </div>
+                                            <div class="landscape-player-info-container content-info-table"></div>
+                                        </div>
+                                        <div class="landscape-footer">
+                                            <span class="footer-text"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="create-id-demo-card portrait-card">
+                                    <div class="portrait-center-logo-container">
+                                        <img src="image/default.png" class="portrait-center-logo">
+                                    </div>
+                                    <div class="portrait-main-container">
+                                        <div class="portrait-header">
+                                            <div class="portrait-heading-title"></div>
+                                        </div>
+                                        <div class="portrait-middle">
+                                            <div class="portrait-player-photo-container">
+                                                <div class="portrait-player-bg-logo-container">
+                                                    <img src="image/default.png" class="portrait-player-bg-logo">
+                                                </div>
+                                                <div class="portrait-player-image-container">
+                                                    <img src="image/player.png" class="portrait-player-image">
+                                                </div>
+                                            </div>
+                                            <div class="portrait-player-info-container content-info-table-portrait"></div>
+                                        </div>
+                                        <div class="portrait-footer">
+                                            <span class="footer-text"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="create-id-content-custom-popup-cont">
+                                <div class="create-id-content-custom-input-popup">
+                                    <div class="add-custom-input-title">Add Custom Input</div>
+                                    <div class="add-custom-input-cont">
+                                        <input type="text" class="add-custom-input content-heading" placeholder="Add Heading">
+                                        <input type="text" class="add-custom-input content-content" placeholder="Add Content">
+                                    </div>
+                                    <div class="add-custom-input-buttons">
+                                        <div class="add-custom-save-btn">Save</div>
+                                        <div class="add-custom-cancel-btn">Cancel</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="extras" class="create-id-extras-container">
+                        <div class="create-id-content-heading">Preview and Extras</div>
+                        <div class="create-id-content-middle">
+                            <div class="create-id-content-options-cont">
+                                <div class="create-id-extras-option-cont restrictJob-cont">
+                                    <div class="create-id-extras-option-cont-title">
+                                        <div class="create-id-extras-option-cont-title-name">Restrict Card to Job</div>
+                                        <div class="create-id-extras-option-job-name restrict-add-table"></div>
+                                    </div>
+                                    <div class="create-id-extras-options">
+                                        <i class="fa-solid fa-square-plus add-input-extras restrict-job-add"></i>
+                                        <div class="create-id-extras-options-btn restrict-job-yes">Yes</div>
+                                        <div class="create-id-extras-options-btn restrict-job-no selected-input">No</div>
+                                    </div>
+                                </div>
+                                <div class="create-id-extras-option-cont auto-issue-option">
+                                    <div class="create-id-extras-option-cont-title">
+                                        <div class="create-id-extras-option-cont-title-name">Default Auto Issue Card</div>
+                                    </div>
+                                    <div class="create-id-extras-options">
+                                        <div class="create-id-extras-options-btn auto-issue-yes">Yes</div>
+                                        <div class="create-id-extras-options-btn auto-issue-no selected-input">No</div>
+                                    </div>  
+                                </div>
+                                <div class="create-id-extras-option-cont issuedFor-cont">
+                                    <div class="create-id-extras-option-cont-title">
+                                        <div class="create-id-extras-option-cont-title-name">Allowed To Issue Jobs</div>
+                                        <div class="create-id-extras-option-job-name allowed-add-table"></div>
+                                    </div>
+                                    <div class="create-id-extras-options">
+                                        <i class="fa-solid fa-square-plus add-input-extras issue-job-add"></i>
+                                        <div class="create-id-extras-options-btn issue-job-yes selected-input">Yes</div>
+                                        <div class="create-id-extras-options-btn issue-job-no">No</div>
+                                    </div>
+                                </div>
+                                <div class="create-id-extras-option-cont">
+                                    <div class="create-id-extras-option-cont-title">
+                                        <div class="create-id-extras-option-cont-title-name">Charge Money</div>
+                                    </div>
+                                    <div class="create-id-extras-options">
+                                        <i class="add-input-extras chargeMoneyText"></i>
+                                        <div class="create-id-extras-options-btn charge-money-yes">Yes</div>
+                                        <div class="create-id-extras-options-btn charge-money-no selected-input">No</div>
+                                    </div>
+                                </div>
+                                <div class="create-id-extras-option-cont">
+                                    <div class="create-id-extras-option-cont-title">
+                                        <div class="create-id-extras-option-cont-title-name">Inventory Item Name</div>
+                                    </div>
+                                    <div class="create-id-extras-options">
+                                        <input type="url" class="item-name-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="create-id-content-demo-cont">
+                                <div class="create-id-demo-card landscape-card">
+                                    <div class="landscape-center-logo-container">
+                                        <img src="image/default.png" class="landscape-center-logo">
+                                    </div>
+                                    <div class="landscape-main-container">
+                                        <div class="landscape-header">
+                                            <div class="landscape-heading-title"></div>
+                                        </div>
+                                        <div class="landscape-middle">
+                                            <div class="landscape-player-photo-container">
+                                                <div class="landscape-player-bg-logo-container">
+                                                    <img src="image/default.png" class="landscape-player-bg-logo">
+                                                </div>
+                                                <div class="landscape-player-image-container">
+                                                    <img src="image/player.png" class="landscape-player-image">
+                                                </div>
+                                            </div>
+                                            <div class="landscape-player-info-container extras-info-table">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="landscape-footer">
+                                            <span class="footer-text"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="create-id-demo-card portrait-card">
+                                    <div class="portrait-center-logo-container">
+                                        <img src="image/default.png" class="portrait-center-logo">
+                                    </div>
+                                    <div class="portrait-main-container">
+                                        <div class="portrait-header">
+                                            <div class="portrait-heading-title"></div>
+                                        </div>
+                                        <div class="portrait-middle">
+                                            <div class="portrait-player-photo-container">
+                                                <div class="portrait-player-bg-logo-container">
+                                                    <img src="image/default.png" class="portrait-player-bg-logo">
+                                                </div>
+                                                <div class="portrait-player-image-container">
+                                                    <img src="image/player.png" class="portrait-player-image">
+                                                </div>
+                                            </div>
+                                            <div class="portrait-player-info-container extras-info-table-portrait"></div>
+                                        </div>
+                                        <div class="portrait-footer">
+                                            <span class="footer-text"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="create-id-popup-cont">
+                                <div class="create-id-popup-job-cont">
+                                    <div class="create-id-popup-job-header"></div>
+                                    <div class="create-id-popup-input-cont">
+                                        <input type="text" class="create-id-popup-job-input">
+                                    </div>
+                                    <div class="create-id-popup-buttons-cont">
+                                        <div class="create-id-save-popup-btn">Save</div>
+                                        <div class="create-id-close-popup-btn">Close</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="create-id-next-prev-container">
+                        <div class="create-id-previous-btn"><i class="fa-solid fa-square-caret-left"></i> Previous</div>
+                        <div class="create-id-next-btn">Next <i class="fa-solid fa-square-caret-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="created-cards-container">
+                <div class="created-cards-main">
+                    <div class="created-cards-header">
+                        <div class="created-header-title-cont">
+                            <div class="created-header-logo">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                            </div>
+                            <div class="created-header-title">
+                                <div class="created-header-main-title"></div>
+                                <div class="created-header-sub-title"></div>
+                            </div>
+                        </div>
+                        <div class="created-header-search-cont">
+                            <div class="created-search-btn">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="search" placeholder="Search Cards" class="search-cards-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="no-cards-found"></div>
+                    <div class="created-cards-middle"></div>
+                </div>
+            </div>
+            <div class="issued-cards-container">
+                <div class="issued-card-main">
+                    <div class="created-cards-header">
+                        <div class="created-header-title-cont">
+                            <div class="created-header-logo">
+                                <i class="fa-regular fa-id-card"></i>
+                            </div>
+                            <div class="created-header-title">
+                                <div class="issued-header-main-title">Issued Licenses</div>
+                                <div class="issued-header-sub-title">View and manage all issued licenses on the server</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="no-cards-found"></div>
+                    <div class="issued-cards-middle">
+                        <div class="issued-cards-public-cont">
+                            <div class="issued-cards-public-title">PUBLIC</div>
+                            <div class="no-cards-found no-info-public"></div>
+                            <div class="issued-public-cards-box"></div>
+                        </div>
+                        <div class="issued-cards-job-cont">
+                            <div class="issued-cards-job-title">JOB</div>
+                            <div class="no-cards-found no-info-job"></div>
+                            <div class="issued-job-cards-box"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="issued-cards-inside">
+                    <div class="created-cards-header">
+                        <div class="created-header-title-cont">
+                            <div class="created-header-logo">
+                                <i class="fa-regular fa-id-card"></i>
+                            </div>
+                            <div class="created-header-title">
+                                <div class="issued-cards-title-creator"></div>
+                            </div>
+                        </div>
+                        <div class="created-header-search-cont">
+                            <div class="created-search-btn">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="search" placeholder="Search Player" class="search-player-cards-input">
+                            </div>
+                            <div class="issued-card-go-back-btn">Go Back</div>
+                        </div>
+                    </div>
+                    <div class="issued-cards-inside-middle">
+                        <div class="no-cards-found">No User Found</div>
+                        <div class="players-issued-cards-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+    <div class="confirmation-pop-up-container">
+        <div class="confirmation-container">
+           <div class="revoke-player-container">
+               <div class="revoke-player-title"></div>
+               <div class="revoke-player-content-box">
+                   <div class="revoke-player-content"></div>
+               </div>
+               <div class="revoke-player-btns-cont">
+                   <div class="cancel-revoke-btn">Cancel</div>
+                   <div class="revoke-player-btn">Confirm</div>
+               </div>
+           </div>
+        </div>
+    </div>
+
+    <div class="cards-container">
+        <div class="landscape-card">
+            <div class="landscape-center-logo-container">
+                <img src="image/default.png" class="landscape-center-logo">
+            </div>
+            <div class="landscape-main-container">
+                <div class="landscape-header">
+                    <div class="landscape-heading-title"></div>
+                </div>
+                <div class="landscape-middle">
+                    <div class="landscape-player-photo-container">
+                        <div class="landscape-player-bg-logo-container">
+                            <img src="image/default.png" class="landscape-player-bg-logo">
+                        </div>
+                        <div class="landscape-player-image-container">
+                            <img src="image/player.png" class="landscape-player-image">
+                        </div>
+                    </div>
+                    <div class="landscape-player-info-container"></div>
+                </div>
+                <div class="landscape-footer">
+                    <span class="footer-text"></span>
+                </div>
+            </div>
+            <div class="landscape-close-btn">Close</div>
+            <div class="landscape-press-text">Press E to close document</div>
+            <div class="landscape-revoked-screen">REVOKED</div>
+        </div>
+        <div class="portrait-card">
+            <div class="portrait-center-logo-container">
+                <img src="image/default.png" class="portrait-center-logo">
+            </div>
+            <div class="portrait-main-container">
+                <div class="portrait-header">
+                    <div class="portrait-heading-title"></div>
+                </div>
+                <div class="portrait-middle">
+                    <div class="portrait-player-photo-container">
+                        <div class="portrait-player-bg-logo-container">
+                            <img src="image/default.png" class="portrait-player-bg-logo">
+                        </div>
+                        <div class="portrait-player-image-container">
+                            <img src="image/player.png" class="portrait-player-image">
+                        </div>
+                    </div>
+                    <div class="portrait-player-info-container"></div>
+                </div>
+                <div class="portrait-footer">
+                    <span class="footer-text"></span>
+                </div>
+            </div>
+            <div class="portrait-close-btn">Close</div>
+            <div class="portrait-press-text">Press E to close document</div>
+            <div class="portrait-revoked-screen">REVOKED</div>
+        </div>
+    </div>
+     
+    <div class="job-badge-card-container">
+        <div class="job-badge-background animate__animated">
+            <img src="image/badge_background-00031574.png" class="job-badge-bg-image">
+            <div class="job-badge-card">
+                <div class="job-badge-photo-cont">
+                    <div class="job-badge-heading"></div>
+                    <div class="job-badge-logo-boxes">
+                        <div class="job-badge-photo">
+                            <img src="image/player.png" class="job-badge-player-photo">
+                        </div>
+                        <div class="job-badge-photo">
+                            <img src="image/default.png" class="job-badge-logo">
+                        </div>
+                    </div>
+                </div>
+                <div class="job-badge-details-cont">
+                    <div class="job-badge-details">
+                        <div class="job-badge-title">Name</div>
+                        <div class="job-badge-title-input badge-firstname"></div>
+                    </div>
+                    <div class="job-badge-details">
+                        <div class="job-badge-title">Rank</div>
+                        <div class="job-badge-title-input badge-rank"></div>
+                    </div>
+                    <div class="job-badge-details">
+                        <div class="job-badge-title">Issue</div>
+                        <div class="job-badge-title-input badge-issuedate"></div>
+                    </div>
+                    <div class="job-badge-details badge-expire-cont">
+                        <div class="job-badge-title">Expire</div>
+                        <div class="job-badge-title-input badge-expiredate"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="job-portrait-close-btn">Close</div>
+            <div class="job-portrait-press-text">Press E to close document</div>
+            <div class="job-badge-revoked-screen">Revoked</div>
+        </div>
+    </div> 
+
+    <div class="id-check-container">
+        <div class="id-check-home-page">
+            <div class="id-check-home-header">
+                <div class="id-check-logo-cont">
+                    <img src="image/default.png" class="id-check-logo">
+                </div>
+                <div class="id-check-home-title">Los Santos Police Department</div>
+            </div>
+            <div class="id-check-home-nearby-players-title">Nearby Players</div>
+            <div class="id-check-home-nearby-players-box"></div>
+            <div class="id-check-home-search-cont">
+                <input type="text" placeholder="Search ID" class="id-check-search-input">
+                <div class="id-check-scan-btn">Scan</div>
+            </div>
+        </div>
+        <div class="id-check-main">
+            <div class="id-check-heading">
+                <div class="id-check-title">Issued License</div>
+                <div class="id-check-go-back-btn">
+                    <i class="fa-solid fa-circle-left"></i>Go Back
+                </div>
+            </div>
+            <div class="id-check-photo-container">
+                <div class="id-check-photo-box">
+                    <img src="image/player.png" class="id-check-photo">
+                </div>
+            </div>
+            <div class="id-check-list-container">
+                <div class="id-check-owned-ids">
+                    <div class="id-check-owned-heading"></div>
+                    <div class="id-check-expired-box"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper-manager">
+        <div class="job-management-panel">
+            <div class="job-management-main">
+                <div class="created-cards-header">
+                    <div class="created-header-title-cont">
+                        <div class="created-header-logo">
+                            <i class="fa-solid fa-people-roof"></i>
+                        </div>
+                        <div class="created-header-title">
+                            <div class="created-header-main-title"></div>
+                            <div class="created-header-sub-title"></div>
+                        </div>
+                    </div>
+                    <div class="management-panel-buttons-cont">
+                        <div class="issue-card-btn"></div>
+                        <div class="managment-close-btn">Close</div>
+                    </div>
+                </div>
+                <div class="job-management-home-page">
+                    <div class="job-management-nearby-panel-cont">
+                        <div class="job-management-search-box">
+                            <div class="job-management-search-btn-cont">
+                                <input type="text" class="job-management-search-btn" placeholder="Search ID">
+                                <i class="fa-solid fa-magnifying-glass search-btn-nearby-player"></i>
+                            </div>
+                        </div>
+                        <div class="job-nearby-panel-heading">Nearby Players <i class="fa-solid fa-arrows-rotate"></i></div>
+                        <div class="job-nearby-players-cont"></div>
+                    </div>
+                    <div class="job-management-logo-box">
+                        <img src="image/default.png" class="job-management-logo">
+                        <div class="management-title"></div>
+                    </div>
+                    <div class="job-management-cards-cont">
+                        <div class="job-management-available-cards-panel">
+                            <div class="job-nearby-panel-heading">Available Job & Public Licenses</div>
+                            <div class="job-nearby-panel-cards"></div>
+                        </div>
+                        <div class="job-card-already-owned-panel"></div>
+                        <div class="job-cards-expiration-panel">
+                            <div class="job-nearby-panel-heading">Set Expiration</div>
+                            <div class="job-nearby-panel-expiry-cont">
+                                <div class="expiry-date-cont">
+                                    <input type="date" class="expiry-date">
+                                </div>
+                                <div class="never-expire-button">Never Expire</div>
+                            </div>
+                        </div>
+                        <div class="job-nearby-panel-buttons-cont">
+                            <div class="issued-card-preview-btn">See Preview</div>
+                            <div class="nearby-issued-card-btn">Revoke</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="issued-cards-management-box">
+                    <h2 class="issued-cards-title">Issued Licenses</h2>
+                    <div class="table-responsive">
+                        <table id="issued-cards-table" class="table table-dark table-hover table-borderless" style="--bs-table-bg: transparent; width: 100%;">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">License</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Issued To</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Issued On</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Valid Till</th>
+                                    <th class="text-secondary opacity-7"></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fake-system-panel">
+        <div class="fake-system-panel-main">
+            <div class="created-cards-header">
+                <div class="created-header-title-cont">
+                    <div class="created-header-logo">
+                        <i class="fa-regular fa-address-card"></i>
+                    </div>
+                    <div class="created-header-title">
+                        <div class="created-header-main-title"></div>
+                        <div class="created-header-sub-title"></div>
+                    </div>
+                </div>
+                <div class="management-panel-buttons-cont">
+                    <div class="fake-system-close-btn">Close</div>
+                </div>
+            </div>
+            <div class="fake-system-middle">
+                <div class="fake-system-middle-left"></div>
+                <div class="fake-system-middle-right">
+                    <div class="fake-id-card-photo-box">
+                        <div class="fake-id-card-photo">
+                            <img src="image/player.png" class="fake-photo-image">
+                        </div>
+                        <div class="fake-id-card-btns">
+                            <div class="fake-photo-capture-btn">Capture</div>
+                        </div>
+                    </div>
+                    <div class="fake-id-upload-container">
+                        <div class="fake-id-logo-url-text">Logo URL</div>
+                        <input type="text" class="fake-id-upload-input">
+                    </div>
+                    <div class="fake-id-layout-options">
+                        <div class="fake-id-select-layout-text">Select Layout</div>
+                        <div class="fake-id-select-layout">
+                            <div class="fake-id-portrait-layout">Portrait</div>
+                            <div class="fake-id-landscape-layout selected-option">Landscape</div>
+                        </div>
+                    </div>
+                    <div class="fake-id-card-buttons-box">
+                        <div class="fake-id-see-preview-btn">See Preview</div>
+                        <div class="fake-id-generate-btn">Generate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="working-card-container">
+        <div class="working-card-background animate__animated">
+            <img src="image/badge_background-00031574.png" class="job-badge-bg-image">
+            <div class="working-badge-card">
+                <div class="working-badge-left-tag">
+                    <div class="working-text">Working ID</div>
+                </div>
+                <div class="working-badge-right-tag">
+                    <div class="working-badge-logo-cont">
+                        <img src="image/go-postal.png" class="working-badge-logo">
+                    </div>
+                    <div class="working-badge-content-cont">
+                        <div class="working-badge-content">
+                            <div class="working-badge-content-title">Name</div>
+                            <div class="working-badge-content-input worker-name"></div>
+                        </div>
+                        <div class="working-badge-content">
+                            <div class="working-badge-content-title">Sex</div>
+                            <div class="working-badge-content-input worker-sex"></div>
+                        </div>
+                        <div class="working-badge-content">
+                            <div class="working-badge-content-title">Job</div>
+                            <div class="working-badge-content-input worker-job"></div>
+                        </div>
+                        <div class="working-badge-content">
+                            <div class="working-badge-content-title">Rank</div>
+                            <div class="working-badge-content-input worker-rank"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="working-press-text">Press E to close document</div>
+        </div>
+    </div>
+
+    <div class="get-card-panel-container">
+        <div class="get-card-panel">
+            <div class="get-card-panel-main">
+                <div class="get-card-panel-header"><i class="fa-solid fa-id-card-clip"></i> License Menu</div>
+                <div class="get-card-panel-search">
+                    <input type="Search" class="get-card-panel-search-input" placeholder="Search License">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="get-card-panel-middle-cont"></div>
+                <div class="get-card-panel-footer">
+                    <div class="get-card-total">
+                        <div>Total Price</div>
+                        <div class="get-card-total-btns">
+                            <div class="get-total-price-btn">$0</div>
+                            <div class="get-card-pay-btn">Pay</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+    <div class="capture-photo-container">
+        <div class="capture-title-text">
+            <div class="capture-text">Capture Your Image</div>
+            <div class="photo-capture-btn">
+                <div class="capture-btn">Capture Photo</div>
+            </div>
+        </div>
+        <div class="are-your-sure">
+            <div class="are-you-box">
+                <div class="captured-photo-container">
+                    <div class="captured-photo-box">
+                        <img src="image/player.png" class="captured-image-preview">
+                    </div>
+                </div>
+                <div class="are-you-sure-text">Are you sure you want to submit this picture?</div>
+                <div class="capture-buttons-container">
+                    <div class="retake-btn">Retake</div>
+                    <div class="submit-btn">Submit</div>
+                </div>
+            </div>
+            <svg height="108px" width="108px" viewBox="0 0 128 128" class="loader">
+                <defs>
+                <clipPath id="loader-eyes">
+                    <circle transform="rotate(-40,64,64) translate(0,-56)" r="8" cy="64" cx="64" class="loader__eye1"></circle>
+                    <circle transform="rotate(40,64,64) translate(0,-56)" r="8" cy="64" cx="64" class="loader__eye2"></circle>
+                </clipPath>
+                <mask id="loader-mask">
+                    <rect fill="#fff" height="128" width="128" y="0" x="0"></rect>
+                </mask>
+                </defs>
+                <g stroke-dasharray="175.93 351.86" stroke-width="12" stroke-linecap="round">
+                <g>
+                    <rect clip-path="url(#loader-eyes)" height="64" width="128" fill="#fff"></rect>
+                    <g stroke="#fff" fill="none">
+                    <circle transform="rotate(180,64,64)" r="56" cy="64" cx="64" class="loader__mouth1"></circle>
+                    <circle transform="rotate(0,64,64)" r="56" cy="64" cx="64" class="loader__mouth2"></circle>
+                    </g>
+                </g>
+                <g mask="url(#loader-mask)">
+                    <rect clip-path="url(#loader-eyes)" height="64" width="128" fill="#fff"></rect>
+                    <g stroke="#fff" fill="none">
+                    <circle transform="rotate(180,64,64)" r="56" cy="64" cx="64" class="loader__mouth1"></circle>
+                    <circle transform="rotate(0,64,64)" r="56" cy="64" cx="64" class="loader__mouth2"></circle>
+                    </g>
+                </g>
+                <text x="64" y="150" text-anchor="middle" fill="#fff" font-size="18px" font-weight="900">Loading...</text>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://www.lactame.com/lib/image-js/0.21.2/image.min.js"></script>
+    <script src='https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js'></script>
+    <script src='https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js'></script>
+    <script src='https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js'></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
