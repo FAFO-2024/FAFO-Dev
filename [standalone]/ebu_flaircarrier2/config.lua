@@ -15,4 +15,4 @@ Config.MarkerSize               = { x = 5.0, y = 5.0, z = 1.0 }
 Config.CarMarkerSize            = { x = 2.5, y = 2.5, z = 1.0 }
 
 Config.LoadCarCommand           = 'lcc'
-Config.UnLoadCarCommand           = 'ulcc'
+Config.UnLoadCarCommand         = 'ulcc'

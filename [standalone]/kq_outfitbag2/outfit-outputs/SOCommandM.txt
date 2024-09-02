@@ -1,0 +1,21 @@
+{
+  name = "SOCommandM",
+  model = 1885233650,
+  drawable = {
+    mask = { drawable = 121, texture = 0, palette = 2 }, 
+    bag = { drawable = 116, texture = 4, palette = 2 }, 
+    decals = { drawable = 41, texture = 0, palette = 2 }, 
+    torso = { drawable = 11, texture = 0, palette = 2 }, 
+    chest = { drawable = 13, texture = 0, palette = 2 }, 
+    accessory = { drawable = 1, texture = 0, palette = 2 }, 
+    legs = { drawable = 184, texture = 0, palette = 2 }, 
+    tops = { drawable = 532, texture = 2, palette = 2 }, 
+    feet = { drawable = 25, texture = 0, palette = 2 }, 
+    undershirt = { drawable = 38, texture = 0, palette = 2 }, 
+  },
+  props = {
+    helmet = { prop = 205, texture = 1 }, 
+    glasses = { prop = 0, texture = 0 }, 
+    ear = { prop = -1, texture = -1 }, 
+  },
+},

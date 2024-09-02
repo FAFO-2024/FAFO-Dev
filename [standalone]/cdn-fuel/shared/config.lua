@@ -2,7 +2,7 @@ Config = {}
 Config.FuelDebug = false -- Used for debugging, although there are not many areas in yet (Default: false) + Enables Setfuel Commands (0, 50, 100). 
 Config.PolyDebug = false -- Enables Polyzone Debugging to see PolyZones!
 Config.ShowNearestGasStationOnly = true -- When enabled, only the nearest gas stations will be shown on the map.
-Config.LeaveEngineRunning = false -- When true, the vehicle's engine will be left running upon exit if the player *HOLDS* F.
+Config.LeaveEngineRunning = true -- When true, the vehicle's engine will be left running upon exit if the player *HOLDS* F.
 Config.VehicleBlowUp = true -- When true, there will be a configurable chance of the vehicle blowing up, if you fuel while the engine is on.
 Config.BlowUpChance = 5 -- Percentage for Chance of Engine Explosion (Default: 5% or 5)
 Config.CostMultiplier = 3 -- Amount to multiply 1 by. This indicates fuel price. (Default: $3.0/l or 3.0)
@@ -45,7 +45,8 @@ Config.EmergencyServicesDiscount = {
     ['job'] = {
         "police",
         "sasp",
-        "trooper",
+        "sheriff",
+        "firefighter",
         "ambulance",
     }
 }
@@ -226,18 +227,18 @@ Config.FuelUsage = { -- The left part is at percentage RPM, and the right is how
 Config.AirAndWaterVehicleFueling = {
     ['enabled'] = true,
     ['locations'] = {
-        -- MRPD Helipad
+        -- VPD Helipad
         [1] = {
             ['PolyZone'] = {
                 ['coords'] = {
-                    vector2(439.96, -973.0),
-                    vector2(458.09, -973.04),
-                    vector2(458.26, -989.47),
-                    vector2(439.58, -989.94),
+                    vector2(585.43096923828, 6.7828946113586),
+                    vector2(585.69903564453, 17.962341308594),
+                    vector2(574.36859130859, 18.046571731567),
+                    vector2(574.35955810547, 6.6947450637817),
                 },
                 ['minmax'] = {
-                    ['min'] = 40,
-                    ['max'] = 50.0
+                    ['min'] = 103.23384094238,
+                    ['max'] = 103.23457336426
                 },
             },
             ['draw_text'] = "[G] Refuel Helicopter",
@@ -246,7 +247,7 @@ Config.AirAndWaterVehicleFueling = {
                 ['enabled'] = true,
                 ['on_duty_only'] = true,
                 ['whitelisted_jobs'] = {
-                    'police', 'ambulance'
+                    'police', 'sasp', 'sheriff',
                 },
             },
             ['prop'] = {
@@ -1407,6 +1408,28 @@ Config.GasStations = { -- Configuration options for various gas station related 
         electriccharger = nil,
         electricchargercoords = vector4(-341.63, -1459.39, 29.76, 271.73),
         label = "Alta Street Globe Oil",
+    },
+    [28] = { -- Legion Square LTD.
+        zones = {
+            vector2(196.29348754883, -895.40026855469),
+            vector2(176.03854370117, -889.88122558594),
+            vector2(170.70425415039, -906.82568359375),
+            vector2(190.86647033691, -913.64752197266)
+        },
+        minz = 28.66,
+        maxz = 30.72,
+        pedmodel = "a_m_m_indian_01",
+        cost = 100000,
+        shutoff = false,
+        pedcoords = {
+            x = 203.2,
+            y = -866.17,
+            z = 29.72,
+            h = 115.68,
+        },
+        electriccharger = nil,
+        electricchargercoords = vector4(837.7554, -793.623, 25.23, 105.22),
+        label = "Legion LTD",
     },
     --[[
     [28] = { -- Gabz Ottos Autos Location, Line In If Needed.

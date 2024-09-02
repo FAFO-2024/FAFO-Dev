@@ -1,0 +1,21 @@
+{
+  name = "PDCommandM",
+  model = 1885233650,
+  drawable = {
+    feet = { drawable = 25, texture = 0, palette = 2 }, 
+    decals = { drawable = 0, texture = 0, palette = 2 }, 
+    tops = { drawable = 546, texture = 4, palette = 2 }, 
+    mask = { drawable = 121, texture = 0, palette = 2 }, 
+    torso = { drawable = 0, texture = 0, palette = 2 }, 
+    chest = { drawable = 13, texture = 0, palette = 2 }, 
+    legs = { drawable = 188, texture = 0, palette = 2 }, 
+    bag = { drawable = 0, texture = 0, palette = 2 }, 
+    accessory = { drawable = 1, texture = 0, palette = 2 }, 
+    undershirt = { drawable = 38, texture = 1, palette = 2 }, 
+  },
+  props = {
+    glasses = { prop = 0, texture = 0 }, 
+    helmet = { prop = 209, texture = 0 }, 
+    ear = { prop = -1, texture = -1 }, 
+  },
+},

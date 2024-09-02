@@ -1,2 +1,0 @@
-Remove the NOBADGE from the file name of both of the files by renaming the file.
-Replace the .yft files in the steam folder with the files you have just renamed.
