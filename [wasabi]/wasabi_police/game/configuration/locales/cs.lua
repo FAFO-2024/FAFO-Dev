@@ -5,6 +5,17 @@ if not Config.Language then Config.Language = 'cs' end
 if Config.Language ~= 'cs' then return end
 
 Strings = {
+    no_society_account = 'Žádný účet společnosti nebyl nalezen - zkontrolujte svou konfiguraci!',
+    officer = 'Úředník',
+    not_authorized = 'Není oprávněno',
+    not_authorized_desc = 'Nemáte oprávnění to používat!',
+    not_on_duty = 'Není na službě',
+    not_on_duty_desc = 'Nyní nejste na službě!',
+    gps_enabled = 'GPS je povoleno',
+    gps_enabled_desc = 'GPS bylo povoleno',
+    gps_disabled = 'GPS je zakázáno',
+    gps_disabled_desc = 'GPS bylo zakázáno',
+
     new_speed_trap = 'Nová rychlostní past',
     speed_limit = 'Rychlostní limit',
     incorrect_input = 'Nesprávný vstup',

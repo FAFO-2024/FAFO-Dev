@@ -11,6 +11,14 @@ RegisterNuiCallback("gksphone:home:fetchHouseData", function (data, cb)
         local ownedHouses = exports.bcs_housing:GetOwnedHomes()
         debugprint('bcs_housing ownedHouses', ownedHouses)
         cb(ownedHouses)
+    elseif Config.QsHousing then
+        Config.Core.Functions.TriggerCallback('qb-phone:server:GetPlayerHouses', function(result)
+            debugprint('get house qs-housing', result)
+            for i = 1, #result do
+                result[i].transfer = false
+            end
+            cb(result)
+        end)
     else
         Config.Core.Functions.TriggerCallback('qb-phone:server:GetPlayerHouses', function(result)
             debugprint('qb-phone:server:GetPlayerHouses', result)
@@ -47,6 +55,11 @@ RegisterNUICallback('gksphone:home:fetchKeysData', function(data, cb)
         end
         debugprint('bcs_housing keys', keys)
         cb(keys)
+    elseif Config.QsHousing then
+        Config.Core.Functions.TriggerCallback('qb-phone:server:GetHouseKeys', function(result)
+            debugprint('get key qs-housing', result)
+            cb(result)
+        end)
     else
         Config.Core.Functions.TriggerCallback('qb-phone:server:GetHouseKeys', function(result)
             debugprint('qb-phone:server:GetHouseKeys', result)
@@ -67,6 +80,9 @@ RegisterNUICallback('gksphone:home:transferHouse', function(data, cb)
                 TriggerServerEvent('Housing:server:TransferOwner', data.house.identifier, tonumber(srcid))
             end
         end, data.phoneNumber)
+    elseif Config.QsHousing then
+        cb(false)
+        return
     else
         debugprint('qb-phone:server:TransferHouse', data)
         Config.Core.Functions.TriggerCallback('gksphone:server:getCizitinIDSource', function(citizenid)

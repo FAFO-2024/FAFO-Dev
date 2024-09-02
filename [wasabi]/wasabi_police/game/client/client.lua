@@ -49,6 +49,13 @@ RegisterNetEvent('wasabi_bridge:playerLoaded', function()
     SpeedTraps = InitializeSpeedTraps()
     if wsb.hasGroup(Config.policeJobs) then
         TriggerServerEvent('wasabi_police:updateCopCount')
+        if Config.GPSBlips.enabled and not Config.GPSBlips.item then
+            if wsb.framework == 'qb' and wsb.isOnDuty() then
+                TriggerServerEvent('wasabi_police:addOfficerToGPS')
+            elseif wsb.framework ~= 'qb' then
+                TriggerServerEvent('wasabi_police:addOfficerToGPS')
+            end
+        end
     end
     TriggerServerEvent('wasabi_police:getPoliceOnline')
 end)
@@ -963,7 +970,7 @@ CreateThread(function()
     end
     for k, v in pairs(Config.Locations) do
         if v.blip.enabled then
-            createBlip(v.blip.coords, v.blip.sprite, v.blip.color, v.blip.string, v.blip.scale, false, 'coords', true)
+            CreateBlip(v.blip.coords, v.blip.sprite, v.blip.color, v.blip.string, v.blip.scale, false, 'coords', true)
         end
         if v?.clockInAndOut?.enabled then
             if v.clockInAndOut.target.enabled then
@@ -1304,7 +1311,7 @@ CreateThread(function()
                     coords = v.armoury.coords,
                     distance = 30,
                     onEnter = function(self)
-                        if not ped then
+                        if not ped and v.armoury.ped then
                             wsb.stream.animDict('mini@strip_club@idles@bouncer@base')
                             wsb.stream.model(v.armoury.ped, 7500)
                             ped = CreatePed(28, v.armoury.ped, v.armoury.coords.x, v.armoury.coords.y, v.armoury.coords
@@ -1708,107 +1715,6 @@ if Config.spikeStripsEnabled then
     end)
 end
 
-local GetActivePlayers = GetActivePlayers
-local NAMES, serverBlips, activeBlips, showPlayers = {}, {}, {}, {}
-CreateThread(function()
-    if not Config.GPSBlips.enabled then return end
-    while not wsb.playerLoaded do
-        Wait(1000)
-    end
-
-    while Config.GPSBlips.enabled do
-        NAMES = wsb.awaitServerCallback('wasabi_police:getPlayerNames')
-
-        Wait(60000)
-    end
-end)
-
-RegisterNetEvent('wasabi_police:useGPS', function(player, bool)
-    showPlayers[player] = bool
-end)
-
-CreateThread(function()
-    if not Config.GPSBlips.enabled then return end
-    local cooldown = 0
-    local server = {}
-    local active, activeTable, activeCreated, activePed, activePlayer = {}, {}, {}, 0, 0
-
-    while not wsb.playerLoaded do
-        Wait(1000)
-    end
-    Wait(1000)
-
-    while Config.GPSBlips.enabled do
-        active = GetActivePlayers()
-
-        for k, data in pairs(active) do
-            activePlayer = GetPlayerServerId(data)
-            if not showPlayers[activePlayer] then goto continue end
-            if data == wsb.cache.playerId then goto continue end
-            activePed = GetPlayerPed(data)
-            if not DoesEntityExist(activePed) then goto continue end
-
-            activeTable[activePlayer] = {
-                coords = GetEntityCoords(activePed),
-                player = activePlayer,
-                ped = activePed,
-                name = NAMES[activePlayer]
-            }
-
-            ::continue::
-        end
-
-        for _, data in pairs(activeTable) do
-            if not DoesBlipExist(activeBlips[data.player]) and not activeCreated[data.player] then
-                activeCreated[data.player] = true
-                activeBlips[data.player] = createBlip(activePed, Config.GPSBlips.blip.sprite, Config.GPSBlips.blip.color,
-                    data.name, Config.GPSBlips.blip.scale, false, 'entity', Config.GPSBlips.blip.short)
-                SetBlipCategory(activeBlips[data.player], 7)
-            elseif not DoesBlipExist(activeBlips[data.player]) and activeCreated[data.player] then
-                activeCreated[data.player] = false
-                activeBlips[data.player] = nil
-            end
-        end
-
-        for k, data in pairs(activeBlips) do
-            if not DoesBlipExist(data) then
-                activeBlips[k] = nil
-            elseif DoesBlipExist(data) and not showPlayers[k] then
-                RemoveBlip(data)
-                activeBlips[k] = nil
-            end
-        end
-
-        if cooldown <= 0 then
-            cooldown = Config.GPSBlips.refreshrate
-            server = wsb.awaitServerCallback('wasabi_police:getPlayerCoords')
-            if server == {} or not server then goto skip end
-
-            for k, data in pairs(serverBlips) do
-                if DoesBlipExist(data) then
-                    RemoveBlip(data)
-                    serverBlips[k] = nil
-                end
-            end
-
-            for k, data in pairs(server) do
-                if activeBlips[data.player] then goto continue end
-                serverBlips[data.player] = createBlip(vector(data.coords.x, data.coords.y, data.coords.z),
-                    Config.GPSBlips.blip.sprite, Config.GPSBlips.blip.color, data.name, Config.GPSBlips.blip.scale, false,
-                    'coords', Config.GPSBlips.blip.short)
-                SetBlipCategory(serverBlips[data.player], 7)
-
-                ::continue::
-            end
-        else
-            cooldown -= 1
-        end
-
-        ::skip::
-        Wait(1000)
-    end
-end)
-
 if Config.tackle.enabled then
     RegisterCommand('tacklePlayer', function()
         attemptTackle()
@@ -1864,7 +1770,7 @@ RegisterNetEvent('wasabi_police:initSpeedTraps', function(traps)
         trap.point = AddSpeedTrapPoint(trap, i)
         if Config.RadarPosts.blip.enabled then
             trap.coords = vec3(trap.coords.x, trap.coords.y, trap.coords.z)
-            trap.blip = createBlip(trap.coords, Config.RadarPosts.blip.sprite, Config.RadarPosts.blip.color,
+            trap.blip = CreateBlip(trap.coords, Config.RadarPosts.blip.sprite, Config.RadarPosts.blip.color,
                 Config.RadarPosts.blip.label, Config.RadarPosts.blip.scale, false, 'coords', Config.RadarPosts.blip
                 .short)
         end
@@ -1876,7 +1782,7 @@ RegisterNetEvent('wasabi_police:addNewSpeedTrap', function(speedTrap)
     SpeedTraps[tblKey] = speedTrap
     SpeedTraps[tblKey].point = AddSpeedTrapPoint(speedTrap, tblKey)
     if Config.RadarPosts.blip.enabled then
-        SpeedTraps[tblKey].blip = createBlip(vec3(speedTrap.coords.x, speedTrap.coords.y, speedTrap.coords.z),
+        SpeedTraps[tblKey].blip = CreateBlip(vec3(speedTrap.coords.x, speedTrap.coords.y, speedTrap.coords.z),
             Config.RadarPosts.blip.sprite, Config.RadarPosts.blip.color,
             Config.RadarPosts.blip.label, Config.RadarPosts.blip.scale, false, 'coords', Config.RadarPosts.blip.short)
     end

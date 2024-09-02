@@ -1,4 +1,5 @@
 {
+  "debug": false,
   "emailDomain": "gkshop.org",
   "xsound": false,
   "RealTime": false,
@@ -11,7 +12,7 @@
   "qbitSell": false,
   "qbitTransfer": false,
   "LiveAPPGIF": 5000,
-  "debug": false,
+  "MessageLiveLocation": true,
   "NewsPerm" : {
     "police" : true,
     "sasp" : true,
@@ -19,6 +20,10 @@
     "firefighter" : true,
     "ambulance" : true,
     "newspaper" : true
+  },
+  "Casino" : {
+    "dice" : true,
+    "roll" : true
   },
 
   "Settings": {
@@ -45,6 +50,7 @@
   "SetupScreen": {
     "Languages" : {
       "af": "Afrikaans",
+      "zh-TW": "Chinese",
       "de": "Deutsch",
       "en": "English",
       "fr": "Français",
@@ -344,6 +350,16 @@
       "allowjob": {},
       "signal": false,
       "show": false
+    },
+    {
+      "name": "Casino",
+      "icons": "/html/img/icons/casino.png",
+      "url": "/betgame",
+      "categori": "mix",
+      "blockedjobs": {},
+      "allowjob": {},
+      "signal": true,
+      "show": true
     },
     {
       "name": "Calculator",

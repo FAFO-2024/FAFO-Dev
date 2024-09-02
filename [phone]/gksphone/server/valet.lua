@@ -24,60 +24,61 @@ Config.Core.Functions.CreateCallback('gksphone:server:vale:getVehicles', functio
     }, function(vehicles)
         debugprint("gksphone:server:vale:getVehicles | Total vehicles: " .. #vehicles .. " | CitizenID: " .. citizenid)
         for _, v in pairs(vehicles) do
-            local props = json.decode(v.mods)
-            if not props then
-                props = {}
-            end
-            props.plate = v.plate
+            if v.vehicle then
+                local props = json.decode(v.mods)
+                if not props then
+                    props = {}
+                end
+                props.plate = v.plate
 
-            local vehicleData = Config.Core.Shared.Vehicles[v.vehicle]
-            if vehicleData then
-                v.type = vehicleData.category or "Car"
-                props.model = v.vehicle
-                v.model = vehicleData.name
-                props.hash = vehicleData.hash
-            else
-                debugprint("Vehicle not found in qb-core/shared/vehicles.lua: " .. v.vehicle)
-                props.model = v.vehicle
-                props.hash = tonumber(v.hash)
-                v.type = v.type or "Car"
-                v.model = string.upper(v.vehicle) or "Unknown"
-            end
+                local vehicleData = Config.Core.Shared.Vehicles[v.vehicle]
+                if vehicleData then
+                    v.type = vehicleData.category or "Car"
+                    props.model = v.vehicle
+                    v.model = vehicleData.name
+                    props.hash = vehicleData.hash
+                else
+                    debugprint("Vehicle not found in qb-core/shared/vehicles.lua: " .. v.vehicle)
+                    props.model = v.vehicle
+                    props.hash = tonumber(v.hash)
+                    v.type = v.type or "Car"
+                    v.model = string.upper(v.vehicle) or "Unknown"
+                end
 
-
-            if Config.qbGarages and Config.Garages and v.garage ~= nil then
-                if vehicleData and (Config.Garages[v.garage] ~= nil) then
-                    if v.state == 1 then
-                        v.garage = Config.Garages[v.garage]["label"]
+                if Config.qbGarages and Config.Garages and v.garage ~= nil then
+                    if vehicleData and (Config.Garages[v.garage] ~= nil) then
+                        if v.state == 1 then
+                            v.garage = Config.Garages[v.garage]["label"]
+                        elseif v.state == 2 then
+                            v.garage = "Impounded"
+                        elseif v.state == 0 then
+                            v.garage = "Out"
+                        end
+                    else
+                        if v.state == 2 or v.state == 0 then
+                            v.garage = "Impounded"
+                        end
+                    end
+                elseif Config.cdGarages or Config.JGGarages then
+                    v.garage = v.garage_id
+                    if not v.in_garage then
+                        v.garage = "On The Street"
+                    end
+                    if v.impound ~= 0 then
+                        v.garage = "Impounded"
+                    end
+                elseif Config.loafGarages then
+                    v.garage = v.garage or "Unknown"
+                    if v.state == 0 then
+                        v.garage = "On The Street"
                     elseif v.state == 2 then
                         v.garage = "Impounded"
-                    elseif v.state == 0 then
-                        v.garage = "Out"
                     end
-                else
-                    if v.state == 2 or v.state == 0 then
-                        v.garage = "Impounded"
-                    end
+                elseif v.garage == nil then
+                    v.garage = "Unknown"
                 end
-            elseif Config.cdGarages and v.garage ~= nil then
-                v.garage = v.garage_id
-                if not v.in_garage then
-                    v.garage = "On The Street"
-                end
-                if v.impound ~= 0 then
-                    v.garage = "Impounded"
-                end
-            elseif Config.loafGarages and v.garage ~= nil then
-                v.garage = v.garage
-                if v.state == 0 then
-                    v.garage = "On The Street"
-                elseif v.state == 2 then
-                    v.garage = "Impounded"
-                end
-            elseif v.garage == nil then
-                v.garage = "Unknown"
+                v.vehicle = props
             end
-            v.vehicle = props
         end
         cb(vehicles)
     end)
@@ -121,7 +122,7 @@ Config.Core.Functions.CreateCallback("gksphone:server:vale:vehiclebring", functi
             vehicles = vehicles[1]
             vehicles.mods = json.decode(vehicles.mods)
             if Config.ImpoundVale then
-                if Config.cdGarages then
+                if Config.cdGarages or Config.JGGarages then
                     if vehicles.impound ~= 0 then
                         debugprint("gksphone:server:vale:vehiclebring | Vehicle is impounded | CitizenID: " .. citizenid .. " | Plate: " .. plate)
                         cb("carimpounded")
@@ -153,7 +154,7 @@ Config.Core.Functions.CreateCallback("gksphone:server:vale:vehiclebring", functi
                     end
                 end
 
-                if Config.cdGarages then
+                if Config.cdGarages or Config.JGGarage then
                     MySQL.Async.execute('UPDATE player_vehicles SET  `in_garage` = @in_garage WHERE `plate` = @plate', {
                         ['@plate'] = plate,
                         ['@in_garage'] = 0,

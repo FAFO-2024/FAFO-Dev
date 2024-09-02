@@ -5,6 +5,17 @@ if not Config.Language then Config.Language = 'ko' end
 if Config.Language ~= 'ko' then return end
 
 Strings = {
+    no_society_account = '%s의 사회 계좌를 찾을 수 없습니다 - 설정을 확인하세요!',
+    officer = '경찰관',
+    not_authorized = '권한 없음',
+    not_authorized_desc = '이 기능을 사용할 권한이 없습니다!',
+    not_on_duty = '근무 중 아님',
+    not_on_duty_desc = '현재 근무 중이 아닙니다!',
+    gps_enabled = 'GPS 활성화됨',
+    gps_enabled_desc = 'GPS를 활성화했습니다',
+    gps_disabled = 'GPS 비활성화됨',
+    gps_disabled_desc = 'GPS를 비활성화했습니다',
+
     new_speed_trap = '새 속도 함정',
     speed_limit = '속도 제한',
     incorrect_input = '잘못된 입력',

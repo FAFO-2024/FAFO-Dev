@@ -12,6 +12,13 @@ function WSB.inventory.getItemSlot(source, itemName)
     return GetItemSlot(source, itemName) or false
 end
 
+function WSB.inventory.getItemSlots(source, itemName)
+    local src = source
+    local inventory = exports.qs_inventory:GetInventory(src)
+    if not inventory then return {} end
+    return GetSlotsByItem(inventory, itemName)
+end
+
 function WSB.inventory.getItemMetadata(source, slot)
     if not source or not slot then return end
     return exports['qs-inventory']:GetItemBySlot(source, slot)?.info
@@ -29,5 +36,5 @@ end
 ---@param keepItems string | table
 function WSB.inventory.clearInventory(source, identifier, keepItems)
     exports['qs-inventory']:ClearInventory(source, keepItems)
-        TriggerClientEvent('wasabi_ambulance:weaponRemove', source)
+    TriggerClientEvent('wasabi_ambulance:weaponRemove', source)
 end

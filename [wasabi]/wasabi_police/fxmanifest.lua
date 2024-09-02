@@ -7,7 +7,7 @@ lua54 'yes'
 
 description 'Wasabi ESX/QBCore Police Job'
 author 'wasabirobby'
-version '1.8.0'
+version '1.8.1'
 
 ui_page 'ui/index.html'
 files { 'ui/*', 'ui/**/*' }

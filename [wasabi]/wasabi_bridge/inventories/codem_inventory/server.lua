@@ -13,6 +13,12 @@ function WSB.inventory.getItemSlot(source, itemName)
     return GetItemSlot(source, itemName) or false
 end
 
+function WSB.inventory.getItemSlots(source, itemName)
+    local src = source
+    local items = exports['codem-inventory']:GetItemsByName(src, itemName)
+    return GetSlotsByItem(items, itemName)
+end
+
 function WSB.inventory.getItemMetadata(source, slot)
     local player = WSB.getPlayer(source)
     if not player then return end

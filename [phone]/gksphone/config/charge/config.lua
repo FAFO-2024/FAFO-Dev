@@ -1,3 +1,10 @@
+--- ### Charge settings ### ---
+
+Config.ChargeItems = { "powerbank" } -- Set the name of the item to charge the phone (default: powerbank)
+Config.UseChargeKey   = "E"
+Config.ChargeAutCommand = "charge"  --- Register Command (/charge playerid charge(0-100))
+Config.qbcorechargeaut = "god"      --- qb-core authorization system
+
 ChargeOn = true --- To turn on and off the charging system
 ChargeEndCommand = "endcharge"  ---command used to finish charging
 ChargeBlipOn = false  --- To see the blips of the charging stations

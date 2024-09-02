@@ -4,6 +4,12 @@
 BillingTable = {}
 
 CreateThread(function()
+    if Config.AutoPaidBillDelete then
+        MySQL.Async.execute('DELETE FROM gksphone_billing WHERE gksphone_billing.status = "paid"', {})
+    end
+    if Config.UnpaidBillInterest then
+        MySQL.Async.execute('UPDATE `gksphone_billing` SET `amount` = `amount` * (('..Config.BillInterest.percent.. '/ 100) + 1) WHERE gksphone_billing.status = "unpaid" AND `time` < NOW() - INTERVAL '..Config.BillInterest.day.. ' DAY', {})
+    end
     BillingTable = MySQL.query.await('SELECT * FROM `gksphone_billing`')
 end)
 
@@ -199,7 +205,8 @@ Config.Core.Functions.CreateCallback('gksphone:server:billing:allbillpay', funct
                 local totalBillingAmount = 0
                 for i = 1, #phonedata.bankDetails.Billings, 1 do
                     if phonedata.bankDetails.Billings[i].status == "unpaid" then
-                        if Config.UseBillingCommission then
+                        local isPlayerFee = Config.PlayerFeeJobs[phonedata.bankDetails.Billings[i].society]
+                        if Config.UseBillingCommission and not isPlayerFee then
                             local SenderPly = Config.Core.Functions.GetPlayerByCitizenId(phonedata.bankDetails.Billings[i].sendercitizenid)
                             if SenderPly ~= nil then
                                 if Config.BillingCommissions[phonedata.bankDetails.Billings[i].society] then
@@ -215,10 +222,34 @@ Config.Core.Functions.CreateCallback('gksphone:server:billing:allbillpay', funct
                         end
 
                         xPlayer.Functions.RemoveMoney('bank', phonedata.bankDetails.Billings[i].amount, "paid-invoice")
-
-                        local SocietyAddMoney = SocietyAddMoney(phonedata.bankDetails.Billings[i].society, phonedata.bankDetails.Billings[i].amount)
-                        if SocietyAddMoney then
-                            debugprint("billing paid, society add money", {phonedata.bankDetails.Billings[i].society, phonedata.bankDetails.Billings[i].amount})
+                        if not isPlayerFee then
+                            local SocietyAddMoney = SocietyAddMoney(phonedata.bankDetails.Billings[i].society, phonedata.bankDetails.Billings[i].amount)
+                            if SocietyAddMoney then
+                                debugprint("billing paid, society add money", {phonedata.bankDetails.Billings[i].society, phonedata.bankDetails.Billings[i].amount})
+                            end
+                        else
+                            local SenderPly = Config.Core.Functions.GetPlayerByCitizenId(phonedata.bankDetails.Billings[i].sendercitizenid)
+                            if SenderPly ~= nil then
+                                SenderPly.Functions.AddMoney('bank', phonedata.bankDetails.Billings[i].amount)
+                                local phoneLang = GetPhoneLangBySource(SenderPly.PlayerData.source)
+                                local notify = {
+                                    title = _T(phoneLang, "BillingAPP.APP_BILLING_HEADER"), -- The title of the notification
+                                    message = _T(phoneLang, "BillingAPP.APP_BILLING_PLAYERFEE"), -- The message of the notification
+                                    icon = "/html/img/icons/billing.png", -- The icon to be displayed with the notification
+                                }
+                                exports["gksphone"]:sendNotification(SenderPly.PlayerData.source, notify)
+                                
+                                exports["gksphone"]:BankSaveHistory(SenderPly.PlayerData.source, 2, phonedata.bankDetails.Billings[i].amount, _T(phoneLang, "BillingAPP.APP_BILLING_PLAYERFEE"))
+                            else
+                                SenderPly = Config.Core.Functions.GetOfflinePlayerByCitizenId(phonedata.bankDetails.Billings[i].sendercitizenid)
+                                if SenderPly then
+                                    SenderPly.PlayerData.money["bank"] = SenderPly.PlayerData.money["bank"] + phonedata.bankDetails.Billings[i].amount
+                                    MySQL.Async.execute('UPDATE players SET `money` = @money WHERE `citizenid` = @citizenid', {
+                                        ['@citizenid'] = phonedata.bankDetails.Billings[i].sendercitizenid,
+                                        ['@money'] = json.encode(SenderPly.PlayerData.money),
+                                    })
+                                end
+                            end
                         end
 
 
@@ -352,7 +383,9 @@ Config.Core.Functions.CreateCallback('gksphone:server:billing:billpay', function
                                 return
                             end
 
-                            if Config.UseBillingCommission then
+                            local isPlayerFee = Config.PlayerFeeJobs[phonedata.bankDetails.Billings[i].society]
+
+                            if Config.UseBillingCommission and not isPlayerFee then
                                 local SenderPly = Config.Core.Functions.GetPlayerByCitizenId(phonedata.bankDetails.Billings[i].sendercitizenid)
                                 if SenderPly ~= nil then
                                     if Config.BillingCommissions[phonedata.bankDetails.Billings[i].society] then
@@ -367,9 +400,33 @@ Config.Core.Functions.CreateCallback('gksphone:server:billing:billpay', function
                             end
 
                             xPlayer.Functions.RemoveMoney('bank', phonedata.bankDetails.Billings[i].amount, "paid-invoice")
-                            local SocietyAddMoney = SocietyAddMoney(phonedata.bankDetails.Billings[i].society, phonedata.bankDetails.Billings[i].amount)
-                            if SocietyAddMoney then
-                                debugprint("billing paid, society add money", {phonedata.bankDetails.Billings[i].society, phonedata.bankDetails.Billings[i].amount})
+                            if not isPlayerFee then
+                                local SocietyAddMoney = SocietyAddMoney(phonedata.bankDetails.Billings[i].society, phonedata.bankDetails.Billings[i].amount)
+                                if SocietyAddMoney then
+                                    debugprint("billing paid, society add money", {phonedata.bankDetails.Billings[i].society, phonedata.bankDetails.Billings[i].amount})
+                                end
+                            else
+                                local SenderPly = Config.Core.Functions.GetPlayerByCitizenId(phonedata.bankDetails.Billings[i].sendercitizenid)
+                                if SenderPly ~= nil then
+                                    SenderPly.Functions.AddMoney('bank', phonedata.bankDetails.Billings[i].amount)
+                                    local phoneLang = GetPhoneLangBySource(SenderPly.PlayerData.source)
+                                    local notify = {
+                                        title = _T(phoneLang, "BillingAPP.APP_BILLING_HEADER"), -- The title of the notification
+                                        message = _T(phoneLang, "BillingAPP.APP_BILLING_PLAYERFEE"), -- The message of the notification
+                                        icon = "/html/img/icons/billing.png", -- The icon to be displayed with the notification
+                                    }
+                                    exports["gksphone"]:sendNotification(SenderPly.PlayerData.source, notify)
+                                    exports["gksphone"]:BankSaveHistory(SenderPly.PlayerData.source, 2, phonedata.bankDetails.Billings[i].amount, _T(phoneLang, "BillingAPP.APP_BILLING_PLAYERFEE"))
+                                else
+                                    SenderPly = Config.Core.Functions.GetOfflinePlayerByCitizenId(phonedata.bankDetails.Billings[i].sendercitizenid)
+                                    if SenderPly then
+                                        SenderPly.PlayerData.money["bank"] = SenderPly.PlayerData.money["bank"] + phonedata.bankDetails.Billings[i].amount
+                                        MySQL.Async.execute('UPDATE players SET `money` = @money WHERE `citizenid` = @citizenid', {
+                                            ['@citizenid'] = phonedata.bankDetails.Billings[i].sendercitizenid,
+                                            ['@money'] = json.encode(SenderPly.PlayerData.money),
+                                        })
+                                    end
+                                end
                             end
 
                             MySQL.Async.execute('UPDATE gksphone_billing SET status = @status WHERE id = @id', {
@@ -688,6 +745,7 @@ Config.Core.Functions.CreateCallback('gksphone:server:deleteBill', function(sour
 
             cb(true)
         else
+            local phoneLang = GetPhoneLangBySource(source)
             local notify = {
                 title = _T(phoneLang, "BillingAPP.APP_BILLING_HEADER"), -- The title of the notification
                 message = _T(phoneLang, "BillingAPP.APP_BILLING_NOBILL"), -- The message of the notification

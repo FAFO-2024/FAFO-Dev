@@ -82,6 +82,9 @@ function SetItemData(source, item, data)
     elseif Config.qsInvetory then
       exports['qs-inventory']:SetItemMetadata(src, item.slot, data)
       return true
+    elseif Config.tgiannInventory then
+      exports['tgiann-inventory']:UpdateItemMetadata(src, item.name, item.slot, data)
+      return true
     elseif not Config.MetaItem then
       return true
     else
@@ -115,6 +118,9 @@ function UpdateItemData(source, item, datatype, data)
     exports['core_inventory']:updateMetadata(inventory, item.id, metadata)
   elseif Config.qsInvetory then
     exports['qs-inventory']:SetItemMetadata(src, item.slot, metadata)
+  elseif Config.tgiannInventory then
+    exports['tgiann-inventory']:UpdateItemMetadata(src, item.name, item.slot, metadata)
+    return true
   else
     local Player = Config.Core.Functions.GetPlayer(src)
     if Player then
@@ -135,17 +141,42 @@ function SearchPhoneItems(source)
   local data = {}
   if Player then
     if Config.qsInvetory then
-      local player = Player.PlayerData.citizenid
       items = {}
       data = exports['qs-inventory']:GetInventory(src)
+    elseif Config.CoreInventory then
+      items = {}
+      local inventory = 'content-' ..  Player.PlayerData.citizenid
+      data = exports['core_inventory']:getInventory(inventory)
+    elseif Config.tgiannInventory then
+      items = {}
+      data = exports["tgiann-inventory"]:GetPlayerItems(src)
     end
     for k, v in pairs(Config.ItemName) do
       if Config.OxInvetory then
         itemData = exports.ox_inventory:Search(src, 1, k)
       elseif Config.CoreInventory then
-        local inventory = 'content-' ..  Player.PlayerData.citizenid
-        itemData = exports['core_inventory']:getItems(inventory, k)
+        if data and type(data) =="table" then
+          for x,y in pairs(data) do
+              if y.name == k then
+                  items[#items+1] = y
+              end
+          end
+        end
+        if #items > 0 then
+          itemData = items
+        end
       elseif Config.qsInvetory then
+        if data and type(data) =="table" then
+          for _, l in pairs(data) do
+            if l.name == k then
+              items[#items+1] = l
+            end
+          end
+        end
+        if #items > 0 then
+          itemData = items
+        end
+      elseif Config.tgiannInventory then
         if data and type(data) =="table" then
           for _, l in pairs(data) do
             if l.name == k then
@@ -204,7 +235,7 @@ end
 function SocietyGetMoney(jobname)
   local BusinessMoney = 0
   if GetResourceState("qb-banking") == "started" then
-    BusinessMoney = exports['qb-banking']:GetAccount(jobname)?.account_balance
+    BusinessMoney = exports['qb-banking']:GetAccount(jobname)?.account_balance or 0
   end
 
   return BusinessMoney
@@ -242,4 +273,32 @@ function CallingPlayerStatus(source)
     retval = true
   end
   return retval
+end
+
+--- Auto Open Close Dispatch ---
+
+if Config.IsDispatchAutoOpenClose then
+  RegisterNetEvent('QBCore:Server:OnJobUpdate', function(source, newJob)
+    if not Config.JOBDispatch[newJob.name] or Config.DispatchAutoIgnoredJobs[newJob.name] then return end
+    local PolicesOnDuty, count = Config.Core.Functions.GetPlayersOnDuty(newJob.name)
+    if count == 0 then
+      local isJobActive = exports["gksphone"]:IsJobStatus(newJob.name)
+      if isJobActive then
+        exports["gksphone"]:JobStatusChange(newJob.name, false)
+      end
+    elseif count == 1 then
+      local isJobActive = exports["gksphone"]:IsJobStatus(newJob.name)
+      if not isJobActive then
+        exports["gksphone"]:JobStatusChange(newJob.name, true)
+      end
+    end
+  end)
+end
+
+--- Delete Character ---
+--- Delete Character Event ---
+if Config.deleteCharacter then
+  RegisterNetEvent("qb-multicharacter:server:deleteCharacter", function (citizenid)
+    DeleteCharacter(citizenid)
+  end)
 end

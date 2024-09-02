@@ -5,6 +5,17 @@ if not Config.Language then Config.Language = 'jp' end
 if Config.Language ~= 'jp' then return end
 
 Strings = {
+    no_society_account = '%s の社会アカウントが見つかりません - 設定を確認してください！',
+    officer = '警官',
+    not_authorized = '権限なし',
+    not_authorized_desc = 'これを使用する権限がありません！',
+    not_on_duty = '勤務中ではない',
+    not_on_duty_desc = '現在勤務中ではありません！',
+    gps_enabled = 'GPS が有効',
+    gps_enabled_desc = 'GPS を有効にしました',
+    gps_disabled = 'GPS が無効',
+    gps_disabled_desc = 'GPS を無効にしました',
+
     new_speed_trap = '新しいスピードトラップ',
     speed_limit = '速度制限',
     incorrect_input = '入力が間違っています',

@@ -2,7 +2,7 @@ fx_version 'cerulean'
 games { 'gta5' }
 lua54 'yes'
 description 'GKSPHONEv2'
-version '2.0.5'
+version '2.0.6'
 
 ui_page 'html/index.html'
 
@@ -25,7 +25,6 @@ client_scripts {
     "config/charge/*.lua",
     "config/signal/*.lua",
     "config/camera/*.lua",
-    "client/*",
 	"client/**/*",
     "escrow/client/**/*",
 }
@@ -36,7 +35,6 @@ server_scripts {
 	"config/rentacar/sv_config.lua",
     "config/charge/*.lua",
     "config/signal/*.lua",
-    "server/*",
     "server/**/*",
     "escrow/server/**/*",
 }

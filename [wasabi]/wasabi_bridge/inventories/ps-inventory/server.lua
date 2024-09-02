@@ -9,45 +9,15 @@ if found ~= 'started' and found ~= 'starting' then return end
 WSB.inventory = {}
 WSB.inventorySystem = 'ps-inventory'
 
-OldInventory = GetResourceMetadata(WSB.inventorySystem, 'version', 0)
-OldInventory = OldInventory:gsub('%.', '')
-OldInventory = tonumber(OldInventory)
-if not OldInventory or OldInventory >= 105 then OldInventory = false end
-
-if not OldInventory then
-    local registeredShops = {}
-    RegisterNetEvent('wasabi_bridge:registerShop', function(data)
-        local src = source
-        if registeredShops[data.identifier] then
-            exports['ps-inventory']:OpenShop(src, data.identifier)
-            return
-        end
-
-        exports['ps-inventory']:CreateShop({
-            name = data.identifier,
-            label = data.name,
-            slots = #data.inventory,
-            items = data.inventory -- { name = 'sandwich', price = 5 }
-        })
-        registeredShops[data.identifier] = data
-        exports['ps-inventory']:OpenShop(src, data.identifier)
-    end)
-
-    RegisterNetEvent('wasabi_bridge:openStash', function(data)
-        local src = source
-        exports['ps-inventory']:OpenInventory(src, data.name,
-            { label = data.name, slots = data.slots, maxweight = data.maxWeight })
-    end)
-
-    RegisterNetEvent('wasabi_bridge:openPlayerInventory', function(targetId)
-        local src = source
-        exports['ps-inventory']:OpenInventoryById(src, targetId)
-    end)
-end
-
-
 function WSB.inventory.getItemSlot(source, itemName)
     return GetItemSlot(source, itemName) or false
+end
+
+function WSB.inventory.getItemSlots(source, itemName)
+    local src = source
+    local player = WSB.getPlayer(src)
+    if not player then return {} end
+    return GetSlotsByItem(player.PlayerData and player.PlayerData.items, itemName)
 end
 
 function WSB.inventory.getItemMetadata(source, slot)

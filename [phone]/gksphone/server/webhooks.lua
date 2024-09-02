@@ -244,6 +244,25 @@ function WebhookLogs(logType, source, logData)
     }
 
     PerformHttpRequest(discord_webhook, function(err, text, headers) end, 'POST', json.encode(data), headers)
+  elseif logType == "livestreamCreate" then
+    local discord_webhook = Cfg.DiscordWebHooks[logType]
+    if not discord_webhook or discord_webhook == "" then
+      return
+    end
+    local headers = {
+      ['Content-Type'] = 'application/json'
+    }
+    local data = {
+      ["username"] = "LiveAPP Create",
+      ["embeds"] = {
+        {
+          ["color"] = 1942002,
+          ['title'] = "LiveAPP Create",
+          ['description'] = '**Streamer:** ' ..logData.xPlayer.PlayerData.source.. ' **['..logData.xPlayer.PlayerData.citizenid..']**' .. '\n**Stream Title:** ' ..logData.livetitle
+        }
+      }
+    }
+    PerformHttpRequest(discord_webhook, function(err, text, headers) end, 'POST', json.encode(data), headers)
   elseif logType == "livestreamDonate" then
     -- livestreamDonate
     local discord_webhook = Cfg.DiscordWebHooks[logType]
@@ -695,6 +714,112 @@ function WebhookLogs(logType, source, logData)
       }
     }
 
+    PerformHttpRequest(discord_webhook, function(err, text, headers) end, 'POST', json.encode(data), headers)
+  elseif logType == "startCall" then
+    local discord_webhook = Cfg.DiscordWebHooks[logType]
+    if not discord_webhook then
+      return
+    end
+
+    local headers = {
+      ['Content-Type'] = 'application/json'
+    }
+
+    local data = {
+      ["username"] = "Phone",
+      ["embeds"] = {
+        {
+          ["color"] = 1942002,
+          ['title'] = "Phone - Start Call",
+          ['description'] = '**Caller:** ' ..logData.caller.. '\n**Receiver:** ' ..logData.receiver.. '\n**Source:** ' ..source .. '\n**Caller Citizen ID:** ' ..logData.callerIdentifier .. '\n**Receiver Citizen ID:** ' ..logData.receiverIdentifier .. '\n**Call Type:** ' ..logData.type .. '\n**Call Is Anonymous:** ' ..logData.is_anonymous
+        }
+      }
+    }
+
+    PerformHttpRequest(discord_webhook, function(err, text, headers) end, 'POST', json.encode(data), headers)
+  elseif logType == "casinoChipBuy" then
+    local discord_webhook = Cfg.DiscordWebHooks[logType]
+    if not discord_webhook then
+      return
+    end
+
+    local headers = {
+      ['Content-Type'] = 'application/json'
+    }
+
+    local data = {
+      ["username"] = "Casino",
+      ["embeds"] = {
+        {
+          ["color"] = 1942002,
+          ['title'] = "Casino - Buy Chip",
+          ['description'] = '**Player Identifier:** ' ..logData.xPlayer.PlayerData.citizenid.. '\n**Purchased Chips:** ' ..logData.chips.. '\n**Price:** ' ..logData.chips
+        }
+      }
+    }
+    PerformHttpRequest(discord_webhook, function(err, text, headers) end, 'POST', json.encode(data), headers)
+  elseif logType == "casinoChipSeller" then
+    local discord_webhook = Cfg.DiscordWebHooks[logType]
+    if not discord_webhook then
+      return
+    end
+
+    local headers = {
+      ['Content-Type'] = 'application/json'
+    }
+
+    local data = {
+      ["username"] = "Casino",
+      ["embeds"] = {
+        {
+          ["color"] = 1942002,
+          ['title'] = "Casino - Sell Chip",
+          ['description'] = '**Player Identifier:** ' ..logData.xPlayer.PlayerData.citizenid.. '\n**Sold Chips:** ' ..logData.chips.. '\n**Price:** ' ..logData.amount
+        }
+      }
+    }
+    PerformHttpRequest(discord_webhook, function(err, text, headers) end, 'POST', json.encode(data), headers)
+  elseif logType == "casinoDiceWinner" then
+    local discord_webhook = Cfg.DiscordWebHooks[logType]
+    if not discord_webhook then
+      return
+    end
+    local Player = Config.Core.Functions.GetPlayer(source)
+    local headers = {
+      ['Content-Type'] = 'application/json'
+    }
+
+    local data = {
+      ["username"] = "Casino",
+      ["embeds"] = {
+        {
+          ["color"] = 1942002,
+          ['title'] = "Casino - Winner Dice Chip",
+          ['description'] =  '**Player Identifier:** ' ..Player.PlayerData.citizenid.. '\n**Player Name:** ' ..Player.PlayerData.charinfo.firstname.. ' ' ..Player.PlayerData.charinfo.lastname.. '\n**Won Chips:** ' ..logData.chips
+        }
+      }
+    }
+    PerformHttpRequest(discord_webhook, function(err, text, headers) end, 'POST', json.encode(data), headers)
+  elseif logType == "casinoRollWinner" then
+    local discord_webhook = Cfg.DiscordWebHooks[logType]
+    if not discord_webhook then
+      return
+    end
+
+    local headers = {
+      ['Content-Type'] = 'application/json'
+    }
+
+    local data = {
+      ["username"] = "Casino",
+      ["embeds"] = {
+        {
+          ["color"] = 1942002,
+          ['title'] = "Casino - Winner Roll Chip",
+          ['description'] =  '**Player Identifier:** ' ..logData.xPlayer.PlayerData.citizenid.. '\n**Player Name:** ' ..logData.xPlayer.PlayerData.charinfo.firstname.. ' ' ..logData.xPlayer.PlayerData.charinfo.lastname.. '\n**Won Chips:** ' ..logData.chips
+        }
+      }
+    }
     PerformHttpRequest(discord_webhook, function(err, text, headers) end, 'POST', json.encode(data), headers)
 
   end

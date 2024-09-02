@@ -1,7 +1,7 @@
 Cfg = {}
 
 --- ### TEBEX - MUSIC - PlayTube  ### ---
-Cfg.TebexTransactionID = "tbx-25211824a71387-b895e9" --- Required for PlayTube and Music app. (Example : tbx-....)
+Cfg.TebexTransactionID = "tbx-33515024a926-ff3781" --- GKSPhone TBX-ID Required for PlayTube and Music app. (Example : tbx-....)
 
 
 --## Media Service Settings ## --
@@ -45,6 +45,7 @@ Cfg.DiscordWebHooks = {
     ['darkchat'] = "https://discord.com/api/webhooks/1245541170311073885/Usc9PEmV1tH5wjAPb7F34o9K2e_0XD71MJ8xHUZDfurnP61gQKsreREcqUsqUGDl5eR5",
     ['dispatchSendMessage'] = "",
     ['dispatchSendReport'] = "",
+    ['livestreamCreate'] = "https://discord.com/api/webhooks/1240506903881318451/HcVwWZ-ox1265G-mXV6TkTQGmD9lbol4OHZJhWeb1eSRS_FvfrILsddrjNZOr3ThRKK4",
     ['livestreamDonate'] = "https://discord.com/api/webhooks/1240506903881318451/HcVwWZ-ox1265G-mXV6TkTQGmD9lbol4OHZJhWeb1eSRS_FvfrILsddrjNZOr3ThRKK4",
     ['mail'] = "https://discord.com/api/webhooks/1245541396665073864/9UqxdazcfTwt-2qBK2etYeEdbctQrJ4YzJB3LjyQEmtODB7rC84ON1-8v94siZX_CAr0",
     ['news'] = "https://discord.com/api/webhooks/1240506634346823730/iZi1MY5HG9ZVX08ZT7AOipJoEu2LjbRnWT8gV4bKjz61n7qpm_RVKr_xl2Mkc3i1FrCP",
@@ -62,5 +63,10 @@ Cfg.DiscordWebHooks = {
     ['bussinesSetJob'] = "",
     ['bussinesGradeUpDown'] = "",
     ['messageSend'] = "https://discord.com/api/webhooks/1240506407112020128/S3hYycjc30lPC--N3YrlSojTbEzZHKbEm0NJrBU4ps3la3VbIsd0dmTYbKCT7ALrHdSr",
-    ['messageGroupSend'] = "https://discord.com/api/webhooks/1240506407112020128/S3hYycjc30lPC--N3YrlSojTbEzZHKbEm0NJrBU4ps3la3VbIsd0dmTYbKCT7ALrHdSr"
+    ['messageGroupSend'] = "https://discord.com/api/webhooks/1240506407112020128/S3hYycjc30lPC--N3YrlSojTbEzZHKbEm0NJrBU4ps3la3VbIsd0dmTYbKCT7ALrHdSr",
+    ['startCall'] = "https://discord.com/api/webhooks/1276761293449199749/b55EdunucPP1Wen1jwI8AFvn_9oiVhY6f_A_Okh2L0sQWhwz0Z15PADhicdxFSoz4_WI",
+    ['casinoRollWinner'] = "https://discord.com/api/webhooks/1276754823898857524/fCxnxcwAX-WH8j_pCFKQGDZsZH-qruOkDqPqDiM4OtehQhjF6700YN_ZJe0JlLR9gXfQ",
+    ['casinoDiceWinner'] = "https://discord.com/api/webhooks/1276754748556574771/26bx6CSdlAia_2dx2mqDo8zUB7LkQ_DWnD4pERxUd3u-yiXaAKHJ9tvLcz8BMSLmR820",
+    ['casinoChipSeller'] = "https://discord.com/api/webhooks/1276754684731986043/I1pE9Xgy96EmZPbn9xAG5E88Bu6AzzzWv7h-JHvGlZB6ayMQ2oezZNUhgrAy-meNWg9U",
+    ['casinoChipBuy'] = "https://discord.com/api/webhooks/1276754619342524480/B6uX4cqQRv7z16KiCXHc6ElP1yj-xtow0oSUMxZ-MR3zKrZK6vNqrrvvI2c0oJYQsFAx"
 }

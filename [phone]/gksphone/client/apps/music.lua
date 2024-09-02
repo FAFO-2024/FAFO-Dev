@@ -2,7 +2,7 @@
 -- Made by GKSHOP  | https://discord.gg/XUck63E
 -- Version: 2.0.0
 xSound = exports.xsound
-local musicData = {}
+musicData = {}
 local volume = 0.2
 
 RegisterNUICallback('gksphone:musicListen', function(data, cb)
@@ -34,13 +34,15 @@ RegisterNUICallback('gksphone:client:playMusic', function(data, cb)
                 check = {time = getTime}
             end
             TriggerServerEvent('gksphone:server:musicListen', data.musicid, data.action == "volume" and data.volume or nil, data.action, data.action == "seek" and data.seekTime or nil)
+        elseif not musicData[id] and data.action == "musicNext" then
+            TriggerServerEvent('gksphone:server:musicListen', data.musicid, volume, "play", 0)
         end
     end
     cb(check)
 end)
 
 RegisterNetEvent('gksphone:client:music', function(action, musicid, mvolume, coords, sid, time)
-    debugprint("Music event", action, musicid, mvolume, coords, sid, time)
+    debugprint("Music event", {action, musicid, mvolume, coords, sid, time})
     if action == "play" or action == "call" then
         if action == "call" then
             sid = "call" .. sid
@@ -53,14 +55,30 @@ RegisterNetEvent('gksphone:client:music', function(action, musicid, mvolume, coo
             debugprint("No coords")
             return
         end
+        local playerID = action == "call" and sid:gsub("call", "") or sid
+        if type(playerID) == "string" then
+            playerID = tonumber(playerID)
+            local playerCheck = GetPlayerFromServerId(playerID)
+            if playerCheck == -1 then
+                debugprint("Player Not Found")
+                return
+            end
+        else
+            local playerCheck = GetPlayerFromServerId(playerID)
+            if playerCheck == -1 then
+                debugprint("Player Not Found")
+                return
+            end
+        end
 
-        xSound:PlayUrlPos(sid, musicid, mvolume, coords, action == "call" and true or false, {
+        xSound:PlayUrlPos(sid, musicid, mvolume, coords, false, {
             onPlayStart = function(event)
                     debugprint("Music started", event)
                     musicData[sid] = {id = musicid, volume = mvolume, coords = coords, time = time, sid = sid}
-                    
-                    xSound:setVolume(sid, mvolume)
-                    if musicData[sid]?.time then
+                    if xSound:soundExists(sid) then
+                        xSound:setVolumeMax(sid, mvolume)
+                    end
+                    if musicData[sid]?.time and xSound:soundExists(sid) then
                         xSound:setTimeStamp(sid, musicData[sid].time)
                     end
                     if sid == currentPlayerId then
@@ -69,11 +87,12 @@ RegisterNetEvent('gksphone:client:music', function(action, musicid, mvolume, coo
                             isPlay = true
                         })
                     end
-                    if action == "call" then
+                    if action == "call" and xSound:soundExists(sid) then
                         xSound:setSoundLoop(sid, true)
                     end
                     CreateThread(function()
                         local checkPosition = false
+                        local WaitTime = 200
                         while true do
                             if not musicData[sid] then
                                 if xSound:soundExists(sid) then
@@ -82,11 +101,12 @@ RegisterNetEvent('gksphone:client:music', function(action, musicid, mvolume, coo
                                 end
                                 break
                             end
-                            if sid == currentPlayerId and xSound:isPlaying(sid) then
+
+                            if sid == currentPlayerId and xSound:soundExists(sid) then
                                 local duration = xSound:getMaxDuration(sid)
                                 local currentTime = xSound:getTimeStamp(sid)
                                 local progress = (currentTime / duration) * 100
-                                debugprint("Updating progress", progress, currentTime, duration)
+                                --debugprint("Updating progress", progress, currentTime, duration)
                                 SendNUIMessage({
                                     action = 'updateProgress',
                                     progress = progress,
@@ -94,7 +114,7 @@ RegisterNetEvent('gksphone:client:music', function(action, musicid, mvolume, coo
                                 })
                             end
 
-                            if xSound:isPlaying(sid) then
+                            if xSound:soundExists(sid) then
                                 local playerID = action == "call" and sid:gsub("call", "") or sid
                                 if type(playerID) == "string" then
                                     playerID = tonumber(playerID)
@@ -123,30 +143,30 @@ RegisterNetEvent('gksphone:client:music', function(action, musicid, mvolume, coo
                                         end
 
                                         if checkPosition then
-                                            xSound:setVolume(sid, musicData[sid].volume)
+                                            xSound:setVolumeMax(sid, musicData[sid].volume)
                                             checkPosition = false
+                                            WaitTime = 200
                                         end
                                     else
-                                        xSound:setVolume(sid, 0.0)
+                                        xSound:setVolumeMax(sid, 0.0)
                                         xSound:Position(sid, pedCoords)
                                         checkPosition = true
+                                        WaitTime = 1000
                                     end
                                 else
-                                    xSound:setVolume(sid, 0.0)
+                                    xSound:setVolumeMax(sid, 0.0)
                                     checkPosition = true
+                                    WaitTime = 1000
                                 end
                             end
 
-                            Wait(200)
+                            Wait(WaitTime)
                         end
                     end)
             end,
             onPlayEnd = function(event)
-                musicData[sid] = nil
                 debugprint("Music ended", event)
-                if musicData[sid] and action == "call" then
-                    xSound:repeatSound(sid)
-                else
+                if action ~= "call" and event and not event.paused then
                     musicData[sid] = nil
                     debugprint("Music ended", event)
                     if sid == currentPlayerId then
@@ -183,7 +203,7 @@ RegisterNetEvent('gksphone:client:music', function(action, musicid, mvolume, coo
         
     elseif action == "volume" then
         if musicData[sid] then
-            xSound:setVolume(sid, mvolume)
+            xSound:setVolumeMax(sid, mvolume)
             musicData[sid].volume = mvolume
         end
     elseif action == "pause" then
@@ -191,7 +211,7 @@ RegisterNetEvent('gksphone:client:music', function(action, musicid, mvolume, coo
             xSound:Pause(sid)
         end
     elseif action == "resume" then
-        if musicData[sid] then
+        if musicData[sid] and xSound:soundExists(sid) then
             xSound:Resume(sid)
         end
     elseif action == "seek" then
@@ -207,6 +227,11 @@ RegisterNetEvent('gksphone:client:music', function(action, musicid, mvolume, coo
         if musicData[sid] and xSound:soundExists(sid) then
             exports["xsound"]:Destroy(sid)
             musicData[sid] = nil
+        end
+    elseif action == "musicNext" then
+        if musicData[sid] and xSound:soundExists(sid) then
+            xSound:setSoundURL(sid, musicid)
+            xSound:setTimeStamp(sid, 0)
         end
     end
 end)

@@ -5,6 +5,17 @@ if not Config.Language then Config.Language = 'da' end
 if Config.Language ~= 'da' then return end
 
 Strings = {
+    no_society_account = 'Ingen samfundskonto fundet - tjek din konfiguration!',
+    officer = 'Officer',
+    not_authorized = 'Ikke autoriseret',
+    not_authorized_desc = 'Du har ikke tilladelse til at bruge dette!',
+    not_on_duty = 'Ikke på vagt',
+    not_on_duty_desc = 'Du er ikke på vagt!',
+    gps_enabled = 'GPS Aktiveret',
+    gps_enabled_desc = 'Du har aktiveret din GPS',
+    gps_disabled = 'GPS Deaktiveret',
+    gps_disabled_desc = 'Du har deaktiveret din GPS',
+
     new_speed_trap = 'Ny Fartfælde',
     speed_limit = 'Fartgrænse',
     incorrect_input = 'Forkert Indtastning',

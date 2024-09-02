@@ -8,40 +8,52 @@
 local textUI = false
 
 -- Show text UI
-function WSB.showTextUI(msg)
-    -- EDIT: Customize with your own text UI system
-    if GetResourceState('wasabi_textui') == 'started' then
-        exports.wasabi_textui:showTextUI(msg)
-        textUI = msg
-        return
-    end
+function WSB.showTextUI(msg, options)
+    -- Customize this logic with your own text UI or ox_lib
+    -- msg = string, the message to display
+    -- options = { -- Optional, data to pass to text UI system
+    --     position = string - either 'right-center', 'left-center', 'top-center', or bottom-center,
+    --     icon = string - icon name,
+    --     iconColor = string - icon color,
+    --     textColor = string - text color,
+    --     backgroundColor = string - background color,
+    --     iconAnimation = 'pulse', -- currently only pusle available
+    -- }
 
-    if GetResourceState('ox_lib') == 'started' then
-        exports.ox_lib:showTextUI(msg)
-        textUI = msg
+    -- Remove under this to use your own text UI --
+    ShowTextUI(msg, options)
+    textUI = msg
+    -- Remove above this if you are using your own menu system / want to use ox_lib
+
+    --[[
+    local oxLib = GetResourceState('ox_lib')
+    if oxLib ~= 'started' and oxLib ~= 'starting' then
+        print(
+            '^0[^3WARNING^0] ^1ox_lib^0 is not running, please ensure it is started before using ^wsb.showTextUI or use default!^0')
         return
     end
-    
-    print('^0[^3WARNING^0] No TextUI system detected! Please add ox_lib OR customize at customize/client/textUI.lua^0')
+    exports.ox_lib:showTextUI(msg)
+    textUI = msg
+    ]]
 end
 
 -- Hide text UI
 function WSB.hideTextUI()
-    if GetResourceState('wasabi_textui') == 'started' then
-        exports.wasabi_textui:hideTextUI()
-        textUI = false
+    -- Remove under this to use your own text UI --
+    HideTextUI()
+    textUI = false
+    -- Remove above this if you are using your own menu system / want to use ox_lib
+
+    --[[
+    local oxLib = GetResourceState('ox_lib')
+    if oxLib ~= 'started' and oxLib ~= 'starting' then
+        print(
+            '^0[^3WARNING^0] ^1ox_lib^0 is not running, please ensure it is started before using ^wsb.showTextUI or use default!^0')
         return
     end
-
-    if GetResourceState('ox_lib') == 'started' then
-        exports.ox_lib:hideTextUI()
-        textUI = false
-        return
-    end
-
-    print('^0[^3WARNING^0] No TextUI system detected! Please add ox_lib OR customize at customize/client/textUI.lua^0')
-
-    -- EDIT: Customize with your own text UI system
+    exports.ox_lib:hideTextUI()
+    textUI = false
+    ]]
 end
 
 -- Checking for text UI

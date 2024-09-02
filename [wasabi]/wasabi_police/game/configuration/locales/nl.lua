@@ -5,6 +5,17 @@ if not Config.Language then Config.Language = 'nl' end
 if Config.Language ~= 'nl' then return end
 
 Strings = {
+    no_society_account = 'Geen maatschappijaccount gevonden voor %s - controleer je configuratie!',
+    officer = 'Officier',
+    not_authorized = 'Niet Geautoriseerd',
+    not_authorized_desc = 'Je bent niet gemachtigd om dit te gebruiken!',
+    not_on_duty = 'Niet op Dienst',
+    not_on_duty_desc = 'Je bent niet op dienst!',
+    gps_enabled = 'GPS Ingeschakeld',
+    gps_enabled_desc = 'Je hebt je GPS ingeschakeld',
+    gps_disabled = 'GPS Uitgeschakeld',
+    gps_disabled_desc = 'Je hebt je GPS uitgeschakeld',
+
     new_speed_trap = 'Nieuwe Snelheidscontrole',
     speed_limit = 'Snelheidslimiet',
     incorrect_input = 'Onjuiste invoer',

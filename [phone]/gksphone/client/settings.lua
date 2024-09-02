@@ -80,6 +80,9 @@ function HasItem(itemName)
   elseif Config.qsInvetory then
     local result = exports['qs-inventory']:Search(itemName)
     return result > 0 and true or false
+  elseif Config.tgiannInventory then
+    local result = exports['tgiann-inventory']:HasItem(items, 1)
+    return result
   else
     local items = Config.Core.Functions.GetPlayerData().items
     for k, v in pairs(items) do

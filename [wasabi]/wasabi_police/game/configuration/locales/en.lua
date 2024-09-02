@@ -5,6 +5,17 @@ if not Config.Language then Config.Language = 'en' end
 if Config.Language ~= 'en' then return end
 
 Strings = {
+    no_society_account = '^0[^WARNING^0] No society account found for %s - check your configuration!',
+    officer = 'Officer',
+    not_authorized = 'Not Authorized',
+    not_authorized_desc = 'You are not authorized to use this!',
+    not_on_duty = 'Not On Duty',
+    not_on_duty_desc = 'You are not on duty!',
+    gps_enabled = 'GPS Enabled',
+    gps_enabled_desc = 'You have enabled your GPS',
+    gps_disabled = 'GPS Disabled',
+    gps_disabled_desc = 'You have disabled your GPS',
+
     new_speed_trap = 'New Speed Trap',
     speed_limit = 'Speed Limit',
     incorrect_input = 'Incorrect Input',

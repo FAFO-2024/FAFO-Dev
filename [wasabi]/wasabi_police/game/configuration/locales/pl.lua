@@ -5,6 +5,17 @@ if not Config.Language then Config.Language = 'pl' end
 if Config.Language ~= 'pl' then return end
 
 Strings = {
+    no_society_account = 'Nie znaleziono konta społeczeństwa dla %s - sprawdź swoją konfigurację!',
+    officer = 'Oficer',
+    not_authorized = 'Nieautoryzowany',
+    not_authorized_desc = 'Nie masz uprawnień do korzystania z tego!',
+    not_on_duty = 'Nie na służbie',
+    not_on_duty_desc = 'Nie jesteś na służbie!',
+    gps_enabled = 'GPS Włączony',
+    gps_enabled_desc = 'Włączyłeś GPS',
+    gps_disabled = 'GPS Wyłączony',
+    gps_disabled_desc = 'Wyłączyłeś GPS',
+
     new_speed_trap = 'Nowa pułapka prędkości',
     speed_limit = 'Ograniczenie prędkości',
     incorrect_input = 'Niepoprawne dane wejściowe',

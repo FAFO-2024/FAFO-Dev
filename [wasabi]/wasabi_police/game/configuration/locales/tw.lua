@@ -5,6 +5,17 @@ if not Config.Language then Config.Language = 'tw' end
 if Config.Language ~= 'tw' then return end
 
 Strings = {
+    no_society_account = '未找到社會賬戶，請檢查您的配置！',
+    officer = '警官',
+    not_authorized = '未授權',
+    not_authorized_desc = '您沒有使用此功能的權限！',
+    not_on_duty = '不在值班',
+    not_on_duty_desc = '您目前不在值班中！',
+    gps_enabled = 'GPS 已啟用',
+    gps_enabled_desc = '您已啟用 GPS',
+    gps_disabled = 'GPS 已禁用',
+    gps_disabled_desc = '您已禁用 GPS',
+
     new_speed_trap = '新測速器',
     speed_limit = '速度限制',
     incorrect_input = '輸入錯誤',

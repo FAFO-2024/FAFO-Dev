@@ -13,15 +13,11 @@ OldInventory = GetResourceMetadata(WSB.inventorySystem, 'version', 0)
 OldInventory = OldInventory:gsub('%.', '')
 OldInventory = tonumber(OldInventory)
 if not OldInventory or OldInventory >= 105 then OldInventory = false end
+local inventoryPrefix = OldInventory and 'inventory' or 'ps-inventory'
 
 function WSB.inventory.openPlayerInventory(targetId)
-    if not OldInventory then
-        TriggerServerEvent('wasabi_bridge:openPlayerInventory', targetId)
-        return
-    end
-
-    TriggerServerEvent('inventory:server:OpenInventory', 'otherplayer', targetId)
-    TriggerEvent('inventory:server:RobPlayer', targetId)
+    TriggerServerEvent(inventoryPrefix .. ':server:OpenInventory', 'otherplayer', targetId)
+    TriggerEvent(inventoryPrefix .. 'inventory:server:RobPlayer', targetId)
 end
 
 function WSB.inventory.openStash(data)
@@ -30,14 +26,9 @@ function WSB.inventory.openStash(data)
         data.name = ('%s_%s'):format(data.name, WSB.getIdentifier())
     end
 
-    if not OldInventory then
-        TriggerServerEvent('wasabi_bridge:openStash', data)
-        return
-    end
-
-    TriggerServerEvent('inventory:server:OpenInventory', 'stash', data.name,
+    TriggerServerEvent(inventoryPrefix .. ':server:OpenInventory', 'stash', data.name,
         { maxweight = data.maxWeight, slots = data.slots })
-    TriggerEvent('inventory:client:SetCurrentStash', data.name)
+    TriggerEvent(inventoryPrefix .. ':client:SetCurrentStash', data.name)
 end
 
 function WSB.inventory.openShop(data)
@@ -52,13 +43,7 @@ data = {
         vec3(0, 0, 0),
     }
 ]]
-
-    if not OldInventory then
-        TriggerServerEvent('wasabi_bridge:registerShop', data)
-        return
-    end
-
     local shopData = ConvertShopData(data)
 
-    TriggerServerEvent("inventory:server:OpenInventory", "shop", data.identifier, shopData)
+    TriggerServerEvent(inventoryPrefix .. ":server:OpenInventory", "shop", data.identifier, shopData)
 end

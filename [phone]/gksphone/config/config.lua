@@ -18,7 +18,7 @@ Config.HospitalAmbulanceAlert = false     -- Set to false to disable hospital am
 Config.KeyMapping          = true        -- Set to false to disable keymapping
 Config.OpenPhone           = "M"        -- Key to open phone (default: F1) (https://docs.fivem.net/docs/game-references/controls/)
 Config.DefaultLocale       = "en"        -- Set default locale (default: en)
-Config.Locales             = {"af", "de", "en", "fr", "nl", "tr"} -- Set the languages you want to use
+Config.Locales             = {"af", "de", "en", "fr", "nl", "tr", "zh-TW"} -- Set the languages you want to use
 Config.RegisterCommandName = "phone"     -- Set the name of the command to open the phone (default: phone)
 Config.ItemName = {  -- Set the name of the item to open the phone (default: ["iphone"] = "ios") !!!  -- Don't add more than two options unless you're using the phone as a meta item. !!!
     ["iphone"] = "ios",
@@ -31,23 +31,17 @@ Config.PropName = {
 Config.SerialNumberPrefix  = "GKS"       -- Set the prefix of the phone (default: gks)
 Config.PropActive          = true        -- Set to true to enable prop when phone is open (default: true)
 Config.Fahrenheit          = true       -- Set to true to use Fahrenheit (default: false)
-Config.OxInvetory          = GetResourceState("ox_inventory") ~= 'missing'
-Config.CoreInventory       = GetResourceState("core_inventory") ~= 'missing'
-Config.qsInvetory          = GetResourceState("qs-inventory") ~= 'missing'
+Config.QbInventory         = GetResourceState("qb-inventory") ~= 'missing'
+Config.OxInvetory          = GetResourceState("ox_inventory") ~= 'missing' -- https://github.com/overextended/ox_inventory
+Config.CoreInventory       = GetResourceState("core_inventory") ~= 'missing' -- https://www.c8re.store/package/5123274
+Config.qsInvetory          = GetResourceState("qs-inventory") ~= 'missing' -- https://buy.quasar-store.com/package/4770732
+Config.tgiannInventory     = GetResourceState("tgiann-inventory") ~= 'missing'  -- https://store.tgiann.com/package/6273000
 Config.AirSharePlayerName  = true       -- Set player names to true to appear as unknown in AirShare (default: false)
 Config.WaitPhone           = 2           -- Set the time to wait before opening the phone (default: 2)
 Config.MetaItem            = true       -- Set to false to disable meta item (default: true) !!!If your inventory supports it, you can use it.!!!
-
-
---- ### Charge settings ### ---
-
-Config.ChargeEnable = true           -- Set to false to disable charging
-Config.ChargeItems = { "powerbank" } -- Set the name of the item to charge the phone (default: powerbank)
-Config.UseChargeKey   = "E"
-
-Config.ChargeAutCommand = "charge"  --- Register Command (/charge playerid charge(0-100))
-Config.qbcorechargeaut = "god"      --- qb-core authorization system
-
+Config.AutoDeleteData      = false        -- Set to true to automatically delete data (default: true)
+Config.AutoDeleteDays      = 5           -- This value is used to automatically delete data that was added a certain number of days ago. (default: 5)
+Config.deleteCharacter     = true       -- Set to true to delete the phone data when the character is deleted (default: false) !!!All data in Darkchat, Messages and similar applications will be deleted.!!!
 
 --- ### EyeTarget Settings ### ---
 
@@ -71,6 +65,7 @@ Config.TaxiJobCode = "taxi"                 -- Job Code
 
 Config.loafHouse        = false   -- Activate if you are using Loaf House (https://store.loaf-scripts.com/package/4310850)
 Config.bcs_housing      = false   -- Activate if you are using BCS Housing (https://masbagus.tebex.io/package/5090952)
+Config.QsHousing        = false   -- Activate if you are using QS-Housing (https://buy.quasar-store.com/package/6304045)
 
 --- ### Bank APP Settings ### ---
 
@@ -84,15 +79,29 @@ Config.MetaBankTransfer     = false   -- Being able to transfer money from someo
 Config.qbGarages        = true   -- Set to false if you are not using qb-garages
 Config.cdGarages        = false  -- Activate if you are using Codesign Garage (https://codesign.pro/package/4206352)
 Config.loafGarages      = false  -- Activate if you are using Loaf Garage (https://store.loaf-scripts.com/package/4310876)
+Config.JGGarages        = false  -- Activate if you are using JG Advanced Garages v3 (https://store.jgscripts.com/package/5126524)
 
 Config.ValespawnRadius  = 100.0   -- Distance to spaw your car (default: 100.0)
 Config.ValePrice        = 100000000    -- Vale Price (default: 100)
 Config.ValeNPC          = false   -- Activate if you want the valet to bring the car to you. (default: true)
 Config.ImpoundVale      = false   -- Set to true to not bring impounded cars (default: true)
 
+Config.ValeBlaclistCars = { -- Add the car code to the list to prevent bringing the car
+    "police",
+    "police2",
+    "police3",
+    "ambulance",
+}
+
 
 --- ### Car Seller App Settings ### ---
 Config.CarSellerAppFee = 0 -- Commission rate for car sales (default: 10)
+Config.SellerBlaclistCars = { -- Add the car code to the list to prevent selling the car
+    "police",
+    "police2",
+    "police3",
+    "ambulance",
+}
 
 
 --- ### Advertising APP Settings ### ---
@@ -106,7 +115,7 @@ Config.TwitterSendBanCommand = "bantwitter" -- (/bantwitter true/false username)
 Config.TwitterSubsDate = 5 -- Twitter subs subscription renewal time
 Config.TwitterSubsPay = 15 -- Twitter Subscription fee
 
--- ## PHONE Box ## -- v2(coming soon)
+-- ## PHONE Box ## --
 
 Config.PhoneBox = false      -- Set to false to disable phone box
 Config.PhoneBoxKey = "E"    -- Key to open phone box (default: E) (https://docs.fivem.net/docs/game-references/controls/)
@@ -309,8 +318,10 @@ Config.UseSIMData = {
 -- Commission rate for each jobs
 -- This is a percentage (0.10) == 10% ( Must be active to receive commission - If the player is not in the game, she/he cannot receive a commission.)
 Config.AutoPaidBillDelete = false -- Set to true to automatically delete paid invoices
-Config.UseBillingCommission = true -- Set to true to use billing commission
-Config.BillingCommissions = {
+Config.UnpaidBillInterest = true --When you enable it, the interest transaction will happen automatically every time you open a server, according to the conditions you set below.
+Config.BillInterest = { day = 7, percent = 20 }  -- You can increase the amount of bills that are 7 days or more past due by 20%. ( !! Dates of bills change when the commission is set )
+Config.UseBillingCommission = true -- Set to true if you want players to receive commissions
+Config.BillingCommissions = {   -- Section to set how much commission players will receive from billing issued for specific jobs.
     mechanic = 0.10,
     police = 0.20,
     sasp = 0.20,
@@ -319,11 +330,70 @@ Config.BillingCommissions = {
     firefighter = 0.20
 }
 
+-- This configuration determines whether the player receives the fee from billing issued for specific jobs.
+-- If set to true, the player will receive the payment; if false, the payment is transferred to the business's bank account.
+Config.PlayerFeeJobs = {
+    ["police"] = false,  -- Police job: The player does not receive the fee from issued billing 
+    ["taxi"] = true,     -- Taxi job: The player receives the fee from issued billing.
+}
+
 
 -- JOBs that will use the Business APP
--- billingpay = Authority to pay invoices issued to the jobs
+-- billingpay = Authority to pay billing issued to the jobs
 Config.UseBusinessJobs = {
     ["police"] = {
+        billingview = 1,
+        billingcreate = 1,
+        billingdelete = 4,
+        employeview = 4,
+        employechangerank = 4,
+        employefire = 4,
+        employeadd = 4,
+        earningview = 4,
+        jobrequest = 1,
+        businessAuth = 4,
+        billingpay = 4,
+    },
+    ["sasp"] = {
+        billingview = 1,
+        billingcreate = 1,
+        billingdelete = 4,
+        employeview = 4,
+        employechangerank = 4,
+        employefire = 4,
+        employeadd = 4,
+        earningview = 4,
+        jobrequest = 1,
+        businessAuth = 4,
+        billingpay = 4,
+    },
+    ["sheriff"] = {
+        billingview = 1,
+        billingcreate = 1,
+        billingdelete = 4,
+        employeview = 4,
+        employechangerank = 4,
+        employefire = 4,
+        employeadd = 4,
+        earningview = 4,
+        jobrequest = 1,
+        businessAuth = 4,
+        billingpay = 4,
+    },
+    ["ambulance"] = {
+        billingview = 1,
+        billingcreate = 1,
+        billingdelete = 4,
+        employeview = 4,
+        employechangerank = 4,
+        employefire = 4,
+        employeadd = 4,
+        earningview = 4,
+        jobrequest = 1,
+        businessAuth = 4,
+        billingpay = 4,
+    },
+    ["firefighter"] = {
         billingview = 1,
         billingcreate = 1,
         billingdelete = 4,
@@ -361,6 +431,20 @@ Config.UseBusinessJobs = {
 -- isOpen = This profession can receive messages and reports while the server is just starting up. (true/false)
 Config.JOBDispatch = {
     --[[ ["police"] = { messageView = 2, messageSend = 2, reportView = 2, reportDeleteAll = 2, openClosingAuth = 2, location = vector4(0,0,0,0), label = "Police", isOpen = true },
-    ["ems"] = { messageView = 2, messageSend = 2, reportView = 2, reportDeleteAll = 2, openClosingAuth = 2, location = vector4(0,0,0,0), label = "EMS", isOpen = true },
-    ["mechanic"] = { messageView = 2, messageSend = 2, reportView = 2, reportDeleteAll = 2, openClosingAuth = 2, location = vector4(0,0,0,0), label = "Mechanic", isOpen = true } ]]
+    ["ambulance"] = { messageView = 2, messageSend = 2, reportView = 2, reportDeleteAll = 2, openClosingAuth = 2, location = vector4(0,0,0,0), label = "EMS", isOpen = true },
+    ["mechanic"] = { messageView = 2, messageSend = 2, reportView = 2, reportDeleteAll = 2, openClosingAuth = 2, location = vector4(0,0,0,0), label = "Mechanic", isOpen = true }
+}
+
+Config.IsDispatchAutoOpenClose = true -- Set to true if you want to enable auto open/close dispatch
+Config.DispatchAutoIgnoredJobs = {   -- Add here the jobs for which you want to ignore automatic on/off
+    ["police"] = true,
+    ["ambulance"] = true,
+    ["mechanic"] = false ]]
+}
+
+--- Casino APP Settings ---
+
+Config.Casino = {
+    Tax = 20, -- Commission for chip sales
+    RollMaxBet = 5000, -- Maximum bet amount for roll
 }

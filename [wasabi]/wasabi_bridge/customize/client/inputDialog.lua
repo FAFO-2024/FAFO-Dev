@@ -39,6 +39,10 @@ function WSB.inputDialog(heading, rows, color)
     --   }
     -- },
     -- {
+    --    type = 'color', -- Example of type color picker
+    --    label = 'COLOR PICKER LABEL, -- Label of color picker
+    -- },
+    -- {
     --    type = 'checkbox', -- Example of type checkbox
     --    label = 'NUMBER CHECKBOX LABEL, -- Label of checkbox
     --    checked = false -- Checked or not checked by default

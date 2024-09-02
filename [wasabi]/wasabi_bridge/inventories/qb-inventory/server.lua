@@ -52,6 +52,13 @@ function WSB.inventory.getItemSlot(source, itemName)
     return GetItemSlot(source, itemName) or false
 end
 
+function WSB.inventory.getItemSlots(source, itemName)
+    local src = source
+    local player = WSB.getPlayer(src)
+    if not player then return {} end
+    return GetSlotsByItem(player.PlayerData and player.PlayerData.items, itemName)
+end
+
 function WSB.inventory.getItemMetadata(source, slot)
     local player = WSB.getPlayer(source)
     if not player then return end

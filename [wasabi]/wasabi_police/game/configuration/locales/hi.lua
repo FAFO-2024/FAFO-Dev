@@ -5,6 +5,17 @@ if not Config.Language then Config.Language = 'hi' end
 if Config.Language ~= 'hi' then return end
 
 Strings = {
+    no_society_account = 'कोई समाज खाता नहीं मिला - अपनी सेटिंग्स जांचें!',
+    officer = 'अधिकारी',
+    not_authorized = 'अधिकृत नहीं',
+    not_authorized_desc = 'आपका इसका उपयोग करने का अधिकार नहीं है!',
+    not_on_duty = 'ड्यूटी पर नहीं',
+    not_on_duty_desc = 'आप ड्यूटी पर नहीं हैं!',
+    gps_enabled = 'GPS सक्षम',
+    gps_enabled_desc = 'आपने अपना GPS सक्षम कर दिया है',
+    gps_disabled = 'GPS अक्षम',
+    gps_disabled_desc = 'आपने अपना GPS अक्षम कर दिया है',
+
     new_speed_trap = 'नई स्पीड ट्रैप',
     speed_limit = 'गति सीमा',
     incorrect_input = 'गलत इनपुट',

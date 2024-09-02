@@ -68,6 +68,9 @@ local function BringCar(netId, vehicleData, pos)
     end
 
     Config.Core.Functions.SpawnVehicle(model, function (vehID)
+        if Config.JGGarages then
+            TriggerServerEvent("jg-advancedgarages:server:register-vehicle-outside", vehicleData.plate, VehToNet(vehId))
+        end
         Config.Core.Functions.SetVehicleProperties(vehID, vehicleData.mods)
         SetVehicleEngineOn(vehID, true, true, false)
         local carBlip = AddBlipForEntity(vehID)
@@ -178,6 +181,7 @@ RegisterNUICallback('gksphone:vale:bring', function(data, cb)
     debugprint('Car Spawn', data.plate, data.model, isCarSpawned)
     if isCarSpawned then return end
     isCarSpawned = true
+    local blacklistCheck = false
     local model = type(data.model) == "string" and joaat(data.model) or data.model
     if not IsModelInCdimage(model) then
         debugprint('Model not found in CDImage', data.model)
@@ -190,6 +194,29 @@ RegisterNUICallback('gksphone:vale:bring', function(data, cb)
     else
         local modelClassNumber = GetVehicleClassFromName(model)
         modelType = VehClassNamesEnum[modelClassNumber] or "automobile"
+    end
+
+    if Config.ValeBlaclistCars then
+        for k, v in pairs(Config.ValeBlaclistCars) do
+            if v then
+                local blacklistModel = type(v) == "string" and GetHashKey(v) or v
+                if model == blacklistModel then
+                    blacklistCheck = true
+                    break
+                end
+            end
+        end
+    end
+
+    if blacklistCheck then
+        local notify = {
+            title = _T(lastItemData?.info?.phoneLang, "ValeAPP.APP_VALE_TITLE"), -- The title of the notification
+            message = _T(lastItemData?.info?.phoneLang, "ValeAPP.APP_VALE_ERROR_CARBLACKLIST"), -- The message of the notification
+            icon = "/html/img/icons/vale.png", -- The icon to be displayed with the notification
+        }
+        exports["gksphone"]:Notification(notify)
+        isCarSpawned = false
+        return
     end
 
     local coords = GetEntityCoords(PlayerPedId())

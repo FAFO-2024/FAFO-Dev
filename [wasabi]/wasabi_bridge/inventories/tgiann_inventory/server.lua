@@ -12,11 +12,11 @@ local registeredShops = {}
 RegisterNetEvent('wasabi_bridge:registerShop', function(data)
     local src = source
     if registeredShops[data.identifier] then
-       exports["tgiann-inventory"]:OpenInventory(src, 'shop', data.identifier, data.identifier)
+        exports["tgiann-inventory"]:OpenInventory(src, 'shop', data.identifier, data.identifier)
         return
     end
 
-    exports["tgiann-inventory"]:RegisterShop(data.identifier,data.inventory)
+    exports["tgiann-inventory"]:RegisterShop(data.identifier, data.inventory)
     registeredShops[data.identifier] = data
     exports["tgiann-inventory"]:OpenInventory(src, 'shop', data.identifier, data.identifier)
 end)
@@ -25,9 +25,16 @@ function WSB.inventory.getItemSlot(source, itemName)
     return GetItemSlot(source, itemName) or false
 end
 
+function WSB.inventory.getItemSlots(source, itemName)
+    local src = source
+    local items = exports["tgiann-inventory"]:GetPlayerItems(src)
+    if not items then return {} end
+    return GetSlotsByItem(items, itemName)
+end
+
 function WSB.inventory.getItemMetadata(source, slot)
     if not source or not slot then return end
-    return exports["tgiann-inventory"]:GetItemBySlot(source, slot).metadata
+    return exports["tgiann-inventory"]:GetItemBySlot(source, slot).info
 end
 
 function WSB.inventory.setItemMetadata(source, slot, metadata)
@@ -51,7 +58,7 @@ end
 ---@param keepItems string | table
 function WSB.inventory.clearInventory(source, identifier, keepItems)
     exports["tgiann-inventory"]:ClearInventory(source)
-        TriggerClientEvent('wasabi_ambulance:weaponRemove', source)
+    TriggerClientEvent('wasabi_ambulance:weaponRemove', source)
 
     local invData = exports["tgiann-inventory"]:GetPlayerItems(source)
     for _, item in pairs(invData) do

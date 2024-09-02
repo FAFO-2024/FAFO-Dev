@@ -14,12 +14,13 @@ function WSB.getCore()
     return QBCore
 end
 
-AddStateBagChangeHandler('isLoggedIn', '', function(_bagName, _key, value, _reserved, _replicated)
-    if value then
-        SwitchHandler('isLoggedIn', WSB.playerData)
-    else
-        SwitchHandler('isLoggedOut')
-    end
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
+    SwitchHandler('isLoggedIn', WSB.playerData or {})
+    TriggerEvent('wasabi_bridge:onPlayerSpawn')
+end)
+
+RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
+    SwitchHandler('isLoggedOut')
 end)
 
 AddEventHandler('onResourceStart', function(resourceName)
@@ -46,10 +47,6 @@ AddEventHandler('gameEventTriggered', function(event, data)
         }
         TriggerEvent('wasabi_bridge:onPlayerDeath', data)
     end
-end)
-
-RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
-    TriggerEvent('wasabi_bridge:onPlayerSpawn')
 end)
 
 RegisterNetEvent('QBCore:Player:SetPlayerData', function(newPlayerData)

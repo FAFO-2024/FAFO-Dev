@@ -14,11 +14,23 @@ function PaySociety(accountName, amount)
     if wsb.framework == 'qb' then
         local management = Config.OldQBManagement and 'qb-management' or 'qb-banking'
         exports[management]:AddMoney(accountName, amount)
-    else -- Assume 'esx' framework
-        TriggerEvent('esx_addonaccount:getSharedAccount', accountName, function(account)
-            account.addMoney(amount)
-        end)
+        return
     end
+    -- If not QB, assume esx
+    TriggerEvent('esx_addonaccount:getSharedAccount', accountName, function(account)
+        if account then
+            account.addMoney(amount)
+            return
+        end
+        -- if account doesn't exist, try adding society_ prefix
+        TriggerEvent('esx_addonaccount:getSharedAccount', 'society_'..accountName, function(societyAccount)
+            if not societyAccount then
+                print(Strings.no_society_account:format(accountName))
+                return
+            end
+            societyAccount.addMoney(amount)
+        end)
+    end)
 end
 
 --Death check

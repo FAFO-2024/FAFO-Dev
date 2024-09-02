@@ -28,7 +28,7 @@ Config.Core.Functions.CreateCallback('gksphone:server:bank:transfer', function(s
         if xPlayer == nil then
             xPlayer = Config.Core.Functions.GetOfflinePlayerByCitizenId(phonedata.setup_owner)
         end
-        local yPhoneData = GetPhoneDataByNumber(number)
+        local yPhoneData = type(number) == "string" and GetPhoneDataByNumber(number) or GetPhoneDataBySource(number)
         if yPhoneData == nil then
             cb(info)
             return
@@ -128,6 +128,60 @@ Config.Core.Functions.CreateCallback('gksphone:server:bank:transfer', function(s
                 WebhookLogs("bank", source, {phonedata.phone_number, yPhoneData.phone_number, money, xPlayerTransferDesc, yPlayerTransferDesc, xPlayer.PlayerData.citizenid, yPlayer.PlayerData.citizenid})
             end
             cb(info)
+        elseif Config.OfflineBankTransfer and not xPlayer and yPlayer then
+            xPlayer = Config.Core.Functions.GetOfflinePlayerByCitizenId(phonedata.setup_owner)
+            if xPlayer then
+                local balance = xPlayer.PlayerData.money["bank"]
+                local bankTax = Config.BankTransferTax
+                local taxAmount = math.floor(money * (bankTax / 100))
+                local amount = math.floor(money + taxAmount)
+    
+                if balance < amount then
+                    cb(info)
+                    return
+                end
+
+                xPlayer.PlayerData.money["bank"] = xPlayer.PlayerData.money["bank"] - amount
+                yPlayer.Functions.AddMoney('bank', money, "Bank Transfer")
+                MySQL.Async.execute('UPDATE players SET `money` = @money WHERE `citizenid` = @citizenid', {
+                    ['@citizenid'] = phonedata.setup_owner,
+                    ['@money'] = json.encode(xPlayer.PlayerData.money),
+                })
+
+                info.status = true
+                if yPhoneData.ownerName == nil then
+                    yPhoneData.ownerName = yPlayer.PlayerData.charinfo.firstname .. " " .. yPlayer.PlayerData.charinfo.lastname
+                end
+                local xPlayerTransferDesc = _T(phonedata.phone_lang, "BankAPP.APP_BANK_TRANSFERDESCRIPTION_SENDER", {name = yPhoneData.ownerName})
+                local xPlayerTransferFeeDesc = _T(phonedata.phone_lang, "BankAPP.APP_BANK_TRANSFERDESCRIPTION_FEE")
+                local yPlayerTransferDesc = _T(yPhoneData.phone_lang, "BankAPP.APP_BANK_TRANSFERDESCRIPTION_RECEIVER", {name = phonedata.ownerName})
+                -- bank history save
+                local bnkhistoryxPlayer = exports["gksphone"]:bankHistorySave(number, 1, money, xPlayerTransferDesc, phoneUniq)-- xPlayer
+                local bnkhistoryFeexPlayer = exports["gksphone"]:bankHistorySave(number, 1, taxAmount, xPlayerTransferFeeDesc, phoneUniq)-- xPlayer
+    
+                local bnkhistoryPlayer = exports["gksphone"]:bankHistorySave(phonedata.phone_number, 2, money, yPlayerTransferDesc, yPhoneData.unique_id)-- yPlayer
+    
+                local bnkBalanceChangexPlayer = exports["gksphone"]:bankBalanceUpdate(phoneUniq)
+                local bnkBalanceChangeyPlayer = exports["gksphone"]:bankBalanceUpdate(yPhoneData.unique_id)
+    
+                local notify = {
+                    title = _T(yPhoneData?.phone_lang, "BankAPP.APP_BANK_TITLE"),
+                    message = _T(yPhoneData?.phone_lang, "BankAPP.APP_BANK_TRANSFERNOTIFICATION", {name = phonedata.ownerName, money = money}),
+                    icon = "/html/img/icons/wallet.png",
+                    info = "sucess",
+                }
+                exports["gksphone"]:sendNotification(yPlayer.PlayerData.source, notify)
+    
+    
+                if bnkhistoryxPlayer and bnkhistoryPlayer and bnkBalanceChangexPlayer and bnkBalanceChangeyPlayer then
+                    debugprint("bank history save and balance update success")
+                else
+                    debugprint("bank history save and balance update failed", bnkhistoryxPlayer, bnkhistoryPlayer, bnkBalanceChangexPlayer, bnkBalanceChangeyPlayer)
+                end
+    
+                WebhookLogs("bank", source, {phonedata.phone_number, yPhoneData.phone_number, money, xPlayerTransferDesc, yPlayerTransferDesc, xPlayer.PlayerData.citizenid, yPlayer.PlayerData.citizenid})
+                Wait(1000)
+            end
         else
             debugprint("bank transfer error 5")
             cb(info)

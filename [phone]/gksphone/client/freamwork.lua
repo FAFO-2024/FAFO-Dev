@@ -47,7 +47,7 @@ end)
 RegisterNetEvent('QBCore:Player:SetPlayerData', function(val)
     PlayerData = val
     debugprint('QBCore:Player:SetPlayerData', PlayerData)
-    if GetResourceState('qb-inventory') == 'started' or Config.CoreInventory or Config.qsInvetory then
+    if Config.QbInventory or Config.CoreInventory or Config.qsInvetory or Config.tgiannInventory then
         PlayerItemFind()
     end
 
@@ -59,6 +59,9 @@ RegisterNetEvent('QBCore:Player:SetPlayerData', function(val)
         phoneBlockReason = "You can't use the phone while dead, handcuffed or in last stand."
         if incall then
             EndPhoneCall()
+        end
+        if musicData and musicData[currentPlayerId] then
+            TriggerServerEvent('gksphone:server:musicListen', nil, nil, "pause", nil)
         end
     else
         phoneOpenBlock = false
