@@ -74,55 +74,42 @@ if Config.Framework == 'qb' then
     function GetMedicalInventoryItems()
         invItems = {}
         DebugPrint('Getting Medical Inventory Items')
-        if Config.UsedInventory == '' or Config.UsedInventory == 'default' then
+        if Config.UsedInventory == '' or Config.UsedInventory == 'default' or Config.UsedInventory == 'qb' then
             local inventory = lib.callback.await('osp_ambulance:getInventory', 1000)
             Wait(100)
+            if inventory == nil then print('UNABLE TO GET INVENTORY ITEMS, MAKE SURE TO CONFIGURE THE SCRIPT') end
             DebugPrint('Got Inventory', inventory)
-            for k,v in pairs(Config.InventoryItems) do
-                for _, x in pairs(inventory) do
-                    DebugPrint('Checking Item', k,v,x.name)
-                    if x.name == k then
-                        table.insert(invItems, {label = k, item = v})
-                    end
-                end
+            for _, x in pairs(inventory) do
+                DebugPrint('Checking Item', _, x.name)
+                table.insert(invItems, {item = x.name})
             end
         elseif Config.UsedInventory == 'qs' then
             local inventory = lib.callback.await('osp_ambulance:getInventory', 1000)
             Wait(100)
             DebugPrint('Got Inventory', inventory)
-            for k,v in pairs(Config.InventoryItems) do
-                for _, x in pairs(inventory) do
-                    DebugPrint('Checking Item', k,v,x.name)
-                    if x.name == k then
-                        table.insert(invItems, {label = k, item = v})
-                    end
-                end
+            for _, x in pairs(inventory) do
+                DebugPrint('Checking Item', _, x.name)
+                table.insert(invItems, {item = x.name})
             end
         elseif Config.UsedInventory == 'ox' then
             local inventory = lib.callback.await('osp_ambulance:getInventory', 1000)
             Wait(100)
             DebugPrint('Got Inventory', inventory)
-            for k,v in pairs(Config.InventoryItems) do
-                for _, x in pairs(inventory) do
-                    DebugPrint('Checking Item', k,v,x.name)
-                    if x.name == k then
-                        table.insert(invItems, {label = k, item = v})
-                    end
-                end
+            for _, x in pairs(inventory) do
+                DebugPrint('Checking Item', _, x.name)
+                table.insert(invItems, {item = x.name})
             end
         elseif Config.UsedInventory == 'core' then
             QBCore.Functions.TriggerCallback('core_inventory:server:getInventory', function(inventory)
                 Wait(100)
                 DebugPrint('Got Inventory', inventory)
-                for k,v in pairs(Config.InventoryItems) do
-                    for _, x in pairs(inventory) do
-                        DebugPrint('Checking Item', k,v,x.name)
-                        if x.name == k then
-                            table.insert(invItems, {label = k, item = v})
-                        end
-                    end
+                for _, x in pairs(inventory) do
+                    DebugPrint('Checking Item', _, x.name)
+                    table.insert(invItems, {item = x.name})
                 end
             end)
+        else
+            print('YOU ARE USING AN UNSUPPORTED CONFIG OPTION')
         end
         DebugPrint(json.encode(invItems))
     end
@@ -163,6 +150,11 @@ if Config.Framework == 'qb' then
                 end
             end
         end
+
+        if BodyDamage.Fractures == nil then
+            migratePlayerdata()
+        end
+
         QBCore.Functions.GetPlayerData(function(PlayerData)
             PlayerJob = PlayerData.job
             onDuty = PlayerData.job.onduty
@@ -192,6 +184,11 @@ if Config.Framework == 'qb' then
         LocalPlayer.state:set('BodyDamage',  BodyDamage, true)
         loadScreens()
         ReloadJobInteractions()
+        SendNUIMessage(
+            {
+                damageStatus = json.encode(BodyDamage),
+            }
+        )
     end)
 
     RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
@@ -283,11 +280,13 @@ if Config.Framework == 'qb' then
 
     AddEventHandler('onResourceStart', function(name)
         QBCore.Functions.GetPlayerData(function(PlayerData)
-            PlayerJob = PlayerData.job
-            onDuty = PlayerData.job.onduty
-            for _,x in pairs(Config.AmbulanceJobs) do
-                if PlayerJob.name == x and onDuty then
-                    TriggerServerEvent("hospital:server:AddDoctor", PlayerJob.name)
+            if PlayerData ~= nil then
+                PlayerJob = PlayerData.job
+                onDuty = PlayerData.job.onduty
+                for _,x in pairs(Config.AmbulanceJobs) do
+                    if PlayerJob.name == x and onDuty then
+                        TriggerServerEvent("hospital:server:AddDoctor", PlayerJob.name)
+                    end
                 end
             end
         end)
@@ -314,53 +313,39 @@ elseif Config.Framework == 'esx' then
     function GetMedicalInventoryItems()
         invItems = {}
         DebugPrint('Getting Medical Inventory Items')
-        if Config.UsedInventory == '' or Config.UsedInventory == 'default' then
+        if Config.UsedInventory == '' or Config.UsedInventory == 'default' or Config.UsedInventory == 'esx' then
             local inventory = lib.callback.await('osp_ambulance:getInventory', 1000)
             Wait(100)
             DebugPrint('Got Inventory', inventory)
-            for k,v in pairs(Config.InventoryItems) do
-                for _, x in pairs(inventory) do
-                    DebugPrint('Checking Item', k,v,x.name)
-                    if x.name == k and x.count > 0 then
-                        table.insert(invItems, {label = k, item = v})
-                    end
+            for _, x in pairs(inventory) do
+                if x.count > 0 then
+                    DebugPrint('Checking Item', _, x.name)
+                    table.insert(invItems, {item = x.name})
                 end
             end
         elseif Config.UsedInventory == 'qs' then
             local inventory = lib.callback.await('osp_ambulance:getInventory', 1000)
             Wait(100)
             DebugPrint('Got Inventory', inventory)
-            for k,v in pairs(Config.InventoryItems) do
-                for _, x in pairs(inventory) do
-                    DebugPrint('Checking Item', k,v,x.name)
-                    if x.name == k then
-                        table.insert(invItems, {label = k, item = v})
-                    end
-                end
+            for _, x in pairs(inventory) do
+                DebugPrint('Checking Item', _, x.name)
+                table.insert(invItems, {item = x.name})
             end
         elseif Config.UsedInventory == 'ox' then
             local inventory = lib.callback.await('osp_ambulance:getInventory', 1000)
             Wait(100)
             DebugPrint('Got Inventory', inventory)
-            for k,v in pairs(Config.InventoryItems) do
-                for _, x in pairs(inventory) do
-                    DebugPrint('Checking Item', k,v,x.name)
-                    if x.name == k then
-                        table.insert(invItems, {label = k, item = v})
-                    end
-                end
+            for _, x in pairs(inventory) do
+                DebugPrint('Checking Item', _, x.name)
+                table.insert(invItems, {item = x.name})
             end
         elseif Config.UsedInventory == 'core' then
             ESX.TriggerServerCallback('core_inventory:server:getInventory', function(inventory)
                 Wait(100)
                 DebugPrint('Got Inventory', inventory)
-                for k,v in pairs(Config.InventoryItems) do
-                    for _, x in pairs(inventory) do
-                        DebugPrint('Checking Item', k,v,x.name)
-                        if x.name == k then
-                            table.insert(invItems, {label = k, item = v})
-                        end
-                    end
+                for _, x in pairs(inventory) do
+                    DebugPrint('Checking Item', _, x.name)
+                    table.insert(invItems, {item = x.name})
                 end
             end)
         end
@@ -440,6 +425,9 @@ elseif Config.Framework == 'esx' then
                 end
             end
         end
+        if BodyDamage.Fractures == nil then
+            migratePlayerdata()
+        end
         BodyDamage.playerName = GetCharacterName()
         BodyDamage.BodyPartDamage.appliedTourniquets["Rarm"] = false
         BodyDamage.BodyPartDamage.appliedTourniquets["Larm"] = false
@@ -457,6 +445,11 @@ elseif Config.Framework == 'esx' then
         end
         loadScreens()
         ReloadJobInteractions()
+        SendNUIMessage(
+            {
+                damageStatus = json.encode(BodyDamage),
+            }
+        )
     end)
 
 
@@ -621,7 +614,9 @@ function CreateBloodDropEvidence()
     local randY = math.random() + math.random(-1, 1)
     local coords = GetOffsetFromEntityInWorldCoords(PlayerPedId(), randX, randY, 0)
     if Config.Framework == 'qb' then
-        TriggerServerEvent("evidence:server:CreateBloodDrop", GetPlayerData().citizenid, GetPlayerData().metadata["bloodtype"], coords)
+        if GetPlayerData().metadata then
+            TriggerServerEvent("evidence:server:CreateBloodDrop", GetPlayerData().citizenid, GetPlayerData().metadata["bloodtype"], coords)
+        end
     end
 end
 
@@ -642,6 +637,10 @@ RegisterNetEvent('osp_ambulance:SaveBodyDamageCl', function()
             OnDeath()
             DeathTimer()
         end
+        LocalPlayer.state:set('BodyDamage',  BodyDamage, true)
+    end
+    if BodyDamage.Fractures == nil then
+        migratePlayerdata()
         LocalPlayer.state:set('BodyDamage',  BodyDamage, true)
     end
 end)
@@ -745,7 +744,6 @@ function TargetEntity(entity, list1, list2, list3, list4, list5)
     end
 end
 
-
 function registerContext(data)
     lib.registerContext({
         id = data.id,
@@ -757,7 +755,6 @@ end
 function showContext(id)
     lib.showContext(id)
 end
-
 
 
 function RemoveTargetZone(entity)
@@ -850,6 +847,8 @@ function ProgressBar(msg, time, animdict, anim)
     end
 end
 
+
+
 function drawtext3d(coordsx, coordsy, coordsz, text)
     local onScreen,_x,_y=World3dToScreen2d(coordsx, coordsy, coordsz)
     local px,py,pz=table.unpack(GetGameplayCamCoords())
@@ -913,6 +912,7 @@ function TriggerSound(sound, coords, distance)
 	end)
     return soundId
 end
+
 
 AddEventHandler('onResourceStop', function(r)
     if r == GetCurrentResourceName() then
@@ -1024,6 +1024,25 @@ function CPRFunction(data)
     end)
 end
 
+
+function DeadMovement()
+    local ped = PlayerPedId()
+    loadAnimDict("move_injured_ground")
+    if IsDisabledControlPressed(0, 34) then
+        SetEntityHeading(ped, GetEntityHeading(ped)+0.25 )
+    elseif IsDisabledControlPressed(0, 35) then
+        SetEntityHeading(ped, GetEntityHeading(ped)-0.25 )
+    end
+    
+    if IsDisabledControlJustPressed(0, 32) then
+        Wait(1000)
+        ClearPedTasks(ped)
+        TaskPlayAnimAdvanced(ped, "move_injured_ground", "front_loop", GetEntityCoords(ped), 1.0, 0.0, GetEntityHeading(ped), 1.0, 1.0, 1.0, 47, 1.0, 0, 0)
+    elseif IsDisabledControlJustReleased(0, 32) then 
+        TaskPlayAnimAdvanced(ped, "move_injured_ground", "front_loop", GetEntityCoords(ped), 1.0, 0.0, GetEntityHeading(ped), 1.0, 1.0, 1.0, 46, 1.0, 0, 0)
+    end
+end
+
 RegisterNetEvent("osp_ambulance:OnPlayerLastStand", function(bool)
     if Config.MutePlayerOnLastStand then
         TriggerServerEvent('osp_ambulance:mutePlayer', true)
@@ -1033,6 +1052,16 @@ RegisterNetEvent("osp_ambulance:OnPlayerLastStand", function(bool)
     end
     DebugPrint('Setting laststand')
     SetLaststand(bool)
+    -- if Config.Crawl then
+    --     Citizen.CreateThread(function()
+    --         Wait(1000)
+    --         while true do
+    --             DeadMovement()
+    --             Wait(1)
+    --             if not BodyDamage.inLastStand then break end
+    --         end
+    --     end)
+    -- end
 end)
 
 RegisterNetEvent("osp_ambulance:OnPlayerDeath", function()
@@ -1045,12 +1074,15 @@ RegisterNetEvent("osp_ambulance:OnPlayerDeath", function()
     OnDeath()
 end)
 
-RegisterNetEvent("osp_ambulance:OnPlayerDead", function()
+
+RegisterNetEvent("osp_ambulance:OnPlayerDead")
+AddEventHandler("osp_ambulance:OnPlayerDead", function()
     -- exports['pma-voice']:overrideProximityCheck()
     -- You can use this event to do something when the player dies/is dead
 end)
 
-RegisterNetEvent("osp_ambulance:OnPlayerSpawn", function()
+RegisterNetEvent("osp_ambulance:OnPlayerSpawn")
+AddEventHandler("osp_ambulance:OnPlayerSpawn", function()
     -- exports['pma-voice']:resetProximityCheck()
     -- You can use this event to do something when the player spawns 
 end)
@@ -1061,10 +1093,14 @@ end
 
 
 function disableAllSystems()
+    -- if exports['FFA HERE']:something() then
+    --     return true
+    -- end
     return false
     -- Place custom code here when you want to block all medical systems (eg when in paintball)
     -- To disable all system trigger this inside a if statment:    return true
 end
+
 
 
 function webHookPacket(data)
@@ -1119,12 +1155,36 @@ function GetPlayers()
     return players
 end
 
+function IsInjuryCausingLimp()
+    for k,x in pairs(Config.Wounds) do
+        for _,v in pairs(BodyDamage.BodyPartDamage.Wounds["Lleg"]) do
+            if k == v then
+                if x.causeLimping then
+                    return true
+                end
+            end
+        end
+        for _,v in pairs(BodyDamage.BodyPartDamage.Wounds["Rleg"]) do
+            if k == v then
+                if x.causeLimping then
+                    return true
+                end
+            end
+        end
+    end 
+    if BodyDamage.BodyPartDamage.Fractures["Rleg"] or BodyDamage.BodyPartDamage.Fractures["Lleg"] then
+        return true
+    end
+    return false
+end
+
 
 local SlowEffect1 = false
 local SlowEffect2 = false
 local SlowEffect3 = false
 
 local isinjuried = false
+
 
 function ProcessRunStuff()
     if IsInjuryCausingLimp() then
@@ -1147,7 +1207,7 @@ function ProcessRunStuff()
             SlowEffect1 = true
         elseif BodyDamage.BodyPartDamage.DamageType["Rleg"] > 1 or BodyDamage.BodyPartDamage.DamageType["Lleg"] > 1 then
             SlowEffect2 = true
-        elseif BodyDamage.BodyPartDamage.DamageType["Rleg"] > 2 or BodyDamage.BodyPartDamage.DamageType["Lleg"] > 2 then
+        elseif (BodyDamage.BodyPartDamage.DamageType["Rleg"] > 2 or BodyDamage.BodyPartDamage.DamageType["Lleg"] > 2) or (BodyDamage.BodyPartDamage.Fractures["Rleg"] or BodyDamage.BodyPartDamage.Fractures["Lleg"]) then
             SlowEffect2 = true
         else
             SlowEffect1 = false
@@ -1173,6 +1233,76 @@ Citizen.CreateThread(function()
         end
     end
 end)
+
+function CauseFractureStaggering() -- Will be triggered every second
+    local ped = PlayerPedId()
+    for k,x in pairs(BodyDamage.BodyPartDamage.Fractures) do
+        DebugPrint(k, x)
+        if x == true or x == 'xrayed' then
+            for _,v in pairs(Config.Fractures) do
+                if v.bone == k and IsPedRunning(ped) then
+                    SetPedToRagdoll(ped, 1500, 2000, 3, true, true, false)
+                    ShakeGameplayCam('SMALL_EXPLOSION_SHAKE', Config.CameraShakeIntensity)
+                end
+            end
+        end
+    end 
+end
+
+function LockSteering() -- Will be triggered every 15 seconds
+    local ped = PlayerPedId()
+    if (BodyDamage.BodyPartDamage.Fractures["Rarm"] == true or BodyDamage.BodyPartDamage.Fractures["Larm"] == true) or (BodyDamage.BodyPartDamage.Fractures["Rarm"] == 'xrayed' or BodyDamage.BodyPartDamage.Fractures["Larm"] == 'xrayed') then
+        local continue = false
+        for k,v in pairs(Config.Fractures) do
+            if v.bone == 'Rarm' or v.bone == 'Larm' then
+                if v.lockSteering then
+                    continue = true
+                end
+            end
+        end
+        if not continue then return end
+
+        local chance = math.random(1, 2)
+        if chance > 1 then
+            local timer = 500
+            CreateThread(function()
+                while true do
+                    if IsPedInAnyVehicle(ped, true) then
+                        DisableControlAction(0, 63, true) 
+                        DisableControlAction(0, 64, true)
+                        DisableAllControlActions(0)
+                        EnableControlAction(0, 1, true) -- LookLeftRight
+                        EnableControlAction(0, 2, true) -- LookUpDown
+                        EnableControlAction(0, 245, true) -- T
+                        EnableControlAction(0, 38, true) -- A
+                        EnableControlAction(0, 0, true)
+                        EnableControlAction(0, 322, true) -- ESC
+                        EnableControlAction(0, 213, true) -- HOME
+                        EnableControlAction(0, 249, true) -- N
+                        EnableControlAction(0, 46, true) -- E
+                        EnableControlAction(0, 47, true) -- G
+                        EnableControlAction(0, 71, true) -- E
+                        EnableControlAction(0, 72, true) -- G
+                    end
+                    if IsPlayerFreeAiming(PlayerId()) then
+                        DisablePlayerFiring(PlayerId(), true) -- Disable weapon firing
+                    end
+                    timer = timer - 1
+                    Wait(1)
+                    if timer <= 0 then
+                        EnableAllControlActions(0)
+                        EnableControlAction(0, 63, true) 
+                        EnableControlAction(0, 64, true) 
+                        DisablePlayerFiring(PlayerId(), false) 
+                        break
+                    end
+                end
+            end)
+        end
+    end
+
+end
+
 
 
 signPoly = {}
@@ -1569,7 +1699,6 @@ end
 Wait(500)
 ReloadJobInteractions()
 
-
 if Config.UseTarget then
     CreateThread(function()
         for k, v in pairs(Config.Locations["checking"]) do
@@ -1581,6 +1710,19 @@ if Config.UseTarget then
                     label = lang.text.check_in,
                 } 
             )
+        end
+        for k, v in pairs(Config.Locations["beds"]) do
+            if v.xrayMonitor then
+                TargetingBoxZone("xrayMonitor"..k, v.xrayMonitor, 2.3,2.3,1,
+                    {
+                        type = "client",
+                        event = "osp_ambulance:xray",
+                        icon = "fa-solid fa-person-rays",
+                        label = 'Start X-RAY',
+                        xray = Config.Locations["beds"][k],
+                    }
+                )
+            end
         end
         for k, v in pairs(Config.Locations["beds"]) do
             TargetingBoxZone("beds"..k, v.coords, 2.3,2.3,1,
@@ -1626,6 +1768,42 @@ else
 
         end
         local bedPoly = {}
+
+
+        for k, v in pairs(Config.Locations["beds"]) do
+            if v.xrayMonitor then
+                local function onEnter(self)
+                    textUi('[E] Start X-RAY')
+                    CreateThread(function()
+                        listen = true
+                        while listen do
+                            if IsControlJustPressed(0, 38) then
+                                TriggerEvent('osp_ambulance:xray', {xray = Config.Locations["beds"][k]})
+                                listen = false
+                            end
+                            Wait(1)
+                        end
+                    end)
+                end
+                
+                local function onExit(self)
+                    listen = false
+                    removeTextUi()
+                end
+    
+                bedPoly[#bedPoly+1] = lib.zones.box({
+                    coords = vec3(v.xrayMonitor.x, v.xrayMonitor.y, v.xrayMonitor.z),
+                    name = "beds"..k,
+                    size = vec3(2.5, 2.3, 2.3),
+                    rotation = -20,
+                    debug = false,
+                    inside = inside,
+                    onEnter = onEnter,
+                    onExit = onExit
+                })
+            end
+        end
+
         for k, v in pairs(Config.Locations["beds"]) do
             local function onEnter(self)
                 if not isInHospitalBed then
@@ -1656,29 +1834,53 @@ end
 
 
 
-
-
-
-
-
-
-
+local function deepCopyWithoutFunctions(orig)
+    local orig_type = type(orig)
+    local copy
+    if orig_type == 'table' then
+        copy = {}
+        for orig_key, orig_value in next, orig, nil do
+            if type(orig_value) ~= 'function' then
+                copy[orig_key] = deepCopyWithoutFunctions(orig_value)
+            end
+        end
+    else
+        copy = orig
+    end
+    return copy
+end
 
 function initLanguages() -- Initilizes the ui language
     SendNUIMessage({
         type = "lang",
         translations = json.encode(lang)
     })
+    local medicationDataWithoutFunctions = deepCopyWithoutFunctions(Config.Medication)
+    local jsonData = json.encode(medicationDataWithoutFunctions)
+    SendNUIMessage({
+        damageStatus = json.encode(BodyDamage),
+        medicationData = jsonData,
+        castsData = json.encode(Config.Casts),
+    })
 end
+
+
 Wait(1000)
 initLanguages()
+
+
 
 RegisterNUICallback('GetLang', function()
     SendNUIMessage({
         type = "lang",
         translations = json.encode(lang)
     })
-end)  
+end) 
+
+RegisterNUICallback('RecieveSkellyData', function(data)
+    BodyDamage.skellyWidth = data.skellyWidth
+    BodyDamage.skellyPos = data.skellyPos
+end) 
 
 local keycooldown = false
 Citizen.CreateThread(function()
@@ -1780,12 +1982,11 @@ RegisterCommand("code", function(source, args, rawCommand)
     for k,v in pairs(Config.IncomingScreenSoundPos) do
         TriggerSound('codeblue', v, Config.IncomingScreenSoundRange)
         if Config.UseXsound then
-            xSound:PlayUrlPos("codeblue",'codeblue.mp3', 1.0, Config.IncomingScreenSoundPos, false)
+            xSound:PlayUrlPos("codeblue",'codeblue.mp3', 1.0, v, false)
             xSound:Distance("codeblue", Config.IncomingScreenSoundRange)
             xSound:destroyOnFinish("codeblue", true)
         end
     end
-
 end, false)
 
 
@@ -1810,6 +2011,20 @@ RegisterCommand("skelly", function(source, args, rawCommand)
             }
         )
     end
+end, false)
+
+local editSkelly = false
+-- RegisterKeyMapping('editskelly', 'Edit Skelly Position', 'keyboard', '<')
+RegisterCommand("editskelly", function(source, args, rawCommand)
+    Wait(100)
+    SetNuiFocus(true, true)
+    SendNUIMessage(
+        {
+            editSkelly = true,
+            skellyWidth = BodyDamage.skellyWidth,
+            skellyPos = BodyDamage.skellyPos,
+        }
+    )
 end, false)
 
 
@@ -1997,6 +2212,38 @@ RegisterNetEvent('hospital:client:RespawnAtHospital', function()
     end
 end)
 
+function migratePlayerdata()
+    BodyDamage.hrIncrease = BodyDamage.hrIncrease or 0
+    BodyDamage.hrDecrease = BodyDamage.hrDecrease or 0
+    BodyDamage.hrIncrease = 0
+    BodyDamage.hrDecrease = 0
+    BodyDamage.skellyWidth = BodyDamage.skellyWidth or {}
+    BodyDamage.skellyPos = BodyDamage.skellyPos or {}
+    BodyDamage.BodyPartDamage.TotalBloodFill = BodyDamage.BodyPartDamage.TotalBloodFill or 0
+    BodyDamage.BodyPartDamage.RefillBloodLeft = BodyDamage.BodyPartDamage.RefillBloodLeft or 0
+    BodyDamage.BodyPartDamage.TotalInfusionFill = BodyDamage.BodyPartDamage.TotalInfusionFill or 0
+    BodyDamage.BodyPartDamage.RefillInfusionLeft = BodyDamage.BodyPartDamage.RefillInfusionLeft or 0
+    BodyDamage.BodyPartDamage.TotalBloodFill = 0
+    BodyDamage.BodyPartDamage.RefillBloodLeft = 0
+    BodyDamage.BodyPartDamage.TotalInfusionFill = 0
+    BodyDamage.BodyPartDamage.RefillInfusionLeft = 0
+    BodyDamage.BodyPartDamage.Fractures = BodyDamage.BodyPartDamage.Fractures or {}
+    BodyDamage.BodyPartDamage.FractureTime = BodyDamage.BodyPartDamage.FractureTime or {}
+    BodyDamage.BodyPartDamage.Fractures["Rarm"] = false
+    BodyDamage.BodyPartDamage.Fractures["Larm"] = false
+    BodyDamage.BodyPartDamage.Fractures["Rleg"] = false
+    BodyDamage.BodyPartDamage.Fractures["Lleg"] = false
+    BodyDamage.BodyPartDamage.Fractures["Torso"] = false
+    BodyDamage.BodyPartDamage.Fractures["Head"] = false
+
+    BodyDamage.BodyPartDamage.FractureTime["Rarm"] = 0
+    BodyDamage.BodyPartDamage.FractureTime["Larm"] = 0
+    BodyDamage.BodyPartDamage.FractureTime["Rleg"] = 0
+    BodyDamage.BodyPartDamage.FractureTime["Lleg"] = 0
+    BodyDamage.BodyPartDamage.FractureTime["Torso"] = 0
+    BodyDamage.BodyPartDamage.FractureTime["Head"] = 0
+end
+
 -- Restoring the player on admin revive
 
 function RestorePlayer(player)
@@ -2012,8 +2259,9 @@ function RestorePlayer(player)
         TriggerServerEvent("hospital:server:SetLaststandStatus", false)
     end
     emsNotified = false
-    BodyDamage.epinephrineKoefficient = 0
-    BodyDamage.morphineKoefficient = 0
+    itemsInjected = {}
+    BodyDamage.hrIncrease = 0
+    BodyDamage.hrDecrease = 0
     BodyDamage.BodyPartDamage.BloodLevel = 6.0
     BodyDamage.Pain = 0
     BodyDamage.Conscious = true
@@ -2051,6 +2299,18 @@ function RestorePlayer(player)
     BodyDamage.BodyPartDamage.DamageType["Lleg"] = 0
     BodyDamage.BodyPartDamage.DamageType["Torso"] = 0
     BodyDamage.BodyPartDamage.DamageType["Head"] = 0
+    BodyDamage.BodyPartDamage.Fractures["Rarm"] = false
+    BodyDamage.BodyPartDamage.Fractures["Larm"] = false
+    BodyDamage.BodyPartDamage.Fractures["Rleg"] = false
+    BodyDamage.BodyPartDamage.Fractures["Lleg"] = false
+    BodyDamage.BodyPartDamage.Fractures["Torso"] = false
+    BodyDamage.BodyPartDamage.Fractures["Head"] = false
+    BodyDamage.BodyPartDamage.FractureTime["Rarm"] = 0
+    BodyDamage.BodyPartDamage.FractureTime["Larm"] = 0
+    BodyDamage.BodyPartDamage.FractureTime["Rleg"] = 0
+    BodyDamage.BodyPartDamage.FractureTime["Lleg"] = 0
+    BodyDamage.BodyPartDamage.FractureTime["Torso"] = 0
+    BodyDamage.BodyPartDamage.FractureTime["Head"] = 0
     ProcessRunStuff()
     LocalPlayer.state:set('BodyDamage',  BodyDamage, true)
 end
@@ -2097,16 +2357,20 @@ RegisterNetEvent('osp_ambulance:partialRevive', function()
     BodyDamage.isDead = false
     BodyDamage.inLastStand = false
     BodyDamage.cardiacState = 'NSR'
+    itemsInjected = {}
     BodyDamage.Pulse = 70
     BodyDamage.oxygenSaturation = 95
     BodyDamage.Temp = 37.0
     BodyDamage.BodyPartDamage.BloodLevel = 6.0
     BodyDamage.BloodPressure[1] = 120
     BodyDamage.BloodPressure[2] = 80
+    BodyDamage.hrIncrease = 0
+    BodyDamage.hrDecrease = 0
     LocalPlayer.state:set('BodyDamage',  BodyDamage, true)
     TriggerServerEvent("hospital:server:resetHungerThirst")
     ProcessRunStuff()
     SetEntityVisible(PlayerPedId(), true, true)
+    BodyDamage.isInBodybag = false
     DeleteEntity(bodyBag)
     if Config.Framework == 'esx' then
         TriggerServerEvent('osp_ambulance:setDeathStatus', false)
@@ -2152,6 +2416,7 @@ RegisterNetEvent('hospital:client:Revive', function()
     )
     SendTextMessage(lang.interactions.medicalHeader, lang.info.healthy, 5000, "success")
     SetEntityVisible(PlayerPedId(), true, true)
+    BodyDamage.isInBodybag = false
     DeleteEntity(bodyBag)
     if Config.Framework == 'esx' then
         TriggerServerEvent('osp_ambulance:setDeathStatus', false)
@@ -2171,8 +2436,6 @@ end)
 RegisterNetEvent('osp_ambulance:useIfak', function()
     local dict, anim = Config.InteractionDict , Config.InteractionAnim
     ProgressBar(lang.update1.useIfak, 4000, dict, anim)
-    TriggerServerEvent('osp_ambulance:addItem', 'field_dressing', 1)
-    TriggerServerEvent('osp_ambulance:addItem', 'ecg', 1)
 end)
 
 RegisterNetEvent('osp_ambulance:useBandage', function()
@@ -2240,7 +2503,7 @@ RegisterNetEvent('osp_ambulance:painKillers', function()
     end
     TriggerServerEvent('hud:server:RelieveStress', 100)
     BodyDamage.Pain = BodyDamage.Pain/2
-    BodyDamage.morphineKoefficient = BodyDamage.morphineKoefficient + 10
+    BodyDamage.hrDecrease = BodyDamage.hrDecrease + 10
     FreezeEntityPosition(PlayerPedId(), false)
 end)
 

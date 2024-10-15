@@ -48,12 +48,6 @@ AddEventHandler('esx:setPlayerData', function(key, value)
 end)
 
 ---@diagnostic disable: duplicate-set-field
-
-function WSB.showNotification(_title, msg, type)
-    if type == 'inform' then type = 'info' end
-    ESX.ShowNotification(msg, type)
-end
-
 function WSB.serverCallback(name, cb, ...)
     ESX.TriggerServerCallback(name, cb, ...)
 end
@@ -121,4 +115,8 @@ end
 
 function WSB.isPlayerDead()
     return isDead
+end
+
+function WSB.isPlayerHandcuffed()
+    return LocalPlayer.state.handcuffed or false
 end

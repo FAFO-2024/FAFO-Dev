@@ -4,7 +4,7 @@ lua54 'yes'
 
 author 'KuzQuality | Kuzkay'
 description 'Outfit bag script by KuzQuality'
-version '2.0.2'
+version '2.1.3'
 
 ui_page 'html/index.html'
 

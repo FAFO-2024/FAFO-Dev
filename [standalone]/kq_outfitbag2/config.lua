@@ -8,13 +8,13 @@ Config.debug = false
 --- If using a standalone solution, keep both frameworks disabled.
 
 Config.esxSettings = {
-    enabled = false,
+    enabled = true,
     -- Whether or not to use the new ESX export method
-    useNewESXExport = false
+    useNewESXExport = true
 }
 
 Config.qbSettings = {
-    enabled = true,
+    enabled = false,
 }
 
 ----------------------------------
@@ -22,7 +22,7 @@ Config.qbSettings = {
 ----------------------------------
 -- Outfitbag command settings
 Config.command = {
-    enabled = false,
+    enabled = true,
     command = 'outfitbag',
     shortCommand = 'ob'
 }
@@ -37,8 +37,8 @@ Config.sql = {
 }
 
 Config.target = {
-    enabled = true,
-    system = 'qb-target' -- 'qtarget' or 'qb-target' or 'ox_target' (Other systems might work as well)
+    enabled = false,
+    system = 'ox_target' -- 'qtarget' or 'qb-target' or 'ox_target' (Other systems might work as well)
 }
 
 
@@ -86,7 +86,7 @@ Config.additionalItems = {
 ----------------------------------
 
 -- Maxmimum amount of outfits that people can save per bag
-Config.maxOutfits = 15
+Config.maxOutfits = 50
 
 -- Whether or not to allow players to share their outfits
 Config.allowBagSharing = true
@@ -106,7 +106,12 @@ Config.bagDespawning = {
 -- Whether to save outfits using an external system (this will make players keep their outfit upon relog when using a specialized outfit resource)
 Config.clothingSystemSaving = {
     enabled = false,
-    system = 'illenium-appearance', -- illenium-appearance or fivem-appearance by default.
+    system = 'illenium-appearance',
+    -- Available systems:
+    -- illenium-appearance
+    -- fivem-appearance
+    -- qb-clothing
+    -- codem-appearance
     -- To add your custom system; you can do this in the client/editable/editable.lua file within the OnPlayerApplyOutfit function
 }
 
@@ -209,266 +214,77 @@ Config.fixedBags = {
         bags = {
             jobs = {
                 'police',
-                'sasp',
-                'sheriff',
+                'lspd',
+                'bcso',
             },
             locations = {
-                --vector4(592.66, -11.23, 72.82, 336.4),
+                vector4(458.98, -992.28, 30.68, 63.0),
             },
         },
         outfits = {
             {
-                name = "PD Patrol M",
+                name = "Male Officer",
                 model = 1885233650,
                 drawable = {
-                  feet = { drawable = 25, texture = 0, palette = 2 }, 
-                  decals = { drawable = 0, texture = 0, palette = 2 }, 
-                  tops = { drawable = 546, texture = 2, palette = 2 }, 
-                  mask = { drawable = 121, texture = 0, palette = 2 }, 
-                  torso = { drawable = 0, texture = 0, palette = 2 }, 
-                  chest = { drawable = 13, texture = 0, palette = 2 }, 
-                  legs = { drawable = 188, texture = 0, palette = 2 }, 
-                  bag = { drawable = 0, texture = 0, palette = 2 }, 
-                  accessory = { drawable = 1, texture = 0, palette = 2 }, 
-                  undershirt = { drawable = 38, texture = 1, palette = 2 }, 
+                    torso = { drawable = 19, texture = 0, palette = 0 },
+                    feet = { drawable = 51, texture = 0, palette = 0 },
+                    accessory = { drawable = 0, texture = 0, palette = 0 },
+                    chest = { drawable = 0, texture = 0, palette = 0 },
+                    decals = { drawable = 0, texture = 0, palette = 2 },
+                    bag = { drawable = 0, texture = 0, palette = 0 },
+                    tops = { drawable = 55, texture = 0, palette = 0 },
+                    undershirt = { drawable = 58, texture = 0, palette = 0 },
+                    legs = { drawable = 24, texture = 0, palette = 0 },
+                    mask = { drawable = 0, texture = 0, palette = 0 },
                 },
                 props = {
-                  glasses = { prop = 0, texture = 0 }, 
-                  helmet = { prop = 209, texture = 0 }, 
-                  ear = { prop = -1, texture = -1 }, 
+                    ear = { prop = 0, texture = 0 },
+                    glasses = { prop = -1, texture = -1 },
+                    helmet = { prop = -1, texture = -1 },
                 },
-              },
+            },
             {
-                name = "PD Supervisor M",
+                name = "Male Bulletproof",
                 model = 1885233650,
                 drawable = {
-                  feet = { drawable = 25, texture = 0, palette = 2 }, 
-                  decals = { drawable = 0, texture = 0, palette = 2 }, 
-                  tops = { drawable = 546, texture = 0, palette = 2 }, 
-                  mask = { drawable = 121, texture = 0, palette = 2 }, 
-                  torso = { drawable = 0, texture = 0, palette = 2 }, 
-                  chest = { drawable = 13, texture = 0, palette = 2 }, 
-                  legs = { drawable = 188, texture = 0, palette = 2 }, 
-                  bag = { drawable = 0, texture = 0, palette = 2 }, 
-                  accessory = { drawable = 1, texture = 0, palette = 2 }, 
-                  undershirt = { drawable = 38, texture = 1, palette = 2 }, 
+                    mask = { drawable = 0, texture = 0, palette = 0 },
+                    chest = { drawable = 11, texture = 1, palette = 0 },
+                    bag = { drawable = 0, texture = 0, palette = 0 },
+                    undershirt = { drawable = 58, texture = 0, palette = 0 },
+                    tops = { drawable = 55, texture = 0, palette = 0 },
+                    torso = { drawable = 41, texture = 0, palette = 0 },
+                    accessory = { drawable = 0, texture = 0, palette = 0 },
+                    feet = { drawable = 25, texture = 0, palette = 0 },
+                    legs = { drawable = 25, texture = 0, palette = 0 },
+                    decals = { drawable = 0, texture = 0, palette = 0 },
                 },
                 props = {
-                  glasses = { prop = 0, texture = 0 }, 
-                  helmet = { prop = 209, texture = 0 }, 
-                  ear = { prop = -1, texture = -1 }, 
+                    ear = { prop = 2, texture = 0 },
+                    helmet = { prop = -1, texture = -1 },
+                    glasses = { prop = 0, texture = 0 },
                 },
-              },
+            },
             {
-                name = "PD Assistant M",
+                name = "Male Trooper",
                 model = 1885233650,
                 drawable = {
-                  feet = { drawable = 25, texture = 0, palette = 2 }, 
-                  decals = { drawable = 0, texture = 0, palette = 2 }, 
-                  tops = { drawable = 546, texture = 3, palette = 2 }, 
-                  mask = { drawable = 121, texture = 0, palette = 2 }, 
-                  torso = { drawable = 0, texture = 0, palette = 2 }, 
-                  chest = { drawable = 13, texture = 0, palette = 2 }, 
-                  legs = { drawable = 188, texture = 0, palette = 2 }, 
-                  bag = { drawable = 0, texture = 0, palette = 2 }, 
-                  accessory = { drawable = 1, texture = 0, palette = 2 }, 
-                  undershirt = { drawable = 38, texture = 1, palette = 2 }, 
+                    torso = { drawable = 20, texture = 0, palette = 0 },
+                    feet = { drawable = 51, texture = 0, palette = 0 },
+                    accessory = { drawable = 0, texture = 0, palette = 0 },
+                    chest = { drawable = 0, texture = 0, palette = 0 },
+                    decals = { drawable = 0, texture = 0, palette = 2 },
+                    bag = { drawable = 0, texture = 0, palette = 0 },
+                    tops = { drawable = 317, texture = 3, palette = 0 },
+                    undershirt = { drawable = 58, texture = 0, palette = 0 },
+                    legs = { drawable = 24, texture = 0, palette = 0 },
+                    mask = { drawable = 0, texture = 0, palette = 0 },
                 },
                 props = {
-                  glasses = { prop = 0, texture = 0 }, 
-                  helmet = { prop = 209, texture = 0 }, 
-                  ear = { prop = -1, texture = -1 }, 
+                    ear = { prop = 0, texture = 0 },
+                    glasses = { prop = -1, texture = -1 },
+                    helmet = { prop = 58, texture = 0 },
                 },
-              },
-            {
-                name = "PD Command M",
-                model = 1885233650,
-                drawable = {
-                  feet = { drawable = 25, texture = 0, palette = 2 }, 
-                  decals = { drawable = 0, texture = 0, palette = 2 }, 
-                  tops = { drawable = 546, texture = 4, palette = 2 }, 
-                  mask = { drawable = 121, texture = 0, palette = 2 }, 
-                  torso = { drawable = 0, texture = 0, palette = 2 }, 
-                  chest = { drawable = 13, texture = 0, palette = 2 }, 
-                  legs = { drawable = 188, texture = 0, palette = 2 }, 
-                  bag = { drawable = 0, texture = 0, palette = 2 }, 
-                  accessory = { drawable = 1, texture = 0, palette = 2 }, 
-                  undershirt = { drawable = 38, texture = 1, palette = 2 }, 
-                },
-                props = {
-                  glasses = { prop = 0, texture = 0 }, 
-                  helmet = { prop = 209, texture = 0 }, 
-                  ear = { prop = -1, texture = -1 }, 
-                },
-              },
-            {
-                name = "SP Patrol M",
-                model = 1885233650,
-                drawable = {
-                  mask = { drawable = 121, texture = 0, palette = 2 }, 
-                  bag = { drawable = 123, texture = 0, palette = 2 }, 
-                  decals = { drawable = 0, texture = 0, palette = 2 }, 
-                  torso = { drawable = 11, texture = 0, palette = 2 }, 
-                  chest = { drawable = 13, texture = 0, palette = 2 }, 
-                  accessory = { drawable = 1, texture = 0, palette = 2 }, 
-                  legs = { drawable = 198, texture = 0, palette = 2 }, 
-                  tops = { drawable = 565, texture = 0, palette = 2 }, 
-                  feet = { drawable = 25, texture = 0, palette = 2 }, 
-                  undershirt = { drawable = 38, texture = 0, palette = 2 }, 
-                },
-                props = {
-                  helmet = { prop = 219, texture = 0 }, 
-                  glasses = { prop = 0, texture = 0 }, 
-                  ear = { prop = -1, texture = -1 }, 
-                },
-              },
-            {
-                name = "SP Supervisor M",
-                model = 1885233650,
-                drawable = {
-                  mask = { drawable = 121, texture = 0, palette = 2 }, 
-                  bag = { drawable = 123, texture = 0, palette = 2 }, 
-                  decals = { drawable = 44, texture = 1, palette = 2 }, 
-                  torso = { drawable = 11, texture = 0, palette = 2 }, 
-                  chest = { drawable = 13, texture = 0, palette = 2 }, 
-                  accessory = { drawable = 1, texture = 0, palette = 2 }, 
-                  legs = { drawable = 198, texture = 0, palette = 2 }, 
-                  tops = { drawable = 565, texture = 1, palette = 2 }, 
-                  feet = { drawable = 25, texture = 0, palette = 2 }, 
-                  undershirt = { drawable = 38, texture = 0, palette = 2 }, 
-                },
-                props = {
-                  helmet = { prop = 219, texture = 0 }, 
-                  glasses = { prop = 0, texture = 0 }, 
-                  ear = { prop = -1, texture = -1 }, 
-                },
-              },
-            {
-                name = "SP Assistant M",
-                model = 1885233650,
-                drawable = {
-                  mask = { drawable = 121, texture = 0, palette = 2 }, 
-                  bag = { drawable = 123, texture = 0, palette = 2 }, 
-                  decals = { drawable = 44, texture = 3, palette = 2 }, 
-                  torso = { drawable = 11, texture = 0, palette = 2 }, 
-                  chest = { drawable = 13, texture = 0, palette = 2 }, 
-                  accessory = { drawable = 1, texture = 0, palette = 2 }, 
-                  legs = { drawable = 198, texture = 0, palette = 2 }, 
-                  tops = { drawable = 565, texture = 2, palette = 2 }, 
-                  feet = { drawable = 25, texture = 0, palette = 2 }, 
-                  undershirt = { drawable = 38, texture = 0, palette = 2 }, 
-                },
-                props = {
-                  helmet = { prop = 219, texture = 0 }, 
-                  glasses = { prop = 0, texture = 0 }, 
-                  ear = { prop = -1, texture = -1 }, 
-                },
-              },
-            {
-                name = "PD Command M",
-                model = 1885233650,
-                drawable = {
-                  feet = { drawable = 25, texture = 0, palette = 2 }, 
-                  decals = { drawable = 0, texture = 0, palette = 2 }, 
-                  tops = { drawable = 546, texture = 4, palette = 2 }, 
-                  mask = { drawable = 121, texture = 0, palette = 2 }, 
-                  torso = { drawable = 0, texture = 0, palette = 2 }, 
-                  chest = { drawable = 13, texture = 0, palette = 2 }, 
-                  legs = { drawable = 188, texture = 0, palette = 2 }, 
-                  bag = { drawable = 0, texture = 0, palette = 2 }, 
-                  accessory = { drawable = 1, texture = 0, palette = 2 }, 
-                  undershirt = { drawable = 38, texture = 1, palette = 2 }, 
-                },
-                props = {
-                  glasses = { prop = 0, texture = 0 }, 
-                  helmet = { prop = 209, texture = 0 }, 
-                  ear = { prop = -1, texture = -1 }, 
-                },
-              },
-            {
-                name = "SO Patrol M",
-                model = 1885233650,
-                drawable = {
-                  mask = { drawable = 121, texture = 0, palette = 2 }, 
-                  bag = { drawable = 116, texture = 0, palette = 2 }, 
-                  decals = { drawable = 0, texture = 0, palette = 2 }, 
-                  torso = { drawable = 11, texture = 0, palette = 2 }, 
-                  chest = { drawable = 13, texture = 0, palette = 2 }, 
-                  accessory = { drawable = 1, texture = 0, palette = 2 }, 
-                  legs = { drawable = 184, texture = 0, palette = 2 }, 
-                  tops = { drawable = 532, texture = 0, palette = 2 }, 
-                  feet = { drawable = 25, texture = 0, palette = 2 }, 
-                  undershirt = { drawable = 38, texture = 0, palette = 2 }, 
-                },
-                props = {
-                  helmet = { prop = 205, texture = 0 }, 
-                  glasses = { prop = 0, texture = 0 }, 
-                  ear = { prop = -1, texture = -1 }, 
-                },
-              },
-            {
-                name = "SO Supervisor M",
-                model = 1885233650,
-                drawable = {
-                  mask = { drawable = 121, texture = 0, palette = 2 }, 
-                  bag = { drawable = 116, texture = 1, palette = 2 }, 
-                  decals = { drawable = 44, texture = 1, palette = 2 }, 
-                  torso = { drawable = 11, texture = 0, palette = 2 }, 
-                  chest = { drawable = 13, texture = 0, palette = 2 }, 
-                  accessory = { drawable = 1, texture = 0, palette = 2 }, 
-                  legs = { drawable = 184, texture = 0, palette = 2 }, 
-                  tops = { drawable = 532, texture = 1, palette = 2 }, 
-                  feet = { drawable = 25, texture = 0, palette = 2 }, 
-                  undershirt = { drawable = 38, texture = 0, palette = 2 }, 
-                },
-                props = {
-                  helmet = { prop = 205, texture = 0 }, 
-                  glasses = { prop = 0, texture = 0 }, 
-                  ear = { prop = -1, texture = -1 }, 
-                },
-              },
-            {
-                name = "SO Assistant M",
-                model = 1885233650,
-                drawable = {
-                  mask = { drawable = 121, texture = 0, palette = 2 }, 
-                  bag = { drawable = 116, texture = 2, palette = 2 }, 
-                  decals = { drawable = 44, texture = 3, palette = 2 }, 
-                  torso = { drawable = 11, texture = 0, palette = 2 }, 
-                  chest = { drawable = 13, texture = 0, palette = 2 }, 
-                  accessory = { drawable = 1, texture = 0, palette = 2 }, 
-                  legs = { drawable = 184, texture = 0, palette = 2 }, 
-                  tops = { drawable = 532, texture = 2, palette = 2 }, 
-                  feet = { drawable = 25, texture = 0, palette = 2 }, 
-                  undershirt = { drawable = 38, texture = 0, palette = 2 }, 
-                },
-                props = {
-                  helmet = { prop = 205, texture = 0 }, 
-                  glasses = { prop = 0, texture = 0 }, 
-                  ear = { prop = -1, texture = -1 }, 
-                },
-              },
-            {
-                name = "SO Command M",
-                model = 1885233650,
-                drawable = {
-                  mask = { drawable = 121, texture = 0, palette = 2 }, 
-                  bag = { drawable = 116, texture = 4, palette = 2 }, 
-                  decals = { drawable = 41, texture = 0, palette = 2 }, 
-                  torso = { drawable = 11, texture = 0, palette = 2 }, 
-                  chest = { drawable = 13, texture = 0, palette = 2 }, 
-                  accessory = { drawable = 1, texture = 0, palette = 2 }, 
-                  legs = { drawable = 184, texture = 0, palette = 2 }, 
-                  tops = { drawable = 532, texture = 2, palette = 2 }, 
-                  feet = { drawable = 25, texture = 0, palette = 2 }, 
-                  undershirt = { drawable = 38, texture = 0, palette = 2 }, 
-                },
-                props = {
-                  helmet = { prop = 205, texture = 1 }, 
-                  glasses = { prop = 0, texture = 0 }, 
-                  ear = { prop = -1, texture = -1 }, 
-                },
-              },
+            },
             {
                 name = "Female officer",
                 model = -1667301416,

@@ -1,6 +1,8 @@
 -----------------For support, scripts, and more----------------
 --------------- https://discord.gg/wasabiscripts  -------------
 ---------------------------------------------------------------
+local qboxFound = GetResourceState('qbx_core')
+if qboxFound == 'started' or qboxFound == 'starting' then return end
 
 local found = GetResourceState('qb-core')
 if found ~= 'started' and found ~= 'starting' then return end
@@ -55,12 +57,6 @@ RegisterNetEvent('QBCore:Player:SetPlayerData', function(newPlayerData)
 end)
 
 ---@diagnostic disable: duplicate-set-field
-
-function WSB.showNotification(title, msg, type)
-    if type == 'inform' or type == 'info' then type = 'primary' end
-    QBCore.Functions.Notify({ text = title, caption = msg }, type)
-end
-
 function WSB.serverCallback(name, cb, ...)
     QBCore.Functions.TriggerCallback(name, cb, ...)
 end
@@ -147,4 +143,10 @@ function WSB.isPlayerDead()
     if not WSB.playerLoaded then return end
     WSB.playerData = QBCore.Functions.GetPlayerData()
     return (WSB.playerData.metadata.isdead or WSB.playerData.metadata.inlaststand)
+end
+
+function WSB.isPlayerHandcuffed()
+    if not WSB.playerLoaded then return end
+    WSB.playerData = QBCore.Functions.GetPlayerData()
+    return WSB.playerData.metadata.ishandcuffed and true or false
 end

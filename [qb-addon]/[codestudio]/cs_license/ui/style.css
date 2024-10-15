@@ -378,7 +378,7 @@ body {
 }
 
 .create-id-logo-upload-box {
-    height: 20%;
+    height: 33%;
     width: 100%;
     margin-top: 3vh;
     display: flex;
@@ -394,21 +394,21 @@ body {
     justify-content: space-between;
 }
 
-.create-id-logo-upload-input {
+.create-id-logo-upload-input, .create-id-bg-upload-input {
     height: 100%;
     width: 73%;
     background: none;
     border: none;
     outline: none;
     padding: 5px;
-    color: var(--card-primary-color);
+    color: #959595;
     font-family: "Poppins", sans-serif;
     font-size: 1.5vh;
     background-color: #22a77d36;
     border: 1px solid #22a77d30;
 }
 
-.create-id-logo-upload-btn {
+.create-id-logo-upload-btn, .create-id-bg-upload-btn {
     height: 100%;
     width: 25%;
     background-color: #22a77d50;
@@ -420,7 +420,7 @@ body {
     justify-content: center;
 }
 
-.create-id-logo-upload-btn:hover {
+.create-id-logo-upload-btn:hover, .create-id-bg-upload-btn:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.2);
     border: 1px solid white;
@@ -1287,6 +1287,9 @@ body {
     align-items: center;
     justify-content: center;
     animation-duration: 0.6s;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position:center;
 }
 
 .landscape-center-logo-container,
@@ -1428,7 +1431,8 @@ body {
 
 .landscape-heading-title,
 .portrait-heading-title {
-    font-size: 1.5vh;
+    font-family: "Organetto";
+    font-size: 1.4vh;
     width: 90%;
     display: flex;
     align-items: center;
@@ -1472,6 +1476,9 @@ body {
     align-items: center;
     justify-content: center;
     animation-duration: 0.6s;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position:center;
 }
 
 .portrait-player-photo-container {
@@ -2802,6 +2809,9 @@ body {
     position: absolute;
     justify-content: space-between;
     top: 6vh;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position:center;
 }
 
 .job-badge-photo-cont {
@@ -2830,6 +2840,7 @@ body {
     overflow: hidden;
     padding: 1px;
     border-radius: 10px;
+    font-family: "Nove";
 }
 
 .job-badge-details-cont {
@@ -2852,7 +2863,7 @@ body {
     width: 40%;
     background-color: white;
     color: #333333;
-    font-size: 1.5vh;
+    font-size: 1.4vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2862,7 +2873,7 @@ body {
     height: 100%;
     width: 60%;
     background-color: #00000080;
-    font-size: 1.5vh;
+    font-size: 1.4vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3245,7 +3256,7 @@ body {
     justify-content: space-evenly;
 }
 
-.capture-btn {
+.capture-btn, .exit-btn {
     height: 4vh;
     width: 15vh;
     background-color: #2c9ffda3;
@@ -3257,7 +3268,7 @@ body {
     transition: all 0.5s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
 
-.capture-btn:hover {
+.capture-btn:hover, .exit-btn:hover {
     background-color: white;
     color: #171717;
     transform: scale(1.2);

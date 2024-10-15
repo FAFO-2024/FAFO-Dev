@@ -105,7 +105,7 @@ function WSB.target.bone(bones, data)
     return 'bone_' .. identifier
 end
 
-function WSB.target.removeZone(id)
+function WSB.target.removeTarget(id)
     if not id then return end
     exports['qb-target']:RemoveZone(id)
 end
@@ -150,3 +150,9 @@ function WSB.target.boxZone(identifier, coords, width, length, data)
     local z = coords.z - data.minZ + data.maxZ
     WSB.target.addBoxZone(coords, data.heading, vec3(width, length, z), nil, options, identifier)
 end
+
+function WSB.target.removeZone(id)
+    if not id then return end
+    WSB.target.removeTarget(id)
+end
+-- END: Compatibility for older versions of Wasabi Scripts, will remove in future --

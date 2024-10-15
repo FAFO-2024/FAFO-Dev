@@ -112,7 +112,7 @@ if Config.Framework == "qb" then
 end
 
 AddEventHandler("onResourceStart", function(name)
-    Wait(2000)
+    Wait(5000)
     if name ~= GetCurrentResourceName() then return end
     PopulateData()
     

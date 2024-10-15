@@ -73,7 +73,11 @@ end)
 ------------------ DO NOT TOUCH BELOW THIS-----------------
 
 
-RegisterCommand("convertqbmanagement", function()
+RegisterCommand("convertqbmanagement", function(source)
+    if source ~= 0 then 
+        print("This command can only be run from the server console.")
+        return
+    end
     local manageData = MySQL.Sync.fetchAll("SELECT * FROM `management_funds`")
     local totalAmount = {}
     local jobMoney = {}

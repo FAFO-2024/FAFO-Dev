@@ -5,7 +5,7 @@ lua54 'yes'
 
 description 'Complete Medical System Overhaul'
 author 'OSP Development'
-version '1.1.0'
+version '1.5.0'
 
 shared_script {
     'lang/lang.lua',
@@ -57,12 +57,6 @@ files {
 	'handling.meta'
 }
 
-data_file 'DLC_ITYP_REQUEST' 'stream/v_med_crutch01.ytyp'
-data_file 'HANDLING_FILE'			'handling.meta'
-data_file 'VEHICLE_METADATA_FILE'	'vehicles.meta'
-data_file 'VEHICLE_VARIATION_FILE'	'carvariations.meta'
-data_file 'DLC_ITYP_REQUEST' 'stream/ems_props.ytyp'
-
 ui_page {
     'html/ui.html'
 }
@@ -79,7 +73,6 @@ export {
     'GetAmbulanceData',
     'isDead',
 }
-dependency '/assetpacks'
 
 
 

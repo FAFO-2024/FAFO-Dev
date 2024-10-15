@@ -154,5 +154,9 @@
 
     "total_loan_amount_taken_label": "Total Borrowed ",
     "optional": "Memo (Optional)",
-    "no_memo_msg": "ATM"
+    "no_memo_msg": "ATM",
+
+    "confirm_transfer_details": "Please confirm the transfer details",
+    "tranfer_to": "Transfer To",
+    "confirm_transfer_title": "Confirm Transfer"
 }

@@ -1,6 +1,3 @@
-
-
-
 function Notification(msg)
     lib.notify({
         title = 'Notification',
@@ -18,10 +15,10 @@ end
 
 
 function ExecuteAnimation(start)
-    ClearPedTasks(PlayerPedId())
+    ClearPedTasks(cache.ped)
 
     for k, v in pairs(GetGamePool('CObject')) do
-        if IsEntityAttachedToEntity(PlayerPedId(), v) then
+        if IsEntityAttachedToEntity(cache.ped, v) then
             DeleteObject(v)
             DetachEntity(v, 0, 0)
             SetEntityAsMissionEntity(v, true, true)
@@ -39,12 +36,12 @@ function ExecuteAnimation(start)
 			DetachEntity(cardProp)
             cardProp = nil
         end
-        cardProp = CreateObject(prop, GetEntityCoords(PlayerPedId()), true, true, true)
-        AttachEntityToEntity(cardProp, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 57005), 0.1000, 0.0200, -0.0300, -90.000, 170.000, 78.999, true, true, false, false, 1, true)
-        TaskPlayAnim(PlayerPedId(), 'paper_1_rcm_alt1-8', 'player_one_dual-8', 5.0, 5.0, -1, 51, 0, false, false, false)
+        cardProp = CreateObject(prop, GetEntityCoords(cache.ped), true, true, true)
+        AttachEntityToEntity(cardProp, cache.ped, GetPedBoneIndex(cache.ped, 57005), 0.1000, 0.0200, -0.0300, -90.000, 170.000, 78.999, true, true, false, false, 1, true)
+        TaskPlayAnim(cache.ped, 'paper_1_rcm_alt1-8', 'player_one_dual-8', 5.0, 5.0, -1, 51, 0, false, false, false)
     else
-        if IsEntityPlayingAnim(PlayerPedId(), "paper_1_rcm_alt1-8", "player_one_dual-8", 3) then
-            ClearPedTasks(PlayerPedId())
+        if IsEntityPlayingAnim(cache.ped, "paper_1_rcm_alt1-8", "player_one_dual-8", 3) then
+            ClearPedTasks(cache.ped)
         end
         if cardProp then 
 			DeleteObject(cardProp)
@@ -80,7 +77,13 @@ end
 
 
 lib.callback.register('cs:identity:getClosestPlayer', function()
-    return GetPlayerServerId(lib.getClosestPlayer(GetEntityCoords(PlayerPedId()), 2.0, false))
+    local nearPly = {}
+    local nearby = lib.getNearbyPlayers(GetEntityCoords(cache.ped), 2.0, true)
+    if #nearby == 0 then return end
+    for _, v in pairs(nearby) do
+        table.insert(nearPly, GetPlayerServerId(v.id))
+    end
+    return nearPly
 end)
 
 
@@ -177,12 +180,19 @@ function openFakeIDCreator()
 end
 
 
-
 --Used in Green Screen Studio --
 function DisableWeatherSync(disable) -- Add your weathersync events here 
     if disable then --Disable
+        if GetResourceState('cs_weather') == 'started' then
+            TriggerEvent('cs:weather:client:DisableSync')
+            return
+        end
         TriggerEvent('qb-weathersync:client:DisableSync')
     else --Enable
+        if GetResourceState('cs_weather') == 'started' then
+            TriggerEvent('cs:weather:client:DisableSync')
+            return
+        end
         TriggerEvent('qb-weathersync:client:EnableSync')
     end
 end

@@ -265,6 +265,10 @@ body {
     color: #d1d0d0;
 }
 
+.upcoming-weather-edit-time {
+    visibility: hidden;
+}
+
 .weather-panel-exit-btn:hover,
 .upcoming-weather-edit-time:hover,
 .upcoming-weather-delete-time:hover{
@@ -293,7 +297,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background: rgb(0 0 0 / 44%);
     box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
 }

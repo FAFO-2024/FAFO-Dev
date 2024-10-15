@@ -3,7 +3,11 @@ local function TrimString(name)
   return name:sub(9)
 end
 
-RegisterCommand("convertesxsociety", function()
+RegisterCommand("convertesxsociety", function(source)
+  if source ~= 0 then 
+    print("This command can only be run from the server console.")
+    return
+end
   local societyData = MySQL.Sync.fetchAll("SELECT * FROM `addon_account_data`")
   local totalAmount = {}
   local jobMoney = {}

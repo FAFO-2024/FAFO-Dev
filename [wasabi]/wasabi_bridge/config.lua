@@ -12,6 +12,10 @@ Config.CheckForUpdates = true
 --- UI Settings (Only works if using built-in systems) ---
 ----------------------------------------------------------
 
+Config.DefaultColor = '#43ea80' -- Default color for progress bars, circles, menus, etc if not defined when used.
+-- (Most of the time there will be configuration of color within specific Wasabi Scripts, but this is a fallback)
+-- (If you wish to use this color as default in other Wasabi Scripts set their UI color to false if applicable)
+
 -- Has built-in notify and automatic detection for wasabi_notify
 -- If using ox_lib, you can uncomment the code in wasabi_bridge/customize/client/notifications.lua
 -- and comment out the wasabi_notify/default code to use ox_lib instead.
@@ -23,7 +27,7 @@ Config.Notifications = {
         iconSize = '2.2rem',                        -- Default icon size if shown and not defined. (Default is 1.5rem)
         fontColor = '#e5e5e5',                      -- Color, hex, etc (default: '#b5b3b3')
         backgroundColor = 'rgba(37, 38, 43, 0.60)', -- Background color of notification (default: 'rgba(80, 80, 80, 0.651)')
-        sound = true,                               -- Play a sound when the notification is shown
+        sound = false,                               -- Play a sound when the notification is shown
     },
     styles = {                           -- Notification styles (Feel free to edit and add, but don't remove any default styles completely)
 

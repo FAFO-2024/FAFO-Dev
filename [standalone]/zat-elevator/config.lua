@@ -1,6 +1,7 @@
 Config = {}
-Config.Framework = "qbcore"
+Config.Framework = "qb" -- esx
 Config.Debug    = false
+Config.Target   = 'qb' --ox
 Config.Elevators = {
     [1] = {
         name = "FIB Building",                      -- Building name

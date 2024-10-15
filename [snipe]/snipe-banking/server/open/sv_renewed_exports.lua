@@ -39,7 +39,11 @@ exportHandler('removeAccountMoney', function(account, amount)
     end
 end)
 
-RegisterCommand("convertrenewed", function()
+RegisterCommand("convertrenewed", function(source)
+    if source ~= 0 then 
+        print("This command can only be run from the server console.")
+        return
+    end
     local renewedData = MySQL.Sync.fetchAll("SELECT * FROM `bank_accounts_new`")
     local totalAmount = {}
     local jobMoney = {}

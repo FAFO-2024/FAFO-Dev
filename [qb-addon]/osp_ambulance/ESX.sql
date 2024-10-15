@@ -27,4 +27,8 @@ INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	('wheelchair', 'Wheelchair', 1, 0, 1),
 	('crutch', 'Crutch', 1, 0, 1),
 	('stretcher', 'Stretcher', 1, 0, 1),
-	('bodybag', 'Bodybag', 1, 0, 1);
+	('bodybag', 'Bodybag', 1, 0, 1),
+	('bandage', 'Bandage', 1, 0, 1),
+	('ifak', 'IFAK', 1, 0, 1),
+	('painkillers', 'Painkillers', 1, 0, 1),
+	('temporary_tourniquet', 'Temporary Tourniquet', 1, 0, 1);

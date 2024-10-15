@@ -6,16 +6,15 @@ Config.Framework = 'qb' -- Set this to your framework. 'qb' or 'esx'
 Config.b2060 = true -- Set this to true if you are using server version 2060 or above, otherwise set it to false
 Config.b2545 = true -- Set this to tru if you are using server version 2545 or above, otherwise set it to false
 Config.startDamageTimer = 5000 -- Time in ms before the player damages gets applied when loading the chracters
-Config.UseRadialProgressBar = true -- Use the radial progress bar instead of the default one
-Config.UseOxNotif = false -- Set this to false if you want to use the default framework notificatins
-Config.UseOxInventory = false -- Set this to true if you use ox_inventory
-Config.UsedInventory = '' -- qs or ox or nothing(default)
+Config.UseRadialProgressBar = false -- Use the radial progress bar instead of the default one
+Config.UseOxNotif = true -- Set this to false if you want to use the default framework notificatins
+Config.UsedInventory = '' -- qb, esx, ox, qs or empty(will use default inventory for that framework)
 
-Config.webHook = 'https://discord.com/api/webhooks/1240510162758799382/EcNiDTBObF7-rp8vNZd6Jv3YWAl35ikhgyGo1O8_9zHGsqiNgMw2KyGi30R1VMMnDkA2'
+Config.webHook = ''
 Config.webHookName = 'OSP Development - Ambulance' -- Name of the WebHook bot
 Config.webHookLogo = 'https://cdn.discordapp.com/attachments/1102704629025886360/1227748671211180062/image.png?ex=6629890d&is=6617140d&hm=60043a8694fb72acc6cd4b1a7f21194d6dfc5df1ce2c79b34545ab358a3bf8c6&' -- Logo of the WebHook bot
 
-Config.UseTarget = true -- Set to false if you don't want to use targetting at all and instead use drawtext
+Config.UseTarget = false -- Set to false if you don't want to use targetting at all and instead use drawtext
 Config.UseOxTarget = false -- Set to false if you don't want to use ox_target
 Config.TargetName = 'qb-target' -- The name of the target resource (only needed if you use qb-target or qtarget)
 Config.Dispatch = 'default' -- Usable dispatch inputs: 'default', 'ps', 'other'
@@ -27,40 +26,37 @@ Config.SkellyKey = 'k' -- The default key to open the skelly overview
 Config.LockMedicalMenu = false -- Set to true if you want to lock the medical menu to only be opened by EMS
 
 Config.ServerDelay = 100 -- How many ms the server is behind by. Recommended to keep above 100ms. Should say in your server console by how far behind your server is.
-Config.Debug = false -- Enable or disable debug mode to investigate issues with the scripts
-
-
-
+Config.Debug = false -- Enable or disable debug mode to investigate issues with the script
 
 Config.CustomDeathScreen = false -- Enable of disable a customised death timer screen, keep at false if you don't know what you are doing
 Config.PopUpSkelly = true
 
 Config.AmbulanceJobs = {
     'ambulance',
-    'firefighter',
+    'ambulance2',
 }
 
 Config.InteractionDict = 'anim@heists@narcotics@funding@gang_idle'
 Config.InteractionAnim = 'gang_chatting_idle01'
 
 Config.JobBlips = true -- Whether or not ambulance personel can see eachother on the map.
-Config.MinimalDoctors = 1 -- How many players with the ambulance job to prevent the hospital check-in system from being used
+Config.MinimalDoctors = 3 -- How many players with the ambulance job to prevent the hospital check-in system from being used
 Config.DocCooldown = 1 -- Cooldown between doctor calls allowed, in minutes
 Config.AIHealTimer = 10 -- How long it will take to be healed after checking in, in seconds
-Config.WipeInventoryOnRespawn = false -- Enable or disable removing all the players items when they respawn at the hospital
+Config.WipeInventoryOnRespawn = true -- Enable or disable removing all the players items when they respawn at the hospital
 Config.ExcludeItems = {'iphone', 'anotheritem'}
-Config.Helicopter = "c3medhawk" -- Helicopter model that players with the ambulance job can use
-Config.BillCost = 500 -- Price that players are charged for using the hospital check-in system
-Config.LastStandTime = 240 -- How long before the player is percived as medically dead (in seconds)
+Config.Helicopter = "polmav" -- Helicopter model that players with the ambulance job can use
+Config.BillCost = 2000 -- Price that players are charged for using the hospital check-in system
+Config.LastStandTime = 120 -- How long before the player is percived as medically dead (in seconds)
 Config.RespawnTime = 120 -- How long before the player can respawn (in seconds)
 Config.PropDespawnTimer = 360*1000 -- How long before the ecg prop despawns after being placed in ms
-Config.SavePlayerDataTimer = 30*1000 -- How often the player data should be saved in ms (the lower the more accurate the data is saved but the more performance impact) (The data is sent to the server so that the player data is saved when the player quits)
+Config.SavePlayerDataTimer = 60*1000 -- How often the player data should be saved in ms (the lower the more accurate the data is saved but the more performance impact) (The data is sent to the server so that the player data is saved when the player quits)
 Config.AntiCombatLogLoop = 200 -- How often the anti combat log loop should run in ms (lower is better but has a higher performance impact)
 Config.DeadBlipDelay = 360 -- How long the dead blip should be visible on the map in ms, with each tick of this reducing the transpaerncy of the blip 250 - 0
 Config.AutomaticAmbulanceAlert = false -- Enable or disable the automatic ambulance alert when a player is downed
 Config.inLastStandHealth = 150 -- The health the player should have when they are in last stand
 Config.DeathHealth = 200 -- The health the player should have when they are dead
-
+Config.XrayScreenTimeout = 10*1000 -- How long before the screen automatically shuts off after an xray
 
 Config.MutePlayerOnLastStand = false
 Config.MutePlayerOnDeath = true
@@ -81,30 +77,7 @@ Config.KillPlayerInCriticalCondition = true -- Enable or disable the kill player
 
 -- The different types of equipment and their time to apply in ms
 Config.QuickCheckVitalsTime = 3000 -- How long it should take to check pulse etc in ms
-Config.TourniquetTime = 3000 -- Time to apply/remove tourniquet in ms
-Config.TourniquetPain = 3 -- How much pain the tourniquet should cause
-
-Config.DressingTime = 5000
-Config.ElasticTime = 8000
-Config.QuickClotTime = 4000
-Config.PackingTime = 4000
-Config.SewingTime = 10000
-Config.BodybagTime = 10000
 Config.ReviveKitTime = 5000
-
-Config.Epinephrine = 3000
-Config.EpinephrineDuration = 30000 -- How long the epinephrine should last in ms
-
-Config.Morphine = 3000
-Config.MorphineDuration = 30000 -- How long the morphine should last in ms
-
-Config.BloodSetupTime = 3000 
-Config.BloodInjectingTime250 = 120 -- in seconds 
-Config.BloodInjectingTime500 = 200 -- in seconds
-
-Config.SalinePack250Content = 75 -- How much blood the saline pack should give in ml
-Config.SalinePack500Content = 150 -- How much blood the saline pack should give in ml
-
 
 -- SIDE EFFECTS
 Config.SideEffectsTime = 60000 -- The interval for how often the side effects should be triggered in ms
@@ -141,6 +114,305 @@ Config.MaxWheelChairTime = 60 -- The maximum time a player can be set in a wheel
 Config.MaxCrutchTime = 60 -- The maximum time a player can be set in a wheelchair in minutes
 
 
+Config.Medication = {
+    {
+        itemName = 'tourniquet',
+        type = 'tourniquet',
+        anim = {
+            name = 'gang_chatting_idle01',
+            dict = 'anim@heists@narcotics@funding@gang_idle',
+        },
+        lang = lang.progress.applying_tourniquet,
+        langUsed = lang.update1.applied_tourniquet,
+        buttonLang = lang.buttons.apply_tourniquet,
+        buttonLangRemove = lang.buttons.remove_tourniquet,
+        time = 3000,
+        pain = 3.0,
+    },
+    {
+        itemName = 'field_dressing',
+        type = 'bandage',
+        effectivenessModifiers = {["abrasion"] = 0.7, ["avulsion"] = 0.8, ["contusion"] = 1.0, ["crush"] = 0.9, ["cut"] = 0.9, ["laceration"] = 0.1, ["velocitywound"] = 0.5, ["lowvelocitywound"] = 0.5, ["mediumvelocitywound"] = 0.5, ["highvelocitywound"] = 0.5, ["puncturewound"] = 0.7, ["burn"] = 0.7},
+        anim = {
+            name = 'gang_chatting_idle01',
+            dict = 'anim@heists@narcotics@funding@gang_idle',
+        },
+        lang = lang.progress.applying_field_dressing,
+        langUsed = lang.vitals.applied_field_dressing,
+        buttonLang = lang.buttons.apply_field_dressing,
+        time = 5000,
+        removeItem = true,
+    },
+    {
+        itemName = 'elastic_bandage',
+        type = 'bandage',
+        effectivenessModifiers = {["abrasion"] = 0.7, ["avulsion"] = 0.6, ["contusion"] = 1.0, ["crush"] = 0.7, ["cut"] = 0.7, ["laceration"] = 0.7, ["velocitywound"] = 0.6, ["lowvelocitywound"] = 0.5, ["mediumvelocitywound"] = 0.5, ["highvelocitywound"] = 0.5, ["puncturewound"] = 0.6, ["burn"] = 0.9 },
+        anim = {
+            name = 'gang_chatting_idle01',
+            dict = 'anim@heists@narcotics@funding@gang_idle',
+        },
+        lang = lang.progress.applying_elastic_bandage,
+        langUsed = lang.vitals.applied_elastic_bandage,
+        buttonLang = lang.buttons.apply_elastic_bandage,
+        time = 9000,
+        removeItem = true,
+    },
+    {
+        itemName = 'quick_clot',
+        type = 'bandage',
+        effectivenessModifiers = {["abrasion"] = 0.85, ["avulsion"] = 0.8, ["contusion"] = 1.0, ["crush"] = 0.6, ["cut"] = 0.6, ["laceration"] = 0.8, ["velocitywound"] = 0.8, ["lowvelocitywound"] = 0.5, ["mediumvelocitywound"] = 0.5, ["highvelocitywound"] = 0.5, ["puncturewound"] = 0.7, ["burn"] = 0.4 },
+        anim = {
+            name = 'gang_chatting_idle01',
+            dict = 'anim@heists@narcotics@funding@gang_idle',
+        },
+        lang = lang.progress.applying_quick_clot,
+        langUsed = lang.vitals.applied_quick_clot,
+        buttonLang = lang.buttons.apply_quick_clot,
+        time = 4000,
+        removeItem = true,
+    },
+    {
+        itemName = 'packing_bandage',
+        type = 'bandage',
+        effectivenessModifiers = {["abrasion"] = 0.7, ["avulsion"] = 0.6, ["contusion"] = 1.0, ["crush"] = 0.7, ["cut"] = 0.7, ["laceration"] = 0.7, ["velocitywound"] = 0.6, ["lowvelocitywound"] = 0.5, ["mediumvelocitywound"] = 0.5, ["highvelocitywound"] = 0.5, ["puncturewound"] = 0.7, ["burn"] = 0.4 },
+        anim = {
+            name = 'gang_chatting_idle01',
+            dict = 'anim@heists@narcotics@funding@gang_idle',
+        },
+        lang = lang.progress.applying_packing_bandage,
+        langUsed = lang.vitals.applied_packing_bandage,
+        buttonLang = lang.buttons.apply_packing_bandage,
+        time = 4000,
+        removeItem = true,
+    },
+    {
+        itemName = 'sewing_kit',
+        type = 'sewing',
+        anim = {
+            name = 'gang_chatting_idle01',
+            dict = 'anim@heists@narcotics@funding@gang_idle',
+        },
+        lang = lang.progress.sewing_injuries,
+        langUsed = lang.progress.sewing_injuries,
+        buttonLang = lang.buttons.sewing,
+        time = 7000,
+        removeItem = false,
+    },
+    {
+        itemName = 'morphine',
+        type = 'medication',
+        anim = {
+            name = 'gang_chatting_idle01',
+            dict = 'anim@heists@narcotics@funding@gang_idle',
+        },
+        lang = lang.progress.injected_morphine,
+        langUsed = lang.vitals.injected_morphine,
+        buttonLang = lang.buttons.morphine,
+        time = 3000,
+        removeItem = true,
+        painReduce = 6.0,
+        maxDose = 3,
+        hrDecrease = 30,
+        hrIncrease = -10,
+        onOverDose = function(self) 
+            print('Player is overdosing!')
+            -- Trigger the code you want to happen when a player overdoeses eg dies
+        end,
+    },
+    {
+        itemName = 'epinephrine',
+        type = 'medication',
+        anim = {
+            name = 'gang_chatting_idle01',
+            dict = 'anim@heists@narcotics@funding@gang_idle',
+        },
+        lang = lang.progress.injected_epinephrine,
+        langUsed = lang.vitals.injected_epinephrine,
+        buttonLang = lang.buttons.epinephrine,
+        time = 3000,
+        removeItem = true,
+        painReduce = 4.0,
+        maxDose = 5,
+        hrDecrease = -10,
+        hrIncrease = 20,
+        onOverDose = function(self) 
+            print('Player is overdosing')
+            -- Trigger the code you want to happen when a player overdoeses eg dies
+        end,
+    },
+    {
+        itemName = 'blood250ml',
+        type = 'infusion',
+        anim = {
+            name = 'gang_chatting_idle01',
+            dict = 'anim@heists@narcotics@funding@gang_idle',
+        },
+        lang = lang.progress.injected_blood_pack,
+        langUsed = lang.vitals.injected_blood_pack250ml,
+        buttonLang = lang.buttons.blood_pack250ml,
+        time = 8000,
+        removeItem = true,
+        volume = 250,
+        injectingTime = 60*1000,
+        onUse = function(self)
+
+        end,
+        onTick = function(self)
+            if BodyDamage.BodyPartDamage.BloodLevel < 6 then
+                local bloodbuff = (self.volume/1000)/self.injectingTime
+                BodyDamage.BodyPartDamage.BloodLevel = BodyDamage.BodyPartDamage.BloodLevel + bloodbuff
+            end
+        end,
+        onFinish = function(self)
+
+        end,
+    },
+    {
+        itemName = 'blood500ml',
+        type = 'infusion',
+        anim = {
+            name = 'gang_chatting_idle01',
+            dict = 'anim@heists@narcotics@funding@gang_idle',
+        },
+        lang = lang.progress.injected_blood_pack,
+        langUsed = lang.vitals.injected_blood_pack500ml,
+        buttonLang = lang.buttons.blood_pack500ml,
+        time = 8000,
+        removeItem = true,
+        volume = 500,
+        injectingTime = 120*1000,
+        onUse = function(self)
+
+        end,
+        onTick = function(self)
+            if BodyDamage.BodyPartDamage.BloodLevel < 6 then
+                local bloodbuff = (self.volume/1000)/self.injectingTime
+                BodyDamage.BodyPartDamage.BloodLevel = BodyDamage.BodyPartDamage.BloodLevel + bloodbuff
+            end
+        end,
+        onFinish = function(self)
+
+        end,
+    },
+    {
+        itemName = 'saline250ml',
+        type = 'infusion',
+        anim = {
+            name = 'gang_chatting_idle01',
+            dict = 'anim@heists@narcotics@funding@gang_idle',
+        },
+        lang = lang.progress.injected_saline_pack,
+        langUsed = lang.vitals.injected_saline_pack250ml,
+        buttonLang = lang.buttons.saline_pack250ml,
+        time = 8000,
+        removeItem = true,
+        volume = 250,
+        injectingTime = 120*1000,
+        onUse = function(self)
+
+        end,
+        onTick = function(self)
+            if BodyDamage.BodyPartDamage.BloodLevel < 6 then
+                local bloodbuff = (self.volume/1000)/self.injectingTime
+                BodyDamage.BodyPartDamage.BloodLevel = BodyDamage.BodyPartDamage.BloodLevel + (bloodbuff/2)
+            end
+        end,
+        onFinish = function(self)
+
+        end,
+    },
+    {
+        itemName = 'saline500ml',
+        type = 'infusion',
+        anim = {
+            name = 'gang_chatting_idle01',
+            dict = 'anim@heists@narcotics@funding@gang_idle',
+        },
+        lang = lang.progress.injected_saline_pack,
+        langUsed = lang.vitals.injected_saline_pack500ml,
+        buttonLang = lang.buttons.saline_pack500ml,
+        time = 8000,
+        removeItem = true,
+        volume = 500,
+        injectingTime = 120*1000,
+        onUse = function(self)
+
+        end,
+        onTick = function(self)
+            if BodyDamage.BodyPartDamage.BloodLevel < 6 then
+                local bloodbuff = (self.volume/1000)/self.injectingTime
+                BodyDamage.BodyPartDamage.BloodLevel = BodyDamage.BodyPartDamage.BloodLevel + (bloodbuff/2)
+            end
+        end,
+        onFinish = function(self)
+
+        end,
+    },
+    {
+        itemName = 'propofol',
+        type = 'infusion',
+        anim = {
+            name = 'gang_chatting_idle01',
+            dict = 'anim@heists@narcotics@funding@gang_idle',
+        },
+        lang = lang.progress.injected_propofol,
+        langUsed = lang.vitals.injected_propofol,
+        buttonLang = lang.buttons.propofol,
+        time = 1000,
+        removeItem = true,
+        volume = 20,
+        injectingTime = 5*60*1000,
+        onUse = function(self)
+            DoScreenFadeOut(15000)
+        end,
+        onTick = function(self)
+            SetPedToRagdoll(PlayerPedId(), 5000, 5000, 0, 0)
+            if BodyDamage.BodyPartDamage.BloodLevel < 6 then
+                BodyDamage.BodyPartDamage.BloodLevel = BodyDamage.BodyPartDamage.BloodLevel + 0.1
+            end
+            if BodyDamage.Pain > 0 then
+                BodyDamage.Pain = BodyDamage.Pain - BodyDamage.Pain/5
+            end
+        end,
+        onFinish = function(self)
+            DoScreenFadeIn(15000)
+        end,
+    },
+
+
+    -- Template to create a fully custom medication
+    -- {
+    --     itemName = 'customMedication',
+    --     type = 'custom', -- A fully custom preset where you write all the code yourself. (almost)
+    --     anim = {
+    --         name = 'gang_chatting_idle01',
+    --         dict = 'anim@heists@narcotics@funding@gang_idle',
+    --     },
+    --     lang = lang.progress.injected_propofol,
+    --     langUsed = lang.vitals.injected_propofol,
+    --     buttonLang = lang.buttons.propofol,
+    --     time = 1000,
+    --     removeItem = true,
+    --     maxDose = 2,
+    --     onOverDose = function() 
+    --         print('Player is overdosing')
+    --         -- Trigger the code you want to happen when a player overdoeses eg dies
+    --     end,
+    --     onUse = function()
+    --         Citizen.CreateThread(function()
+    --             DoScreenFadeOut(5000)
+    --             Wait(5000)
+    --             DoScreenFadeIn(5000)
+    --             print('onuse')
+    --         end)
+    --     end,
+    -- },
+
+
+}
+
+
+
 -- Ambulances with stretcher support
 Config.Ambulances = {
     ["ambulance"] = {
@@ -155,7 +427,7 @@ Config.Ambulances = {
         playeroffset = vector3(0.0,-2.5,1.6),
         playerrotation = vector3(0.0, 0.0, 177.0),
     },
-    ["f550ambows"] = {
+    ["ambulance2"] = {
         offsetinstart = vector3(0.0, -5.0, 0.0),
         offsetinstop = vector3(0.0, 0.5, 0.0),
         offsetoutstart = vector3(0.0, -2.75, 0.0),
@@ -179,47 +451,35 @@ Config.Ambulances = {
         playeroffset = vector3(0.05,1.1,0.97),
         playerrotation = vector3(0.0, 0.0, 90.0),
     },
-    ["c3medhawk"] = {
-        offsetinstart = vector3(-1.5, -0.7, 0.63),
-        offsetinstop = vector3(1.5, 1.1, -0.63),
-        offsetoutstart = vector3(0.0, 1.7, 0.63),
-        offsetoutstop = vector3(-2.5, 1.1, -0.72),
-        rotation = vector3(0.0, 0.0, 177.0),
-
-        stretcheroffset = vector3(0.0,-0.80,-0.2),
-        stretcherrotation = vector3(90.0, -95.0, -193.0),
-        playeroffset = vector3(0.05,1.1,0.97),
-        playerrotation = vector3(0.0, 0.0, 90.0),
-    },
 }
 
 Config.AuthorizedVehicles = { -- Vehicles players can use based on their ambulance job grade level
 	-- Grade 0
 	[0] = {
+		["ambulance"] = "Ambulance",
 	},
 	-- Grade 1
 	[1] = {
-		["f550ambows"] = "Ambulance",
+		["ambulance"] = "Ambulance",
 	},
 	-- Grade 2
 	[2] = {
-		["f550ambows"] = "Ambulance",
+		["ambulance"] = "Ambulance",
 	},
 	-- Grade 3
 	[3] = {
-		["f550ambows"] = "Ambulance",
+		["ambulance"] = "Ambulance",
 	},
 	-- Grade 4
 	[4] = {
-		["f550ambows"] = "Ambulance",
-        ["durangopru"] = "Chief's Durango",
+		["ambulance"] = "Ambulance",
 	}
 }
 
 Config.VehicleExtras = { -- Enable/disable the vehicle extras when spawning them with the job vehicle spawner
-    ["f550ambows"] = { -- Model name
-        ["1"] = true, -- on/off
-        ["2"] = true,
+    ["ambulance"] = { -- Model name
+        ["1"] = false, -- on/off
+        ["2"] = true, -- !OBS! The native checks for an inverted value, so if you want to have this extra enabled it should be false and the other way around. !OBS!
         ["3"] = true,
         ["4"] = true,
         ["5"] = true,
@@ -231,187 +491,222 @@ Config.VehicleExtras = { -- Enable/disable the vehicle extras when spawning them
         ["11"] = true,
         ["12"] = true,
     },
-    ["durangopru"] = {
-        ["1"] = true,
-        ["2"] = false,
-        ["3"] = false,
+    ["ambulance2"] = {
+        ["1"] = false,
+        ["2"] = true,
+        ["3"] = true,
         ["4"] = true,
         ["5"] = true,
-        ["6"] = false,
-        ["7"] = false,
-        ["8"] = false,
-        ["9"] = false,
+        ["6"] = true,
+        ["7"] = true,
+        ["8"] = true,
+        ["9"] = true,
         ["10"] = true,
-        ["11"] = false,
-        ["12"] = false,
-        ["13"] = false,
+        ["11"] = true,
+        ["12"] = true,
     }
 }
-
-
-Config.InventoryItems = {
-    ['epinephrine'] = 'epinephrine',  -- Change the latter iteration name to your inventory item names, if you for some reason have changed them. (NOT RECOMMENDED) 
-    ['morphine'] = 'morphine',
-    ['tourniquet'] = 'tourniquet',
-    ['field_dressing'] = 'field_dressing',
-    ['elastic_bandage'] = 'elastic_bandage',
-    ['quick_clot'] = 'quick_clot',
-    ['packing_bandage'] = 'packing_bandage',
-    ['sewing_kit'] = 'sewing_kit',
-    ['blood250ml'] = 'blood250ml',
-    ['blood500ml'] = 'blood500ml',
-    ['saline250ml'] = 'saline250ml',
-    ['saline500ml'] = 'saline500ml',
-    ['revivekit'] = 'revivekit',
-    ['bodybag'] = 'bodybag',
-}
-
 
 -- Items that can be purchased by the ambulance personel
 Config.ItemShop = { -- The stock resets every script restart but is synced to all players
     {
         label = 'Radio',
         name = "radio",
-        price = 1,
+        price = 100,
         type = "item",
     },
     {
         label = 'Flashlight',
         name = "weapon_flashlight",
-        price = 1,
+        price = 100,
+        type = "item",
+    },
+    {
+        label = 'Fire Extinguisher',
+        name = "weapon_fireextinguisher",
+        price = 100,
         type = "item",
     },
     {
         label = 'Pager',
         name = "pager",
-        price = 1,
+        price = 100,
         type = "item",
     },
     {
         label = 'ECG',
         name = "ecg",
-        price = 1,
+        price = 1000,
         type = "item",
         amount = 3,
     },
     {
-        label = 'Stretcher',
-        name = "stretcher",
-        price = 1,
-        type = "item",
-        amount = 5,
-    },
-    {
-        label = 'Wheelchair',
-        name = "wheelchair",
-        price = 1,
-        type = "item",
-        amount = 5,
-    },
-    {
-        label = 'Crutch',
-        name = "crutch",
-        price = 1,
-        type = "item",
-        amount = 5,
-    },
-    {
-        label = 'IFAK',
-        name = "ifak",
-        price = 1,
-        type = "item",
-        amount = 25,
-    },
-    {
         label = 'Tourniquet',
         name = "tourniquet",
-        price = 1,
+        price = 50,
         type = "item",
         amount = 30,
     },
     {
         label = 'Field Dressing',
         name = "field_dressing",
-        price = 1,
+        price = 25,
         type = "item",
         amount = 50,
     },
     {
         label = 'Elastic Bandage',
         name = "elastic_bandage",
-        price = 1,
+        price = 25,
         type = "item",
         amount = 50,
     },
     {
         label = 'Quick Clot',
         name = "quick_clot",
-        price = 1,
+        price = 25,
         type = "item",
         amount = 50,
     },
     {
         label = 'Packing Bandage',
         name = "packing_bandage",
-        price = 1,
+        price = 25,
         type = "item",
         amount = 50,
     },
     {
         label = 'Sewing Kit',
         name = "sewing_kit",
-        price = 1,
+        price = 100,
         type = "item",
         amount = 10,
     },
     {
         label = 'Epinephrine',
         name = "epinephrine",
-        price = 1,
+        price = 50,
         type = "item",
         amount = 15,
     },
     {
         label = 'Morphine',
         name = "morphine",
-        price = 1,
+        price = 50,
         type = "item",
         amount = 15,
     },
     {
+        label = 'Propofol',
+        name = "propofol",
+        price = 250,
+        type = "item",
+        amount = 10,
+    },
+    {
         label = 'Blood Pack 250ml',
         name = "blood250ml",
-        price = 1,
+        price = 150,
         type = "item",
         amount = 5,
     },
     {
         label = 'Blood Pack 500ml',
         name = "blood500ml",
-        price = 1,
+        price = 250,
         type = "item",
         amount = 3,
     },
     {
         label = 'Saline 250ml',
         name = "saline250ml",
-        price = 1,
+        price = 75,
         type = "item",
         amount = 25,
     },
     {
         label = 'Saline 500ml',
         name = "saline500ml",
-        price = 1,
+        price = 125,
+        type = "item",
+        amount = 25,
+    },
+    {
+        label = 'Stretcher',
+        name = "stretcher",
+        price = 250,
+        type = "item",
+        amount = 5,
+    },
+    {
+        label = 'Wheelchair',
+        name = "wheelchair",
+        price = 150,
+        type = "item",
+        amount = 5,
+    },
+    {
+        label = 'Crutch',
+        name = "crutch",
+        price = 100,
+        type = "item",
+        amount = 5,
+    },
+    {
+        label = 'IFAK',
+        name = "ifak",
+        price = 300,
         type = "item",
         amount = 25,
     },
     {
         label = 'Revive Kit',
         name = "revivekit",
-        price = 1,
+        price = 1250,
         type = "item",
         amount = 3,
+    },
+    {
+        label = 'Leg Splint',
+        name = "legsplint",
+        price = 300,
+        type = "item",
+        amount = 5,
+    },
+    {
+        label = 'Leg Cast',
+        name = "legcast",
+        price = 300,
+        type = "item",
+        amount = 5,
+    },
+    {
+        label = 'Arm Splint',
+        name = "armplint",
+        price = 300,
+        type = "item",
+        amount = 5,
+    },
+    {
+        label = 'Arm Cast',
+        name = "armcast",
+        price = 300,
+        type = "item",
+        amount = 5,
+    },
+    {
+        label = 'Neck Brace',
+        name = "neckbrace",
+        price = 300,
+        type = "item",
+        amount = 5,
+    },
+    {
+        label = 'Neck Cast',
+        name = "neckcast",
+        price = 300,
+        type = "item",
+        amount = 5,
     },
 }
 
@@ -419,27 +714,20 @@ Config.UseGarageSystem = true
 
 Config.Locations = {
     ["checking"] = {
-	    vector3(310.53,-585.88,43.27),
-    },
-    ["boss"] = {
-        --vector3(-1031.41, -1418.68, 4.97),
+	    vector3(312.2069, -593.4422, 43.0868),
     },
     ["duty"] = {
-        vector3(-1031.41, -1418.68, 4.97),
+        vector3(310.3887, -597.3732, 43.2976),
     },
     ["vehicle"] = {
-        --[[ vector4(-1028.7, -1359.85, 4.48, 74.63),    --bay 5
-        vector4(-1027.17, -1354.12, 4.48, 75.01),   --bay 6
-        vector4(-1025.66, -1348.39, 4.48, 75.64),   --bay 7 ]]
+        vector4(294.7070, -607.2061, 43.0078, 68.8774),
+        vector4(331.9502, -579.1585, 28.5665, 339.8551),
     },
     ["helicopter"] = {
-        vector4(-1036.16, -1441.18, 9.29, 347.06),  --right helipad
+        vector4(351.58, -587.45, 74.2, 160.5),
     },
     ["shop"] = {
-        --vector3(-1041.12, -1421.56, 4.97),
-    },
-    ["cloakroom"] = {
-        --vector3(-1041.12, -1421.56, 4.97),
+        vector3(311.7910, -564.0659, 43.2841),
     },
     ["roof"] = {
         vector4(338.5, -583.85, 74.16, 245.5),
@@ -448,19 +736,24 @@ Config.Locations = {
         vector3(332.3166, -595.6741, 43.2841),
     },
     ["stash"] = {
-        --vector3(-1035.23, -1424.9, 4.97),
+        vector3(308.5978, -562.2446, 43.5902),
     },
     ["beds"] = {
-        {coords = vector4(327.64, -583.56, 44.12, 150.34), taken = false, model = 1631638868},
-        {coords = vector4(330.66, -584.93, 44.12, 158.84), taken = false, model = 1631638868},
-        {coords = vector4(328.53, -588.74, 44.12, 336.67), taken = false, model = 2117668672},
-        --{coords = vector4(328.44, -588.78, 44.12, 330.68), taken = false, model = 2117668672},
-        {coords = vector4(325.57, -587.85, 44.12, 334.64), taken = false, model = 2117668672},
-        {coords = vector4(322.59, -586.9,  44.12, 337.67), taken = false, model = -1091386327},
-        {coords = vector4(319.84, -585.64, 44.12, 336.48), taken = false, model = -1091386327},
-        {coords = vector4(316.89, -584.65, 44.12, 337.46), taken = false, model = -1091386327},
-	    {coords = vector4(318.46, -580.52, 44.12, 154.74), taken = false, model = 2117668672},
-        {coords = vector4(321.22, -581.56, 44.12, 164.45), taken = false, model = 2117668672},
+        -- Add the xray variables to make it an xray bed
+        {coords = vector4(348.7, -579.4, 43.1971, 157.0), taken = false, xray = true, xrayMonitor = vector3(344.79, -578.14, 43.84), xrayMonitorRot = vector3(0.0,0.0,122.0), screenScale = 0.042},
+
+
+        {coords = vector4(319.3530, -580.8159, 43.2039, 157.9544), taken = false, model = 1631638868},
+        {coords = vector4(324.1608, -582.8101, 43.2040, 157.6627), taken = false, model = 1631638868},
+        {coords = vector4(322.6, -586.9601, 43.2040, 340.9906), taken = false, model = 2117668672},
+        {coords = vector4(317.6, -585.3027, 43.2040, 340.0982), taken = false, model = 2117668672},
+        {coords = vector4(314.5, -584.0378, 43.2040, 340.4092), taken = false, model = 2117668672},
+        {coords = vector4(311.0, -582.7598, 43.2040, 340.4864), taken = false, model = -1091386327},
+        {coords = vector4(307.8, -581.4847, 43.2040, 340.6982), taken = false, model = -1091386327},
+        {coords = vector4(309.1634, -577.5354, 43.2040, 157.5351), taken = false, model = -1091386327},
+	    {coords = vector4(313.8121, -579.1085, 43.2040, 157.7460), taken = false, model = 2117668672},
+        {coords = vector4(-247.04, 6317.95, 32.34, 134.64), taken = false, model = 2117668672},
+        {coords = vector4(-255.98, 6315.67, 32.34, 313.91), taken = false, model = 2117668672},
     },
     ["jailbeds"] = {
         {coords = vector4(1761.96, 2597.74, 45.66, 270.14), taken = false, model = 2117668672},
@@ -469,9 +762,18 @@ Config.Locations = {
         {coords = vector4(1771.85, 2591.85, 45.66, 91.51), taken = false, model = 2117668672},
     },
     ["stations"] = {
-        {label = 'Hospital', coords = vector4(304.27, -600.33, 43.28, 272.249)}
-    }
+        {label = 'Hospital', coords = vector4(304.27, -600.33, 43.28, 272.249)},
+    },
+
+    -- Following actions only support integration for default esx
+    ["boss"] = {
+        -- vector3(334.7231, -594.4026, 43.2841),
+    },
+    ["cloakroom"] = {
+        -- vector3(302.1178, -598.8913, 43.0763),
+    },
 }
+
 
 -- ECG CONFIGURATION
 Config.Prop = 'prop_ld_bomb'
@@ -494,11 +796,13 @@ Config.ScreenProp = 'xm_prop_x17_tv_ceiling_01' -- The prop used for the screen
 Config.IncomingRenderDistance = 70 -- The rendering distance of an incoming screen, recommended to keep above 30 to avoid sync issues.
 
 Config.IncomingScreenPos = { -- The position of the incoming screen
-    vector4(332.6308, -581.5911, 46.0, 251.2287),
-    vector4(300.8384, -582.8441, 46.0, 91.7694)
+    vector4(328.2508, -576.4911, 46.0, 34.4687),
+    vector4(300.8384, -582.8441, 46.0, 32.9394)
 }
 Config.IncomingScreenSoundPos = {
-    vector3(306.2124, -584.6828, 43.2741),
+    vector3(309.2776, -589.0244, 45.1519),
+    vector3(329.5522, -579.1614, 44.6322),
+    vector3(355.9286, -589.8729, 44.7986),
 }
 Config.IncomingScreenSoundRange = 50
 
@@ -507,51 +811,51 @@ Config.StationaryECGProp = 'v_med_cor_ceilingmonitor' -- The prop used for the s
 
 Config.StationaryECG = { -- IF YOU WANT MORE THAN 6 ECGS YOU NEED TO CREATE MORE GFX FILES.
     {
-        coords = vector4(327.9489, -582.8219, 45.8, 344.3082),
-        bedcoords = vector3(327.64, -583.56, 44.12),
+        coords = vector4(318.7118, -579.8219, 45.8, 344.3082),
+        bedcoords = vector3(319.2666, -581.1186, 44.2040),
         name = 'ICU 1'
     },
     {
-        coords = vector4(330.9489, -583.8219, 45.8, 344.3082),
-        bedcoords = vector3(330.66, -584.93, 44.12),
+        coords = vector4(323.7489, -581.5202, 45.8, 337.8694),
+        bedcoords = vector3(324.2232, -583.0401, 44.2040),
         name = 'ICU 2'
     },
     {
-        coords = vector4(328.0185, -589.3665, 45.8, 162.2001),
-        bedcoords = vector3(328.53, -588.74, 44.12),
+        coords = vector4(321.3699, -587.7664, 45.8, 163.4208),
+        bedcoords = vector3(322.6256, -586.7698, 44.2130),
         name = 'ICU 3'
     },
     {
-        coords = vector4(325.2185, -588.3665, 45.8, 162.2001),
-        bedcoords = vector3(325.57, -587.85, 44.12),
+        coords = vector4(316.4125, -586.0515, 45.8, 163.2631),
+        bedcoords = vector3(317.5998, -585.4157, 44.2040),
         name = 'ICU 4'
     },
     {
-        coords = vector4(322.3185, -587.3665, 45.8, 162.2001),
-        bedcoords = vector3(322.59, -586.9,  44.12),
+        coords = vector4(313.1407, -584.6058, 45.8, 162.2001),
+        bedcoords = vector3(314.5409, -583.9615, 44.2040),
         name = 'ICU 5'
     },
     {
-        coords = vector4(319.4185, -586.3665, 45.8, 162.2001),
-        bedcoords = vector3(319.84, -585.64, 44.12),
+        coords = vector4(309.6808, -583.5556, 45.8, 162.3711),
+        bedcoords = vector3(311.2327, -582.8145, 44.2040),
         name = 'ICU 6'
     },
     -- Some people have experienced issues with having a lot of loaded gfx files.
-    {
-        coords = vector4(316.6185, -585.3665, 45.8, 162.2001),
-        bedcoords = vector3(316.89, -584.65, 44.12),
-        name = 'ICU 7'
-    },
-    {
-        coords = vector4(318.8489, -579.8219, 45.8, 344.3082),
-        bedcoords = vector3(318.46, -580.52, 44.12),
-        name = 'ICU 8'
-    },
-    {
-        coords = vector4(321.7489, -580.8219, 45.8, 344.3082),
-        bedcoords = vector3(321.22, -581.56, 44.12),
-        name = 'ICU 9'
-    },
+    -- {
+    --     coords = vector4(308.3385, -582.8965, 45.8, 159.9160),
+    --     bedcoords = vector3(307.7694, -581.3610, 44.2049),
+    --     name = 'ICU 7'
+    -- },
+    -- {
+    --     coords = vector4(310.4750, -576.9198, 45.8, 340.2058),
+    --     bedcoords = vector3(309.2775, -577.7110, 44.2044),
+    --     name = 'ICU 8'
+    -- },
+    -- {
+    --     coords = vector4(315.0273, -578.4716, 45.8, 342.0016),
+    --     bedcoords = vector3(313.8342, -579.3513, 44.2040),
+    --     name = 'ICU 9'
+    -- },
 }
 
 
@@ -819,7 +1123,6 @@ Config.Wounds = { -- These are major/critical injuries
         bleeding = 0.08,
         pain = 2.0,
         causeLimping = 1, -- Will only cause limping if the legs are damaged
-        causeFracture = 1,
         reopeningTime = 60, -- base time in seconds before wound can reopen and then multiples by the bandage modifier
         causeStaggering = 50, -- 100 = 100% chance
     },
@@ -945,11 +1248,170 @@ Config.MinorWounds = { -- These are minor wounds that might happen during soft c
 }
 
 
-Config.BandageModifier = {
-    ["Dressing"] = {effectivenessModifiers = {["abrasion"] = 0.7, ["avulsion"] = 0.8, ["contusion"] = 1.0, ["crush"] = 0.9, ["cut"] = 0.9, ["laceration"] = 0.1, ["velocitywound"] = 0.5, ["lowvelocitywound"] = 0.5, ["mediumvelocitywound"] = 0.5, ["highvelocitywound"] = 0.5, ["puncturewound"] = 0.7, ["burn"] = 0.7 }},
-    ["Elastic"] = {effectivenessModifiers = {["abrasion"] = 0.7, ["avulsion"] = 0.6, ["contusion"] = 1.0, ["crush"] = 0.7, ["cut"] = 0.7, ["laceration"] = 0.7, ["velocitywound"] = 0.6, ["lowvelocitywound"] = 0.5, ["mediumvelocitywound"] = 0.5, ["highvelocitywound"] = 0.5, ["puncturewound"] = 0.6, ["burn"] = 0.9 }},
-    ["QuickClot"] = {effectivenessModifiers = {["abrasion"] = 0.85, ["avulsion"] = 0.8, ["contusion"] = 1.0, ["crush"] = 0.6, ["cut"] = 0.6, ["laceration"] = 0.8, ["velocitywound"] = 0.8, ["lowvelocitywound"] = 0.5, ["mediumvelocitywound"] = 0.5, ["highvelocitywound"] = 0.5, ["puncturewound"] = 0.7, ["burn"] = 0.4 }},
-    ["Packing"] = {effectivenessModifiers = {["abrasion"] = 0.7, ["avulsion"] = 0.6, ["contusion"] = 1.0, ["crush"] = 0.7, ["cut"] = 0.7, ["laceration"] = 0.7, ["velocitywound"] = 0.6, ["lowvelocitywound"] = 0.5, ["mediumvelocitywound"] = 0.5, ["highvelocitywound"] = 0.5, ["puncturewound"] = 0.7, ["burn"] = 0.4 }},
+Config.Fractures = {
+    {
+        bone = 'NECK',
+        chance = 50, -- Chance in % that a fracture is being applied when wounded
+        causes = { 
+            [Config.WeaponClasses['HEAVY_IMPACT']] = true,
+            [Config.WeaponClasses['EXPLOSIVE']] = true,
+            [Config.WeaponClasses['OTHER']] = true,
+            [Config.WeaponClasses['SHOTGUN']] = true,
+        },
+        pain = 15.0
+    }, 
+    -- {
+    --     bone = 'SPINE',
+    --     chance = 100,
+    --     causes = { 
+    --         [Config.WeaponClasses['HEAVY_IMPACT']] = true,
+    --         [Config.WeaponClasses['EXPLOSIVE']] = true,
+    --         [Config.WeaponClasses['OTHER']] = true,
+    --         [Config.WeaponClasses['SHOTGUN']] = true,
+    --     },
+    --     pain = 15.0
+    -- },
+    {
+        bone = 'LARM',
+        chance = 50,
+        causes = { 
+            [Config.WeaponClasses['HEAVY_IMPACT']] = true,
+            [Config.WeaponClasses['EXPLOSIVE']] = true,
+            [Config.WeaponClasses['OTHER']] = true,
+            [Config.WeaponClasses['SHOTGUN']] = true,
+        },
+        pain = 15.0,
+        lockSteering = true,
+    },
+    {
+        bone = 'RARM',
+        chance = 50,
+        causes = { 
+            [Config.WeaponClasses['HEAVY_IMPACT']] = true,
+            [Config.WeaponClasses['EXPLOSIVE']] = true,
+            [Config.WeaponClasses['OTHER']] = true,
+            [Config.WeaponClasses['SHOTGUN']] = true,
+        },
+        pain = 15.0,
+        lockSteering = true,
+    },
+    {
+        bone = 'RLEG',
+        chance = 50,
+        causes = { 
+            [Config.WeaponClasses['HEAVY_IMPACT']] = true,
+            [Config.WeaponClasses['EXPLOSIVE']] = true,
+            [Config.WeaponClasses['OTHER']] = true,
+            [Config.WeaponClasses['SHOTGUN']] = true,
+        },
+        pain = 15.0,
+        causeStaggering = true, 
+    },
+    {
+        bone = 'LLEG',
+        chance = 50,
+        causes = { 
+            [Config.WeaponClasses['HEAVY_IMPACT']] = true,
+            [Config.WeaponClasses['EXPLOSIVE']] = true,
+            [Config.WeaponClasses['OTHER']] = true,
+            [Config.WeaponClasses['SHOTGUN']] = true,
+        },
+        pain = 15.0,
+        causeStaggering = true,
+    },
 }
 
 
+Config.UseCustomProps = false -- If enabled, the script will apply the pedvariations from the config below (The default config is intended to be used with Sinner Mod Shop medical props pack)
+Config.Casts = {
+    {
+        type = 'splint',
+        lang = lang.progress.applying_splint,
+        langUsed = lang.ui.splint_applied,
+        buttonLang = lang.buttons.apply_splint,
+        anim = {
+            name = 'gang_chatting_idle01',
+            dict = 'anim@heists@narcotics@funding@gang_idle',
+        },
+        removeButtonLang = 'Remove Splint',
+        time = 5000,
+        timeInCast = 15*60*1000,
+        casts = {
+            {
+                itemName = 'neckbrace',
+                bone = 'NECK',
+                pedVariationCategory = 8,
+                pedVariationId = 209,
+            },
+            {
+                itemName = 'legsplint',
+                bone = 'RLEG',
+                pedVariationCategory = 8,
+                pedVariationId = 209,
+            },
+            {
+                itemName = 'legsplint',
+                bone = 'LLEG',
+                pedVariationCategory = 8,
+                pedVariationId = 209,
+            },
+            {
+                itemName = 'armsplint',
+                bone = 'RARM',
+                pedVariationCategory = 8,
+                pedVariationId = 209,
+            },
+            {
+                itemName = 'armsplint',
+                bone = 'LARM',
+                pedVariationCategory = 8,
+                pedVariationId = 209,
+            },
+        }
+    },
+    {
+        type = 'cast',
+        lang = lang.progress.applying_cast,
+        langUsed = lang.ui.cast_applied,
+        buttonLang = lang.buttons.apply_cast,
+        anim = {
+            name = 'gang_chatting_idle01',
+            dict = 'anim@heists@narcotics@funding@gang_idle',
+        },
+        time = 5000,
+        timeInCast = 15*60*1000,
+        casts = {
+            {
+                itemName = 'neckcast',
+                bone = 'NECK',
+                pedVariationCategory = 8,
+                pedVariationId = 209,
+            },
+            {
+                itemName = 'legcast',
+                bone = 'RLEG',
+                pedVariationCategory = 8,
+                pedVariationId = 209,
+            },
+            {
+                itemName = 'legcast',
+                bone = 'LLEG',
+                pedVariationCategory = 8,
+                pedVariationId = 209,
+            },
+            {
+                itemName = 'armcast',
+                bone = 'RARM',
+                pedVariationCategory = 8,
+                pedVariationId = 209,
+            },
+            {
+                itemName = 'armcast',
+                bone = 'LARM',
+                pedVariationCategory = 8,
+                pedVariationId = 209,
+            },
+        }
+    },
+
+}

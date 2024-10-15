@@ -48,7 +48,7 @@ end
 function GetOfflinePlayerName(identifier)
     if Config.Framework == "qb" then
         local player = MySQL.query.await('SELECT CONCAT(JSON_VALUE(players.charinfo, "$.firstname"), " ", JSON_VALUE(players.charinfo, "$.lastname")) as name FROM players WHERE citizenid = ?', {identifier})
-        return player[1].name or "Unknown"
+        return player[1] and player[1].name or "Unknown"
         
     elseif Config.Framework == "esx" then
         local player = MySQL.query.await('SELECT firstname, lastname FROM users WHERE identifier = ?', {identifier})

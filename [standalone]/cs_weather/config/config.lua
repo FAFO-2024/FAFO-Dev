@@ -1,9 +1,14 @@
 CodeStudio = {}
 CodeStudio.AutoSQL = true
 
-CodeStudio.BaseTime         = 8 -- Time                                             default: 8
-CodeStudio.TimeOffset       = 0 -- Time offset                                      default: 0
-CodeStudio.FreezeTime       = false -- freeze time       
+CodeStudio.TimeScale = 4000 -- How many milliseconds per minute in GTA time (2000ms is normal for a 48 minute day)
+CodeStudio.StartUpTime = {   --Default Time
+    hour = 12,
+    minute = 0
+}
+
+CodeStudio.FreezeTime       = false  
+CodeStudio.RealTimeSync     = false 
 
 CodeStudio.DefaultWeather = 'EXTRASUNNY' -- Default weather
 
@@ -29,6 +34,6 @@ CodeStudio.WeatherTypes = {
 
 CodeStudio.Authorized = {   --Restict Access To Weather Panel
     --group/steam/discord/any other identifier
-    'discord:416744619162730496',   --K9
-    'discord:316956589259096065'    --Sticky
+    'discord:968848387132772434'
 }
+

@@ -14,7 +14,7 @@ end
 
 function WSB.inventory.getItemSlots(source, itemName)
     local src = source
-    local inventory = exports.qs_inventory:GetInventory(src)
+    local inventory = exports['qs-inventory']:GetInventory(src)
     if not inventory then return {} end
     return GetSlotsByItem(inventory, itemName)
 end

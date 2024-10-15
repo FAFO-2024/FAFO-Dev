@@ -6,6 +6,7 @@ CodeStudio.Language = {
     no_Money = 'Not Enough Money',
     no_user_Found = 'No User Found',
     got_license = 'Licesne Received',
+    not_allowed = 'Not authorized to access management panel',
 
     --Target Options--
     license_management = 'License Management',

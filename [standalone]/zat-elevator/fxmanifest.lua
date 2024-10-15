@@ -20,10 +20,10 @@ shared_scripts {
   'config.lua',
   'shared/locales.lua',
   '@es_extended/imports.lua', -- only for ESX
-  '@es_extended/locale.lua',  -- only for ESX
 }
 escrow_ignore {
   'client/target.lua',
+  'client/progressbar.lua',
   'shared/locales.lua',
   'config.lua',
 }

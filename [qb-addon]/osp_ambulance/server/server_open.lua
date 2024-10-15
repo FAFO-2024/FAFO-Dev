@@ -7,7 +7,7 @@ if Config.Framework == 'qb' then
 
     function CreateUseableItem(name, cb)
         if Config.UsedInventory == 'qs' then
-            exports['qs-inventory']:CreateUseableItem(name, cb)
+            exports['qs-inventory']:CreateUsableItem(name, cb)
         else
             QBCore.Functions.CreateUseableItem(name, cb)
         end
@@ -34,13 +34,29 @@ if Config.Framework == 'qb' then
     RegisterServerEvent("osp_ambulance:addItem")
     AddEventHandler("osp_ambulance:addItem", function(name, amount)
         if amount == nil then amount = 1 end
-        if name ~= 'stretcher' and name ~= 'tourniquet' and name ~= 'ecg' then return end
+        local authItem = false
+        for k,v in pairs(Config.Casts) do
+            for _,x in pairs(v.casts) do
+                if x.itemName == name then
+                    authItem = true
+                end
+            end
+        end
+        if name == 'stretcher' or name == 'tourniquet' or name == 'ecg' then 
+            authItem = true
+        end
+        if not authItem then 
+            print('NON AUTHORIZED ITEM SPAWNING BY ID: ', source)
+            return
+        end
         local src = source
         local player = QBCore.Functions.GetPlayer(src)
         if Config.UsedInventory == 'qs' then
             exports['qs-inventory']:AddItem(src, name, amount)
         elseif Config.UsedInventory == 'ox' then
             exports.ox_inventory:AddItem(src, name, amount)
+        elseif Config.UsedInventory == 'chezza' then
+            exports.inventory:AddItemToPlayer(src, name, amount)
         else
             player.Functions.AddItem(name, amount)
             -- exports['qb-inventory']:AddItem(source, name, amount, false, false, 'ambulancejob')
@@ -54,6 +70,8 @@ if Config.Framework == 'qb' then
             exports['qs-inventory']:AddItem(src, name, amount)
         elseif Config.UsedInventory == 'ox' then
             exports.ox_inventory:AddItem(src, name, amount)
+        elseif Config.UsedInventory == 'chezza' then
+            exports.inventory:AddItemToPlayer(src, name, amount)
         else
             player.Functions.AddItem(name, amount)
             -- exports['qb-inventory']:AddItem(source, name, amount, false, false, 'ambulancejob')
@@ -67,6 +85,8 @@ if Config.Framework == 'qb' then
             exports['qs-inventory']:RemoveItem(src, name, amount)
         elseif Config.UsedInventory == 'ox' then
             exports.ox_inventory:RemoveItem(src, name, amount)
+        elseif Config.UsedInventory == 'chezza' then
+            exports.inventory:RemoveItemFromPlayer(src, name, amount)
         else
             player.Functions.RemoveItem(name, amount)
             -- exports['qb-inventory']:RemoveItem(source, name, amount, false, 'ambulancejob')
@@ -83,6 +103,8 @@ if Config.Framework == 'qb' then
             exports['qs-inventory']:RemoveItem(src, name, amount)
         elseif Config.UsedInventory == 'ox' then
             exports.ox_inventory:RemoveItem(src, name, amount)
+        elseif Config.UsedInventory == 'chezza' then
+            exports.inventory:RemoveItemFromPlayer(src, name, amount)
         else
             player.Functions.RemoveItem(name, amount)
             -- exports['qb-inventory']:RemoveItem(source, name, amount, false, 'ambulancejob')
@@ -188,9 +210,12 @@ if Config.Framework == 'qb' then
             inventory = exports['qs-inventory']:GetInventory(source)
         elseif Config.UsedInventory == 'ox' then
             inventory = exports.ox_inventory:GetInventoryItems(source)
+        elseif Config.UsedInventory == 'chezza' then
+            inventory = exports.inventory:getInventory(Player)
         else
             inventory = Player.PlayerData.items
         end
+        while not inventory do Wait(10) end
         return inventory
     end)
 
@@ -306,15 +331,31 @@ elseif Config.Framework == 'esx' then
 
 
     RegisterServerEvent("osp_ambulance:addItem")
-    AddEventHandler("osp_ambulance:addItem", function(item, amount)
+    AddEventHandler("osp_ambulance:addItem", function(name, amount)
         if amount == nil then amount = 1 end
-        if item ~= 'stretcher' and item ~= 'tourniquet' and item ~= 'ecg' then return end
+        local authItem = false
+        for k,v in pairs(Config.Casts) do
+            for _,x in pairs(v.casts) do
+                if x.itemName == name then
+                    authItem = true
+                end
+            end
+        end
+        if name == 'stretcher' or name == 'tourniquet' or name == 'ecg' then 
+            authItem = true
+        end
+        if not authItem then 
+            print('NON AUTHORIZED ITEM SPAWNING BY ID: ', source)
+            return
+        end
         local src = source
         local player = GetPlayer(src)
         if Config.UsedInventory == 'qs' then
-            exports['qs-inventory']:AddItem(src, item, amount)
+            exports['qs-inventory']:AddItem(src, name, amount)
+        elseif Config.UsedInventory == 'chezza' then
+            exports.inventory:AddItemToPlayer(src, name, amount)
         else
-            player.addInventoryItem(item, amount)
+            player.addInventoryItem(name, amount)
         end
     end)
 
@@ -322,6 +363,8 @@ elseif Config.Framework == 'esx' then
         local player = GetPlayer(src)
         if Config.UsedInventory == 'qs' then
             exports['qs-inventory']:AddItem(src, name, amount)
+        elseif Config.UsedInventory == 'chezza' then
+            exports.inventory:AddItemToPlayer(src, name, amount)
         else
             player.addInventoryItem(name, amount)
         end
@@ -331,6 +374,8 @@ elseif Config.Framework == 'esx' then
         local player = GetPlayer(src)
         if Config.UsedInventory == 'qs' then
             exports['qs-inventory']:RemoveItem(src, name, amount)
+        elseif Config.UsedInventory == 'chezza' then
+            exports.inventory:RemoveItemFromPlayer(src, name, amount)
         else
             player.removeInventoryItem(name, amount)
         end
@@ -343,6 +388,8 @@ elseif Config.Framework == 'esx' then
         local player = GetPlayer(src)
         if Config.UsedInventory == 'qs' then
             exports['qs-inventory']:RemoveItem(src, name, amount)
+        elseif Config.UsedInventory == 'chezza' then
+            exports.inventory:RemoveItemFromPlayer(src, name, amount)
         else
             player.removeInventoryItem(name, amount)
         end
@@ -466,6 +513,8 @@ elseif Config.Framework == 'esx' then
             inventory = exports['qs-inventory']:GetInventory(source)
         elseif Config.UsedInventory == 'ox' then
             inventory = exports.ox_inventory:GetInventoryItems(source)
+        elseif Config.UsedInventory == 'chezza' then
+            inventory = exports.inventory:getInventory(Player)
         else
             inventory = Player.getInventory()
         end
@@ -538,6 +587,13 @@ elseif Config.Framework == 'esx' then
     end)
 
 end
+
+function DebugPrint(...)
+    if Config.Debug then
+        print(...)
+    end
+end
+
 
 
 lib.callback.register('osp_ambulance:GetTime', function(source, data)
@@ -678,6 +734,8 @@ RegisterNetEvent('hospital:server:SendToBed', function(bedId, isRevive)
     if isRevive then
         TriggerClientEvent('hospital:client:SendBillEmail', src, Config.BillCost)
         if Config.Framework == 'qb' then 
+            exports['qb-management']:AddMoney("ambulance", Config.BillCost)
+            -- exports['qb-banking']:AddMoney('ambulance', Config.BillCost, 'Player treatment') -- Uncomment if you're using latest qb
             Player.Functions.RemoveMoney("bank", Config.BillCost, "respawned-at-hospital")
         else
             Player.removeAccountMoney('bank', tonumber(Config.BillCost))
@@ -911,7 +969,6 @@ AddEventHandler("osp_ambulance:wipeECGTable", function()
 end)
 
 
--- Functions
 function UpdateBlips()
     local dutyPlayers = {}
     local players = GetPlayers()

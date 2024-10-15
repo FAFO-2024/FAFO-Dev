@@ -14,7 +14,6 @@ end)
 
 
 
-
 function GetPlayer(source)
     if CodeStudio.ServerType == 'QB' then
         local Player = QBCore.Functions.GetPlayer(source)
@@ -178,6 +177,15 @@ lib.callback.register('cs:identity:deductMoney', function(source, amount)
     return false
 end)
 
+RegisterNetEvent('cs:identity:refundStudio', function(refund)
+    if CodeStudio.ServerType == 'QB' then
+        local Player = QBCore.Functions.GetPlayer(source)
+        Player.Functions.AddMoney("cash", refund)
+    elseif CodeStudio.ServerType == 'ESX' then
+        local Player = ESX.GetPlayerFromId(source)
+        Player.addAccountMoney('money', refund)
+    end
+end)
 
 
 function addItem(source, item, metadata)
@@ -191,6 +199,10 @@ function addItem(source, item, metadata)
         exports['ox_inventory']:AddItem(source, item, 1, metadata)
     elseif GetResourceState('qs-inventory') == 'started' then
         exports['qs-inventory']:AddItem(source, item, 1, false, metadata)
+    elseif GetResourceState('tgiann-inventory') == 'started' then
+        exports["tgiann-inventory"]:AddItem(source, item, 1, nil, metadata, false)
+    elseif GetResourceState('origen_inventory') == 'started' then
+        exports['origen_inventory']:AddItem(source, item, 1, nil, false, metadata)
     else
         if CodeStudio.ServerType == 'QB' then
             local Player = QBCore.Functions.GetPlayer(source)
@@ -201,7 +213,6 @@ function addItem(source, item, metadata)
         end
     end
 end
-
 
 
 function issueLicense(playerSrc, license, issue)  --This Function triggers when license gets issued or revoked
@@ -235,7 +246,6 @@ function issueLicense(playerSrc, license, issue)  --This Function triggers when 
 end
 
 
-
 function createItems()
     -- Register Public Licenses --
     for itemName, v in pairs(allLicense) do
@@ -247,19 +257,11 @@ function createItems()
                     itemInfo = (data and data.metadata) or (data and data.info) or {}
                     itemInfo.card = allLicense[itemKey]
                 end
-
-                if nearby ~= 0 then
+                for k, playerID  in pairs(nearby) do
                     if itemInfo.checkCard == 'codestudio' then
-                        TriggerClientEvent('cs:identity:useCard', nearby, itemInfo, itemKey, source)
-                        TriggerClientEvent('cs:identity:useCard', source, itemInfo, itemKey, source)
+                        TriggerClientEvent('cs:identity:useCard', playerID, itemInfo, itemKey, source)
                     else
-                        useCard(source, nearby, itemKey)
-                    end
-                else
-                    if itemInfo.checkCard == 'codestudio' then
-                        TriggerClientEvent('cs:identity:useCard', source, itemInfo, itemKey, source)
-                    else
-                        useCard(source, source, itemKey)
+                        useCard(source, playerID, itemKey)
                     end
                 end
             end)
@@ -269,16 +271,12 @@ function createItems()
             QBCore.Functions.CreateUseableItem(itemName, function(source, item)
                 handleCardUse(source, item, itemName)
             end)
-
-            QBCore.Functions.CreateUseableItem('carplay', function(source, item)
-                handleCardUse(source, item, 'carplay')
-            end)
         elseif CodeStudio.ServerType == "ESX" then
             ESX.RegisterUsableItem(itemName, function(source, item, data)
-                if GetResourceState('qs-inventory') == 'started' then
-                    handleCardUse(source, item, itemName)
-                else
+                if GetResourceState('ox_inventory') == 'started' then
                     handleCardUse(source, data, itemName)
+                else
+                    handleCardUse(source, item, itemName)
                 end
             end)
         end
@@ -292,23 +290,15 @@ function createItems()
             local function handleBadgeUse(source, data, itemKey)
                 lib.callback('cs:identity:getClosestPlayer', source, function(nearby)
                     local itemInfo = {}
-
+    
                     if CodeStudio.IDSettings.useMetaData then
                         itemInfo = (data and data.metadata) or (data and data.info) or {}
                     end
-
-                    if nearby ~= 0 then
+                    for k, playerID  in pairs(nearby) do
                         if itemInfo.checkCard == 'codestudio' then
-                            TriggerClientEvent('cs:identity:useBadge', nearby, itemInfo, itemKey, source)
-                            TriggerClientEvent('cs:identity:useBadge', source, itemInfo, itemKey, source)
+                            TriggerClientEvent('cs:identity:useBadge', playerID, itemInfo, itemKey, source)
                         else
-                            useBadge(source, nearby, itemKey)
-                        end
-                    else
-                        if itemInfo.checkCard == 'codestudio' then
-                            TriggerClientEvent('cs:identity:useBadge', source, itemInfo, itemKey, source)
-                        else
-                            useBadge(source, source, itemKey)
+                            useBadge(source, playerID, itemKey)
                         end
                     end
                 end)
@@ -320,37 +310,33 @@ function createItems()
                 end)
             elseif CodeStudio.ServerType == "ESX" then
                 ESX.RegisterUsableItem(itemName, function(source, item, data)
-                    if GetResourceState('qs-inventory') == 'started' then
-                        handleBadgeUse(source, item, itemName)
-                    else
+                    if GetResourceState('ox_inventory') == 'started' then
                         handleBadgeUse(source, data, itemName)
+                    else
+                        handleBadgeUse(source, item, itemName)
                     end
                 end)
             end
         end
     end
 
-
+  -- Register Worker IDs Items --
     for k, config in pairs(CodeStudio.WorkerID) do
         if config.ItemName then
             local itemName = config.ItemName
 
             local function handleWorkerIDUse(source, data, itemKey)
-                if not CodeStudio.IDSettings.useMetaData then return end
                 lib.callback('cs:identity:getClosestPlayer', source, function(nearby)
-                    local itemInfo = (data and data.metadata) or (data and data.info) or {}
-                    if nearby ~= 0 then
+                    local itemInfo = {}
+    
+                    if CodeStudio.IDSettings.useMetaData then
+                        itemInfo = (data and data.metadata) or (data and data.info) or {}
+                    end
+                    for k, playerID  in pairs(nearby) do
                         if itemInfo.checkCard == 'codestudio' then
-                            TriggerClientEvent('cs:identity:useWorkerID', nearby, itemInfo, itemKey, source)
-                            TriggerClientEvent('cs:identity:useWorkerID', source, itemInfo, itemKey, source)
+                            TriggerClientEvent('cs:identity:useWorkerID', playerID, itemInfo, itemKey, source)
                         else
-                            useWorkerID(source, nearby, itemKey)
-                        end
-                    else
-                        if itemInfo.checkCard == 'codestudio' then
-                            TriggerClientEvent('cs:identity:useWorkerID', source, itemInfo, itemKey, source)
-                        else
-                            useWorkerID(source, source, itemKey)
+                            useWorkerID(source, playerID, itemKey)
                         end
                     end
                 end)
@@ -362,10 +348,10 @@ function createItems()
                 end)
             elseif CodeStudio.ServerType == "ESX" then
                 ESX.RegisterUsableItem(itemName, function(source, item, data)
-                    if GetResourceState('qs-inventory') == 'started' then
-                        handleWorkerIDUse(source, item, itemName)
-                    else
+                    if GetResourceState('ox_inventory') == 'started' then
                         handleWorkerIDUse(source, data, itemName)
+                    else
+                        handleWorkerIDUse(source, item, itemName)
                     end
                 end)
             end
@@ -373,19 +359,14 @@ function createItems()
 
     end
 
-    
+    -- Register Forge/Fake IDs --
     local function handleForgeIDUse(source, data, itemKey)
         if not CodeStudio.IDSettings.useMetaData then return end
         lib.callback('cs:identity:getClosestPlayer', source, function(nearby)
             local itemInfo = (data and data.metadata) or (data and data.info) or {}
-            if nearby ~= 0 then
+            for k, playerID  in pairs(nearby) do
                 if itemInfo.checkCard == 'codestudio' then
-                    TriggerClientEvent('cs:identity:useCard', nearby, itemInfo, itemKey, source)
-                    TriggerClientEvent('cs:identity:useCard', source, itemInfo, itemKey, source)
-                end
-            else
-                if itemInfo.checkCard == 'codestudio' then
-                    TriggerClientEvent('cs:identity:useCard', source, itemInfo, itemKey, source)
+                    TriggerClientEvent('cs:identity:useCard', playerID, itemInfo, itemKey, source)
                 end
             end
         end)
@@ -397,16 +378,15 @@ function createItems()
         end)
     elseif CodeStudio.ServerType == "ESX" then
         ESX.RegisterUsableItem(CodeStudio.FakeID.itemName, function(source, item, data)
-            if GetResourceState('qs-inventory') == 'started' then
-                handleForgeIDUse(source, item, CodeStudio.FakeID.itemName)
-            else
+            if GetResourceState('ox_inventory') == 'started' then
                 handleForgeIDUse(source, data, CodeStudio.FakeID.itemName)
+            else
+                handleForgeIDUse(source, item, CodeStudio.FakeID.itemName)
             end
         end)
     end
 
 end
-
 
 
 
@@ -427,5 +407,4 @@ if CodeStudio.LicenseChecker.Enable then
         end
     end)
 end
-
 
